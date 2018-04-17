@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR;
 
 public class Sword : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+     SteamVR_TrackedObject strackObject = null;
+     SteamVR_Controller.Device sdevice;
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -20,6 +23,7 @@ public class Sword : MonoBehaviour {
         if (collision.gameObject.tag=="Minion")
         {
             Destroy(collision.gameObject);
+            sdevice.TriggerHapticPulse(700);
         }
     }
 }
