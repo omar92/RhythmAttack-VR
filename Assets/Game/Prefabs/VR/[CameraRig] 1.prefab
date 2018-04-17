@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 114983391254390884}
   - component: {fileID: 23208084194037750}
   - component: {fileID: 33196585745173688}
+  - component: {fileID: 54459923667278030}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -110,6 +111,7 @@ GameObject:
   - component: {fileID: 114442476106172596}
   - component: {fileID: 23487167144276184}
   - component: {fileID: 33348621050030476}
+  - component: {fileID: 54076951773090862}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -520,6 +522,36 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1782629023435878}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &54076951773090862
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1782629023435878}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!54 &54459923667278030
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1529558033724348}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!81 &81211249434182466
 AudioListener:
   m_ObjectHideFlags: 1

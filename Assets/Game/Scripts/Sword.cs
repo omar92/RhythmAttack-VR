@@ -16,6 +16,7 @@ public class Sword : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("collision");
         if (collision.gameObject.tag=="Minion")
         {
             Destroy(collision.gameObject);
