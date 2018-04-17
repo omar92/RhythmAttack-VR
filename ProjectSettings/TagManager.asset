@@ -7,6 +7,7 @@ TagManager:
   - FxTemporaire
   - projectile
   - Minion
+  - Sword
   layers:
   - Default
   - TransparentFX

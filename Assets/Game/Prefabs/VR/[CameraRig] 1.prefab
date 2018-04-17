@@ -53,6 +53,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4197506384633918}
   - component: {fileID: 114483753394769988}
+  - component: {fileID: 114257314892618422}
   m_Layer: 0
   m_Name: Controller (left)
   m_TagString: Untagged
@@ -181,6 +182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4201252465042250}
   - component: {fileID: 114052492760290390}
+  - component: {fileID: 114801277592346450}
   m_Layer: 0
   m_Name: Controller (right)
   m_TagString: Untagged
@@ -625,6 +627,18 @@ MonoBehaviour:
   verbose: 0
   createComponents: 1
   updateDynamically: 1
+--- !u!114 &114257314892618422
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1492031547488388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de0a6c1638140a74da75014619816f2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mysword: {fileID: 1782629023435878}
 --- !u!114 &114442476106172596
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -699,6 +713,18 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114801277592346450
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1918147414583844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de0a6c1638140a74da75014619816f2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mysword: {fileID: 1529558033724348}
 --- !u!114 &114900755527186694
 MonoBehaviour:
   m_ObjectHideFlags: 1
