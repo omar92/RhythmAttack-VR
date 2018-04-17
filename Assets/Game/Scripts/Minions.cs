@@ -6,6 +6,9 @@ public class Minions : MonoBehaviour {
 
     public GameObject[] lanes;
     int randNum;
+
+    [Range(.2f,3)]
+    public float speed = 1;
    // Rigidbody rb;
     public Rigidbody pref;
 
@@ -18,12 +21,18 @@ public class Minions : MonoBehaviour {
     {
         while (true)
         {
-            Rigidbody clone;
-            randNum = Random.Range(0, lanes.Length - 1);
-            clone = Instantiate(pref, lanes[randNum].transform.position, Quaternion.identity) as Rigidbody;
-            clone.velocity = new Vector3(0, 0, -20.0f);
-            clone.tag = "Minion";
-            yield return new WaitForSeconds(1);
+            int rand = Random.Range(0, 2);
+
+            for (int i = 0; i <= rand; i++)
+            {
+                Rigidbody clone;
+                randNum = Random.Range(0, lanes.Length);
+                clone = Instantiate(pref, lanes[randNum].transform.position, Quaternion.identity) as Rigidbody;
+                clone.velocity = new Vector3(0, 0, -20.0f);
+                clone.tag = "Minion";
+              
+            }
+            yield return new WaitForSeconds(speed);
         }
     }
 }
