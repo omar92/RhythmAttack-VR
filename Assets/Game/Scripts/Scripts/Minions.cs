@@ -6,11 +6,11 @@ public class Minions : MonoBehaviour
 {
 
     public GameObject[] lanes;
-    public float speedIncrease = .1f;
+    public float speedIncrease = .02f;
     int randNum;
 
-    [Range(.2f, 3)]
-    public float speed = 1;
+    //[Range(.2f, 3)]
+    public float speedRate = -1;
     // Rigidbody rb;
     public Rigidbody pref;
 
@@ -23,7 +23,7 @@ public class Minions : MonoBehaviour
     IEnumerator Throw()
     {
         var track = Utilities.track;
-        float speedRate = 0;
+        speedRate = 0;
         while (true)
         {
             //int rand = Random.Range(0, 2);
@@ -40,7 +40,7 @@ public class Minions : MonoBehaviour
 
             for (int y = 0; y < track.Length; y += 5)
             {
-                var newSpeed = track[y + 4] - speedRate;
+                var newSpeed = track[y + 4]*2f - speedRate;
                 yield return new WaitForSeconds(newSpeed > .1f ? newSpeed : .1f);
                 for (int x = y; x < y + 4; x++)
                 {
