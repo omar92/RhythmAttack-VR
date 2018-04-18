@@ -3,25 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
 
-public class Controller : MonoBehaviour {
+public class RController : MonoBehaviour {
 
     SteamVR_TrackedObject trackObject=null;
     public SteamVR_Controller.Device device;
     public GameObject mysword;
-    Color current;
+    public static int currentDeviceIndex;
+    Color currentColler;
     void Awake()
     {
         trackObject = GetComponent<SteamVR_TrackedObject>();
     }
     // Use this for initialization
     void Start () {
-        current = mysword.GetComponent<Renderer>().material.color;
+        currentColler = mysword.GetComponent<Renderer>().material.color;
+        currentDeviceIndex =(int) this.device.index;
+       
+      
 	}
 	
 	// Update is called once per frame
 	void Update () {
+       
         device = SteamVR_Controller.Input((int)trackObject.index);
-
+        
         if (device.GetTouchDown(SteamVR_Controller.ButtonMask.Trigger))
         {
             mysword.GetComponent<Renderer>().material.color = new Color(0,1,1,1);
@@ -29,7 +34,7 @@ public class Controller : MonoBehaviour {
         }
         if (device.GetTouchUp(SteamVR_Controller.ButtonMask.Trigger))
         {
-            mysword.GetComponent<Renderer>().material.color = current;
+            mysword.GetComponent<Renderer>().material.color = currentColler;
            Debug.Log("up");
         }
     }
