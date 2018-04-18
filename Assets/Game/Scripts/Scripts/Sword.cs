@@ -24,8 +24,9 @@ public class Sword : MonoBehaviour {
         {
             Destroy(collision.gameObject);
             //sdevice.TriggerHapticPulse(700);
-             SteamVR_Controller.Input(0).TriggerHapticPulse(1000);
-            SteamVR_Controller.Input(1).TriggerHapticPulse(1000);
+            //
+            SteamVR_Controller.Input(RController.currentDeviceIndex).TriggerHapticPulse(1000);
+            SteamVR_Controller.Input(LController.currentDeviceIndex).TriggerHapticPulse(1000);
 
         }
     }
