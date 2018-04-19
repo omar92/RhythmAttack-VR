@@ -8,7 +8,7 @@ public class Minions : MonoBehaviour
     public GameObject[] lanes;
     public float speedIncrease = .02f;
     int randNum;
-
+    public float ProjectileSpeed = 10.0f;
     //[Range(.2f, 3)]
     public float speedRate = -1;
     // Rigidbody rb;
@@ -50,7 +50,7 @@ public class Minions : MonoBehaviour
                         Rigidbody clone;
                         //randNum = Random.Range(0, lanes.Length);
                         clone = Instantiate(pref, em.transform.position, Quaternion.identity) as Rigidbody;
-                        clone.velocity = new Vector3(0, 0, -20.0f);
+                        clone.velocity = new Vector3(0, 0, -ProjectileSpeed);
                         clone.tag = "Minion";
                     }
                 }

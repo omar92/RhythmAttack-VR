@@ -7,10 +7,14 @@ public class Sword : MonoBehaviour {
 
      SteamVR_TrackedObject strackObject = null;
      SteamVR_Controller.Device sdevice;
+
+    AudioSource audioSource ;
+
     // Use this for initialization
     void Start () {
-		
-	}
+        audioSource = GetComponent<AudioSource>();
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -27,7 +31,7 @@ public class Sword : MonoBehaviour {
             //
             SteamVR_Controller.Input(RController.currentDeviceIndex).TriggerHapticPulse(1000);
             SteamVR_Controller.Input(LController.currentDeviceIndex).TriggerHapticPulse(1000);
-
+            audioSource.Play();
         }
     }
 }
