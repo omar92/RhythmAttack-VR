@@ -64,7 +64,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1668918397659358}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.94, y: 6.24, z: -5.97}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4000013855202188}
@@ -162,13 +162,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fb0999ab241539438b0b012d2ea9779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MPTK_LogWaves: 0
+  MPTK_LogWaves: 1
   transpose: 0
   volume: 0
   AudioSourceTemplate: {fileID: 82000010482852012}
-  midiNameToPlay: MPTK_Example 0002
+  midiNameToPlay: MPTK_Example 0001
   distanceEditorModeOnly: 0
-  speed: 0.87
+  speed: 1
   durationEditorModeOnly: 
   playTimeEditorModeOnly: 
   OnEventStartPlayMidi:
