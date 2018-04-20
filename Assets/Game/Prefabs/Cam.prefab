@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 82966052375746588}
   m_Layer: 0
   m_Name: Sword
-  m_TagString: Untagged
+  m_TagString: Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 82011217858996828}
   m_Layer: 0
   m_Name: Sword
-  m_TagString: Untagged
+  m_TagString: Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,6 +79,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4725095529295126}
   - component: {fileID: 114665053633615928}
+  - component: {fileID: 114216588303648798}
   m_Layer: 0
   m_Name: Controller (right)
   m_TagString: Untagged
@@ -165,6 +166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4263932902257670}
   - component: {fileID: 114493707350564262}
+  - component: {fileID: 114100623413284374}
   m_Layer: 0
   m_Name: Controller (left)
   m_TagString: Untagged
@@ -280,8 +282,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1354872480218414}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.84, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4166602272215282}
@@ -324,7 +326,7 @@ Transform:
   m_GameObject: {fileID: 1054213495301506}
   m_LocalRotation: {x: 0.70710635, y: -0, z: -0, w: 0.7071073}
   m_LocalPosition: {x: 0, y: -0.012000017, z: 0.4846}
-  m_LocalScale: {x: 0.05, y: 0.5033773, z: 0.050000023}
+  m_LocalScale: {x: -0.05, y: 0.5033773, z: 0.12}
   m_Children: []
   m_Father: {fileID: 4725095529295126}
   m_RootOrder: 0
@@ -352,7 +354,7 @@ Transform:
   m_GameObject: {fileID: 1244464501275978}
   m_LocalRotation: {x: 0.70710677, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: -0.012, z: 0.4846}
-  m_LocalScale: {x: 0.05, y: 0.503377, z: 0.050000023}
+  m_LocalScale: {x: -0.05, y: 0.503377, z: 0.12}
   m_Children: []
   m_Father: {fileID: 4263932902257670}
   m_RootOrder: 0
@@ -656,7 +658,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -736,7 +738,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -756,6 +758,18 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1777400618299554}
   m_Enabled: 1
+--- !u!114 &114100623413284374
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1866642147484054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70a62932eeaee4c41b9b6bf018cea222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mysword: {fileID: 1244464501275978}
 --- !u!114 &114194046431782084
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -785,6 +799,18 @@ MonoBehaviour:
   verbose: 0
   createComponents: 1
   updateDynamically: 1
+--- !u!114 &114216588303648798
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1345700148511052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de0a6c1638140a74da75014619816f2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mysword: {fileID: 1054213495301506}
 --- !u!114 &114263009527034644
 MonoBehaviour:
   m_ObjectHideFlags: 1

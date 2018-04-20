@@ -8,6 +8,7 @@ TagManager:
   - projectile
   - Minion
   - Sword
+  - Note
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Note
   - 
   - 
   - 
