@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="Windows-1252"?>
+<?xml version="1.0" encoding="windows-1256"?>
 <MidiSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SoundFonts>
     <SoundFontInfo>
@@ -50,5 +50,8 @@
     <string>MPTK_Example 0029</string>
     <string>MPTK_Example 0030</string>
     <string>MPTK_Example 0031</string>
+    <string>MPTK_Example 0032</string>
+    <string>MPTK_Example 0033</string>
+    <string>MPTK_Example 0034</string>
   </MidiFiles>
 </MidiSet>
