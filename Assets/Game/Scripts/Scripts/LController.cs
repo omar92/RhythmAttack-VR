@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LController : MonoBehaviour {
 
-    SteamVR_TrackedObject trackObject = null;
+    public static SteamVR_TrackedObject trackObject = null;
     public SteamVR_Controller.Device device;
     public GameObject mysword;
     public static int currentDeviceIndex;
@@ -17,9 +17,9 @@ public class LController : MonoBehaviour {
     void Start()
     {
         currentColler = mysword.GetComponent<Renderer>().material.color;
-        currentDeviceIndex = (int)this.device.index;
+        //currentDeviceIndex = (int)this.device.index;
 
-
+        trackObject.SetDeviceIndex(8);
     }
 
     // Update is called once per frame
