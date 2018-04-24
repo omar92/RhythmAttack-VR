@@ -16,17 +16,23 @@ public class LController : MonoBehaviour {
     void Awake()
     {
         trackObject = GetComponent<SteamVR_TrackedObject>();
-    }
-    void Start()
-    {
-       // currentColler = mysword.GetComponent<Renderer>().material.color;
-        //currentDeviceIndex = (int)this.device.index;
-        if(isLeft)
+        if (isLeft)
             trackObject.SetDeviceIndex(8);
         else
             trackObject.SetDeviceIndex(9);
     }
+    void Start()
+    {
+        // currentColler = mysword.GetComponent<Renderer>().material.color;
+        //currentDeviceIndex = (int)this.device.index;
 
+        //if (isLeft)
+        //    trackObject.SetDeviceIndex(8);
+        //else
+        //    trackObject.SetDeviceIndex(9);
+        
+    }
+    
     void Update()
     {
 

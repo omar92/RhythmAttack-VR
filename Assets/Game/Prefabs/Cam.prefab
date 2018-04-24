@@ -96,7 +96,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4725095529295126}
   - component: {fileID: 114665053633615928}
-  - component: {fileID: 114216588303648798}
+  - component: {fileID: 114258459469217010}
   m_Layer: 0
   m_Name: Controller (right)
   m_TagString: Untagged
@@ -351,7 +351,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1354872480218414}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -6.84, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4166602272215282}
@@ -1057,7 +1057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70a62932eeaee4c41b9b6bf018cea222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mysword: {fileID: 1244464501275978}
+  isLeft: 1
 --- !u!114 &114194046431782084
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1087,7 +1087,7 @@ MonoBehaviour:
   verbose: 0
   createComponents: 1
   updateDynamically: 1
---- !u!114 &114216588303648798
+--- !u!114 &114258459469217010
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1095,10 +1095,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1345700148511052}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de0a6c1638140a74da75014619816f2f, type: 3}
+  m_Script: {fileID: 11500000, guid: 70a62932eeaee4c41b9b6bf018cea222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mysword: {fileID: 1054213495301506}
+  isLeft: 0
 --- !u!114 &114263009527034644
 MonoBehaviour:
   m_ObjectHideFlags: 1
