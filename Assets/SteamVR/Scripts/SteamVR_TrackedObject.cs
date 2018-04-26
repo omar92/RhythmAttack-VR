@@ -52,7 +52,7 @@ public class SteamVR_TrackedObject : MonoBehaviour
 			return;
 
 		if (!poses[i].bPoseIsValid)
-			return;
+			return;  
 
         isValid = true;
 
