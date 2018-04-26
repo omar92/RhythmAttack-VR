@@ -17,7 +17,7 @@ public class LMyController : MonoBehaviour {
     // Use this for initialization
     private void Awake()
     {
-        leftController = GameObject.Find("LeftControllert");
+        leftController = GameObject.Find("LeftController");
 
         leftController.transform.position = this.transform.position;
         leftController.transform.rotation = this.transform.rotation;
@@ -36,7 +36,7 @@ public class LMyController : MonoBehaviour {
 
         speed = (currentPos - previuosPos).magnitude / Time.deltaTime;
 
-        previuosPos = transform.position;
+        previuosPos = currentPos;
         Debug.Log("left control speed = " + speed);
     }
 

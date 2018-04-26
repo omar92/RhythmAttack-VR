@@ -33,7 +33,10 @@ public class RMyController : MonoBehaviour {
 
         speed = (currentPos - previuosPos).magnitude / Time.deltaTime;
 
-        previuosPos = transform.position;
+        previuosPos = currentPos;
         Debug.Log("right control speed = "+speed);
+
+       
+        
     }
 }

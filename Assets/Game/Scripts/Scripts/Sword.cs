@@ -37,10 +37,9 @@ public class Sword : MonoBehaviour
         {
           //  Destroy(collision.gameObject);
             //sdevice.TriggerHapticPulse(700);
-
-            //for htc vive
-            //SteamVR_Controller.Input((int)RController.trackObject.index).TriggerHapticPulse(1000);
-            //SteamVR_Controller.Input((int )LController.trackObject.index).TriggerHapticPulse(1000);
+            //
+            SteamVR_Controller.Input((int)LController.trackObject.index).TriggerHapticPulse(1000);
+            SteamVR_Controller.Input((int )LController.trackObject.index).TriggerHapticPulse(1000);
             audioSource.Play();
         }
     }
@@ -50,14 +49,11 @@ public class Sword : MonoBehaviour
         // Debug.Log("collision");
         if (other.gameObject.tag == "Note")
         {
-            //     Destroy(other.gameObject);
+       //     Destroy(other.gameObject);
             //sdevice.TriggerHapticPulse(700);
-
-            //for htc vive
-            //SteamVR_Controller.Input((int)RController.trackObject.index).TriggerHapticPulse(1000);
-            //SteamVR_Controller.Input((int )LController.trackObject.index).TriggerHapticPulse(1000);
-
-            
+            //
+            SteamVR_Controller.Input(LController.currentDeviceIndex).TriggerHapticPulse(1000);
+            SteamVR_Controller.Input(LController.currentDeviceIndex).TriggerHapticPulse(1000);
 
             NoteScript sc = other.GetComponent<NoteScript>();
 
@@ -71,10 +67,7 @@ public class Sword : MonoBehaviour
             //         audioSource.PlayOneShot(AudioLib[key]);
             //}
                
-        
-
-
-
+       
             //  print(sc.BeatName);
             // audioSource.clip = 
         }
