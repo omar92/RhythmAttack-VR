@@ -198,7 +198,7 @@ MonoBehaviour:
   newMidiToPlay: 0
   stopMidiToPlay: 0
   midiIsPlaying: 0
-  loop: 1
+  loop: 0
   playPause: 0
   timeFromStartMS: 0
 --- !u!135 &135420960072459656

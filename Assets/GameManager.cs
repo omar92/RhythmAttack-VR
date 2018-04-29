@@ -5,18 +5,18 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     MidiFilePlayer midiPLayer;
+    StateMachine stateMachine;//= new StateMachine(gameObject.GetComponent<GameManager>()); 
+
     void Awake()
     {
-        var midiPLayer = gameObject.GetComponentInChildren<MidiFilePlayer>();
-        if (midiPLayer)
-        {
-            midiPLayer.enabled = false;
-            MidiPlayerInitialiser.Init("Assets/Game/Resources/Tracks/");
-            midiPLayer.enabled = true;
-            midiPLayer.MPTK_Play();
-        }
+        stateMachine = new StateMachine(this);
+        stateMachine.ChangeState(new InitialState());
 
+    }
 
+    private void Update()
+    {
+        stateMachine.StateUpdate();
     }
 
 
