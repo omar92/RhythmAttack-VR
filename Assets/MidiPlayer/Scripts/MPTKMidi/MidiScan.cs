@@ -48,6 +48,7 @@ namespace MidiPlayerTK
                         }
                         else if (trackEvent.Event.CommandCode == MidiCommandCode.NoteOff)
                         {
+
                         }
                         else if (trackEvent.Event.CommandCode == MidiCommandCode.ControlChange)
                         {

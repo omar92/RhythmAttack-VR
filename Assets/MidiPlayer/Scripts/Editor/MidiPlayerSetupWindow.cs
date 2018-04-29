@@ -23,7 +23,7 @@ namespace MidiPlayerTK
         public static string version = "1.1 Free";
 #endif
         public static string releaseDate = "April 14 2018";
-        private static MidiPlayerSetupWindow window;
+        public static MidiPlayerSetupWindow inistance;
 
         Vector2 scrollPosBanks = Vector2.zero;
         Vector2 scrollPosSoundFont = Vector2.zero;
@@ -66,9 +66,9 @@ namespace MidiPlayerTK
             // Get existing open window or if none, make a new one:
             try
             {
-                window = (MidiPlayerSetupWindow)EditorWindow.GetWindow(typeof(MidiPlayerSetupWindow));
-                window.titleContent.text = "Midi Player Setup";
-                window.minSize = new Vector2(828, 565);
+                inistance = (MidiPlayerSetupWindow)EditorWindow.GetWindow(typeof(MidiPlayerSetupWindow));
+                inistance.titleContent.text = "Midi Player Setup";
+                inistance.minSize = new Vector2(828, 565);
 
                 styleBold = new GUIStyle(EditorStyles.boldLabel);
                 styleBold.fontStyle = FontStyle.Bold;
@@ -101,7 +101,7 @@ namespace MidiPlayerTK
             // Trig an  error before v2017...
             if (Application.isPlaying)
             {
-                window.Close();
+                inistance.Close();
             }
 #endif
         }
@@ -129,7 +129,7 @@ namespace MidiPlayerTK
         {
             try
             {
-                if (window == null) Init();
+                if (inistance == null) Init();
                 float startx = 5;
                 float starty = 7;
                 //Log.Write("test");
@@ -139,7 +139,7 @@ namespace MidiPlayerTK
 
                 GUI.color = MidiPlayerToolsEdit.ButtonColor;
                 content = new GUIContent() { text = "Help & Contact", tooltip = "Get some help" };
-                Rect rect = new Rect(window.position.size.x - buttonWidth - 5, starty, buttonWidth, buttonHeight);
+                Rect rect = new Rect(inistance.position.size.x - buttonWidth - 5, starty, buttonWidth, buttonHeight);
                 try
                 {
                     if (GUI.Button(rect, content))
@@ -152,8 +152,8 @@ namespace MidiPlayerTK
 
                 starty += buttonHeight + espace;
 
-                widthRight = window.position.size.x - widthLeft - 2 * espace - startx;
-                heightBottom = window.position.size.y - heightTop - heightMiddle - 3 * espace - starty;
+                widthRight = inistance.position.size.x - widthLeft - 2 * espace - startx;
+                heightBottom = inistance.position.size.y - heightTop - heightMiddle - 3 * espace - starty;
 
                 ShowListSoundFonts(startx, starty);
                 ShowListBanks(startx + widthLeft + espace, starty);
@@ -616,6 +616,42 @@ namespace MidiPlayerTK
             try
             {
                 string selectedFile = EditorUtility.OpenFilePanel("Open and import Midi file", MidiPlayerToolsEdit.lastDirectoryMidi, "mid");
+                Debug.Log(selectedFile);
+                if (!string.IsNullOrEmpty(selectedFile))
+                {
+                    MidiPlayerToolsEdit.lastDirectoryMidi = Path.GetDirectoryName(selectedFile);
+
+                    // Build path to midi folder 
+                    string pathMidiFile = Path.Combine(Application.dataPath, MidiPlayerGlobal.PathToMidiFile);
+                    if (!Directory.Exists(pathMidiFile))
+                        Directory.CreateDirectory(pathMidiFile);
+
+                    string filenameToSave = Path.Combine(pathMidiFile, Path.GetFileNameWithoutExtension(selectedFile) + MidiPlayerGlobal.ExtensionMidiFile);
+                    // Create a copy of the midi file in resources
+                    File.Copy(selectedFile, filenameToSave, true);
+
+                    if (MidiPlayerGlobal.CurrentMidiSet.MidiFiles == null)
+                        MidiPlayerGlobal.CurrentMidiSet.MidiFiles = new List<string>();
+
+                    MidiPlayerGlobal.CurrentMidiSet.MidiFiles.Add(Path.GetFileNameWithoutExtension(selectedFile));
+                    MidiPlayerGlobal.CurrentMidiSet.Save();
+                }
+                AssetDatabase.Refresh();
+            }
+            catch (System.Exception ex)
+            {
+                MidiPlayerGlobal.ErrorDetail(ex);
+            }
+        }
+
+
+        /// <summary>
+        /// Add a new Midi file from desktop
+        /// </summary>
+        public static void AddMidifile(string selectedFile)
+        {
+            try
+            {
                 if (!string.IsNullOrEmpty(selectedFile))
                 {
                     MidiPlayerToolsEdit.lastDirectoryMidi = Path.GetDirectoryName(selectedFile);

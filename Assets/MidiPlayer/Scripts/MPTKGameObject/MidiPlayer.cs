@@ -400,6 +400,7 @@ namespace MidiPlayerTK
                 Debug.Log(string.Format("{0} C:{1,2} P:{2,3:000} D:{3} Note:{4,3:000} {5,-3} Duration:{6,4} sec. Velocity:{7} Wave:{8}",
                     time, note.Chanel, note.Patch, note.Drum, note.Midi, HelperNoteLabel.LabelFromMidi(note.Midi),
                     Math.Round(note.Duration / 1000d, 2), note.Velocity, sample.WaveFile));
+                Debug.Log("note: " + note.Midi);
                 //var midiWave = new MidiWave
                 //{
                 //    Time = time,

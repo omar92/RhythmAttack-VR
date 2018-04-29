@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using MidiPlayerTK;
 using UnityEngine;
 
+
 public class BroadcastMidiWave : MonoBehaviour
 {
 
@@ -14,6 +15,10 @@ public class BroadcastMidiWave : MonoBehaviour
     {
         inistance = this;
 
+    }
+    private void Start()
+    {
+        
     }
 
     internal void Broadcast(AudioSource audioSource, MidiNote note)

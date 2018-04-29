@@ -6,11 +6,13 @@ using UnityEngine;
 public class Emitter : MonoBehaviour
 {
 
+    public int[] lanesNotes = new int[8];
+    
     void OnMidiNoteAudio(object data)
     {
         var noteAudio = (MidiNoteAudio)data;
         SpawnNote(noteAudio);
-
+        
     }
     int x, y;
     void SpawnNote(MidiNoteAudio note)

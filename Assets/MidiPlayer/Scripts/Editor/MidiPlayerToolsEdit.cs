@@ -8,7 +8,6 @@ using System.Linq;
 
 namespace MidiPlayerTK
 {
-
     public class MidiPlayerToolsEdit
     {
         public static Color ButtonColor = new Color(.7f, .9f, .7f, 1f);
