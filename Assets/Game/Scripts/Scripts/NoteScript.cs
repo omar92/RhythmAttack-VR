@@ -1,4 +1,4 @@
-﻿using MidiPlayerTK;
+﻿    using MidiPlayerTK;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -38,22 +38,14 @@ public class NoteScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        rb.velocity = new Vector3(0, 0, 0);
-       // this.enabled = false;
-
-        StartCoroutine(PlayNote(myNoteAudio.audioSource, !myNoteAudio.note.Drum, myNoteAudio.note, Hide));
-       // Hide();
-
-
-        // print("triggered "+ other.tag);
-        // if (other.tag == "Sword")
+        float swordSpeed = other.GetComponent<Sword>().speed;
+        Debug.Log("my sword speed ");
+        if (swordSpeed>2)
         {
-            // this.GetComponent<BoxCollider>().enabled = false;
-            // var coliders = this.GetComponentsInChildren<BoxCollider>();
-            //  print(coliders);
-            //  coliders[1].enabled = false;
-
+            rb.velocity = new Vector3(0, 0, 0);
+            StartCoroutine(PlayNote(myNoteAudio.audioSource, !myNoteAudio.note.Drum, myNoteAudio.note, Hide));
         }
+
     }
 
 
