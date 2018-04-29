@@ -45,13 +45,13 @@ public class NoteScript : MonoBehaviour
         {
             float swordSpeed = other.GetComponent<Sword>().speed;
             Debug.Log("my sword speed ");
-          //  if (swordSpeed > 2)
-          //  {
+            if (swordSpeed > 2)
+            {
                // rb.velocity = new Vector3(0, 0, 0);
                 rb.GetComponent<Renderer>().enabled = false;
                 rb.GetComponent<Collider>().enabled = false;
                 StartCoroutine(PlayNote(myNoteAudio.audioSource, !myNoteAudio.note.Drum, myNoteAudio.note, Hide));
-         //   }
+            }
         }
         else
         {
