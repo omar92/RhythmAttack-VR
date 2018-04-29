@@ -32,18 +32,31 @@ public class NoteScript : MonoBehaviour
        // this.enabled = true;
         transform.SetParent(null);
         transform.position = pos;
+        rb.GetComponent<Renderer>().enabled = true;
+        rb.GetComponent<Collider>().enabled = true;
         rb.velocity = new Vector3(0, 0, -Velocity);
         myNoteAudio = note;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        float swordSpeed = other.GetComponent<Sword>().speed;
-        Debug.Log("my sword speed ");
-        if (swordSpeed>2)
+        rb.velocity = new Vector3(0, 0, 0);
+        if (other.tag == "Sword")
         {
-            rb.velocity = new Vector3(0, 0, 0);
-            StartCoroutine(PlayNote(myNoteAudio.audioSource, !myNoteAudio.note.Drum, myNoteAudio.note, Hide));
+            float swordSpeed = other.GetComponent<Sword>().speed;
+            Debug.Log("my sword speed ");
+          //  if (swordSpeed > 2)
+          //  {
+               // rb.velocity = new Vector3(0, 0, 0);
+                rb.GetComponent<Renderer>().enabled = false;
+                rb.GetComponent<Collider>().enabled = false;
+                StartCoroutine(PlayNote(myNoteAudio.audioSource, !myNoteAudio.note.Drum, myNoteAudio.note, Hide));
+         //   }
+        }
+        else
+        {
+           // rb.velocity = new Vector3(0, 0, 0);
+            Hide();
         }
 
     }
