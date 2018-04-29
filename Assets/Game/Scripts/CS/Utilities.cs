@@ -39,3 +39,7 @@
 
 
 }
+public enum VRControllersTypes
+{
+    LeftH, RightH, Head
+}
