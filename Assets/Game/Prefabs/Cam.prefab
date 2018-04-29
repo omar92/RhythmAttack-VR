@@ -96,7 +96,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4725095529295126}
   - component: {fileID: 114665053633615928}
-  - component: {fileID: 114216588303648798}
+  - component: {fileID: 114424885298109556}
   m_Layer: 0
   m_Name: Controller (right)
   m_TagString: Untagged
@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 20508139362466318}
   - component: {fileID: 114877208859978332}
   - component: {fileID: 92463419820323084}
+  - component: {fileID: 114873847398832642}
   m_Layer: 0
   m_Name: Camera (head)
   m_TagString: MainCamera
@@ -234,7 +235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4263932902257670}
   - component: {fileID: 114493707350564262}
-  - component: {fileID: 114100623413284374}
+  - component: {fileID: 114388453879184998}
   m_Layer: 0
   m_Name: Controller (left)
   m_TagString: Untagged
@@ -351,7 +352,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1354872480218414}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -6.84, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4166602272215282}
@@ -1046,18 +1047,6 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1777400618299554}
   m_Enabled: 1
---- !u!114 &114100623413284374
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1866642147484054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70a62932eeaee4c41b9b6bf018cea222, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mysword: {fileID: 1244464501275978}
 --- !u!114 &114194046431782084
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1087,18 +1076,6 @@ MonoBehaviour:
   verbose: 0
   createComponents: 1
   updateDynamically: 1
---- !u!114 &114216588303648798
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1345700148511052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de0a6c1638140a74da75014619816f2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mysword: {fileID: 1054213495301506}
 --- !u!114 &114263009527034644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1127,6 +1104,28 @@ MonoBehaviour:
   verbose: 0
   createComponents: 1
   updateDynamically: 1
+--- !u!114 &114388453879184998
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1866642147484054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9582e541ada66f54c987b948f8962860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114424885298109556
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1345700148511052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5379f83f18052604f9901836f4520e9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114493707350564262
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1194,6 +1193,17 @@ MonoBehaviour:
   - {x: -1.65, y: 0.01, z: -1.275}
   - {x: -1.65, y: 0.01, z: 1.275}
   - {x: 1.65, y: 0.01, z: 1.275}
+--- !u!114 &114873847398832642
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1777400618299554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 775075d10ee65a94683621ec95b9b916, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114877208859978332
 MonoBehaviour:
   m_ObjectHideFlags: 1

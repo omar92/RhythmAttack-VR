@@ -4,25 +4,35 @@ using UnityEngine;
 
 public class LController : MonoBehaviour {
 
+    public bool isLeft;
     public static SteamVR_TrackedObject trackObject = null;
     public SteamVR_Controller.Device device;
-    public GameObject mysword;
+
+  //  public GameObject mysword;
     public static int currentDeviceIndex;
     Color currentColler;
+    int ChildCount = 0;
+    IControllable child;
     void Awake()
     {
         trackObject = GetComponent<SteamVR_TrackedObject>();
+        if (isLeft)
+            trackObject.SetDeviceIndex(8);
+        else
+            trackObject.SetDeviceIndex(9);
     }
-    // Use this for initialization
     void Start()
     {
-        currentColler = mysword.GetComponent<Renderer>().material.color;
+        // currentColler = mysword.GetComponent<Renderer>().material.color;
         //currentDeviceIndex = (int)this.device.index;
 
-        trackObject.SetDeviceIndex(8);
+        //if (isLeft)
+        //    trackObject.SetDeviceIndex(8);
+        //else
+        //    trackObject.SetDeviceIndex(9);
+        
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
 
@@ -30,13 +40,23 @@ public class LController : MonoBehaviour {
 
         if (device.GetTouchDown(SteamVR_Controller.ButtonMask.Trigger))
         {
-            mysword.GetComponent<Renderer>().material.color = new Color(0, 1, 1, 1);
-            Debug.Log("down");
+            HandCheck(true);
         }
         if (device.GetTouchUp(SteamVR_Controller.ButtonMask.Trigger))
         {
-            mysword.GetComponent<Renderer>().material.color = currentColler;
-            Debug.Log("up");
+            HandCheck(false);
+        }
+    }
+    void HandCheck(bool hand)
+    {
+        ChildCount = transform.childCount;
+        for (int i = 0; i < ChildCount; i++)
+        {
+            child = transform.GetChild(i).GetComponent<IControllable>();
+            if (child != null)
+            {
+                child.OnTrigger(hand);
+            }
         }
     }
 }

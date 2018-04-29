@@ -10,16 +10,25 @@ public class MidiPlayerInitialiser {
     public static void Init(string directory)
     {
         //clean old data
-        if (MidiPlayerGlobal.CurrentMidiSet.MidiFiles.Count > 0)
+        try
         {
-            for (int i = 0; i < MidiPlayerGlobal.CurrentMidiSet.MidiFiles.Count; i++)
+            if (MidiPlayerGlobal.CurrentMidiSet.MidiFiles.Count > 0)
             {
-                var fileName = MidiPlayerGlobal.CurrentMidiSet.MidiFiles[i];
-                DeleteResource(MidiLoad.BuildOSPath(MidiPlayerGlobal.CurrentMidiSet.MidiFiles[i]));
-               // print(MidiLoad.BuildOSPath(MidiPlayerGlobal.CurrentMidiSet.MidiFiles[i]));
-                Debug.Log(MidiPlayerGlobal.CurrentMidiSet.MidiFiles);
+                for (int i = 0; i < MidiPlayerGlobal.CurrentMidiSet.MidiFiles.Count; i++)
+                {
+                    var fileName = MidiPlayerGlobal.CurrentMidiSet.MidiFiles[i];
+                    DeleteResource(MidiLoad.BuildOSPath(MidiPlayerGlobal.CurrentMidiSet.MidiFiles[i]));
+                    // print(MidiLoad.BuildOSPath(MidiPlayerGlobal.CurrentMidiSet.MidiFiles[i]));
+                    Debug.Log(MidiPlayerGlobal.CurrentMidiSet.MidiFiles);
+                }
             }
         }
+        catch (System.Exception)
+        {
+
+            throw;
+        }
+
 
         //load tracks files 
 
