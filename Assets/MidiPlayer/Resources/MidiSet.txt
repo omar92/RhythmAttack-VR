@@ -25,5 +25,6 @@
     <string>MPTK_Example 0004</string>
     <string>MPTK_Example 0005</string>
     <string>MPTK_Example 0006</string>
+    <string>MPTK_Example 0007</string>
   </MidiFiles>
 </MidiSet>
