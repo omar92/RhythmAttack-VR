@@ -4,7 +4,8 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 
-public class MidiPlayerInitialiser {
+public class MidiPlayerInitialiser
+{
 
 
     public static void Init(string directory)
@@ -18,7 +19,6 @@ public class MidiPlayerInitialiser {
                 {
                     var fileName = MidiPlayerGlobal.CurrentMidiSet.MidiFiles[i];
                     DeleteResource(MidiLoad.BuildOSPath(MidiPlayerGlobal.CurrentMidiSet.MidiFiles[i]));
-                    // print(MidiLoad.BuildOSPath(MidiPlayerGlobal.CurrentMidiSet.MidiFiles[i]));
                     Debug.Log(MidiPlayerGlobal.CurrentMidiSet.MidiFiles);
                 }
             }
@@ -26,26 +26,17 @@ public class MidiPlayerInitialiser {
         catch (System.Exception)
         {
 
-            throw;
         }
 
-
         //load tracks files 
-
-        //path: Game\Resources\Tracks
-        //  var midiTracks = Resources.LoadAll("Tracks");
-
         DirectoryInfo dir = new DirectoryInfo(directory);
         FileInfo[] FilesInfo = dir.GetFiles("*.mid");
         foreach (FileInfo track in FilesInfo)
         {
             //add to tracks list
-            Debug.Log(track.FullName);
             AddMidifile(track.FullName);
-            //MidiPlayerToolsEdit.lastDirectoryMidi = Path.GetDirectoryName(selectedFile);
-
-
         }
+
 
 
         // Load description of available soundfont
@@ -53,18 +44,25 @@ public class MidiPlayerInitialiser {
         {
             LoadMidiSet();
             CheckMidiSet();
-            if (MidiPlayerGlobal.ImSFCurrent != null)
-            {
-                //KeepAllPatchs = MidiPlayerGlobal.ImSFCurrent.KeepAllPatchs;
-                // KeepAllZones = MidiPlayerGlobal.ImSFCurrent.KeepAllZones;
-            }
             AssetDatabase.Refresh();
         }
         catch (System.Exception ex)
         {
             MidiPlayerGlobal.ErrorDetail(ex);
         }
-        //GameObject.Find("MidiFilePlayer").SetActive(true); ;
+    }
+
+    public static string[] GetTracksLocations(string directory)
+    {
+        DirectoryInfo dir = new DirectoryInfo(directory);
+        FileInfo[] FilesInfo = dir.GetFiles("*.mid");
+
+        string[] dirs = new string[FilesInfo.Length];
+        for (int i = 0; i < FilesInfo.Length; i++)
+        {
+            dirs[i] = FilesInfo[i].FullName;
+        }
+        return dirs;
     }
 
 

@@ -5,19 +5,17 @@ using UnityEngine;
 
 public class Emitter : MonoBehaviour
 {
-
-    public int[] lanesNotes = new int[8];
-    
     void OnMidiNoteAudio(object data)
     {
         var noteAudio = (MidiNoteAudio)data;
         SpawnNote(noteAudio);
-        
+
     }
     int x, y;
     void SpawnNote(MidiNoteAudio note)
     {
-        var em = GetLane(x++ % 2, y++ % 4);
+
+        var em = GetLane(GlobalData.tracksNotesLanesMaper[0][note.note.Midi]);
         NoteScript clone = NotesPoolScript.inistance.PullNote(em.position, note);
         //randNum = Random.Range(0, lanes.Length);
         // clone = Instantiate(NoteTemp, em.transform.position, Quaternion.identity) as Rigidbody;
@@ -29,7 +27,12 @@ public class Emitter : MonoBehaviour
 
     Transform GetLane(int row, int col)
     {
+     //   print(row + " , " + col);
         return transform.GetChild(row).GetChild(col);
+    }
+    Transform GetLane(int index)
+    {
+        return GetLane((index / (transform.GetChild(0).childCount)), index);
     }
 }
 //{

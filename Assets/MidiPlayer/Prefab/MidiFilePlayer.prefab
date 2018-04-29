@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fb0999ab241539438b0b012d2ea9779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MPTK_LogWaves: 1
+  MPTK_LogWaves: 0
   transpose: 0
   volume: 0
   AudioSourceTemplate: {fileID: 82000010482852012}

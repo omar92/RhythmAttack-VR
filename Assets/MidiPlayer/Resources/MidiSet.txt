@@ -20,5 +20,6 @@
   </ActiveSounFontInfo>
   <MidiFiles>
     <string>MPTK_Example 0001</string>
+    <string>MPTK_Example 0002</string>
   </MidiFiles>
 </MidiSet>
