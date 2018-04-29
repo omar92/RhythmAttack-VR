@@ -26,7 +26,7 @@ public class MidiPlayerInitialiser {
         catch (System.Exception)
         {
 
-            throw;
+            
         }
 
 

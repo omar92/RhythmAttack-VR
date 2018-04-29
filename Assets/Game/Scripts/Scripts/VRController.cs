@@ -28,12 +28,15 @@ public class VRController : MonoBehaviour {
     {
         
     }
-    
+    void FixedUpdate()
+    {
+        AssociatedTransform.position = transform.position;
+        AssociatedTransform.rotation = transform.rotation;
+    }
     void Update()
     {
 
-        AssociatedTransform.position = transform.position;
-        AssociatedTransform.rotation = transform.rotation;
+        
 
         device = SteamVR_Controller.Input((int)trackObject.index);
 
