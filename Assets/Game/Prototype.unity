@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18278581, g: 0.22589357, b: 0.29193896, a: 1}
+  m_IndirectSpecularColor: {r: 0.1827862, g: 0.22589424, b: 0.29194012, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -238,12 +238,12 @@ Prefab:
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1187387693}
+      objectReference: {fileID: 803182548}
     - target: {fileID: 33036424011777548, guid: 2f332f1219828be4394837e9b2714d13,
         type: 2}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1525713663}
+      objectReference: {fileID: 1452741823}
     - target: {fileID: 1354872480218414, guid: 2f332f1219828be4394837e9b2714d13, type: 2}
       propertyPath: m_Name
       value: VR_CAM
@@ -384,14 +384,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 4361116375107452, guid: bf3a715d5527be142b27a8cdddbb0838, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4138450305931962, guid: bf3a715d5527be142b27a8cdddbb0838, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bf3a715d5527be142b27a8cdddbb0838, type: 2}
   m_IsPrefabParent: 0
@@ -452,7 +444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 842c667650748324f98f28ac15a31581, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!21 &1187387693
+--- !u!21 &803182548
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -532,40 +524,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32a8d8859acf18d4ba134834a876d5ea, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1455815671
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1149274723170500, guid: c4e2407e51500934ca4df062e4e38938,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1455815672}
-  m_Layer: 0
-  m_Name: World
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1455815672
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 4994584882983466, guid: c4e2407e51500934ca4df062e4e38938,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1455815671}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.84, y: -2.9296875, z: 3.5859375}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1801967407}
-  - {fileID: 218487781}
-  - {fileID: 345388124}
-  m_Father: {fileID: 697940966}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!43 &1525713663
+--- !u!43 &1452741823
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -695,6 +654,39 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
+--- !u!1 &1455815671
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1149274723170500, guid: c4e2407e51500934ca4df062e4e38938,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1455815672}
+  m_Layer: 0
+  m_Name: World
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1455815672
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4994584882983466, guid: c4e2407e51500934ca4df062e4e38938,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1455815671}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.84, y: -2.9296875, z: 3.5859375}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1801967407}
+  - {fileID: 218487781}
+  - {fileID: 345388124}
+  m_Father: {fileID: 697940966}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1540609565 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4361116375107452, guid: bf3a715d5527be142b27a8cdddbb0838,

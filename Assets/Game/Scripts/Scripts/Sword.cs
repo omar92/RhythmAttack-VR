@@ -12,11 +12,18 @@ public class Sword : MonoBehaviour
     AudioSource audioSource;
     Dictionary<string, AudioClip> AudioLib = new Dictionary<string, AudioClip>();
     // Use this for initialization
+
+    Vector3 currentPos;
+    Vector3 previuosPos;
+
+    public float speed;
+        
     void Start()
     {
+        previuosPos = Vector3.zero;
         audioSource = GetComponent<AudioSource>();
         var x = Resources.LoadAll("SoundfontsDB/GeneralUser_GS_SoftSynth_v144/wave/");
-       // Debug.Log(x.Length);
+        Debug.Log(x.Length);
         for (int i = 0; i < x.Length; i++)
         {
             var clip = (AudioClip)x[i];
@@ -27,6 +34,12 @@ public class Sword : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        currentPos = transform.position;
+
+        speed = (currentPos - previuosPos).magnitude / Time.deltaTime;
+
+        previuosPos = currentPos;
+        Debug.Log(" controler speed = " + speed);
 
     }
 
