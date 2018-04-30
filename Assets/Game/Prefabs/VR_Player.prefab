@@ -1586,7 +1586,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  range: 100
+  range: 10000
   fireRate: 15
 --- !u!114 &114284046061572632
 MonoBehaviour:
@@ -1650,7 +1650,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  range: 100
+  range: 10000
   fireRate: 15
 --- !u!136 &136584063846651994
 CapsuleCollider:

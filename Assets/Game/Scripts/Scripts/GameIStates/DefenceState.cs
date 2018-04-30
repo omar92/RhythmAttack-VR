@@ -7,23 +7,23 @@ public class DefenceState :  IState
 {
 
     StateMachine stateMachine; GameManager gameManager;
-    HandStateController[] hands = null;
+    HandStateController[] hands = new HandStateController[0];
     MidiFilePlayer midiPLayer;
 
     public void Enter(StateMachine stateMachine, GameManager gameManager)
     {
         this.stateMachine = stateMachine;
         this.gameManager = gameManager;
-        if (hands == null)
+        if (hands.Length==0)
         {
             hands = GameObject.FindObjectsOfType<HandStateController>();
         }
-
+        Debug.LogError(hands.Length);
 
         Emitter.inistance.StartEmitiing();
-        foreach (var hand in hands)
-        {
-            hand.SetHandState(HandStates.Melee);
+        for (int i = 0; i < hands.Length; i++)
+        {    
+            hands[i].SetHandState(HandStates.Melee);
         }
     }
 

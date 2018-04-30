@@ -5,29 +5,41 @@ using UnityEngine;
 public class AttackState : IState
 {
     StateMachine stateMachine; GameManager gameManager;
-    HandStateController[] hands =null;
-
+    HandStateController[] hands = new HandStateController[0];
+    RangedTargetScript targetsScript;
 
     public void Enter(StateMachine stateMachine, GameManager gameManager)
     {
-        if (hands == null)
+    
+
+        if (hands.Length == 0)
         {
             hands = GameObject.FindObjectsOfType<HandStateController>();
         }
+        if (!targetsScript) {
+            targetsScript= GameObject.FindObjectOfType<RangedTargetScript>();
+        }
+
+        
         this.stateMachine = stateMachine;
         this.gameManager = gameManager;
-        Emitter.inistance.enabled = true;
+        //Emitter.inistance.enabled = true;
+
+
         foreach (var hand in hands)
         {
             hand.SetHandState(HandStates.Ranged);
         }
+        targetsScript.SpawnTargets();
         //stateMachine.ChangeState(new DefenceState());
     }
 
     public void Excute()
     {
-        new WaitForSeconds(60f);
-        stateMachine.ChangeState(new DefenceState());
+        if (targetsScript.isDone)
+        {
+            stateMachine.ChangeState(new DefenceState());
+        }
     }
 
     public void Exit()
