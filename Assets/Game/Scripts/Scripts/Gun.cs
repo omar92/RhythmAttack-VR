@@ -6,6 +6,7 @@ public class Gun : MonoBehaviour, IControllable {
     public float range = 100f;
     public float fireRate = 15f;
     float nextTimeToFire = 0f;
+    public Rigidbody projectile;
 
     public void OnTrigger(bool isDown)
     {
@@ -18,14 +19,20 @@ public class Gun : MonoBehaviour, IControllable {
 
     void Shoot()
     {
-        RaycastHit hit;
-        if(Physics.Raycast(this.transform.position, this.transform.forward, out hit, range))
+        if(this.gameObject.activeInHierarchy == true)
         {
-            Debug.DrawRay(this.transform.position, this.transform.forward, Color.green, range, true);
-           TargetMonester target = hit.transform.GetComponent<TargetMonester>();
-            if (target != null)
+            RaycastHit hit;
+            Rigidbody clone;
+            clone = Instantiate(projectile, transform.position, projectile.transform.rotation) as Rigidbody;
+            clone.velocity = transform.TransformDirection(Vector3.forward * 200);
+            if (Physics.Raycast(this.transform.position, this.transform.forward, out hit, range))
             {
-                target.TakeDamage(damage);
+                Debug.DrawRay(this.transform.position, this.transform.forward, Color.green, range, true);
+                TargetMonester target = hit.transform.GetComponent<TargetMonester>();
+                if (target != null)
+                {
+                    target.TakeDamage(damage);
+                }
             }
         }
     }

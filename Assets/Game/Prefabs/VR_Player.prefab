@@ -1588,6 +1588,8 @@ MonoBehaviour:
   damage: 10
   range: 10000
   fireRate: 15
+  projectile: {fileID: 54327572550279356, guid: dcefda5945bcba94799016bd79c789f8,
+    type: 2}
 --- !u!114 &114284046061572632
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1652,6 +1654,8 @@ MonoBehaviour:
   damage: 10
   range: 10000
   fireRate: 15
+  projectile: {fileID: 54327572550279356, guid: dcefda5945bcba94799016bd79c789f8,
+    type: 2}
 --- !u!136 &136584063846651994
 CapsuleCollider:
   m_ObjectHideFlags: 1

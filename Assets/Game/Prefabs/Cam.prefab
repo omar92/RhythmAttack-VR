@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 20508139362466318}
   - component: {fileID: 92463419820323084}
   - component: {fileID: 114877208859978332}
+  - component: {fileID: 114155823371300572}
   m_Layer: 0
   m_Name: Camera (head)
   m_TagString: MainCamera
@@ -416,6 +417,19 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1777400618299554}
   m_Enabled: 1
+--- !u!114 &114155823371300572
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1777400618299554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70a62932eeaee4c41b9b6bf018cea222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vrControllerType: 2
+  AssociatedTransform: {fileID: 0}
 --- !u!114 &114194046431782084
 MonoBehaviour:
   m_ObjectHideFlags: 1
