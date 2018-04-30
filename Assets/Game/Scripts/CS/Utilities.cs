@@ -1,6 +1,7 @@
-﻿public class Utilities  {
+﻿public class Utilities
+{
 
-    public static float[] track={
+    public static float[] track ={
         0,1,0,0/*|*/,.4f,
         0,0,1,0/*|*/,.4f,
         0,1,0,0/*|*/,.4f,
@@ -42,4 +43,9 @@
 public enum VRControllersTypes
 {
     LeftH, RightH, Head
+}
+
+public enum EmitterEvents
+{
+    StartBgMusic, PuseBgMusic, ResumeBgMusic, StopBgMusic
 }

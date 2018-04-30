@@ -8,8 +8,8 @@ using UnityEngine;
 public class NoteScript : MonoBehaviour
 {
 
-    public float Velocity = 10;
-
+    public EmittedPorjectilesSettings settings;
+  
     [Range(0f, 1f)]
     public float MPTK_Volume = 1;
 
@@ -34,7 +34,7 @@ public class NoteScript : MonoBehaviour
         transform.position = pos;
         rb.GetComponent<Renderer>().enabled = true;
         rb.GetComponent<Collider>().enabled = true;
-        rb.velocity = new Vector3(0, 0, -Velocity);
+        rb.velocity = new Vector3(0, 0, -settings.Velocity);
         myNoteAudio = note;
     }
 
