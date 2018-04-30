@@ -40,16 +40,25 @@ public class NoteScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        rb.velocity = new Vector3(0, 0, 0);
-        if (other.tag == "Sword" && other.GetComponent<Sword>().speed > 2)
+        
+        if (other.tag == "Sword")
         {
-            rb.GetComponent<Renderer>().enabled = false;
-            rb.GetComponent<Collider>().enabled = false;
-            StartCoroutine(PlayNote(myNoteAudio.audioSource, !myNoteAudio.note.Drum, myNoteAudio.note, Hide));
+            if (other.GetComponent<Sword>().speed > 2)
+            {
+                rb.GetComponent<Renderer>().enabled = false;
+                rb.GetComponent<Collider>().enabled = false;
+                StartCoroutine(PlayNote(myNoteAudio.audioSource, !myNoteAudio.note.Drum, myNoteAudio.note, Hide));
+                rb.velocity = new Vector3(0, 0, 0);
+            }
+            else
+            {
+                //sebo fe 7alo 
+            }
         }
-        else
+        else 
         {
             Hide();
+            rb.velocity = new Vector3(0, 0, 0);
         }
     }
 
