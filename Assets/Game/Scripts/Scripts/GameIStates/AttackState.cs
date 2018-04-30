@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class AttackState : IState
 {
+    public GameObject gun;
+
     public void Enter(StateMachine stateMachine, GameManager gameManager)
     {
-        stateMachine.ChangeState(new DefenceState());
+        gun.SetActive(true);
+        //stateMachine.ChangeState(new DefenceState());
     }
 
     public void Excute()
