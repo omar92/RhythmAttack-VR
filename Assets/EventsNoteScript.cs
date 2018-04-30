@@ -25,8 +25,8 @@ public class EventsNoteScript : MonoBehaviour
         // this.enabled = true;
         transform.SetParent(null);
         transform.position = position;
-        rb.GetComponent<Renderer>().enabled = true;
-        rb.GetComponent<Collider>().enabled = true;
+       /// rb.GetComponent<Renderer>().enabled = true;
+       /// rb.GetComponent<Collider>().enabled = true;
         rb.velocity = new Vector3(0, 0, -settings.Velocity);
        this.emitterEvent = emitterEvent;
     }
