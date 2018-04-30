@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 96466807800439572}
   - component: {fileID: 114153215192217136}
   m_Layer: 0
-  m_Name: Tullet
+  m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
