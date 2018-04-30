@@ -1,31 +1,30 @@
-﻿using MidiPlayerTK;
+using MidiPlayerTK;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DefenceState : MonoBehaviour, IState
+public class DefenceState :  IState
 {
 
     StateMachine stateMachine; GameManager gameManager;
-    GameObject sword;
+    HandStateController[] hands = null;
     MidiFilePlayer midiPLayer;
-    private void Start()
-    {
-        sword = GameObject.FindGameObjectWithTag("Gun");
-    }
+
     public void Enter(StateMachine stateMachine, GameManager gameManager)
     {
         this.stateMachine = stateMachine;
         this.gameManager = gameManager;
+        if (hands == null)
+        {
+            hands = GameObject.FindObjectsOfType<HandStateController>();
+        }
 
-        //midiPLayer = gameManager.GetComponentInChildren<MidiFilePlayer>();
-        //if (midiPLayer)
-        //{
-        //    midiPLayer.MPTK_Play();
-        //}
+
         Emitter.inistance.StartEmitiing();
-        sword.SetActive(true);
-
+        foreach (var hand in hands)
+        {
+            hand.SetHandState(HandStates.Melee);
+        }
     }
 
     public void Excute()
@@ -38,6 +37,9 @@ public class DefenceState : MonoBehaviour, IState
 
     public void Exit()
     {
-        sword.SetActive(false);
+        foreach (var hand in hands)
+        {
+            hand.SetHandState(HandStates.Empty);
+        }
     }
 }

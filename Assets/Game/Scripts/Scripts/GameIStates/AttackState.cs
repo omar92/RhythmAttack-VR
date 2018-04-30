@@ -1,22 +1,26 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackState : MonoBehaviour, IState
+public class AttackState : IState
 {
     StateMachine stateMachine; GameManager gameManager;
-    GameObject gun;
+    HandStateController[] hands =null;
 
-    private void Start()
-    {
-        gun = GameObject.FindGameObjectWithTag("Gun");
-    }
+
     public void Enter(StateMachine stateMachine, GameManager gameManager)
     {
+        if (hands == null)
+        {
+            hands = GameObject.FindObjectsOfType<HandStateController>();
+        }
         this.stateMachine = stateMachine;
         this.gameManager = gameManager;
         Emitter.inistance.enabled = true;
-        gun.SetActive(true);
+        foreach (var hand in hands)
+        {
+            hand.SetHandState(HandStates.Ranged);
+        }
         //stateMachine.ChangeState(new DefenceState());
     }
 
@@ -28,6 +32,9 @@ public class AttackState : MonoBehaviour, IState
 
     public void Exit()
     {
-        gun.SetActive(false);
+        foreach (var hand in hands)
+        {
+            hand.SetHandState(HandStates.Empty);
+        }
     }
 }

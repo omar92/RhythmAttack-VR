@@ -49,3 +49,9 @@ public enum EmitterEvents
 {
     StartBgMusic, PuseBgMusic, ResumeBgMusic, StopBgMusic
 }
+
+public enum HandStates
+{
+    Melee, Ranged, Empty
+}
+
