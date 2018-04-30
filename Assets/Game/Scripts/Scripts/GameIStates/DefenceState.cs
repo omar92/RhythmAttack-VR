@@ -14,16 +14,17 @@ public class DefenceState : IState
         this.stateMachine = stateMachine;
         this.gameManager = gameManager;
 
-        midiPLayer = gameManager.GetComponentInChildren<MidiFilePlayer>();
-        if (midiPLayer)
-        {
-            midiPLayer.MPTK_Play();
-        }
+        //midiPLayer = gameManager.GetComponentInChildren<MidiFilePlayer>();
+        //if (midiPLayer)
+        //{
+        //    midiPLayer.MPTK_Play();
+        //}
+        Emitter.inistance.StartEmitiing();
     }
 
     public void Excute()
     {
-        if (!midiPLayer.MPTK_IsPlaying)
+        if (Emitter.inistance.IsDone )
         {
             sword.SetActive(false);
             stateMachine.ChangeState(new AttackState());

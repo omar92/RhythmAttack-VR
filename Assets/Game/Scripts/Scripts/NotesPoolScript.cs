@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,7 @@ public class NotesPoolScript : MonoBehaviour
 
     [Header("Note")]
     public NoteScript NotePref;
+    //public EventsNoteScript eventNotePref;
 
     public static NotesPoolScript inistance;
 
@@ -46,4 +48,11 @@ public class NotesPoolScript : MonoBehaviour
         return note;
     }
 
+    //internal EventsNoteScript PullNote(Vector3 position, EmitterEvents emitterEvent)
+    //{
+    //    var eventNote = Instantiate(eventNotePref.transform).GetComponent<EventsNoteScript>();
+    //    // note.ObjectBool = transform;
+    //    eventNote.tag = "Note";
+    //    return eventNote;
+    //}
 }

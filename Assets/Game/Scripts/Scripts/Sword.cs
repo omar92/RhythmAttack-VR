@@ -17,10 +17,13 @@ public class Sword : MonoBehaviour
     Vector3 previuosPos;
 
     public float speed;
-        
+
+    
+    
     void Start()
     {
-        previuosPos = Vector3.zero;
+        previuosPos = Vector3.zero;
+
         audioSource = GetComponent<AudioSource>();
         var x = Resources.LoadAll("SoundfontsDB/GeneralUser_GS_SoftSynth_v144/wave/");
         Debug.Log(x.Length);
@@ -39,7 +42,7 @@ public class Sword : MonoBehaviour
         speed = (currentPos - previuosPos).magnitude / Time.deltaTime;
 
         previuosPos = currentPos;
-        Debug.Log(" controler speed = " + speed);
+       // Debug.Log(" controler speed = " + speed);
 
     }
 
