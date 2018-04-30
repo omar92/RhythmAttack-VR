@@ -5,7 +5,7 @@ using UnityEngine;
 public class HealthIndicator : MonoBehaviour {
 
     public Material[] healthMaterials = new Material[4];
-    public float playerHealth=100;
+    public static float playerHealth=100;
     
     
     public void healthMatChange(float currentHealth)
