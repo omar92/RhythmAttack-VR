@@ -7,7 +7,7 @@ public class DefenceState : IState
 {
 
     StateMachine stateMachine; GameManager gameManager;
-    public GameObject sword;
+    //public GameObject sword;
     MidiFilePlayer midiPLayer;
     public void Enter(StateMachine stateMachine, GameManager gameManager)
     {
@@ -26,7 +26,7 @@ public class DefenceState : IState
     {
         if (Emitter.inistance.IsDone )
         {
-            sword.SetActive(false);
+          //  sword.SetActive(false);
             stateMachine.ChangeState(new AttackState());
         }
     }

@@ -42,7 +42,7 @@ public class Sword : MonoBehaviour
         speed = (currentPos - previuosPos).magnitude / Time.deltaTime;
 
         previuosPos = currentPos;
-       // Debug.Log(" controler speed = " + speed);
+      //  Debug.Log(" controler speed = " + speed);
 
     }
 

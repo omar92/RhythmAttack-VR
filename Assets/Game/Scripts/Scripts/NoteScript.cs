@@ -40,7 +40,7 @@ public class NoteScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
+        print(other.name);
         if (other.tag == "Sword")
         {
             if (other.GetComponent<Sword>().speed > 2)
@@ -158,7 +158,13 @@ public class NoteScript : MonoBehaviour
         //        yield return new WaitForSeconds(0.01f);
         //    }
         //}
-        Destroy(audio.gameObject);
+        try
+        {
+            Destroy(audio.gameObject);
+        }
+        catch (Exception)
+        {
+        } 
         OnEnd();
 
     }
