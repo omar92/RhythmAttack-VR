@@ -3,12 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DefenceState : IState
+public class DefenceState : MonoBehaviour, IState
 {
 
     StateMachine stateMachine; GameManager gameManager;
-    public GameObject sword;
+    GameObject sword;
     MidiFilePlayer midiPLayer;
+    private void Start()
+    {
+        sword = GameObject.FindGameObjectWithTag("Gun");
+    }
     public void Enter(StateMachine stateMachine, GameManager gameManager)
     {
         this.stateMachine = stateMachine;
@@ -20,19 +24,20 @@ public class DefenceState : IState
         //    midiPLayer.MPTK_Play();
         //}
         Emitter.inistance.StartEmitiing();
+        sword.SetActive(true);
+
     }
 
     public void Excute()
     {
         if (Emitter.inistance.IsDone )
         {
-            sword.SetActive(false);
             stateMachine.ChangeState(new AttackState());
         }
     }
 
     public void Exit()
     {
-      //  throw new System.NotImplementedException();
+        sword.SetActive(false);
     }
 }
