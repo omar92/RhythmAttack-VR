@@ -36,7 +36,8 @@ public class VRController : MonoBehaviour {
     void Update()
     {
 
-        
+        AssociatedTransform.position = transform.position;
+        AssociatedTransform.rotation = transform.rotation;
 
         device = SteamVR_Controller.Input((int)trackObject.index);
 
@@ -55,7 +56,11 @@ public class VRController : MonoBehaviour {
             });
         }
     }
-
+    void LateUpdate()
+    {
+        AssociatedTransform.position = transform.position;
+        AssociatedTransform.rotation = transform.rotation;
+    }
     void ExcuteInChildren(Action<IControllable> action)
     {
         ChildCount = AssociatedTransform.childCount;
