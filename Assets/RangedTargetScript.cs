@@ -5,37 +5,54 @@ using UnityEngine;
 public class RangedTargetScript : MonoBehaviour {
 
     public bool isDone = false;
+    GameObject Targets;
+
+    public float health = 50f;
+    private float originalHealth;
+    HealthBarControll bar;
 
     private void Start()
     {
-        for (int i = 0; i < transform.childCount; i++)
+        originalHealth = health;
+        Targets = GameObject.FindGameObjectWithTag("Targets");
+        for (int i = 0; i < Targets.transform.childCount; i++) 
         {
-            transform.GetChild(i).gameObject.SetActive(false);
+            Targets.transform.GetChild(i).gameObject.SetActive(false);
         }
     }
-    public void SpawnTargets() {
+
+    public void SpawnTargets()
+    {
         isDone = false;
-        for (int i = 0; i < transform.childCount; i++)
+        for (int i = 0; i < Targets.transform.childCount; i++)
         {
-            transform.GetChild(i).gameObject.SetActive(true);
+            Targets.transform.GetChild(i).gameObject.SetActive(true);
         }
-
     }
-
 
     public void Update()
     {
-
-        for (int i = 0; i < transform.childCount; i++)
+        for (int i = 0; i < Targets.transform.childCount; i++)
         {
-           if(transform.GetChild(i).gameObject.activeInHierarchy)
+           if(Targets.transform.GetChild(i).gameObject.activeInHierarchy)
             {
                 return;
             }
         }
-      //Debug.Log("all targets destroyed");
         isDone = true;
     }
+
+    public void TakeDamage(float amount)
+    {
+        health -= amount;
+        bar.ChangeBar(health/ originalHealth);
+
+        if(health < 0)
+        {
+            isDone = true;
+        }
+    }
+
 
 
 }
