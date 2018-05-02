@@ -58,8 +58,9 @@ GameObject:
   - component: {fileID: 114284673474660170}
   - component: {fileID: 222746282677353518}
   - component: {fileID: 114451842017564454}
+  - component: {fileID: 114592033742591178}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -377,6 +378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDone: 0
+  health: 50
 --- !u!114 &114284673474660170
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -404,7 +406,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ee4a545ded50714d8c9d07ffeca8bc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
 --- !u!114 &114292317665422894
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -443,7 +444,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ee4a545ded50714d8c9d07ffeca8bc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
 --- !u!114 &114409147791126700
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -455,7 +455,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ee4a545ded50714d8c9d07ffeca8bc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
 --- !u!114 &114451842017564454
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -483,6 +482,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114592033742591178
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1391842756563086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f32f4bde991ecc42944ab1d948ba711, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114655080066424740
 MonoBehaviour:
   m_ObjectHideFlags: 1

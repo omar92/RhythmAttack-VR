@@ -2,10 +2,10 @@
 
 public class Gun : MonoBehaviour, IControllable {
 
-    public float damage = 10f;
+    public float damage = 35;
     public float range = 100f;
     public float fireRate = 15f;
-    float nextTimeToFire = 0f;
+    float nextTimeToFire = 0f; 
     public Rigidbody projectile;
 
     public void OnTrigger(bool isDown)
@@ -29,9 +29,9 @@ public class Gun : MonoBehaviour, IControllable {
             {
                 Debug.DrawRay(this.transform.position, this.transform.forward, Color.green, range, true);
                 TargetMonester target = hit.transform.GetComponent<TargetMonester>();
-                if (target != null)
+                if (target)
                 {
-                    target.TakeDamage(damage);
+                    target.isHited(damage);
                 }
             }
         }

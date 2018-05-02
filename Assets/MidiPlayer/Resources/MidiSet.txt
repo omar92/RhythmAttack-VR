@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<MidiSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SoundFonts>
+    <SoundFontInfo>
+      <Name>GeneralUser_GS_SoftSynth_v144</Name>
+      <DefaultBankNumber>0</DefaultBankNumber>
+      <DrumKitBankNumber>128</DrumKitBankNumber>
+      <ImSFPath>C:/Devel/Unity/MidiPlayer/Assets\MidiPlayer/Resources/SoundfontsDB\GeneralUser_GS_SoftSynth_v144</ImSFPath>
+      <ImSFResourcePath>SoundfontsDB/GeneralUser_GS_SoftSynth_v144</ImSFResourcePath>
+      <SF2Path>C:/Users/Thierry/AppData/LocalLow/DefaultCompany/MidiPlayer\SoundFont\GeneralUser_GS_SoftSynth_v144.sf2</SF2Path>
+    </SoundFontInfo>
+  </SoundFonts>
+  <ActiveSounFontInfo>
+    <Name>GeneralUser_GS_SoftSynth_v144</Name>
+    <DefaultBankNumber>0</DefaultBankNumber>
+    <DrumKitBankNumber>128</DrumKitBankNumber>
+    <ImSFPath>C:/Devel/Unity/MidiPlayer/Assets\MidiPlayer/Resources/SoundfontsDB\GeneralUser_GS_SoftSynth_v144</ImSFPath>
+    <ImSFResourcePath>SoundfontsDB/GeneralUser_GS_SoftSynth_v144</ImSFResourcePath>
+    <SF2Path>C:/Users/Thierry/AppData/LocalLow/DefaultCompany/MidiPlayer\SoundFont\GeneralUser_GS_SoftSynth_v144.sf2</SF2Path>
+  </ActiveSounFontInfo>
+  <MidiFiles>
+    <string>MPTK_Example 0001</string>
+    <string>MPTK_Example 0002</string>
+    <string>MPTK_Example 0003</string>
+    <string>MPTK_Example 0004</string>
+    <string>MPTK_Example 0005</string>
+    <string>MPTK_Example 0006</string>
+    <string>MPTK_Example 0007</string>
+    <string>MPTK_Example 0092</string>
+    <string>MPTK_Example 0093</string>
+    <string>MPTK_Example 0094</string>
+    <string>MPTK_Example 0095</string>
+    <string>MPTK_Example 0096</string>
+    <string>MPTK_Example 0097</string>
+    <string>MPTK_Example 0098</string>
+    <string>MPTK_Example 0099</string>
+    <string>MPTK_Example 0100</string>
+    <string>MPTK_Example 0101</string>
+    <string>MPTK_Example 0102</string>
+    <string>MPTK_Example 0103</string>
+    <string>MPTK_Example 0104</string>
+    <string>MPTK_Example 0105</string>
+    <string>MPTK_Example 0106</string>
+    <string>MPTK_Example 0107</string>
+    <string>MPTK_Example 0108</string>
+    <string>MPTK_Example 0109</string>
+    <string>MPTK_Example 0110</string>
+    <string>MPTK_Example 0122</string>
+    <string>MPTK_Example 0124</string>
+    <string>MPTK_Example 0125</string>
+    <string>MPTK_Example 0126</string>
+    <string>MPTK_Example 0127</string>
+    <string>MPTK_Example 0140</string>
+  </MidiFiles>
+</MidiSet>

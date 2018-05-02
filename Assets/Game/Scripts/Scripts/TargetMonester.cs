@@ -1,33 +1,23 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class TargetMonester : MonoBehaviour {
+public class TargetMonester : MonoBehaviour
+{
+    RangedTargetScript parentTarget;
 
-    public float health = 100f;
-    Image img;
-
-    private void Start()
+    private void Awake() 
     {
-        img = GameObject.FindObjectOfType<Image>();
-        img.fillAmount = 1;
+        parentTarget = transform.GetComponentInParent<RangedTargetScript>();
+    }
+    public void isHited(float damage)
+    {
+        parentTarget.TakeDamage(damage);
+        Die();
     }
 
-    private void Update()
-    {
-        img.transform.position = transform.position;
-    }
-
-    public void TakeDamage(float amount)
-    {
-        health -= amount;
-        img.fillAmount -= 1 / amount;
-        if (health <= 0)
-        {
-            Die();
-        }
-    }
     void Die()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
+
 }
