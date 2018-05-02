@@ -147,5 +147,13 @@
     <string>MPTK_Example 0126</string>
     <string>MPTK_Example 0127</string>
     <string>MPTK_Example 0128</string>
+    <string>MPTK_Example 0129</string>
+    <string>MPTK_Example 0130</string>
+    <string>MPTK_Example 0131</string>
+    <string>MPTK_Example 0132</string>
+    <string>MPTK_Example 0133</string>
+    <string>MPTK_Example 0134</string>
+    <string>MPTK_Example 0135</string>
+    <string>MPTK_Example 0136</string>
   </MidiFiles>
 </MidiSet>

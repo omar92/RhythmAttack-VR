@@ -14,7 +14,7 @@ public class MissedBalls : MonoBehaviour {
             {
                 HealthIndicator.playerHealth -= 4;
                 HealthIndicator.healthMatChange();
-                Debug.Log(HealthIndicator.playerHealth);
+               // Debug.Log(HealthIndicator.playerHealth);
             }
             else
             {
