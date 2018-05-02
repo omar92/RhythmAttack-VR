@@ -9,6 +9,8 @@ TagManager:
   - Minion
   - Sword
   - Note
+  - Gun
+  - Targets
   layers:
   - Default
   - TransparentFX

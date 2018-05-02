@@ -26,90 +26,6 @@
     <string>MPTK_Example 0005</string>
     <string>MPTK_Example 0006</string>
     <string>MPTK_Example 0007</string>
-    <string>MPTK_Example 0008</string>
-    <string>MPTK_Example 0009</string>
-    <string>MPTK_Example 0010</string>
-    <string>MPTK_Example 0011</string>
-    <string>MPTK_Example 0012</string>
-    <string>MPTK_Example 0013</string>
-    <string>MPTK_Example 0014</string>
-    <string>MPTK_Example 0015</string>
-    <string>MPTK_Example 0016</string>
-    <string>MPTK_Example 0017</string>
-    <string>MPTK_Example 0018</string>
-    <string>MPTK_Example 0019</string>
-    <string>MPTK_Example 0020</string>
-    <string>MPTK_Example 0021</string>
-    <string>MPTK_Example 0022</string>
-    <string>MPTK_Example 0023</string>
-    <string>MPTK_Example 0024</string>
-    <string>MPTK_Example 0025</string>
-    <string>MPTK_Example 0026</string>
-    <string>MPTK_Example 0027</string>
-    <string>MPTK_Example 0028</string>
-    <string>MPTK_Example 0029</string>
-    <string>MPTK_Example 0030</string>
-    <string>MPTK_Example 0031</string>
-    <string>MPTK_Example 0032</string>
-    <string>MPTK_Example 0033</string>
-    <string>MPTK_Example 0034</string>
-    <string>MPTK_Example 0035</string>
-    <string>MPTK_Example 0036</string>
-    <string>MPTK_Example 0037</string>
-    <string>MPTK_Example 0038</string>
-    <string>MPTK_Example 0039</string>
-    <string>MPTK_Example 0040</string>
-    <string>MPTK_Example 0041</string>
-    <string>MPTK_Example 0042</string>
-    <string>MPTK_Example 0043</string>
-    <string>MPTK_Example 0044</string>
-    <string>MPTK_Example 0045</string>
-    <string>MPTK_Example 0046</string>
-    <string>MPTK_Example 0047</string>
-    <string>MPTK_Example 0048</string>
-    <string>MPTK_Example 0049</string>
-    <string>MPTK_Example 0050</string>
-    <string>MPTK_Example 0051</string>
-    <string>MPTK_Example 0052</string>
-    <string>MPTK_Example 0053</string>
-    <string>MPTK_Example 0054</string>
-    <string>MPTK_Example 0055</string>
-    <string>MPTK_Example 0056</string>
-    <string>MPTK_Example 0057</string>
-    <string>MPTK_Example 0058</string>
-    <string>MPTK_Example 0059</string>
-    <string>MPTK_Example 0060</string>
-    <string>MPTK_Example 0061</string>
-    <string>MPTK_Example 0062</string>
-    <string>MPTK_Example 0063</string>
-    <string>MPTK_Example 0064</string>
-    <string>MPTK_Example 0065</string>
-    <string>MPTK_Example 0066</string>
-    <string>MPTK_Example 0067</string>
-    <string>MPTK_Example 0068</string>
-    <string>MPTK_Example 0069</string>
-    <string>MPTK_Example 0070</string>
-    <string>MPTK_Example 0071</string>
-    <string>MPTK_Example 0072</string>
-    <string>MPTK_Example 0073</string>
-    <string>MPTK_Example 0074</string>
-    <string>MPTK_Example 0075</string>
-    <string>MPTK_Example 0076</string>
-    <string>MPTK_Example 0077</string>
-    <string>MPTK_Example 0078</string>
-    <string>MPTK_Example 0079</string>
-    <string>MPTK_Example 0080</string>
-    <string>MPTK_Example 0081</string>
-    <string>MPTK_Example 0082</string>
-    <string>MPTK_Example 0083</string>
-    <string>MPTK_Example 0084</string>
-    <string>MPTK_Example 0085</string>
-    <string>MPTK_Example 0086</string>
-    <string>MPTK_Example 0087</string>
-    <string>MPTK_Example 0088</string>
-    <string>MPTK_Example 0089</string>
-    <string>MPTK_Example 0090</string>
-    <string>MPTK_Example 0091</string>
     <string>MPTK_Example 0092</string>
     <string>MPTK_Example 0093</string>
     <string>MPTK_Example 0094</string>
@@ -129,31 +45,11 @@
     <string>MPTK_Example 0108</string>
     <string>MPTK_Example 0109</string>
     <string>MPTK_Example 0110</string>
-    <string>MPTK_Example 0111</string>
-    <string>MPTK_Example 0112</string>
-    <string>MPTK_Example 0113</string>
-    <string>MPTK_Example 0114</string>
-    <string>MPTK_Example 0115</string>
-    <string>MPTK_Example 0116</string>
-    <string>MPTK_Example 0117</string>
-    <string>MPTK_Example 0118</string>
-    <string>MPTK_Example 0119</string>
-    <string>MPTK_Example 0120</string>
-    <string>MPTK_Example 0121</string>
     <string>MPTK_Example 0122</string>
-    <string>MPTK_Example 0123</string>
     <string>MPTK_Example 0124</string>
     <string>MPTK_Example 0125</string>
     <string>MPTK_Example 0126</string>
     <string>MPTK_Example 0127</string>
-    <string>MPTK_Example 0128</string>
-    <string>MPTK_Example 0129</string>
-    <string>MPTK_Example 0130</string>
-    <string>MPTK_Example 0131</string>
-    <string>MPTK_Example 0132</string>
-    <string>MPTK_Example 0133</string>
-    <string>MPTK_Example 0134</string>
-    <string>MPTK_Example 0135</string>
-    <string>MPTK_Example 0136</string>
+    <string>MPTK_Example 0140</string>
   </MidiFiles>
 </MidiSet>
