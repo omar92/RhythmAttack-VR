@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VRController : MonoBehaviour {
+public class VRController : MonoBehaviour
+{
 
 
     //public
@@ -11,10 +12,10 @@ public class VRController : MonoBehaviour {
     public Transform AssociatedTransform;
 
     //Private
-     SteamVR_TrackedObject trackObject = null;
-     SteamVR_Controller.Device device;
+    SteamVR_TrackedObject trackObject = null;
+    SteamVR_Controller.Device device;
 
- 
+
     public static int currentDeviceIndex;
     Color currentColler;
     int ChildCount = 0;
@@ -22,11 +23,11 @@ public class VRController : MonoBehaviour {
     void Awake()
     {
         trackObject = GetComponent<SteamVR_TrackedObject>();
-        trackObject.SetDeviceIndex((int)vrControllerType); 
+        trackObject.SetDeviceIndex((int)vrControllerType);
     }
     void Start()
     {
-        
+
     }
     void FixedUpdate()
     {
@@ -36,18 +37,18 @@ public class VRController : MonoBehaviour {
     void Update()
     {
 
-        
+
 
         device = SteamVR_Controller.Input((int)trackObject.index);
 
-        if (device.GetTouchDown(SteamVR_Controller.ButtonMask.Trigger))
+        if (device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
         {
             ExcuteInChildren((child) =>
             {
                 child.OnTrigger(true);
             });
         }
-        if (device.GetTouchUp(SteamVR_Controller.ButtonMask.Trigger))
+        if (device.GetPressUp(SteamVR_Controller.ButtonMask.Trigger))
         {
             ExcuteInChildren((child) =>
             {
