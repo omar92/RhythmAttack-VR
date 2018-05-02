@@ -18,7 +18,7 @@ public class MissedBalls : MonoBehaviour {
             }
             else
             {
-                //Destroy(healthCapsules);
+                Destroy(healthCapsules);
             }
             
         }

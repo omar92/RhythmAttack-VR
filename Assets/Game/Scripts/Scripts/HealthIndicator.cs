@@ -2,13 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthIndicator : MonoBehaviour {
+public class HealthIndicator : MonoBehaviour
+{
 
     //public  Material[] healthMaterials = new Material[4];
-    public  static float playerHealth=100;
+    public static float playerHealth = 100;
 
-    static Transform  capsuleTransform;
+    static Transform capsuleTransform;
 
+    static Transform first;
+    static Transform second;
+    static Transform third;
+    static Transform fourth;
 
     void Start()
     {
@@ -18,64 +23,74 @@ public class HealthIndicator : MonoBehaviour {
             capsuleTransform.GetChild(i).GetComponent<Renderer>().material.color = new Color(0, 255, 255, 255);
 
         }
+        first = capsuleTransform.GetChild(0);
+        second = capsuleTransform.GetChild(1);
+        third = capsuleTransform.GetChild(2);
+        fourth = capsuleTransform.GetChild(3);
     }
 
-    
+
     public static void healthMatChange()
     {
         Debug.Log(capsuleTransform.childCount);
-         
+
         if (playerHealth > 75)
         {
-            for (int i= 0; i< capsuleTransform.childCount;i++ )
+            for (int i = 0; i < capsuleTransform.childCount; i++)
             {
-                capsuleTransform.GetChild(i).GetComponent<Renderer>().material.color= new Color(0,255,255,255);
-               
+                capsuleTransform.GetChild(i).GetComponent<Renderer>().material.color = new Color(0, 255, 255, 255);
+
             }
-      
+
+
         }
         else if (playerHealth > 50 && playerHealth < 76)
         {
-            if (capsuleTransform.GetChild(capsuleTransform.childCount - 1) != null)
+
+            for (int i = 0; i < capsuleTransform.childCount; i++)
             {
-                for (int i = 0; i < capsuleTransform.childCount; i++)
-            {
-                capsuleTransform.GetChild(i).GetComponent<Renderer>().material.color = new Color(0, 0, 255);
+                capsuleTransform.GetChild(i).GetComponent<Renderer>().material.color = Color.blue;
 
             }
-            
-                Destroy(capsuleTransform.GetChild(capsuleTransform.childCount - 1).gameObject);
+            if (first != null)
+            {
+                Destroy(first.gameObject);
+
             }
-           
+
         }
         else if (playerHealth > 25 && playerHealth < 51)
         {
-            if (capsuleTransform.GetChild(capsuleTransform.childCount - 1) != null)
+
+            for (int i = 0; i < capsuleTransform.childCount; i++)
             {
-                for (int i = 0; i < capsuleTransform.childCount; i++)
-            {
-                capsuleTransform.GetChild(i).GetComponent<Renderer>().material.color = new Color(0, 255, 0);
+                capsuleTransform.GetChild(i).GetComponent<Renderer>().material.color = Color.green;
 
             }
-            
-                Destroy(capsuleTransform.GetChild(capsuleTransform.childCount - 1).gameObject);
+
+            if (second != null)
+            {
+
+                Destroy(second.gameObject);
+
             }
         }
         else if (playerHealth > 0 && playerHealth < 26)
         {
-            if (capsuleTransform.GetChild(capsuleTransform.childCount -1) != null)
+
+            for (int i = 0; i < capsuleTransform.childCount; i++)
             {
-                for (int i = 0; i < capsuleTransform.childCount; i++)
-                {
-                    capsuleTransform.GetChild(i).GetComponent<Renderer>().material.color = new Color(0, 0, 255);
+                capsuleTransform.GetChild(i).GetComponent<Renderer>().material.color = Color.red;
 
-                }
-
-
-                Destroy(capsuleTransform.GetChild(capsuleTransform.childCount - 1).gameObject);
             }
-               
-            
+
+            if (third != null)
+            {
+                Destroy(third.gameObject);
+
+            }
+
+
         }
 
 
