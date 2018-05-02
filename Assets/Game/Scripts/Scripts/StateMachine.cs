@@ -14,7 +14,7 @@ public class StateMachine
 
     public void ChangeState(IState newState)
     {
-        Debug.Log("Change state" + newState);
+       // Debug.Log("Change state" + newState);
         if (currentState != null)
         {
             currentState.Exit();

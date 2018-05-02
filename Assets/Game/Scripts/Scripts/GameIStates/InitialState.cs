@@ -25,7 +25,7 @@ public class InitialState : IState
             Array.Sort(notes);
             for (int x = 0; x < notes.Length; x++)
             {
-                Debug.Log(notes[x] + ": "+ x);
+                //Debug.Log(notes[x] + ": "+ x);
                 trackMapper.Add(notes[x], x);
             }
             GlobalData.tracksNotesLanesMaper.Add(trackMapper);
