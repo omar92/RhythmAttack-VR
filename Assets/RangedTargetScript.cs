@@ -15,13 +15,14 @@ public class RangedTargetScript : MonoBehaviour {
     {
         originalHealth = health;
         bar = GetComponentInChildren<HealthBarControll>();
-       
+        Targets = GameObject.FindGameObjectWithTag("Targets");
+
     }
 
     private void Start()
     {
         bar.ChangeBar(health / originalHealth);
-        Targets = GameObject.FindGameObjectWithTag("Targets");
+      
         for (int i = 0; i < Targets.transform.childCount; i++) 
         {
             Targets.transform.GetChild(i).gameObject.SetActive(false);

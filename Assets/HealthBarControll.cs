@@ -7,7 +7,7 @@ public class HealthBarControll : MonoBehaviour {
 
     Image bar;
 
-	void Start () {
+	void Awake () {
         bar = gameObject.GetComponentsInChildren<Image>()[1];
 	}
 	 
