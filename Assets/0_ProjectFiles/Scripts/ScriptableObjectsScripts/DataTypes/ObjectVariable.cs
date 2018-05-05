@@ -2,7 +2,7 @@
 using System.Collections;
 
 [CreateAssetMenu(fileName = "ObjectVariable", menuName = "Variables/ObjectVariable", order = 2)]
-public class ObjectVariable : MonoBehaviour
+public class ObjectVariable : ScriptableObject
 {
-    public object Value ;
+    public object value;
 }

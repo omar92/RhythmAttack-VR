@@ -457,7 +457,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vrControllerType: 2
-  AssociatedTransform: {fileID: 0}
+  AssociatedTransform: {fileID: 11400000, guid: cb64a2f3ab24b1d45844466c3d516abe,
+    type: 2}
 --- !u!114 &114529972912221828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -544,7 +545,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vrControllerType: 0
-  AssociatedTransform: {fileID: 0}
+  AssociatedTransform: {fileID: 11400000, guid: 8fa3a180450839241bba7be7281e0fcc,
+    type: 2}
 --- !u!114 &114897564973553810
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -596,7 +598,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vrControllerType: 1
-  AssociatedTransform: {fileID: 0}
+  AssociatedTransform: {fileID: 11400000, guid: 789aab7795bfdfc4eb31853811048bc1,
+    type: 2}
 --- !u!124 &124351857638239326
 Behaviour:
   m_ObjectHideFlags: 1

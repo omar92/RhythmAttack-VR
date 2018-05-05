@@ -1,7 +1,11 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "FloatVariable", menuName = "Variables/GameObjectVariable", order = 1)]
+[CreateAssetMenu(fileName = "GameObjectVariable", menuName = "Variables/GameObjectVariable", order = 1)]
 public class GameObjectVariable : ScriptableObject
 {
-    public GameObject Value;
+    public GameObject value;
+    public void SetValue(GameObject value)
+    {
+        this.value = value;
+    }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StateMachine
+public class StateMachineOld
 {
 
     IState currentState;
@@ -10,7 +10,7 @@ public class StateMachine
 
     GameManager gameManager;
 
-    public StateMachine(GameManager gameManager) { this.gameManager = gameManager; }
+    public StateMachineOld(GameManager gameManager) { this.gameManager = gameManager; }
 
     public void ChangeState(IState newState)
     {

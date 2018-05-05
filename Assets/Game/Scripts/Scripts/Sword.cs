@@ -25,13 +25,7 @@ public class Sword : MonoBehaviour
         previuosPos = Vector3.zero;
 
         audioSource = GetComponent<AudioSource>();
-        var x = Resources.LoadAll("SoundfontsDB/GeneralUser_GS_SoftSynth_v144/wave/");
-        Debug.Log(x.Length);
-        for (int i = 0; i < x.Length; i++)
-        {
-            var clip = (AudioClip)x[i];
-            AudioLib.Add(clip.name, clip);
-        }
+
     }
 
     // Update is called once per frame

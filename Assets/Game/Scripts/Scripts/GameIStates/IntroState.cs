@@ -5,7 +5,7 @@ using UnityEngine;
 public class IntroState : IState
 {
     
-    public void Enter(StateMachine stateMachine, GameManager gameManager)
+    public void Enter(StateMachineOld stateMachine, GameManager gameManager)
     {
         stateMachine.ChangeState(new DefenceState());
 

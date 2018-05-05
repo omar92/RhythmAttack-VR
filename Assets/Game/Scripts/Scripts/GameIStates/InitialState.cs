@@ -7,7 +7,7 @@ using UnityEngine;
 public class InitialState : IState
 {
     MidiFilePlayer midiPLayer;
-    public void Enter(StateMachine stateMachine, GameManager gameManager)
+    public void Enter(StateMachineOld stateMachine, GameManager gameManager)
     {
         midiPLayer = gameManager.GetComponentInChildren<MidiFilePlayer>();
         if (midiPLayer)

@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "GameEvent", menuName = "GameEvent", order = 1)]
+[CreateAssetMenu(fileName = "GameEvent", menuName = "Engine/GameEvent", order = 1)]
 public class GameEvent : ScriptableObject
 {
     private List<GameEventListener> Listeners = new List<GameEventListener>();
 
     public void Raise()
     {
-        for (int i = Listeners.Count; i >= 0; i--)
+        for (int i = Listeners.Count-1; i >= 0; i--)
         {
             Listeners[i].OnEventRaised();
         }

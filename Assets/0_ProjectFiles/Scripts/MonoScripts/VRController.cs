@@ -9,7 +9,7 @@ public class VRController : MonoBehaviour
 
     //public
     public VRControllersTypes vrControllerType;
-    public Transform AssociatedTransform;
+    public TransformVariable AssociatedTransform;
 
     //Private
     SteamVR_TrackedObject trackObject = null;
@@ -31,8 +31,8 @@ public class VRController : MonoBehaviour
     }
     void FixedUpdate()
     {
-        AssociatedTransform.position = transform.position;
-        AssociatedTransform.rotation = transform.rotation;
+        AssociatedTransform.value.position = transform.position;
+        AssociatedTransform.value.rotation = transform.rotation;
     }
     void Update()
     {
@@ -59,10 +59,10 @@ public class VRController : MonoBehaviour
 
     void ExcuteInChildren(Action<IControllable> action)
     {
-        ChildCount = AssociatedTransform.childCount;
+        ChildCount = AssociatedTransform.value.childCount;
         for (int i = 0; i < ChildCount; i++)
         {
-            child = AssociatedTransform.GetChild(i).GetComponent<IControllable>();
+            child = AssociatedTransform.value.GetChild(i).GetComponent<IControllable>();
             if (child != null)
             {
                 action(child);

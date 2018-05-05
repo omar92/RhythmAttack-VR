@@ -6,11 +6,11 @@ using UnityEngine;
 public class DefenceState :  IState
 {
 
-    StateMachine stateMachine; GameManager gameManager;
+    StateMachineOld stateMachine; GameManager gameManager;
     HandStateController[] hands = new HandStateController[0];
     MidiFilePlayer midiPLayer;
 
-    public void Enter(StateMachine stateMachine, GameManager gameManager)
+    public void Enter(StateMachineOld stateMachine, GameManager gameManager)
     {
         this.stateMachine = stateMachine;
         this.gameManager = gameManager;

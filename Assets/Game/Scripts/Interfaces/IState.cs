@@ -3,5 +3,5 @@
     //void Enter(StateMachine stateMachine);
     void Excute();
     void Exit();
-    void Enter(StateMachine stateMachine, GameManager gameManager);
+    void Enter(StateMachineOld stateMachine, GameManager gameManager);
 }

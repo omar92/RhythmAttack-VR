@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class AttackState : IState
 {
-    StateMachine stateMachine; GameManager gameManager;
+    StateMachineOld stateMachine; GameManager gameManager;
     HandStateController[] hands = new HandStateController[0];
     RangedTargetScript targetsScript;
 
-    public void Enter(StateMachine stateMachine, GameManager gameManager)
+    public void Enter(StateMachineOld stateMachine, GameManager gameManager)
     {
     
 
