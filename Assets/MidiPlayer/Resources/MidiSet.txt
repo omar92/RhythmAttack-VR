@@ -44,5 +44,10 @@
     <string>MPTK_Example 0023</string>
     <string>MPTK_Example 0024</string>
     <string>MPTK_Example 0025</string>
+    <string>MPTK_Example 0026</string>
+    <string>MPTK_Example 0027</string>
+    <string>MPTK_Example 0028</string>
+    <string>MPTK_Example 0029</string>
+    <string>MPTK_Example 0030</string>
   </MidiFiles>
 </MidiSet>

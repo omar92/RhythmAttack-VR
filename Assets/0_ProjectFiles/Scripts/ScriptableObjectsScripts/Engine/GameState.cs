@@ -11,6 +11,7 @@ public class GameState : ScriptableObject
 
     public void OnEnter()
     {
+        Debug.Log(Listeners.Count);
         for (int i = Listeners.Count - 1; i >= 0; i--)
         {
             Listeners.Keys.ElementAt(i).OnEnter(this);

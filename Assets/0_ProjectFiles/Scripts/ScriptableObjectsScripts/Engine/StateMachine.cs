@@ -1,22 +1,25 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 [CreateAssetMenu(fileName = "StateMachine", menuName = "Engine/StateMachine", order = 2)]
 public class StateMachine : ScriptableObject
 {
-    
+
     public GameState previousState;
     public GameState currentState;
 
-    public void ChangeStateForced(GameState newState)
+    public void ChangeStateForced(GameState newState, bool alowReloadCurrent = false)
     {
-        Debug.LogWarning("state changed:" + newState);
+        if (!alowReloadCurrent && currentState == newState) { Debug.LogWarning("same state"); return; }
+
         if (currentState != null)
         {
             currentState.OnExit();
         }
-      
+
         previousState = currentState;
         currentState = newState;
+        Debug.LogWarning("state changed:" + currentState);
         currentState.OnEnter();
     }
 
@@ -28,9 +31,11 @@ public class StateMachine : ScriptableObject
     /// </summary>
     /// <param name="newState"></param>
     /// <returns></returns>
-    public bool ChangeStateSmooth(GameState newState)
+    public bool ChangeStateSmooth(GameState newState,bool alowReloadCurrent = false)
     {
-        if(currentState!=null)
+        if (!alowReloadCurrent && currentState == newState) {  Debug.LogWarning("same state"); return false; }
+
+        if (currentState != null)
         {
             if (currentState.IsAllListenersDone())
             {
@@ -49,5 +54,20 @@ public class StateMachine : ScriptableObject
             return true;
         }
 
+    }
+
+    internal void ReloadCurrentState(bool isForced)
+    {
+        if (currentState != null)
+        {
+            if (isForced)
+                ChangeStateForced(currentState);
+            else
+                ChangeStateSmooth(currentState);
+        }
+        else
+        {
+            Debug.LogError("Cant reload: Current state : NULL");
+        }
     }
 }
