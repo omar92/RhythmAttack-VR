@@ -40,7 +40,6 @@ GameObject:
   - component: {fileID: 114835804754870976}
   - component: {fileID: 114333276962054112}
   - component: {fileID: 114827566460869920}
-  - component: {fileID: 114440236318125758}
   - component: {fileID: 114242850676787684}
   m_Layer: 0
   m_Name: MidiFilePlayer
@@ -262,18 +261,6 @@ MonoBehaviour:
         m_Calls: []
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
---- !u!114 &114440236318125758
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1726742566772634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e51fc807c644b14abf5e5bd1fb462a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stateMachine: {fileID: 11400000, guid: 0d6f9a26e0f52fe4ebf9a67e4bd633d9, type: 2}
 --- !u!114 &114827566460869920
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -301,13 +288,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 114440236318125758}
-        m_MethodName: ChangeStateSmooth
+      - m_Target: {fileID: 114242850676787684}
+        m_MethodName: RaiseGameEvent
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 612f8137cb83f544ca4e0534bc3f1cd8,
+          m_ObjectArgument: {fileID: 11400000, guid: 2274d160122853646986eedc3750c62d,
             type: 2}
-          m_ObjectArgumentAssemblyTypeName: GameState, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: GameEvent, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

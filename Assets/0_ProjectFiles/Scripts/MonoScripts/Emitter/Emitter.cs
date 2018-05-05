@@ -22,7 +22,7 @@ public class Emitter : MonoBehaviour
         eventCollectorPos.z = player.transform.position.z;
         var emitter = GameObject.Instantiate(EventEmitter, eventCollectorPos, Quaternion.identity);
         emitter.gameObject.AddComponent<EmitterEventsCollector>();
-
+        emitter.GetComponent<Collider>().enabled = true;
     }
 
     public void StartEmitiing()

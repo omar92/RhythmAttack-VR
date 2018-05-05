@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d2d2782cac3694dae03eab8fef88cc, type: 3}
   m_Name: StateMachine
   m_EditorClassIdentifier: 
-  previousState: {fileID: 0}
-  currentState: {fileID: 0}
+  previousState: {fileID: 11400000, guid: 76ba043e56f4de248b95202d32152f61, type: 2}
+  currentState: {fileID: 11400000, guid: 2d5e2e887c9109c41bcd1d601be7543d, type: 2}
