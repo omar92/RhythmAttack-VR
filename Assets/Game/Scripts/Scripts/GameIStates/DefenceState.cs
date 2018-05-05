@@ -34,7 +34,7 @@ public class DefenceState :  IState
             stateMachine.ChangeState(new LoseState());
         }
         
-        if (Emitter.inistance.IsDone )
+      //  if (Emitter.inistance.IsDone )
         {
             stateMachine.ChangeState(new AttackState());
         }

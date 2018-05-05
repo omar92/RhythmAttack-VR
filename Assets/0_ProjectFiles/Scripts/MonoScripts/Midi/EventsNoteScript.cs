@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class EventsNoteScript : MonoBehaviour
 {
-    public EmitterEvents emitterEvent;
-    public Emitter Emitter;
+    public GameEvent gameEvent;
     public EmittedPorjectilesSettings settings;
 
     private Rigidbody rb;
@@ -14,26 +13,22 @@ public class EventsNoteScript : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        //noteScript = GetComponent<NoteScript>();
     }
 
-
-
-
-    internal void Spawn(Vector3 position, EmitterEvents emitterEvent, Emitter emitter)
+    internal void Spawn(Vector3 position, GameEvent gameEvent, Emitter emitter)
     {
-        // this.enabled = true;
         transform.SetParent(null);
         transform.position = position;
-       /// rb.GetComponent<Renderer>().enabled = true;
-       /// rb.GetComponent<Collider>().enabled = true;
         rb.velocity = new Vector3(0, 0, -settings.Velocity);
-       this.emitterEvent = emitterEvent;
+        this.gameEvent = gameEvent;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-
+        if (gameEvent != null)
+        {
+            gameEvent.Raise();
+        }
     }
 
 }
