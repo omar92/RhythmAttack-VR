@@ -8,6 +8,9 @@ using UnityEngine;
 public class BroadcastMidiWave : MonoBehaviour
 {
 
+    public GameEvent NoteEvent;
+    public ObjectVariable NoteData;
+
     public static BroadcastMidiWave inistance;
 
     // Use this for initialization
@@ -23,11 +26,19 @@ public class BroadcastMidiWave : MonoBehaviour
 
     internal void Broadcast(AudioSource audioSource, MidiNote note)
     {
-        BroadcastMessage("OnMidiNoteAudio", new MidiNoteAudio
+        //Debug.Log("MIDI note Broadcast");
+        NoteData.value = new MidiNoteAudio
         {
             audioSource = audioSource,
             note = note
-        });
+        };
+
+        NoteEvent.Raise();
+        //BroadcastMessage("OnMidiNoteAudio", new MidiNoteAudio
+        //{
+        //    audioSource = audioSource,
+        //    note = note
+        //});
     }
 }
 

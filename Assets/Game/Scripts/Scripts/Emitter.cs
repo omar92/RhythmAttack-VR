@@ -63,9 +63,10 @@ public class Emitter : MonoBehaviour
         IsDone = false;
     }
 
-    void OnMidiNoteAudio(object data)
+    public void OnMidiNoteAudio(ObjectVariable data)
     {
-        var noteAudio = (MidiNoteAudio)data;
+        var noteAudio = (MidiNoteAudio)data.value;
+      //  Debug.Log(noteAudio.note.Midi);
         SpawnNote(noteAudio);
     }
 
