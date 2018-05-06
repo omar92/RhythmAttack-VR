@@ -9,7 +9,12 @@ public class WinState : IState
     {
        // throw new NotImplementedException();
     }
-     
+
+    public void Enter(StateMachineOld stateMachine, GameManager gameManager)
+    {
+        throw new NotImplementedException();
+    }
+
     public void Excute()
     {
       //  throw new NotImplementedException();

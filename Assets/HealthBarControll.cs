@@ -3,17 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBarControll : MonoBehaviour {
+public class HealthBarControll : MonoBehaviour
+{
+
+
+    public FloatVariable BossHealth;
+    public FloatVariable OriginalBossHealth;
 
     Image bar;
 
-	void Awake () {
-        bar = gameObject.GetComponentsInChildren<Image>()[1];
-	}
-	 
-	
-	public void ChangeBar(float amount)
+    void Awake()
     {
-        bar.fillAmount = amount;
+        bar = gameObject.GetComponentsInChildren<Image>()[1];
+    }
+
+
+    public void Update()
+    {
+        bar.fillAmount = BossHealth.value / OriginalBossHealth.value;
     }
 }

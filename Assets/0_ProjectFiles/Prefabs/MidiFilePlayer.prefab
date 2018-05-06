@@ -40,7 +40,6 @@ GameObject:
   - component: {fileID: 114835804754870976}
   - component: {fileID: 114333276962054112}
   - component: {fileID: 114827566460869920}
-  - component: {fileID: 114242850676787684}
   m_Layer: 0
   m_Name: MidiFilePlayer
   m_TagString: Untagged
@@ -170,17 +169,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114242850676787684
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1726742566772634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d38dfd7d91de01e4199dcb5f34ed5936, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114333276962054112
 MonoBehaviour:
   m_ObjectHideFlags: 1

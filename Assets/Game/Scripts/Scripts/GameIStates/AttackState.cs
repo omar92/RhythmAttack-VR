@@ -36,17 +36,17 @@ public class AttackState : IState
 
     public void Excute()
     {
-        if (targetsScript.isDone)
+        //if (targetsScript.isDone)
         {
-            if (targetsScript.health > 0)
-            {
-                stateMachine.ChangeState(new DefenceState());
-            }
-            else
-            {
-                stateMachine.ChangeState(new WinState());
+            //if (targetsScript.health > 0)
+            //{
+            //    stateMachine.ChangeState(new DefenceState());
+            //}
+            //else
+            //{
+            //    stateMachine.ChangeState(new WinState());
 
-            }
+            //}
         }
     }
 

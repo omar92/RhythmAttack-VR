@@ -11,7 +11,7 @@ public class Emitter : MonoBehaviour
     [Header("GameEvents")]
     public GameEvent startBgMusicE;
     public GameEvent stopBgMusicE;
-    public UnityEvent OnDone;
+   // public UnityEvent OnDone;
 
     public void Awake()
     {

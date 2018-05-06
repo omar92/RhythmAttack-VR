@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114065218471795554}
   - component: {fileID: 114069279152157112}
   - component: {fileID: 114367244950921434}
+  - component: {fileID: 114322827602096746}
   m_Layer: 0
   m_Name: Emitter
   m_TagString: Untagged
@@ -816,11 +817,6 @@ MonoBehaviour:
     type: 2}
   startBgMusicE: {fileID: 11400000, guid: 74c0754ad01f5fd429f4dd7576b2e6aa, type: 2}
   stopBgMusicE: {fileID: 11400000, guid: 78a79799fb8a83c478123b03948d79ec, type: 2}
-  OnDone:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114069279152157112
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -856,6 +852,35 @@ MonoBehaviour:
         m_Calls: []
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
+--- !u!114 &114322827602096746
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1174121475195748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79c7ae08bc75c7e43a13e01367bad9b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 060650f82b69d4143b8344705574a379, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114065218471795554}
+        m_MethodName: EmitEvent
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 78a79799fb8a83c478123b03948d79ec,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: GameEvent, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114367244950921434
 MonoBehaviour:
   m_ObjectHideFlags: 1

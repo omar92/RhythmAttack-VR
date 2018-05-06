@@ -4,34 +4,23 @@ using UnityEngine;
 
 public class RangedTargetScript : MonoBehaviour {
 
-    public bool isDone = false;
+    public GameEvent attachEndE;
     GameObject Targets;
 
-    public float health = 100f;
-    private float originalHealth;
-    HealthBarControll bar;
+    public FloatVariable health;
 
     private void Awake()
     {
-        originalHealth = health;
-        bar = GetComponentInChildren<HealthBarControll>();
         Targets = GameObject.FindGameObjectWithTag("Targets");
-
     }
 
     private void Start()
-    {
-        bar.ChangeBar(health / originalHealth);
-      
-        for (int i = 0; i < Targets.transform.childCount; i++) 
-        {
-            Targets.transform.GetChild(i).gameObject.SetActive(false);
-        }
+    {      
+        
     }
 
     public void SpawnTargets()
     {
-        isDone = false;
         for (int i = 0; i < Targets.transform.childCount; i++)
         {
             Targets.transform.GetChild(i).gameObject.SetActive(true);
@@ -47,20 +36,23 @@ public class RangedTargetScript : MonoBehaviour {
                 return;
             }
         }
-        isDone = true;
+        attachEndE.Raise();
     }
 
     public void TakeDamage(float amount)
     {
-        health -= amount;
-        bar.ChangeBar(health/ originalHealth);
+        health.value -= amount;
 
-        if(health <= 0)
+        if(health.value <= 0)
         {
-            isDone = true;
+            health.value  = 0;
         }
     }
-
-
-
+    public void HideTargets()
+    {
+        for (int i = 0; i < Targets.transform.childCount; i++)
+        {
+            Targets.transform.GetChild(i).gameObject.SetActive(false);
+        }
+    }
 }
