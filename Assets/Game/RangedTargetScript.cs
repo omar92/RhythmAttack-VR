@@ -5,6 +5,7 @@ using UnityEngine;
 public class RangedTargetScript : MonoBehaviour {
 
     public GameEvent attachEndE;
+    public GameEvent healthChanged;
     GameObject Targets;
 
     public FloatVariable health;
@@ -47,6 +48,7 @@ public class RangedTargetScript : MonoBehaviour {
         {
             health.value  = 0;
         }
+        healthChanged.Raise();
     }
     public void HideTargets()
     {

@@ -18,7 +18,7 @@ public class HealthBarControll : MonoBehaviour
     }
 
 
-    public void Update()
+    public void ChangeHealth()
     {
         bar.fillAmount = BossHealth.value / OriginalBossHealth.value;
     }
