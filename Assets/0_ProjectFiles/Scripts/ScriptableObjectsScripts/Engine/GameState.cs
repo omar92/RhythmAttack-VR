@@ -24,7 +24,6 @@ public class GameState : ScriptableObject
             Listeners.Keys.ElementAt(i).OnExit(this);
         }
     }
-
     internal void SetDone(StateChangeListener listener, bool isDone)
     {
         if (Listeners.Keys.Contains(listener))
@@ -43,6 +42,11 @@ public class GameState : ScriptableObject
             Debug.LogError("listener of " + listener.gameObject.name + " already exiist");
     }
 
+    public void UnregisterListener(StateChangeListener listener)
+    {
+        if (Listeners.Keys.Contains(listener)) Listeners.Remove(listener);
+    }
+
     internal bool IsAllListenersDone()
     {
         for (int i = Listeners.Count - 1; i >= 0; i--)
@@ -54,10 +58,5 @@ public class GameState : ScriptableObject
             }
         }
         return true;
-    }
-
-    public void UnregisterListener(StateChangeListener listener)
-    {
-        if (Listeners.Keys.Contains(listener)) Listeners.Remove(listener);
     }
 }
