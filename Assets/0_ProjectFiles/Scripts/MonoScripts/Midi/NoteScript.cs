@@ -158,7 +158,8 @@ public class NoteScript : MonoBehaviour
         //        yield return new WaitForSeconds(0.01f);
         //    }
         //}
-        Destroy(audio.gameObject);
+
+
         OnEnd();
 
     }

@@ -31,14 +31,22 @@ public class AttackState : IState
             hand.SetHandState(HandStates.Ranged);
         }
         targetsScript.SpawnTargets();
-        //stateMachine.ChangeState(new DefenceState());
+        //stateMachine.ChangeState(new DefenceState()); 
     }
 
     public void Excute()
     {
         if (targetsScript.isDone)
         {
-            stateMachine.ChangeState(new DefenceState());
+            if (targetsScript.health > 0)
+            {
+                stateMachine.ChangeState(new DefenceState());
+            }
+            else
+            {
+                stateMachine.ChangeState(new WinState());
+
+            }
         }
     }
 

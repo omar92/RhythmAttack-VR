@@ -18,7 +18,7 @@ public class DefenceState :  IState
         {
             hands = GameObject.FindObjectsOfType<HandStateController>();
         }
-        Debug.LogError(hands.Length);
+        //Debug.LogError(hands.Length);
 
         Emitter.inistance.StartEmitiing();
         for (int i = 0; i < hands.Length; i++)
