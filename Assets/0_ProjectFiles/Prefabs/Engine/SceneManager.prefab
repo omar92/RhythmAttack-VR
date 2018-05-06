@@ -142,7 +142,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114617843008592658}
-        m_MethodName: ChangeStateForced
+        m_MethodName: ChangeStateSmooth
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 11400000, guid: 2d5e2e887c9109c41bcd1d601be7543d,
