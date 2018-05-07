@@ -7,7 +7,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class NoteScript : MonoBehaviour
 {
-
+    
+    public Vector3Variable hitDirection;
     public EmittedPorjectilesSettings settings;
   
     [Range(0f, 1f)]
@@ -19,6 +20,7 @@ public class NoteScript : MonoBehaviour
     public Transform ObjectBool { get; internal set; }
     private Rigidbody rb;
     private MidiNoteAudio myNoteAudio;
+    private Vector3 collisionPoint;
     //  private NoteScript noteScript;
 
     private void Awake()
@@ -37,7 +39,18 @@ public class NoteScript : MonoBehaviour
         rb.velocity = new Vector3(0, 0, -settings.Velocity);
         myNoteAudio = note;
     }
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag=="Sword" )
+        {
+            collisionPoint = collision.contacts[0].point;
+            hitDirection.value= SwordDirection(collisionPoint);
+        }
+    }
+    Vector3 SwordDirection(Vector3 collisionPoint)
+    {
+        return (collisionPoint - transform.position).normalized;
+    }
     private void OnTriggerEnter(Collider other)
     {
         
@@ -45,6 +58,7 @@ public class NoteScript : MonoBehaviour
         {
             if (other.GetComponent<Sword>().speed > 2)
             {
+                
                 rb.GetComponent<Renderer>().enabled = false;
                 rb.GetComponent<Collider>().enabled = false;
                 StartCoroutine(PlayNote(myNoteAudio.audioSource, !myNoteAudio.note.Drum, myNoteAudio.note, Hide));
