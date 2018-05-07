@@ -1,8 +1,8 @@
 ﻿using MidiPlayerTK;
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using VRTK;
 
 [RequireComponent(typeof(Rigidbody))]
 public class NoteScript : MonoBehaviour
@@ -11,6 +11,7 @@ public class NoteScript : MonoBehaviour
     private Vector3 hitDirection;
     public LevelSettings settings;
     public FloatVariable SwordSpeed;
+    VRTK_ControllerReference VRTK_Controller;
 
     [Range(0f, 1f)]
     public float MPTK_Volume = 1;
@@ -27,6 +28,7 @@ public class NoteScript : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        VRTK_Controller = GetComponent<VRTK_ControllerReference>();
         //noteScript = GetComponent<NoteScript>();
     }
 
@@ -59,7 +61,7 @@ public class NoteScript : MonoBehaviour
         {
             if (SwordSpeed.value > 2)
             {
-
+                VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_Controller, 1f, 1f, 1f);
                 rb.GetComponent<Renderer>().enabled = false;
                 rb.GetComponent<Collider>().enabled = false;
                 StartCoroutine(PlayNote(myNoteAudio.audioSource, !myNoteAudio.note.Drum, myNoteAudio.note, Hide));
