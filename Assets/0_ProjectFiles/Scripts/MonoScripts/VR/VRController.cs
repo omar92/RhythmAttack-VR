@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+using VRTK;
 using UnityEngine;
 
 public class VRController : MonoBehaviour
@@ -12,8 +11,9 @@ public class VRController : MonoBehaviour
     public TransformVariable AssociatedTransform;
 
     //Private
-    SteamVR_TrackedObject trackObject = null;
+    VRTK_ControllerEvents trackObject = null;
     SteamVR_Controller.Device device;
+
 
 
     public static int currentDeviceIndex;
@@ -22,39 +22,26 @@ public class VRController : MonoBehaviour
     IControllable child;
     void Awake()
     {
-        trackObject = GetComponent<SteamVR_TrackedObject>();
-        trackObject.SetDeviceIndex((int)vrControllerType);
-    }
-    void Start()
-    {
+        trackObject = GetComponent<VRTK_ControllerEvents>();
+
+        //register events
+        trackObject.TriggerPressed += GripPressed;
+        trackObject.TriggerReleased += GripReleased;
 
     }
-    void FixedUpdate()
+    private void GripPressed(object sender, ControllerInteractionEventArgs e)
     {
-        AssociatedTransform.value.position = transform.position;
-        AssociatedTransform.value.rotation = transform.rotation;
-    }
-    void Update()
-    {
-
-
-
-        device = SteamVR_Controller.Input((int)trackObject.index);
-
-        if (device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
+        ExcuteInChildren((child) =>
         {
-            ExcuteInChildren((child) =>
-            {
-                child.OnTrigger(true);
-            });
-        }
-        if (device.GetPressUp(SteamVR_Controller.ButtonMask.Trigger))
+            child.OnTrigger(true);
+        });
+    }
+    private void GripReleased(object sender, ControllerInteractionEventArgs e)
+    {
+        ExcuteInChildren((child) =>
         {
-            ExcuteInChildren((child) =>
-            {
-                child.OnTrigger(false);
-            });
-        }
+            child.OnTrigger(false);
+        });
     }
 
     void ExcuteInChildren(Action<IControllable> action)
@@ -68,5 +55,22 @@ public class VRController : MonoBehaviour
                 action(child);
             }
         }
+    }
+
+
+    void FixedUpdate()
+    {
+        AssociatedTransform.value.position = transform.position;
+        AssociatedTransform.value.rotation = transform.rotation;
+    }
+    void Update()
+    {
+        AssociatedTransform.value.position = transform.position;
+        AssociatedTransform.value.rotation = transform.rotation;
+    }
+    private void LateUpdate()
+    {
+        AssociatedTransform.value.position = transform.position;
+        AssociatedTransform.value.rotation = transform.rotation;
     }
 }
