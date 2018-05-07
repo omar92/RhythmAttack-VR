@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 205b3ef3646ef5e4c9943ede3aeb1185, type: 3}
   m_Name: Data
   m_EditorClassIdentifier: 
-  levelSounds: {fileID: 11400000, guid: 69cde3793c0e1f940b715c563b996cf2, type: 2}
-  BossHealth: 100
-  MenionsSpeed: 10
-  GunDamage: 50
+  levelSounds: {fileID: 0}
+  BossHealth: 0
+  MenionsSpeed: 0
+  GunDamage: 0

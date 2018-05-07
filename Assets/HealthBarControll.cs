@@ -8,7 +8,7 @@ public class HealthBarControll : MonoBehaviour
 
 
     public FloatVariable BossHealth;
-    public FloatVariable OriginalBossHealth;
+    public LevelSettings level;
 
     Image bar;
 
@@ -20,6 +20,6 @@ public class HealthBarControll : MonoBehaviour
 
     public void Update()
     {
-        bar.fillAmount = BossHealth.value / OriginalBossHealth.value;
+        bar.fillAmount = BossHealth.value / level.BossHealth;
     }
 }

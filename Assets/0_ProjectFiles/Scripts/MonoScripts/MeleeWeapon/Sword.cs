@@ -16,7 +16,7 @@ public class Sword : MonoBehaviour
     Vector3 currentPos;
     Vector3 previuosPos;
 
-    public float speed;
+    public FloatVariable speed;
 
     
     
@@ -33,7 +33,7 @@ public class Sword : MonoBehaviour
     {
         currentPos = transform.position;
 
-        speed = (currentPos - previuosPos).magnitude / Time.deltaTime;
+        speed.value = (currentPos - previuosPos).magnitude / Time.deltaTime;
 
         previuosPos = currentPos;
        // Debug.Log(" controler speed = " + speed);

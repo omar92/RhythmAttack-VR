@@ -6,7 +6,7 @@ using UnityEngine;
 public class EventsNoteScript : MonoBehaviour
 {
     public GameEvent gameEvent;
-    public EmittedPorjectilesSettings settings;
+    public LevelSettings settings;
 
     private Rigidbody rb;
 
@@ -19,7 +19,7 @@ public class EventsNoteScript : MonoBehaviour
     {
         transform.SetParent(null);
         transform.position = position;
-        rb.velocity = new Vector3(0, 0, -settings.Velocity);
+        rb.velocity = new Vector3(0, 0, -settings.NoteVelocity);
         this.gameEvent = gameEvent;
     }
 

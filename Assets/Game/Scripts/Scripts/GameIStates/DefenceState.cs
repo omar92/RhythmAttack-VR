@@ -29,10 +29,10 @@ public class DefenceState :  IState
 
     public void Excute()
     {
-        if (HealthIndicator.playerHealth<=0)
-        {
-            stateMachine.ChangeState(new LoseState());
-        }
+        //if (HealthIndicator.playerHealth<=0)
+        //{
+        //    stateMachine.ChangeState(new LoseState());
+        //}
         
       //  if (Emitter.inistance.IsDone )
         {

@@ -7,8 +7,9 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class NoteScript : MonoBehaviour
 {
+    public FloatVariable swordSpeed;
 
-    public EmittedPorjectilesSettings settings;
+    public LevelSettings settings;
   
     [Range(0f, 1f)]
     public float MPTK_Volume = 1;
@@ -34,7 +35,7 @@ public class NoteScript : MonoBehaviour
         transform.position = pos;
         rb.GetComponent<Renderer>().enabled = true;
         rb.GetComponent<Collider>().enabled = true;
-        rb.velocity = new Vector3(0, 0, -settings.Velocity);
+        rb.velocity = new Vector3(0, 0, -settings.NoteVelocity);
         myNoteAudio = note;
     }
 
@@ -43,7 +44,7 @@ public class NoteScript : MonoBehaviour
         
         if (other.tag == "Sword")
         {
-            if (other.GetComponent<Sword>().speed > 2)
+            if (swordSpeed.value > 2)
             {
                 rb.GetComponent<Renderer>().enabled = false;
                 rb.GetComponent<Collider>().enabled = false;
