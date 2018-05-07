@@ -341,7 +341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attachEndE: {fileID: 11400000, guid: dbd414abf8899514dbc6a6f5e4ab74a3, type: 2}
-  healthChanged: {fileID: 0}
+  healthChanged: {fileID: 11400000, guid: 4228c57cbc66d5c47851b7441ebe321e, type: 2}
   health: {fileID: 11400000, guid: ff2ce29ae32063f428957af63590ee04, type: 2}
 --- !u!114 &114285897413406938
 MonoBehaviour:
