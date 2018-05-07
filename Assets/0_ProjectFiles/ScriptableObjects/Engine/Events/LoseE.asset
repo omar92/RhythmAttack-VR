@@ -9,5 +9,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c9ca39da19c8fc54d80a5b133dc27436, type: 3}
+<<<<<<< HEAD:Assets/0_ProjectFiles/ScriptableObjects/Engine/Events/LoseE.asset
   m_Name: LoseE
+=======
+  m_Name: Lose
+>>>>>>> 96f8021679a5c4852375a2abae69c6829584affe:Assets/0_ProjectFiles/ScriptableObjects/Engine/Events/LoseE.asset
   m_EditorClassIdentifier: 

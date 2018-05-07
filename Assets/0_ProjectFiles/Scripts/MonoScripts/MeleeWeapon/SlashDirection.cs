@@ -14,7 +14,10 @@ public class SlashDirection : MonoBehaviour {
         {
             collisionPoint = collision.contacts[0].point;
             hitDirection.value = SwordDirection(collisionPoint);
+<<<<<<< HEAD
             Debug.Log("this is x "+hitDirection.value.x+ " this is y " + hitDirection.value.y);
+=======
+>>>>>>> 96f8021679a5c4852375a2abae69c6829584affe
         }
     }
 
@@ -22,8 +25,14 @@ public class SlashDirection : MonoBehaviour {
     Vector3 SwordDirection(Vector3 collisionPoint)
     {
         return (collisionPoint - transform.position).normalized;
+<<<<<<< HEAD
         
     }
 
    
+=======
+    }
+
+
+>>>>>>> 96f8021679a5c4852375a2abae69c6829584affe
 }
