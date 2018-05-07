@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CreateAssetMenu(fileName = "GeneralSettings", menuName = "GameSettings/General", order = 1)]
-class GameSettings : ScriptableObject
+[CreateAssetMenu(fileName = "GeneralSettings", menuName = "GameSettings/GeneralSettings", order = 1)]
+public class GeneralSounds : ScriptableObject
 {
 
     [Header("Weapons sounds")]

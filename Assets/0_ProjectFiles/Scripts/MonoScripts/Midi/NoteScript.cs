@@ -8,8 +8,10 @@ using UnityEngine;
 public class NoteScript : MonoBehaviour
 {
 
-    public EmittedPorjectilesSettings settings;
-  
+    private Vector3 hitDirection;
+    public LevelSettings settings;
+    public FloatVariable SwordSpeed;
+
     [Range(0f, 1f)]
     public float MPTK_Volume = 1;
 
@@ -19,6 +21,7 @@ public class NoteScript : MonoBehaviour
     public Transform ObjectBool { get; internal set; }
     private Rigidbody rb;
     private MidiNoteAudio myNoteAudio;
+    private Vector3 collisionPoint;
     //  private NoteScript noteScript;
 
     private void Awake()
@@ -34,17 +37,29 @@ public class NoteScript : MonoBehaviour
         transform.position = pos;
         rb.GetComponent<Renderer>().enabled = true;
         rb.GetComponent<Collider>().enabled = true;
-        rb.velocity = new Vector3(0, 0, -settings.Velocity);
+        rb.velocity = new Vector3(0, 0, -settings.NoteVelocity);
         myNoteAudio = note;
     }
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Sword")
+        {
+            collisionPoint = collision.contacts[0].point;
+            hitDirection = SwordDirection(collisionPoint);
+        }
+    }
+    Vector3 SwordDirection(Vector3 collisionPoint)
+    {
+        return (collisionPoint - transform.position).normalized;
+    }
     private void OnTriggerEnter(Collider other)
     {
-        
+
         if (other.tag == "Sword")
         {
-            if (other.GetComponent<Sword>().speed > 2)
+            if (SwordSpeed.value > 2)
             {
+
                 rb.GetComponent<Renderer>().enabled = false;
                 rb.GetComponent<Collider>().enabled = false;
                 StartCoroutine(PlayNote(myNoteAudio.audioSource, !myNoteAudio.note.Drum, myNoteAudio.note, Hide));
@@ -55,7 +70,7 @@ public class NoteScript : MonoBehaviour
                 //sebo fe 7alo 
             }
         }
-        else 
+        else
         {
             Hide();
             rb.velocity = new Vector3(0, 0, 0);

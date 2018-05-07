@@ -19,14 +19,16 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4616463070933624}
-  - component: {fileID: 114617843008592658}
   - component: {fileID: 114987851221061556}
+  - component: {fileID: 114617843008592658}
+  - component: {fileID: 114638235098816384}
   - component: {fileID: 114659148306650782}
   - component: {fileID: 114692386674749402}
   - component: {fileID: 114674285205107654}
   - component: {fileID: 114889102955628180}
   - component: {fileID: 114916553212785102}
   - component: {fileID: 114431541411941970}
+  - component: {fileID: 114946373788741780}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -87,6 +89,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e51fc807c644b14abf5e5bd1fb462a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stateMachine: {fileID: 11400000, guid: 0d6f9a26e0f52fe4ebf9a67e4bd633d9, type: 2}
+--- !u!114 &114638235098816384
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1215017269107966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 065375d4fbdfb1c469900264d4dd7c21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelSettings: {fileID: 11400000, guid: b9631101d1d296346a4108d7517f2217, type: 2}
+  PlayerHealth: {fileID: 11400000, guid: 5fdbe49796ff73d46be7eace4c49cd45, type: 2}
+  BossHealth: {fileID: 11400000, guid: ff2ce29ae32063f428957af63590ee04, type: 2}
   stateMachine: {fileID: 11400000, guid: 0d6f9a26e0f52fe4ebf9a67e4bd633d9, type: 2}
 --- !u!114 &114659148306650782
 MonoBehaviour:
@@ -258,6 +275,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 11400000, guid: ff2ce29ae32063f428957af63590ee04, type: 2}
   winEvent: {fileID: 11400000, guid: c8188db4d97cb4643aac1758a70e414d, type: 2}
+--- !u!114 &114946373788741780
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1215017269107966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79c7ae08bc75c7e43a13e01367bad9b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 9519ff3090654f74dad54218bfff6e32, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114617843008592658}
+        m_MethodName: ChangeStateSmooth
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 4e6343f6fc23c9d42a914533a744d293,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: GameState, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114987851221061556
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -272,6 +318,17 @@ MonoBehaviour:
   OnAwake:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 114638235098816384}
+        m_MethodName: InitGameData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 114617843008592658}
         m_MethodName: ChangeStateForced
         m_Mode: 2

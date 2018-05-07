@@ -9,11 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 878f5cd6d7972864e85b8afde6fdb90c, type: 3}
-  m_Name: GeneralSettings
+  m_Name: GeneralGameSounds
   m_EditorClassIdentifier: 
-  MeleeSlash: {fileID: 8300000, guid: e95cc5dd55bc7cb41aa042e3040b13a3, type: 3}
-  MeleeMiss: {fileID: 8300000, guid: 9ca01fd06909f1e4eaf7ba30310630ee, type: 3}
-  RangedShoot: {fileID: 8300000, guid: 7b283ccad0acf8a4cb40b458c1487b9d, type: 3}
+  MeleeSlash: {fileID: 0}
+  MeleeMiss: {fileID: 0}
+  RangedShoot: {fileID: 0}
   RangedHit: {fileID: 0}
   NoteMiss: {fileID: 0}
   GameWin: {fileID: 0}
