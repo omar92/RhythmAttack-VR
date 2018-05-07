@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 54503300568690612}
   - component: {fileID: 65419936775742504}
   - component: {fileID: 114050400184172646}
+  - component: {fileID: 114051857745269428}
   m_Layer: 8
   m_Name: Note
   m_TagString: Note
@@ -57,7 +58,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 3f5766a8b67794141ac19c1a51d27083, type: 2}
   m_StaticBatchInfo:
@@ -125,5 +125,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   settings: {fileID: 11400000, guid: b9631101d1d296346a4108d7517f2217, type: 2}
-  SwordSpeed: {fileID: 11400000, guid: a8cb140f65888414e873a5e88f7c974d, type: 2}
+  SwordSpeed: {fileID: 0}
   MPTK_Volume: 0.53
+--- !u!114 &114051857745269428
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1362685045808908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92a76f30fdccece44b9040770a8adb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitDirection: {fileID: 11400000, guid: db75a55736dd796468facabaf2e3daeb, type: 2}
