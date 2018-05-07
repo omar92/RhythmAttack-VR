@@ -6,50 +6,44 @@ public class HealthIndicator : MonoBehaviour
 {
 
     //public  Material[] healthMaterials = new Material[4];
-    public static float playerHealth = 100;
+    public  FloatVariable playerHealth ;
 
-    static Transform capsuleTransform;
-
-    static Transform first;
-    static Transform second;
-    static Transform third;
-    static Transform fourth;
+    public Transform first;
+    public Transform second;
+    public Transform third;
+    public Transform fourth;
 
     void Start()
     {
-        capsuleTransform = this.transform;
-        for (int i = 0; i < capsuleTransform.childCount; i++)
+        for (int i = 0; i < transform.childCount; i++)
         {
-            capsuleTransform.GetChild(i).GetComponent<Renderer>().material.color = new Color(0, 255, 255, 255);
+            transform.GetChild(i).GetComponent<Renderer>().material.color = new Color(0, 255, 255, 255);
 
         }
-        first = capsuleTransform.GetChild(0);
-        second = capsuleTransform.GetChild(1);
-        third = capsuleTransform.GetChild(2);
-        fourth = capsuleTransform.GetChild(3);
+
     }
 
 
-    public static void healthMatChange()
+    public void HealthMatChange()
     {
-        Debug.Log(capsuleTransform.childCount);
+        //Debug.Log(transform.childCount);
 
-        if (playerHealth > 75)
+        if (playerHealth.value > 75)
         {
-            for (int i = 0; i < capsuleTransform.childCount; i++)
+            for (int i = 0; i < transform.childCount; i++)
             {
-                capsuleTransform.GetChild(i).GetComponent<Renderer>().material.color = new Color(0, 255, 255, 255);
+                transform.GetChild(i).GetComponent<Renderer>().material.color = new Color(0, 255, 255, 255);
 
             }
 
 
         }
-        else if (playerHealth > 50 && playerHealth < 76)
+        else if (playerHealth.value > 50 && playerHealth.value < 76)
         {
 
-            for (int i = 0; i < capsuleTransform.childCount; i++)
+            for (int i = 0; i < transform.childCount; i++)
             {
-                capsuleTransform.GetChild(i).GetComponent<Renderer>().material.color = Color.blue;
+                transform.GetChild(i).GetComponent<Renderer>().material.color = Color.blue;
 
             }
             if (first != null)
@@ -59,12 +53,12 @@ public class HealthIndicator : MonoBehaviour
             }
 
         }
-        else if (playerHealth > 25 && playerHealth < 51)
+        else if (playerHealth.value > 25 && playerHealth.value < 51)
         {
 
-            for (int i = 0; i < capsuleTransform.childCount; i++)
+            for (int i = 0; i < transform.childCount; i++)
             {
-                capsuleTransform.GetChild(i).GetComponent<Renderer>().material.color = Color.green;
+                transform.GetChild(i).GetComponent<Renderer>().material.color = Color.green;
 
             }
 
@@ -75,12 +69,12 @@ public class HealthIndicator : MonoBehaviour
 
             }
         }
-        else if (playerHealth > 0 && playerHealth < 26)
+        else if (playerHealth.value > 0 && playerHealth.value < 26)
         {
 
-            for (int i = 0; i < capsuleTransform.childCount; i++)
+            for (int i = 0; i < transform.childCount; i++)
             {
-                capsuleTransform.GetChild(i).GetComponent<Renderer>().material.color = Color.red;
+                transform.GetChild(i).GetComponent<Renderer>().material.color = Color.red;
 
             }
 

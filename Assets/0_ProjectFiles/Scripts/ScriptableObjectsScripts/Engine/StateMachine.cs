@@ -23,6 +23,13 @@ public class StateMachine : ScriptableObject
         currentState.OnEnter();
     }
 
+    internal void Init()
+    {
+        previousState = null;
+        currentState = null;
+    }
+
+
     /// <summary>
     /// Chnage state only if all listener is done and ready to change state
     /// Also it set the current listener to Done if failed to change now
@@ -31,9 +38,9 @@ public class StateMachine : ScriptableObject
     /// </summary>
     /// <param name="newState"></param>
     /// <returns></returns>
-    public bool ChangeStateSmooth(GameState newState,bool alowReloadCurrent = false)
+    public bool ChangeStateSmooth(GameState newState, bool alowReloadCurrent = false)
     {
-        if (!alowReloadCurrent && currentState == newState) {  Debug.LogWarning("same state"); return false; }
+        if (!alowReloadCurrent && currentState == newState) { Debug.LogWarning("same state"); return false; }
 
         if (currentState != null)
         {

@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BossHealth: {fileID: 11400000, guid: ff2ce29ae32063f428957af63590ee04, type: 2}
-  OriginalBossHealth: {fileID: 11400000, guid: f6b47b13c683666488ec2cc4967c9ae3, type: 2}
+  level: {fileID: 11400000, guid: b9631101d1d296346a4108d7517f2217, type: 2}
 --- !u!114 &114212310954879566
 MonoBehaviour:
   m_ObjectHideFlags: 1

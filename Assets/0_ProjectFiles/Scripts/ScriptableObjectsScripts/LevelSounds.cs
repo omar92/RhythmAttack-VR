@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CreateAssetMenu(fileName = "Data", menuName = "GameSettings/LevelSounds", order = 1)]
+[CreateAssetMenu(fileName = "LevelSounds", menuName = "GameSettings/LevelSounds", order = 1)]
 public class LevelSounds : ScriptableObject
 {
     [Header("Defence Mode")]

@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 54503300568690612}
   - component: {fileID: 65419936775742504}
   - component: {fileID: 114050400184172646}
+  - component: {fileID: 114051857745269428}
   m_Layer: 8
   m_Name: Note
   m_TagString: Note
@@ -38,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1362685045808908}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7473912, y: 1.805655, z: 8.561525}
+  m_LocalPosition: {x: -5.1473913, y: 2.7168303, z: 5.339821}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -123,5 +124,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 499b303f930da8346b053dc73c78ece5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settings: {fileID: 11400000, guid: 180e683081a078b4fb850fc608bc2fbe, type: 2}
+  settings: {fileID: 11400000, guid: b9631101d1d296346a4108d7517f2217, type: 2}
+  SwordSpeed: {fileID: 0}
   MPTK_Volume: 0.53
+--- !u!114 &114051857745269428
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1362685045808908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92a76f30fdccece44b9040770a8adb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitDirection: {fileID: 11400000, guid: db75a55736dd796468facabaf2e3daeb, type: 2}

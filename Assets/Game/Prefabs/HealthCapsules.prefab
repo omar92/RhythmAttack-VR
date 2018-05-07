@@ -38,6 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4387995227638212}
   - component: {fileID: 114559858021973508}
+  - component: {fileID: 114712440721155742}
   m_Layer: 0
   m_Name: HealthCapsules
   m_TagString: Untagged
@@ -110,8 +111,8 @@ Transform:
   m_LocalScale: {x: 0.18159354, y: 0.18159354, z: 0.18159354}
   m_Children:
   - {fileID: 4992762726403558}
-  - {fileID: 4672002176218818}
   - {fileID: 4722123525990948}
+  - {fileID: 4672002176218818}
   - {fileID: 4872875994227208}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -127,7 +128,7 @@ Transform:
   m_LocalScale: {x: 1, y: 0.16, z: 1}
   m_Children: []
   m_Father: {fileID: 4387995227638212}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4722123525990948
 Transform:
@@ -140,7 +141,7 @@ Transform:
   m_LocalScale: {x: 1, y: 0.16, z: 1}
   m_Children: []
   m_Father: {fileID: 4387995227638212}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4872875994227208
 Transform:
@@ -181,6 +182,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -215,6 +217,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -249,6 +252,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -283,6 +287,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -343,6 +348,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b3ea979bb8f5ed40a3fc9995badddc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerHealth: {fileID: 11400000, guid: 5fdbe49796ff73d46be7eace4c49cd45, type: 2}
+  first: {fileID: 4992762726403558}
+  second: {fileID: 4722123525990948}
+  third: {fileID: 4672002176218818}
+  fourth: {fileID: 4872875994227208}
+--- !u!114 &114712440721155742
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1092366792617616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79c7ae08bc75c7e43a13e01367bad9b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 12a2500e664738c47be8aadb43cf2330, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114559858021973508}
+        m_MethodName: HealthMatChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!136 &136046486027954256
 CapsuleCollider:
   m_ObjectHideFlags: 1

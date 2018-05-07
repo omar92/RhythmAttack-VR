@@ -4,23 +4,24 @@ using UnityEngine;
 
 public class MissedBalls : MonoBehaviour {
 
-    public GameObject healthCapsules; 
-    
+    //public GameObject healthCapsules; 
+    public FloatVariable playerHealth;
+    public GameEvent noteMissedE;
+    public GameEvent LoseE;
+
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "Note")
         {
-            if (HealthIndicator.playerHealth>0)
+            if (playerHealth.value > 0)
             {
-                HealthIndicator.playerHealth -= 4;
-                HealthIndicator.healthMatChange();
-               // Debug.Log(HealthIndicator.playerHealth);
+                    playerHealth.value -= 4;
             }
             else
             {
-                Destroy(healthCapsules);
+                LoseE.Raise();
             }
-            
+            noteMissedE.Raise();
         }
         
     }

@@ -6,7 +6,7 @@ public class Emitter : MonoBehaviour
     public Transform EventEmitter;
     public EventsNoteScript eventNotePref;
     public static Emitter inistance = null;
-
+    
 
     [Header("GameEvents")]
     public GameEvent startBgMusicE;
