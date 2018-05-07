@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1362685045808908}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.113738, y: -7.15646, z: -7.161398}
+  m_LocalPosition: {x: -5.1473913, y: 2.7168303, z: 5.339821}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -124,6 +124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 499b303f930da8346b053dc73c78ece5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swordSpeed: {fileID: 11400000, guid: a8cb140f65888414e873a5e88f7c974d, type: 2}
   settings: {fileID: 11400000, guid: b9631101d1d296346a4108d7517f2217, type: 2}
+  SwordSpeed: {fileID: 11400000, guid: a8cb140f65888414e873a5e88f7c974d, type: 2}
   MPTK_Volume: 0.53
