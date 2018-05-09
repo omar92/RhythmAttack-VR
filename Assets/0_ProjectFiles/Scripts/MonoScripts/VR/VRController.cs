@@ -12,18 +12,18 @@ public class VRController : MonoBehaviour
 
     //Private
     VRTK_ControllerEvents trackObject = null;
-    SteamVR_Controller.Device device;
+    VRTK_ControllerReference controllerReference = null;
 
 
 
-    public static int currentDeviceIndex;
+   // public static int currentDeviceIndex;
     Color currentColler;
     int ChildCount = 0;
     IControllable child;
     void Awake()
     {
         trackObject = GetComponent<VRTK_ControllerEvents>();
-
+        controllerReference = VRTK_ControllerReference.GetControllerReference(gameObject);
         //register events
         trackObject.TriggerPressed += GripPressed;
         trackObject.TriggerReleased += GripReleased;
@@ -31,6 +31,7 @@ public class VRController : MonoBehaviour
     }
     private void GripPressed(object sender, ControllerInteractionEventArgs e)
     {
+        Viprate();
         ExcuteInChildren((child) =>
         {
             child.OnTrigger(true);
@@ -57,6 +58,10 @@ public class VRController : MonoBehaviour
         }
     }
 
+    public void Viprate()
+    {
+        VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(gameObject), 1f,1F,.01F);
+    }
 
     void FixedUpdate()
     {
