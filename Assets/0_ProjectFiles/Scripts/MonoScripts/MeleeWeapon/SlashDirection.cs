@@ -16,7 +16,7 @@ public class SlashDirection : MonoBehaviour {
             firstcollisionPoint = collision.contacts[0].point;
             secondcollisionPoint= collision.contacts[collision.contacts.Length-1].point;
 
-            Debug.Log("first collision point x "+firstcollisionPoint+" second collision point y "+ secondcollisionPoint);
+            Debug.Log("first collision point x "+firstcollisionPoint.x+" second collision point y "+ secondcollisionPoint.y);
             //hitDirection.value = SwordDirection(collisionPoint);
         }
     }
