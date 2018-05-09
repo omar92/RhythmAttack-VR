@@ -41,25 +41,25 @@ public class NoteScript : MonoBehaviour
         rb.velocity = new Vector3(0, 0, -settings.NoteVelocity);
         myNoteAudio = note;
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Sword")
-        {
-            collisionPoint = collision.contacts[0].point;
-            hitDirection = SwordDirection(collisionPoint);
-        }
-    }
-    Vector3 SwordDirection(Vector3 collisionPoint)
-    {
-        return (collisionPoint - transform.position).normalized;
-    }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.tag == "Sword")
+    //    {
+    //        collisionPoint = collision.contacts[0].point;
+    //        hitDirection = SwordDirection(collisionPoint);
+    //    }
+    //}
+    //Vector3 SwordDirection(Vector3 collisionPoint)
+    //{
+    //    return (collisionPoint - transform.position).normalized;
+    //}
     private void OnTriggerEnter(Collider other)
     {
-        ballCut.Raise();
         if (other.tag == "Sword")
         {
             if (SwordSpeed.value > 2)
             {
+                ballCut.Raise();
                 rb.GetComponent<Renderer>().enabled = false;
                 rb.GetComponent<Collider>().enabled = false;
                 StartCoroutine(PlayNote(myNoteAudio.audioSource, !myNoteAudio.note.Drum, myNoteAudio.note, Hide));

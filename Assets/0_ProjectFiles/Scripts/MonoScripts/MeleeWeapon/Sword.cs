@@ -2,18 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
+using VRTK;
 
 public class Sword : MonoBehaviour
 {
-     public FloatVariable speed;
+    public FloatVariable speed;
+    public GameEvent ballCut;
+    public GameEvent swordCut;
     // Use this for initialization
     Vector3 currentPos;
     Vector3 previuosPos;
     AudioSource audioSource;
+    //public VRTK_ControllerReference VRTK_Controller; 
+
+    
     void Start()
     {
         previuosPos = Vector3.zero;
         audioSource = GetComponent<AudioSource>();
+        //VRTK_Controller = GetComponent<VRTK_ControllerReference>();
     }
 
     void Update()
@@ -37,6 +44,9 @@ public class Sword : MonoBehaviour
     {
         if (other.gameObject.tag == "Note")
         {
+            ballCut.Raise();
+            swordCut.Raise();
+            //VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_Controller, 1f, 1f, 1f);
             NoteScript sc = other.GetComponent<NoteScript>();
             audioSource.Play();
         }

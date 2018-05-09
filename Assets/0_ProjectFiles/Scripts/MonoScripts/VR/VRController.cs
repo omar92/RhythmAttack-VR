@@ -9,6 +9,9 @@ public class VRController : MonoBehaviour
     //public
     public VRControllersTypes vrControllerType;
     public TransformVariable AssociatedTransform;
+    public float strength = 1f;
+    public float duration = 0.2f;
+    public float interval = 0.01f;
 
     //Private
     VRTK_ControllerEvents trackObject = null;
@@ -56,11 +59,14 @@ public class VRController : MonoBehaviour
         }
     }
 
-    public void Viprate()
+    public void ViprateNote()
     {
-        VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(gameObject), 1f,1F,.01F);
+        VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(gameObject), strength, duration, interval);
     }
-
+    public void ViprateGun()
+    {
+        VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(gameObject), strength, duration, interval);
+    }
     void FixedUpdate()
     {
         AssociatedTransform.value.position = transform.position;
