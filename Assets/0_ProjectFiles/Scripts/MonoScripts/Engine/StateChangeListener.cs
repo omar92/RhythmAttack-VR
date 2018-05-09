@@ -18,6 +18,24 @@ public class StateChangeListener : MonoBehaviour
         }
     }
 
+    internal void OnPause(GameState state)
+    {
+        for (int i = 0; i < states.Length; i++)
+        {
+            if (states[i].state.GetInstanceID() == state.GetInstanceID())
+                states[i].onPause.Invoke();
+        }
+    }
+
+    internal void OnUnPause(GameState state)
+    {
+        for (int i = 0; i < states.Length; i++)
+        {
+            if (states[i].state.GetInstanceID() == state.GetInstanceID())
+                states[i].onUnPause.Invoke();
+        }
+    }
+
     internal void OnExit(GameState state)
     {
         for (int i = 0; i < states.Length; i++)
@@ -67,5 +85,7 @@ public struct StatesHandling
     /// </summary>
     public bool MustBeDone;
     public UnityEvent onEnter;
+    public UnityEvent onPause;
+    public UnityEvent onUnPause;
     public UnityEvent onExit;
 }

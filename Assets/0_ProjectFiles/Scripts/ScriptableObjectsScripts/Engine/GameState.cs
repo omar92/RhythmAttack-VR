@@ -17,6 +17,25 @@ public class GameState : ScriptableObject
             Listeners.Keys.ElementAt(i).OnEnter(this);
         }
     }
+
+    public void OnPause()
+    {
+        Debug.Log(Listeners.Count);
+        for (int i = Listeners.Count - 1; i >= 0; i--)
+        {
+            Listeners.Keys.ElementAt(i).OnPause(this);
+        }
+    }
+
+    public void OnUnPause()
+    {
+        Debug.Log(Listeners.Count);
+        for (int i = Listeners.Count - 1; i >= 0; i--)
+        {
+            Listeners.Keys.ElementAt(i).OnUnPause(this);
+        }
+    }
+
     public void OnExit()
     {
         for (int i = Listeners.Count - 1; i >= 0; i--)
@@ -24,6 +43,7 @@ public class GameState : ScriptableObject
             Listeners.Keys.ElementAt(i).OnExit(this);
         }
     }
+
     internal void SetDone(StateChangeListener listener, bool isDone)
     {
         if (Listeners.Keys.Contains(listener))
