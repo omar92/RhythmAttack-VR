@@ -8,11 +8,11 @@ public class LevelSounds : ScriptableObject
 {
     [Header("Defence Mode")]
     public AudioClip DefenceBG;
-    public string DefenceMIDI= "/Assets/Game/Resources/Tracks/[MidiFile.midi]";
+    public string DefenceMIDI= "Not Selected";
 
     [Header("Attack Mode")]
     public AudioClip AttackBG;
-    public string AttackMIDI = "/Assets/Game/Resources/Tracks/[MidiFile.midi]";
+    public string AttackMIDI = "Not Selected";
 
     [Header("Lanes sounds")]
     public AudioClip LaneSound1;

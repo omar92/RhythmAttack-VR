@@ -7,22 +7,26 @@ public class MidiHandler : MonoBehaviour
 {
 
     public LevelSounds levelSounds;
-
+    public string tracksResurcesFolder;
     public UnityEvent OnInitDone;
     public void InitMidi()
     {
-        MidiPlayerInitialiser.Init(levelSounds.DefenceMIDI);
+        var tracksPaths = new string[]
+        {
+            tracksResurcesFolder+levelSounds.DefenceMIDI,
+            tracksResurcesFolder+levelSounds.DefenceMIDI
+        };
+        MidiPlayerInitialiser.Init(tracksPaths);
 
         string[] tracks = new string[2];
         tracks[0] = levelSounds.DefenceMIDI;
         tracks[1] = levelSounds.AttackMIDI;
-       // = MidiPlayerInitialiser.GetTracksLocations(levelSounds.DefenceMIDI);
-        Dictionary<int, int> trackMapper = new Dictionary<int, int>();
-        // Debug.Log("-----------------------------------------------");
-        //  for (int i = 0; i < tracks.Length; i++)
-        // {
-            int i=1; //update this
-            var notes = MidiAnalyiser.GetMidiNotesTypes(tracks[i]);
+
+        Dictionary<int, int> trackMapper;
+        for (int i = 0; i < tracks.Length; i++)
+        {
+            trackMapper = new Dictionary<int, int>();
+            var notes = MidiAnalyiser.GetMidiNotesTypes(tracksResurcesFolder + tracks[i]);
             Array.Sort(notes);
             for (int x = 0; x < notes.Length; x++)
             {
@@ -31,7 +35,7 @@ public class MidiHandler : MonoBehaviour
             }
             GlobalData.tracksNotesLanesMaper.Add(trackMapper);
             Debug.Log("-----------------------------------------------");
-      //  }
+        }
         OnInitDone.Invoke();
 
     }
