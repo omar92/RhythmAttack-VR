@@ -12,7 +12,6 @@ public class VRController : MonoBehaviour
 
     //Private
     VRTK_ControllerEvents trackObject = null;
-    VRTK_ControllerReference controllerReference = null;
 
 
 
@@ -23,7 +22,6 @@ public class VRController : MonoBehaviour
     void Awake()
     {
         trackObject = GetComponent<VRTK_ControllerEvents>();
-        controllerReference = VRTK_ControllerReference.GetControllerReference(gameObject);
         //register events
         trackObject.TriggerPressed += GripPressed;
         trackObject.TriggerReleased += GripReleased;
@@ -31,7 +29,7 @@ public class VRController : MonoBehaviour
     }
     private void GripPressed(object sender, ControllerInteractionEventArgs e)
     {
-        Viprate();
+       // Viprate();
         ExcuteInChildren((child) =>
         {
             child.OnTrigger(true);

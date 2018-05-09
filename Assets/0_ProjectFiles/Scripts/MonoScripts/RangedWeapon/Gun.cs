@@ -5,6 +5,7 @@ public class Gun : MonoBehaviour, IControllable {
     public float damage = 35;
     public float range = 100f;
     public float fireRate = 15f;
+    public float destroyAfter = 4f;
     float nextTimeToFire = 0f; 
     public Rigidbody projectile;
 
@@ -19,7 +20,8 @@ public class Gun : MonoBehaviour, IControllable {
 
     void Shoot()
     {
-        if(this.gameObject.activeInHierarchy == true)
+        
+        if (this.gameObject.activeInHierarchy == true)
         {
             RaycastHit hit;
             Rigidbody clone;
@@ -34,6 +36,7 @@ public class Gun : MonoBehaviour, IControllable {
                     target.isHited(damage);
                 }
             }
+            Destroy(clone, destroyAfter);
         }
     }
 }
