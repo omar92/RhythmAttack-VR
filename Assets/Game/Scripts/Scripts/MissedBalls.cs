@@ -9,7 +9,7 @@ public class MissedBalls : MonoBehaviour {
     public GameEvent noteMissedE;
     public GameEvent LoseE;
 
-    private void OnTriggerEnter(Collider collision)
+    void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Note")
         {
