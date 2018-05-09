@@ -6,7 +6,8 @@ public class Emitter : MonoBehaviour
     public Transform EventEmitter;
     public EventsNoteScript eventNotePref;
     public static Emitter inistance = null;
-    
+
+    public FloatVariable currentTrackIndex;
 
     [Header("GameEvents")]
     public GameEvent startBgMusicE;
@@ -40,7 +41,7 @@ public class Emitter : MonoBehaviour
 
     void SpawnNote(MidiNoteAudio note)
     {
-        var em = GetLane(GlobalData.tracksNotesLanesMaper[0][note.note.Midi]);
+        var em = GetLane(GlobalData.tracksNotesLanesMaper[(int)currentTrackIndex.value][note.note.Midi]);
         NoteScript clone = NotesPoolScript.inistance.PullNote(em.position, note);
     }
 

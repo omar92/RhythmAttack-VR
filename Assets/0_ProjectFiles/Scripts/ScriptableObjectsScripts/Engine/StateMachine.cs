@@ -5,8 +5,10 @@ using UnityEngine;
 public class StateMachine : ScriptableObject
 {
 
+    private GameState PrePreviousState;
     public GameState previousState;
     public GameState currentState;
+    public GameState PauseState;
 
     public void ChangeStateForced(GameState newState, bool alowReloadCurrent = false)
     {
@@ -14,13 +16,28 @@ public class StateMachine : ScriptableObject
 
         if (currentState != null)
         {
-            currentState.OnExit();
+            if (newState == PauseState)
+            {
+                currentState.OnPause();
+            }
+            else
+            {
+                currentState.OnExit();
+            }
         }
 
+        PrePreviousState = previousState;
         previousState = currentState;
         currentState = newState;
-        Debug.LogWarning("state changed:" + currentState);
-        currentState.OnEnter();
+
+        if (previousState == PauseState && PrePreviousState == newState)
+        {
+            currentState.OnUnPause();
+        }
+        else
+        {
+            currentState.OnEnter();
+        }
     }
 
     internal void Init()

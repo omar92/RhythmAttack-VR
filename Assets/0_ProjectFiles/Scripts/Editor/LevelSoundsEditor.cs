@@ -48,8 +48,9 @@ public class LevelSoundsEditor : Editor
         GUILayout.Label("Midi: " + me.DefenceMIDI);
         if (GUILayout.Button("DefenceMIDI"))
         {
-            string selectedFile = EditorUtility.OpenFilePanel("Open and import Midi file", "Assets/Game/Resources/Tracks/", "mid");
-            me.DefenceMIDI = selectedFile;
+            string selectedFile = EditorUtility.OpenFilePanel("Open and import Midi file", "Assets/0_ProjectFiles/Resources/Tracks/", "mid");
+            var trimIndex = selectedFile.IndexOf("/Resources/");
+            me.DefenceMIDI = selectedFile.Remove(0, trimIndex + "/Resources/".Length);
         }
 
         EditorGUILayout.PropertyField(AttackBG);
@@ -57,8 +58,9 @@ public class LevelSoundsEditor : Editor
         GUILayout.Label("Midi: " + me.AttackMIDI);
         if (GUILayout.Button("AttackMIDI"))
         {
-            string selectedFile = EditorUtility.OpenFilePanel("Open and import Midi file", "Assets/Game/Resources/Tracks/", "mid");
-            me.AttackMIDI = selectedFile;
+            string selectedFile = EditorUtility.OpenFilePanel("Open and import Midi file", "Assets/0_ProjectFiles/Resources/Tracks/", "mid");
+            var trimIndex = selectedFile.IndexOf("/Resources/");
+            me.AttackMIDI = selectedFile.Remove(0, trimIndex + "/Resources/".Length);
         }
 
         EditorGUILayout.PropertyField(LaneSound1);

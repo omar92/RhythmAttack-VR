@@ -14,7 +14,7 @@ public class InitialState : IState
         {
             midiPLayer.enabled = false;
         }
-        MidiPlayerInitialiser.Init("Assets/Game/Resources/Tracks/");
+       // MidiPlayerInitialiser.Init("Assets/Game/Resources/Tracks/");
 
         var tracks = MidiPlayerInitialiser.GetTracksLocations("Assets/Game/Resources/Tracks/");
         Dictionary<int, int> trackMapper = new Dictionary<int, int>();
