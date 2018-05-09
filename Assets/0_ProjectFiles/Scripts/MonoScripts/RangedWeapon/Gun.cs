@@ -5,7 +5,9 @@ public class Gun : MonoBehaviour, IControllable {
     public float damage = 35;
     public float range = 100f;
     public float fireRate = 15f;
-    public float destroyAfter = 4f;
+    public float destroyAfter = 0.1f;
+    public GameEvent ballCaut;
+    public GameEvent GunVibrate;
     float nextTimeToFire = 0f; 
     public Rigidbody projectile;
 
@@ -20,7 +22,7 @@ public class Gun : MonoBehaviour, IControllable {
 
     void Shoot()
     {
-        
+        GunVibrate.Raise();
         if (this.gameObject.activeInHierarchy == true)
         {
             RaycastHit hit;
