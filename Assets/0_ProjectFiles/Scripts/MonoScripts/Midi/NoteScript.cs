@@ -53,9 +53,9 @@ public class NoteScript : MonoBehaviour
     //{
     //    return (collisionPoint - transform.position).normalized;
     //}
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Sword")
+        if (other.tag == "Sword")
         {
             if (SwordSpeed.value > settings.minCutSpeed)
             {
