@@ -38,7 +38,7 @@ public class Gun : MonoBehaviour, IControllable {
                     target.isHited(damage);
                 }
             }
-            Destroy(clone, destroyAfter);
+            Destroy(clone.gameObject, destroyAfter);
         }
     }
 }

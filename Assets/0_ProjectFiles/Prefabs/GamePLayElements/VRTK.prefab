@@ -8676,7 +8676,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1331767906524832}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64e104da36bd3b04b90c6ae969ac66dc, type: 3}
   m_Name: 
@@ -9108,7 +9108,7 @@ MonoBehaviour:
   AssociatedTransform: {fileID: 11400000, guid: 789aab7795bfdfc4eb31853811048bc1,
     type: 2}
   strength: 2
-  duration: 0.01
+  duration: 0.1
   interval: 0.01
 --- !u!114 &114372909471517788
 MonoBehaviour:
@@ -9631,7 +9631,7 @@ MonoBehaviour:
   AssociatedTransform: {fileID: 11400000, guid: 8fa3a180450839241bba7be7281e0fcc,
     type: 2}
   strength: 2
-  duration: 0.01
+  duration: 0.1
   interval: 0.01
 --- !u!114 &114541912958266118
 MonoBehaviour:
@@ -9686,7 +9686,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1331767906524832}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 65eb64f0f2fd6d64faddbcf5d7d3bdbb, type: 3}
   m_Name: 
@@ -10241,7 +10241,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1331767906524832}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 947b27445602ed640b885db7e667dfc1, type: 3}
   m_Name: 

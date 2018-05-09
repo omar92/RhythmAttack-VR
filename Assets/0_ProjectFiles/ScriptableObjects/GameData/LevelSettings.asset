@@ -11,7 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 205b3ef3646ef5e4c9943ede3aeb1185, type: 3}
   m_Name: LevelSettings
   m_EditorClassIdentifier: 
-  PLayerHealth: 100
+  PlayerHealth: 100
   BossHealth: 100
-  NoteVelocity: 10
-  GunDamage: 10
+  NoteVelocity: 9.22
+  GunDamage: 15
+  minCutSpeed: 1

@@ -14,7 +14,7 @@ public class MidiHandler : MonoBehaviour
         var tracksPaths = new string[]
         {
             tracksResurcesFolder+levelSounds.DefenceMIDI,
-            tracksResurcesFolder+levelSounds.DefenceMIDI
+            tracksResurcesFolder+levelSounds.AttackMIDI
         };
         MidiPlayerInitialiser.Init(tracksPaths);
 

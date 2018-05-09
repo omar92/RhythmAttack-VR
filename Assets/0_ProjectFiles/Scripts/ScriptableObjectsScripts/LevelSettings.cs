@@ -7,12 +7,9 @@ using UnityEditor;
 public class LevelSettings : ScriptableObject
 {
     [Header("Level Settings")]
-    public float PLayerHealth;
+    public float PlayerHealth;
     public float BossHealth;
     public float NoteVelocity;
     public float GunDamage;
-
-
-
-
+    public float minCutSpeed;
 }

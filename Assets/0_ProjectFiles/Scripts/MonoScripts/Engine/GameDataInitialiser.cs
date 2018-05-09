@@ -18,7 +18,7 @@ public class GameDataInitialiser : MonoBehaviour
     public void InitGameData()
     {
         //
-        PlayerHealth.value = levelSettings.PLayerHealth;
+        PlayerHealth.value = levelSettings.PlayerHealth;
         BossHealth.value = levelSettings.BossHealth;
 
         //clean

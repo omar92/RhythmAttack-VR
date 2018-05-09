@@ -11,4 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32b1699c4b414a244ad6cb6eb491f853, type: 3}
   m_Name: RHand
   m_EditorClassIdentifier: 
-  value: 0
+  value: 1
