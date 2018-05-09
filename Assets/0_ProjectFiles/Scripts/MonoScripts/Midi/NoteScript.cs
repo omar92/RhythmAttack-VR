@@ -57,7 +57,7 @@ public class NoteScript : MonoBehaviour
     {
         if (other.tag == "Sword")
         {
-            if (SwordSpeed.value > 2)
+            if (SwordSpeed.value > settings.minCutSpeed)
             {
                 ballCut.Raise();
                 rb.GetComponent<Renderer>().enabled = false;
