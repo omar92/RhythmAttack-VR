@@ -314,6 +314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelSounds: {fileID: 11400000, guid: a62e54a43c358844fad19af3775780de, type: 2}
+  tracksResurcesFolder: Assets/0_ProjectFiles/Resources/
   OnInitDone:
     m_PersistentCalls:
       m_Calls:
