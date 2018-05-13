@@ -26,11 +26,11 @@ public class VRController : MonoBehaviour
     {
         trackObject = GetComponent<VRTK_ControllerEvents>();
         //register events
-        trackObject.TriggerPressed += GripPressed;
+        trackObject.TriggerPressed += TriggerTouch;
         trackObject.TriggerReleased += GripReleased;
 
     }
-    private void GripPressed(object sender, ControllerInteractionEventArgs e)
+    private void TriggerTouch(object sender, ControllerInteractionEventArgs e)
     {
        // Viprate();
         ExcuteInChildren((child) =>
