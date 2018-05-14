@@ -27,7 +27,7 @@ public class Sword : MonoBehaviour
         currentPos.value = transform.position;
         speed.value = (currentPos.value - previuosPos).magnitude / Time.deltaTime;
         previuosPos = currentPos.value;
-        VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(transform.parent.gameObject), speed.value, 0.20f, speed.value/10f);
+        VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(transform.parent.gameObject), speed.value, speed.value/3f, speed.value/10f);
     }
 
     private void OnCollisionEnter(Collision collision)
