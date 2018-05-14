@@ -9,15 +9,15 @@ public class SlashDirection : MonoBehaviour {
     private Vector3 firstcollisionPoint;
     private Vector3 secondcollisionPoint;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Sword")
+        if (other.tag == "Sword")
         {
-            firstcollisionPoint = collision.contacts[0].point;
-            secondcollisionPoint= collision.contacts[collision.contacts.Length-1].point;
+            //firstcollisionPoint = other.contacts[0].point;
+            //secondcollisionPoint= collision.contacts[collision.contacts.Length-1].point;
 
-            Debug.Log("first collision point x "+firstcollisionPoint.x+" second collision point y "+ secondcollisionPoint.y);
-            //hitDirection.value = SwordDirection(collisionPoint);
+            //Debug.Log("first collision point x "+firstcollisionPoint.x+" second collision point y "+ secondcollisionPoint.y);
+            ////hitDirection.value = SwordDirection(collisionPoint);
         }
     }
 
@@ -27,5 +27,6 @@ public class SlashDirection : MonoBehaviour {
     //    return (collisionPoint - transform.position).normalized;
     //}
 
+    
 
 }
