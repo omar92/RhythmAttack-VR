@@ -12,27 +12,31 @@ public class SlashDirection : MonoBehaviour {
 
     Vector3 hitDirection;
     Vector3 multiplcationScale;
+    Vector3 secondHitPoint;
 
-    private void Start()
+    public Transform cam;
+    public Vector3 localPoint;
+
+    void Start()
     {
+        cam = Camera.main.transform;
+        localPoint = cam.InverseTransformPoint(transform.position);
+
         multiplcationScale = GetComponent<BoxCollider>().size;
+
     }
+    
     private void OnTriggerEnter(Collider other)
     {
-        positionBeforeTrigger = swordPosition.value;
+        
         
         if (other.tag == "Sword")
         {
+            positionBeforeTrigger = swordPosition.value;
             positionOnTrigger = other.transform.position;
+            hitDirection = (positionBeforeTrigger - positionBeforeTrigger).normalized;
+            secondHitPoint = hitDirection * multiplcationScale.x;
 
-
-
-             
-            //firstcollisionPoint = other.contacts[0].point;
-            //secondcollisionPoint= collision.contacts[collision.contacts.Length-1].point;
-
-            //Debug.Log("first collision point x "+firstcollisionPoint.x+" second collision point y "+ secondcollisionPoint.y);
-            ////hitDirection.value = SwordDirection(collisionPoint);
         }
     }
 
