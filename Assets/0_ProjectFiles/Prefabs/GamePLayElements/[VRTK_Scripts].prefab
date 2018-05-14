@@ -1939,6 +1939,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vrControllerType: 0
   slashSpeed: {fileID: 11400000, guid: a8cb140f65888414e873a5e88f7c974d, type: 2}
+  settings: {fileID: 11400000, guid: b9631101d1d296346a4108d7517f2217, type: 2}
   strength: 2
   duration: 0.1
   interval: 0.01
@@ -2007,6 +2008,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vrControllerType: 1
   slashSpeed: {fileID: 11400000, guid: a8cb140f65888414e873a5e88f7c974d, type: 2}
+  settings: {fileID: 11400000, guid: b9631101d1d296346a4108d7517f2217, type: 2}
   strength: 2
   duration: 0.1
   interval: 0.01

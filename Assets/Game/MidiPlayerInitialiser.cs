@@ -74,7 +74,7 @@ public class MidiPlayerInitialiser
     {
         try
         {
-            Debug.Log("Delete " + filepath);
+            //Debug.Log("Delete " + filepath);
             File.Delete(filepath);
             // delete also meta
             string meta = filepath + ".meta";

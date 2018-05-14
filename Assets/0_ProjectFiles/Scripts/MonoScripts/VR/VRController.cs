@@ -10,6 +10,7 @@ public class VRController : MonoBehaviour
     public VRControllersTypes vrControllerType;
     //public TransformVariable AssociatedTransform;
     public FloatVariable slashSpeed;
+    public LevelSettings settings;
     public float strength = 1f;
     public float duration = 0.2f;
     public float interval = 0.01f;
@@ -62,7 +63,7 @@ public class VRController : MonoBehaviour
 
     public void ViprateNote()
     {
-        VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(gameObject), slashSpeed.value, duration, interval);   
+        VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(gameObject), strength, duration, interval);   
     }
     public void ViprateGun()
     {
