@@ -16,6 +16,7 @@ public class Sword : MonoBehaviour
     AudioSource audioSource;
     //public VRTK_ControllerReference VRTK_Controller; 
 
+
     
     void Start()
     {
@@ -26,18 +27,16 @@ public class Sword : MonoBehaviour
 
     void Update()
     {
-<<<<<<< HEAD
         currentPos.value = transform.position;
         speed.value = (currentPos.value - previuosPos).magnitude / Time.deltaTime;
         previuosPos = currentPos.value;
        // Debug.Log(" controler speed = " + speed);
-=======
-        currentPos = transform.position;
-        speed.value = (currentPos - previuosPos).magnitude / Time.deltaTime;
-        previuosPos = currentPos;
+        currentPos.value = transform.position;
+        speed.value = (currentPos.value - previuosPos).magnitude / Time.deltaTime;
+        previuosPos = currentPos.value;
         VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(gameObject), speed.value, speed.value/3f, speed.value/10f);
         // Debug.Log(" controler speed = " + speed);
->>>>>>> a5121129540b783356d253d719e5e1f63e7e8b6f
+
 
     }
 
