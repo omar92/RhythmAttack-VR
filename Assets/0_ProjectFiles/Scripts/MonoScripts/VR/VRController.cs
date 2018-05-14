@@ -62,7 +62,7 @@ public class VRController : MonoBehaviour
 
     public void ViprateNote()
     {
-        VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(gameObject), strength, duration, interval);   
+        VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(gameObject), strength, 0.009f, interval-.009f);   
     }
     public void ViprateGun()
     {
