@@ -8345,7 +8345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e104da36bd3b04b90c6ae969ac66dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customColliderContainer: {fileID: 1768116399075382}
+  customColliderContainer: {fileID: 0}
 --- !u!114 &114145415349781874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8681,7 +8681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e104da36bd3b04b90c6ae969ac66dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customColliderContainer: {fileID: 1765125031641148}
+  customColliderContainer: {fileID: 0}
 --- !u!114 &114248149596463292
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8739,8 +8739,8 @@ MonoBehaviour:
   actualHeadset: {fileID: 1602922169117064}
   actualLeftController: {fileID: 1935408420946460}
   actualRightController: {fileID: 1119947933435728}
-  modelAliasLeftController: {fileID: 1632699483822974}
-  modelAliasRightController: {fileID: 1430687171807962}
+  modelAliasLeftController: {fileID: 0}
+  modelAliasRightController: {fileID: 0}
   cachedSystemSDKInfo:
     baseTypeName: VRTK.SDK_BaseSystem
     fallbackTypeName: VRTK.SDK_FallbackSystem
@@ -8812,7 +8812,7 @@ MonoBehaviour:
   grabPrecognition: 0
   throwMultiplier: 1
   createRigidBodyWhenNotTouching: 0
-  controllerAttachPoint: {fileID: 54970469360285900}
+  controllerAttachPoint: {fileID: 0}
   controllerEvents: {fileID: 0}
   interactTouch: {fileID: 0}
 --- !u!114 &114294849633222824
@@ -9107,6 +9107,7 @@ MonoBehaviour:
   vrControllerType: 1
   AssociatedTransform: {fileID: 11400000, guid: 789aab7795bfdfc4eb31853811048bc1,
     type: 2}
+  slashSpeed: {fileID: 11400000, guid: a8cb140f65888414e873a5e88f7c974d, type: 2}
   strength: 2
   duration: 0.1
   interval: 0.01
@@ -9594,8 +9595,8 @@ MonoBehaviour:
   actualHeadset: {fileID: 1263816063007210}
   actualLeftController: {fileID: 1691407709148610}
   actualRightController: {fileID: 1136270563926518}
-  modelAliasLeftController: {fileID: 1632699483822974}
-  modelAliasRightController: {fileID: 1430687171807962}
+  modelAliasLeftController: {fileID: 0}
+  modelAliasRightController: {fileID: 0}
   cachedSystemSDKInfo:
     baseTypeName: VRTK.SDK_BaseSystem
     fallbackTypeName: VRTK.SDK_FallbackSystem
@@ -9630,6 +9631,7 @@ MonoBehaviour:
   vrControllerType: 0
   AssociatedTransform: {fileID: 11400000, guid: 8fa3a180450839241bba7be7281e0fcc,
     type: 2}
+  slashSpeed: {fileID: 11400000, guid: a8cb140f65888414e873a5e88f7c974d, type: 2}
   strength: 2
   duration: 0.1
   interval: 0.01
@@ -9877,8 +9879,8 @@ MonoBehaviour:
   actualHeadset: {fileID: 1467266998771982}
   actualLeftController: {fileID: 1841140848636710}
   actualRightController: {fileID: 1313874271674734}
-  modelAliasLeftController: {fileID: 1632699483822974}
-  modelAliasRightController: {fileID: 1430687171807962}
+  modelAliasLeftController: {fileID: 0}
+  modelAliasRightController: {fileID: 0}
   cachedSystemSDKInfo:
     baseTypeName: VRTK.SDK_BaseSystem
     fallbackTypeName: VRTK.SDK_FallbackSystem
@@ -10250,7 +10252,7 @@ MonoBehaviour:
   grabPrecognition: 0
   throwMultiplier: 1
   createRigidBodyWhenNotTouching: 0
-  controllerAttachPoint: {fileID: 54492062979921354}
+  controllerAttachPoint: {fileID: 0}
   controllerEvents: {fileID: 0}
   interactTouch: {fileID: 0}
 --- !u!114 &114772658749120412
