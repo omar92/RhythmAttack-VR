@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MissedBalls : MonoBehaviour {
+public class MissedBalls : MonoBehaviour
+{
 
     //public GameObject healthCapsules; 
     public FloatVariable playerHealth;
@@ -17,8 +18,11 @@ public class MissedBalls : MonoBehaviour {
         {
             if (playerHealth.value > 0)
             {
-                    playerHealth.value -= levelSettings.MissNoteDamage;
-
+                playerHealth.value -= levelSettings.MissNoteDamage;
+                if (playerHealth.value < 0)
+                {
+                    playerHealth.value = 0;
+                }
             }
             else
 
@@ -28,6 +32,6 @@ public class MissedBalls : MonoBehaviour {
             playerHealthChangeE.Raise();
             noteMissedE.Raise();
         }
-        
+
     }
 }

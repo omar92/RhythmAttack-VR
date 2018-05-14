@@ -10,6 +10,10 @@ public class PlayerHealthRegeneration : MonoBehaviour {
     public void HealPlayer()
     {
         playerHealth.value += levelSettings.PlayerHealValue;
+        if(playerHealth.value> levelSettings.PlayerHealth)
+        {
+            playerHealth.value = levelSettings.PlayerHealth;
+        }
         playerHealthChangeE.Raise();
     }
 }
