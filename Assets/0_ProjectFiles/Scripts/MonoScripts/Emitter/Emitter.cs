@@ -12,7 +12,7 @@ public class Emitter : MonoBehaviour
     [Header("GameEvents")]
     public GameEvent startBgMusicE;
     public GameEvent stopBgMusicE;
-   // public UnityEvent OnDone;
+    // public UnityEvent OnDone;
 
     public void Awake()
     {
@@ -38,11 +38,12 @@ public class Emitter : MonoBehaviour
         SpawnNote(noteAudio);
     }
 
-
+    int laneNum;
     void SpawnNote(MidiNoteAudio note)
     {
-        var em = GetLane(GlobalData.tracksNotesLanesMaper[(int)currentTrackIndex.value][note.note.Midi]);
-        NoteScript clone = NotesPoolScript.inistance.PullNote(em.position, note);
+        laneNum = GlobalData.tracksNotesLanesMaper[(int)currentTrackIndex.value][note.note.Midi];
+        var em = GetLane(laneNum);
+        NoteScript clone = NotesPoolScript.inistance.PullNote(em.position, laneNum);
     }
 
 
@@ -52,7 +53,7 @@ public class Emitter : MonoBehaviour
     }
     Transform GetLane(int index)
     {
-        return GetLane((index / (transform.GetChild(0).childCount)), index);
+        return GetLane((index / (transform.GetChild(0).childCount)), index % transform.GetChild(0).childCount);
     }
 
     public void EmitEvent(GameEvent gameEvent)

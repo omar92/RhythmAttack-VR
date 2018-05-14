@@ -11,14 +11,7 @@ public class LevelSoundsEditor : Editor
     SerializedProperty AttackBG;
     SerializedProperty AttackMIDI;
 
-    SerializedProperty LaneSound1;
-    SerializedProperty LaneSound2;
-    SerializedProperty LaneSound3;
-    SerializedProperty LaneSound4;
-    SerializedProperty LaneSound5;
-    SerializedProperty LaneSound6;
-    SerializedProperty LaneSound7;
-    SerializedProperty LaneSound8;
+    SerializedProperty LaneSounds;
 
     void OnEnable()
     {
@@ -28,14 +21,8 @@ public class LevelSoundsEditor : Editor
         AttackBG = serializedObject.FindProperty("AttackBG");
         AttackMIDI = serializedObject.FindProperty("AttackMIDI");
 
-        LaneSound1 = serializedObject.FindProperty("LaneSound1");
-        LaneSound2 = serializedObject.FindProperty("LaneSound2");
-        LaneSound3 = serializedObject.FindProperty("LaneSound3");
-        LaneSound4 = serializedObject.FindProperty("LaneSound4");
-        LaneSound5 = serializedObject.FindProperty("LaneSound5");
-        LaneSound6 = serializedObject.FindProperty("LaneSound6");
-        LaneSound7 = serializedObject.FindProperty("LaneSound7");
-        LaneSound8 = serializedObject.FindProperty("LaneSound8");
+        LaneSounds = serializedObject.FindProperty("LaneSounds");
+
     }
 
     public override void OnInspectorGUI()
@@ -63,17 +50,12 @@ public class LevelSoundsEditor : Editor
             me.AttackMIDI = selectedFile.Remove(0, trimIndex + "/Resources/".Length);
         }
 
-        EditorGUILayout.PropertyField(LaneSound1);
-        EditorGUILayout.PropertyField(LaneSound2);
-        EditorGUILayout.PropertyField(LaneSound3);
-        EditorGUILayout.PropertyField(LaneSound4);
-        EditorGUILayout.PropertyField(LaneSound5);
-        EditorGUILayout.PropertyField(LaneSound6);
-        EditorGUILayout.PropertyField(LaneSound7);
-        EditorGUILayout.PropertyField(LaneSound8);
-
-
-
+        //to display array
+        EditorGUI.BeginChangeCheck();
+        SerializedProperty LaneSounds = serializedObject.FindProperty("LaneSounds");   
+        EditorGUILayout.PropertyField(LaneSounds, true);
+        if (EditorGUI.EndChangeCheck())
+            serializedObject.ApplyModifiedProperties();
 
         serializedObject.ApplyModifiedProperties();
     }

@@ -23,6 +23,10 @@ public class EventsNoteScript : MonoBehaviour
         this.gameEvent = gameEvent;
     }
 
+    public void Hide()
+    {
+        Destroy(gameObject);
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (gameEvent != null)
