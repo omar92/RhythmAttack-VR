@@ -14,14 +14,12 @@ public class Sword : MonoBehaviour
     public Vector3Variable currentPos;
     Vector3 previuosPos;
     AudioSource audioSource;
-    //public VRTK_ControllerReference VRTK_Controller; 
 
     
     void Start()
     {
         previuosPos = Vector3.zero;
         audioSource = GetComponent<AudioSource>();
-        //VRTK_Controller = GetComponent<VRTK_ControllerReference>();
     }
 
     void Update()
@@ -29,7 +27,7 @@ public class Sword : MonoBehaviour
         currentPos.value = transform.position;
         speed.value = (currentPos.value - previuosPos).magnitude / Time.deltaTime;
         previuosPos = currentPos.value;
-        VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(gameObject), speed.value, speed.value/3f, speed.value/10f);
+        VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(transform.parent.gameObject), speed.value, speed.value/3f, speed.value/10f);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -46,7 +44,6 @@ public class Sword : MonoBehaviour
         {
             ballCut.Raise();
             swordCut.Raise();
-            //VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_Controller, 1f, 1f, 1f);
             NoteScript sc = other.GetComponent<NoteScript>();
             audioSource.Play();
         }

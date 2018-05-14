@@ -8,7 +8,7 @@ public class VRController : MonoBehaviour
 
     //public
     public VRControllersTypes vrControllerType;
-    public TransformVariable AssociatedTransform;
+    //public TransformVariable AssociatedTransform;
     public FloatVariable slashSpeed;
     public float strength = 1f;
     public float duration = 0.2f;
@@ -49,10 +49,10 @@ public class VRController : MonoBehaviour
 
     void ExcuteInChildren(Action<IControllable> action)
     {
-        ChildCount = AssociatedTransform.value.childCount;
+        ChildCount = transform.childCount;
         for (int i = 0; i < ChildCount; i++)
         {
-            child = AssociatedTransform.value.GetChild(i).GetComponent<IControllable>();
+            child = transform.GetChild(i).GetComponent<IControllable>();
             if (child != null)
             {
                 action(child);
@@ -68,19 +68,5 @@ public class VRController : MonoBehaviour
     {
         VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(gameObject), strength, duration, interval);
     }
-    void FixedUpdate()
-    {
-        AssociatedTransform.value.position = transform.position;
-        AssociatedTransform.value.rotation = transform.rotation;
-    }
-    void Update()
-    {
-        AssociatedTransform.value.position = transform.position;
-        AssociatedTransform.value.rotation = transform.rotation;
-    }
-    private void LateUpdate()
-    {
-        AssociatedTransform.value.position = transform.position;
-        AssociatedTransform.value.rotation = transform.rotation;
-    }
+
 }

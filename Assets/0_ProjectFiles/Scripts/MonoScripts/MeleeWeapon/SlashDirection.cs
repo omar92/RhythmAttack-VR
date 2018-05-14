@@ -32,11 +32,14 @@ public class SlashDirection : MonoBehaviour {
         
         if (other.tag == "Sword")
         {
-            positionBeforeTrigger = swordPosition.value;
-            positionOnTrigger = other.transform.position;
+            positionBeforeTrigger = cam.InverseTransformPoint(swordPosition.value);
+            positionOnTrigger = cam.InverseTransformPoint(other.transform.position);
             hitDirection = (positionBeforeTrigger - positionBeforeTrigger).normalized;
             secondHitPoint = hitDirection * multiplcationScale.x;
 
+            //Debug.Log("positionBeforeTrigger "+positionBeforeTrigger);
+            //Debug.Log("positionOnTrigger "+positionOnTrigger);
+            //Debug.Log("hitDirection " + hitDirection);
         }
     }
 
