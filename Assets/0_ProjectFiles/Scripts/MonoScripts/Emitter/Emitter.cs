@@ -18,15 +18,17 @@ public class Emitter : MonoBehaviour
     public void Awake()
     {
         inistance = this;
+    }
 
+     void Start()
+    {
         var eventCollectorPos = EventEmitter.position;
-        //var player = GameObject.FindGameObjectWithTag("Player");
         eventCollectorPos.z = player.value.position.z;
         var emitter = GameObject.Instantiate(EventEmitter, eventCollectorPos, Quaternion.identity);
         emitter.gameObject.AddComponent<EmitterEventsCollector>();
         emitter.GetComponent<Collider>().enabled = true;
-    }
 
+    }
     public void StartEmitiing()
     {
         EmitEvent(startBgMusicE);

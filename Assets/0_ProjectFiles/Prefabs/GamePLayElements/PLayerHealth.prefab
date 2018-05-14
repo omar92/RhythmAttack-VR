@@ -80,7 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: {fileID: 11400000, guid: 5fdbe49796ff73d46be7eace4c49cd45, type: 2}
   level: {fileID: 11400000, guid: b9631101d1d296346a4108d7517f2217, type: 2}
-  isPLayer: 0
+  isPLayer: 1
 --- !u!114 &114536638075810062
 MonoBehaviour:
   m_ObjectHideFlags: 1
