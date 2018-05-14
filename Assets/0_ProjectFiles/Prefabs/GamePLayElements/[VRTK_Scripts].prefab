@@ -129,6 +129,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4264368660939974}
+  - component: {fileID: 114155869341936244}
   m_Layer: 0
   m_Name: '[VRTK_Scripts]'
   m_TagString: Untagged
@@ -1893,7 +1894,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114139724409474552}
         m_MethodName: ViprateNote
         m_Mode: 1
         m_Arguments:
@@ -1941,6 +1942,43 @@ MonoBehaviour:
   strength: 2
   duration: 0.1
   interval: 0.01
+--- !u!114 &114155869341936244
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1138175417146478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e5f2bf92209b7847b9193795fa716fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnAwake:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 2a328382eac28d44492407695e84a265, type: 2}
+        m_MethodName: SetValue
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4264368660939974}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnStart:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114179137280758238
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2224,7 +2262,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114139724409474552}
         m_MethodName: ViprateGun
         m_Mode: 1
         m_Arguments:
@@ -2320,7 +2358,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114203663802683250}
         m_MethodName: ViprateNote
         m_Mode: 1
         m_Arguments:
@@ -2389,7 +2427,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114203663802683250}
         m_MethodName: ViprateGun
         m_Mode: 1
         m_Arguments:
