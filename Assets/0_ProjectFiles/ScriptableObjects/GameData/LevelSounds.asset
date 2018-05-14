@@ -15,11 +15,12 @@ MonoBehaviour:
   DefenceMIDI: Tracks/midi for bg.mid
   AttackBG: {fileID: 8300000, guid: 68aa19f52a857b64c86dfaba88fa713e, type: 3}
   AttackMIDI: Tracks/midi for bg.mid
-  LaneSound1: {fileID: 8300000, guid: ddb2c183acfd788419583254cd853e26, type: 3}
-  LaneSound2: {fileID: 8300000, guid: ddb2c183acfd788419583254cd853e26, type: 3}
-  LaneSound3: {fileID: 8300000, guid: ddb2c183acfd788419583254cd853e26, type: 3}
-  LaneSound4: {fileID: 8300000, guid: ddb2c183acfd788419583254cd853e26, type: 3}
-  LaneSound5: {fileID: 8300000, guid: ddb2c183acfd788419583254cd853e26, type: 3}
-  LaneSound6: {fileID: 8300000, guid: ddb2c183acfd788419583254cd853e26, type: 3}
-  LaneSound7: {fileID: 8300000, guid: ddb2c183acfd788419583254cd853e26, type: 3}
-  LaneSound8: {fileID: 8300000, guid: ddb2c183acfd788419583254cd853e26, type: 3}
+  LaneSounds:
+  - {fileID: 8300000, guid: ddb2c183acfd788419583254cd853e26, type: 3}
+  - {fileID: 8300000, guid: ddb2c183acfd788419583254cd853e26, type: 3}
+  - {fileID: 8300000, guid: ddb2c183acfd788419583254cd853e26, type: 3}
+  - {fileID: 8300000, guid: ddb2c183acfd788419583254cd853e26, type: 3}
+  - {fileID: 8300000, guid: ddb2c183acfd788419583254cd853e26, type: 3}
+  - {fileID: 8300000, guid: ddb2c183acfd788419583254cd853e26, type: 3}
+  - {fileID: 8300000, guid: ddb2c183acfd788419583254cd853e26, type: 3}
+  - {fileID: 8300000, guid: ddb2c183acfd788419583254cd853e26, type: 3}
