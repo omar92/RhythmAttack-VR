@@ -5,6 +5,7 @@ public class Emitter : MonoBehaviour
 {
     public Transform EventEmitter;
     public EventsNoteScript eventNotePref;
+    public TransformVariable player;
     public static Emitter inistance = null;
 
     public FloatVariable currentTrackIndex;
@@ -19,8 +20,8 @@ public class Emitter : MonoBehaviour
         inistance = this;
 
         var eventCollectorPos = EventEmitter.position;
-        var player = GameObject.FindGameObjectWithTag("Player");
-        eventCollectorPos.z = player.transform.position.z;
+        //var player = GameObject.FindGameObjectWithTag("Player");
+        eventCollectorPos.z = player.value.position.z;
         var emitter = GameObject.Instantiate(EventEmitter, eventCollectorPos, Quaternion.identity);
         emitter.gameObject.AddComponent<EmitterEventsCollector>();
         emitter.GetComponent<Collider>().enabled = true;

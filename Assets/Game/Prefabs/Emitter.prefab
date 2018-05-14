@@ -806,6 +806,7 @@ MonoBehaviour:
   EventEmitter: {fileID: 4759805464520270}
   eventNotePref: {fileID: 114718006405924004, guid: 9a06d2522e7546c428ae450546e40842,
     type: 2}
+  player: {fileID: 11400000, guid: 2a328382eac28d44492407695e84a265, type: 2}
   currentTrackIndex: {fileID: 11400000, guid: 22293211273e6d140a31d1cbcdfd54f9, type: 2}
   startBgMusicE: {fileID: 11400000, guid: 74c0754ad01f5fd429f4dd7576b2e6aa, type: 2}
   stopBgMusicE: {fileID: 11400000, guid: 78a79799fb8a83c478123b03948d79ec, type: 2}
