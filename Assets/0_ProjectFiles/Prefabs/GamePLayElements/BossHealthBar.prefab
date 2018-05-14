@@ -61,8 +61,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f32f4bde991ecc42944ab1d948ba711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BossHealth: {fileID: 11400000, guid: ff2ce29ae32063f428957af63590ee04, type: 2}
+  Health: {fileID: 11400000, guid: ff2ce29ae32063f428957af63590ee04, type: 2}
   level: {fileID: 11400000, guid: b9631101d1d296346a4108d7517f2217, type: 2}
+  isPLayer: 0
 --- !u!114 &114173473216008124
 MonoBehaviour:
   m_ObjectHideFlags: 1

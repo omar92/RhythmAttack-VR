@@ -7,8 +7,10 @@ public class HealthBarControll : MonoBehaviour
 {
 
 
-    public FloatVariable BossHealth;
+    public FloatVariable Health;
     public LevelSettings level;
+
+    public bool isPLayer = false;
 
     Image bar;
 
@@ -20,6 +22,13 @@ public class HealthBarControll : MonoBehaviour
 
     public void ChangeHealth()
     {
-        bar.fillAmount = BossHealth.value / level.BossHealth;
+        if (isPLayer)
+        {
+            bar.fillAmount = Health.value / level.PlayerHealth;
+        }
+        else
+        {
+            bar.fillAmount = Health.value / level.BossHealth;
+        }
     }
 }
