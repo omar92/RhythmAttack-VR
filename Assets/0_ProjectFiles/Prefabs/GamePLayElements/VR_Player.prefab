@@ -1916,6 +1916,7 @@ MonoBehaviour:
   speed: {fileID: 11400000, guid: a8cb140f65888414e873a5e88f7c974d, type: 2}
   ballCut: {fileID: 11400000, guid: a9f5acdfd9955e945a92a5d2373949b9, type: 2}
   swordCut: {fileID: 11400000, guid: cb7260fb0c769b04ebee0a09c010a3e9, type: 2}
+  currentPos: {fileID: 11400000, guid: 64c404dabf83bd546aa9591d9f98db72, type: 2}
 --- !u!114 &114045299113418174
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2421,6 +2422,7 @@ MonoBehaviour:
   speed: {fileID: 11400000, guid: a8cb140f65888414e873a5e88f7c974d, type: 2}
   ballCut: {fileID: 11400000, guid: a9f5acdfd9955e945a92a5d2373949b9, type: 2}
   swordCut: {fileID: 11400000, guid: 337a4aecc11662b4d98881f21893bd7b, type: 2}
+  currentPos: {fileID: 11400000, guid: 64c404dabf83bd546aa9591d9f98db72, type: 2}
 --- !u!114 &114999703838713116
 MonoBehaviour:
   m_ObjectHideFlags: 1

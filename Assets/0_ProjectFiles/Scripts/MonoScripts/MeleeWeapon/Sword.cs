@@ -7,10 +7,11 @@ using VRTK;
 public class Sword : MonoBehaviour
 {
     public FloatVariable speed;
+    
     public GameEvent ballCut;
     public GameEvent swordCut;
     // Use this for initialization
-    Vector3 currentPos;
+    public Vector3Variable currentPos;
     Vector3 previuosPos;
     AudioSource audioSource;
     //public VRTK_ControllerReference VRTK_Controller; 
@@ -25,9 +26,9 @@ public class Sword : MonoBehaviour
 
     void Update()
     {
-        currentPos = transform.position;
-        speed.value = (currentPos - previuosPos).magnitude / Time.deltaTime;
-        previuosPos = currentPos;
+        currentPos.value = transform.position;
+        speed.value = (currentPos.value - previuosPos).magnitude / Time.deltaTime;
+        previuosPos = currentPos.value;
        // Debug.Log(" controler speed = " + speed);
 
     }
