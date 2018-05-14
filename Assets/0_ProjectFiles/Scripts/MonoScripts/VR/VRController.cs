@@ -34,7 +34,6 @@ public class VRController : MonoBehaviour
     }
     private void TriggerClick(object sender, ControllerInteractionEventArgs e)
     {
-       // Viprate();
         ExcuteInChildren((child) =>
         {
             child.OnTrigger(true);
