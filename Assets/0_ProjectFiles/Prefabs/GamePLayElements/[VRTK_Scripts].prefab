@@ -1893,7 +1893,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114139724409474552}
         m_MethodName: ViprateNote
         m_Mode: 1
         m_Arguments:
@@ -2224,7 +2224,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114139724409474552}
         m_MethodName: ViprateGun
         m_Mode: 1
         m_Arguments:
@@ -2320,7 +2320,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114203663802683250}
         m_MethodName: ViprateNote
         m_Mode: 1
         m_Arguments:
@@ -2389,7 +2389,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114203663802683250}
         m_MethodName: ViprateGun
         m_Mode: 1
         m_Arguments:
