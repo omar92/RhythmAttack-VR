@@ -12,4 +12,6 @@ public class LevelSettings : ScriptableObject
     public float NoteVelocity;
     public float GunDamage;
     public float minCutSpeed;
+    public float PlayerHealValue;
+    public float MissNoteDamage;
 }

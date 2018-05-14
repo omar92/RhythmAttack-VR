@@ -16,3 +16,5 @@ MonoBehaviour:
   NoteVelocity: 9.22
   GunDamage: 15
   minCutSpeed: 0
+  PlayerHealValue: 5
+  MissNoteDamage: 10

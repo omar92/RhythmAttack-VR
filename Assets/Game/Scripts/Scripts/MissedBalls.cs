@@ -6,7 +6,9 @@ public class MissedBalls : MonoBehaviour {
 
     //public GameObject healthCapsules; 
     public FloatVariable playerHealth;
+    public LevelSettings levelSettings;
     public GameEvent noteMissedE;
+    public GameEvent playerHealthChangeE;
     public GameEvent LoseE;
 
     private void OnTriggerEnter(Collider collision)
@@ -15,13 +17,15 @@ public class MissedBalls : MonoBehaviour {
         {
             if (playerHealth.value > 0)
             {
-                    playerHealth.value -= 4;
+                    playerHealth.value -= levelSettings.MissNoteDamage;
+
             }
             else
 
             {
                 LoseE.Raise();
             }
+            playerHealthChangeE.Raise();
             noteMissedE.Raise();
         }
         
