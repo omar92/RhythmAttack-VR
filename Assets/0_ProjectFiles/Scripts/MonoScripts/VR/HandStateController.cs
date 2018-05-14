@@ -9,7 +9,8 @@ public class HandStateController : MonoBehaviour {
 
     // Use this for initialization
     void Awake() {
-       // SetHandState(HandStates.Empty);
+        Melee.gameObject.SetActive(false);
+        Ranged.gameObject.SetActive(false);
     }
 	
     public void SetHandState(HandStates state)

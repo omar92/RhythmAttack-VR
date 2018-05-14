@@ -29,6 +29,7 @@ GameObject:
   - component: {fileID: 114916553212785102}
   - component: {fileID: 114431541411941970}
   - component: {fileID: 114946373788741780}
+  - component: {fileID: 114400839388140806}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -49,6 +50,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114400839388140806
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1215017269107966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79c7ae08bc75c7e43a13e01367bad9b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: e068701730650e540b4471d974d3b485, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114617843008592658}
+        m_MethodName: ChangeStateSmooth
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 4b6e5d1a5e793e24d88c3619245971d4,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: GameState, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114431541411941970
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -122,7 +152,7 @@ MonoBehaviour:
     onEnter:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 11400000, guid: 4573056ac0ea25a40a87e2580d527d3f, type: 2}
+        - m_Target: {fileID: 0}
           m_MethodName: SetValue
           m_Mode: 4
           m_Arguments:
@@ -353,7 +383,7 @@ MonoBehaviour:
         m_MethodName: ChangeStateForced
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 4b6e5d1a5e793e24d88c3619245971d4,
+          m_ObjectArgument: {fileID: 11400000, guid: 5bf552b8bf9217c4bba3eb425cd43b88,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: GameState, Assembly-CSharp
           m_IntArgument: 0
