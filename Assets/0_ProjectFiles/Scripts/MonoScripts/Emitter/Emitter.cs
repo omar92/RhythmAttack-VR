@@ -20,7 +20,7 @@ public class Emitter : MonoBehaviour
         inistance = this;
     }
 
-     void Start()
+    void Start()
     {
         var eventCollectorPos = EventEmitter.position;
         eventCollectorPos.z = player.value.position.z;
@@ -44,6 +44,16 @@ public class Emitter : MonoBehaviour
     int laneNum;
     void SpawnNote(MidiNoteAudio note)
     {
+        Debug.Log("note Midi" + note.note.Midi
+        + "\n" + "note Pitch" + note.note.Pitch
+        + "\n" + "note Patch" + note.note.Patch
+        + "\n" + "note AbsoluteQuantize" + note.note.AbsoluteQuantize
+        + "\n" + "note Chanel" + note.note.Chanel
+        + "\n" + "note Delay" + note.note.Delay
+        + "\n" + "note Drum" + note.note.Drum
+        + "\n" + "note Duration" + note.note.Duration
+        + "\n" + "note Velocity" + note.note.Velocity);
+
         laneNum = GlobalData.tracksNotesLanesMaper[(int)currentTrackIndex.value][note.note.Midi];
         var em = GetLane(laneNum);
         NoteScript clone = NotesPoolScript.inistance.PullNote(em.position, laneNum);
