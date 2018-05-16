@@ -74,19 +74,18 @@ public class NoteScript : MonoBehaviour
         Debug.Log("OnNoteCut");
         NoteCutE.Raise();
         rb.GetComponent<Renderer>().enabled = false;
-        //rb.GetComponent<Collider>().enabled = false;
-        cor = StartCoroutine(PlayNote(levelSounds.LaneSounds[SourceLane], Hide));
+        rb.GetComponent<Collider>().enabled = false;
         rb.velocity = new Vector3(0, 0, 0);
+        SetDirection(Direction.NONE);
+        cor = StartCoroutine(PlayNote(levelSounds.LaneSounds[SourceLane], Hide));
     }
 
     protected IEnumerator PlayNote(AudioClip audio, Action callback)
     {
-        // Debug.Log("co started");
         audioSource.clip = audio;
         audioSource.Play();
         yield return coroutinrRule;
         callback();
-        //  Debug.Log("co ended");
     }
 
     public void SetDirection(Direction dir)
