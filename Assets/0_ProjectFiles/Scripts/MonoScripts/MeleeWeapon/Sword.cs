@@ -9,6 +9,8 @@ public class Sword : MonoBehaviour
     public FloatVariable speed;
     public Direction dir;
 
+    bool triggerEntered = false;
+
     public float swordssVibrationStrength = 1f;
     public float swordssVibrationInterval = 0.01f;
 
@@ -35,7 +37,9 @@ public class Sword : MonoBehaviour
         CalculateDierection();
         previuosPos = currentPos.value;
 
-
+        //if (triggerEntered)
+        //{
+        //}
 
         if (xyPositions.Count<10)
         {
@@ -82,26 +86,27 @@ public class Sword : MonoBehaviour
           Debug.DrawLine(previuosPos , currentPos.value, color, 5);
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Minion")
-        {
-            
-            audioSource.Play();
-        }
-    }
-
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag == "Sword")
+        {
+            triggerEntered = true;
+        }
+
         if (other.gameObject.tag == "Note")
         {
             swordCut.Raise();
             NoteScript sc = other.GetComponent<NoteScript>();
             audioSource.Play();
         }
-        else if (other.gameObject.tag == "Sword")
-        {
-            VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(gameObject), swordssVibrationStrength, 0.009f, swordssVibrationInterval - .009f);
-        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        //if (other.gameObject.tag == "Sword")
+            VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(transform.parent.gameObject), swordssVibrationStrength);
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        triggerEntered = false;
     }
 }
