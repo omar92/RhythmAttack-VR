@@ -9,7 +9,6 @@ public class Sword : MonoBehaviour
     public FloatVariable speed;
     public Direction dir;
 
-    public GameEvent ballCut;
     public GameEvent swordCut;
     // Use this for initialization
     public Vector3Variable currentPos;
@@ -93,7 +92,6 @@ public class Sword : MonoBehaviour
     {
         if (other.gameObject.tag == "Note")
         {
-            ballCut.Raise();
             swordCut.Raise();
             NoteScript sc = other.GetComponent<NoteScript>();
             audioSource.Play();
