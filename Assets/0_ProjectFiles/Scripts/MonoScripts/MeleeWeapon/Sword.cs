@@ -9,8 +9,8 @@ public class Sword : MonoBehaviour
     public FloatVariable speed;
     public Direction dir;
 
-    public float swordssViprationStrength = 1f;
-    public float swordssViprationInterval = 0.01f;
+    public float swordssVibrationStrength = 1f;
+    public float swordssVibrationInterval = 0.01f;
 
     public GameEvent swordCut;
     // Use this for initialization
@@ -101,7 +101,7 @@ public class Sword : MonoBehaviour
         }
         else if (other.gameObject.tag == "Sword")
         {
-            VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(gameObject), swordssViprationStrength, 0.009f, swordssViprationInterval - .009f);
+            VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(gameObject), swordssVibrationStrength, 0.009f, swordssVibrationInterval - .009f);
         }
     }
 }
