@@ -55,3 +55,7 @@ public enum HandStates
     Melee, Ranged, Empty
 }
 
+public enum Direction
+{
+    UP, DOWN, RIGHT, LEFT
+}

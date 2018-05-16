@@ -13,13 +13,20 @@ public class NoteScript : MonoBehaviour
     public LevelSounds levelSounds;
     public FloatVariable SwordSpeed;
     public GameEvent NoteCutE;
-    public int SourceLane;
+
+    [Space()]
+    public GameObject UP;
+    public GameObject Down;
+    public GameObject Left;
+    public GameObject Right;
 
 
     private Rigidbody rb;
     private AudioSource audioSource;
     private WaitWhile coroutinrRule;
     private Coroutine cor;
+    private int SourceLane;
+    private Direction slashDirection;
 
     private void Awake()
     {
@@ -28,9 +35,7 @@ public class NoteScript : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-
-
-    public void Spawn(Vector3 pos, int lane)
+    public void Spawn(Vector3 pos, int lane, Direction slashDirection)
     {
         // this.enabled = true;
         transform.SetParent(null);
@@ -39,6 +44,8 @@ public class NoteScript : MonoBehaviour
         rb.GetComponent<Collider>().enabled = true;
         rb.velocity = new Vector3(0, 0, -settings.NoteVelocity);
         SourceLane = lane;
+        this.slashDirection = slashDirection;
+        SetDirection(slashDirection);
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -80,6 +87,14 @@ public class NoteScript : MonoBehaviour
         yield return coroutinrRule;
         callback();
         //  Debug.Log("co ended");
+    }
+
+    public void SetDirection(Direction dir)
+    {
+        UP.SetActive(dir == Direction.UP);
+        Down.SetActive(dir == Direction.DOWN);
+        Left.SetActive(dir == Direction.LEFT);
+        Right.SetActive(dir == Direction.RIGHT);
     }
 
     internal void OnHide()
