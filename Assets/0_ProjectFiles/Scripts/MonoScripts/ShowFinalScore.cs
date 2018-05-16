@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ShowScore : MonoBehaviour {
+public class ShowFinalScore : MonoBehaviour {
 
-    public FloatVariable score;
+    public FloatVariable Finalscore;
     public Text scoreTXT;
 	
 	void Start ()
     {
-        scoreTXT.text = score.value.ToString();
+        scoreTXT.text = Finalscore.value.ToString();
 	}
 	
 }

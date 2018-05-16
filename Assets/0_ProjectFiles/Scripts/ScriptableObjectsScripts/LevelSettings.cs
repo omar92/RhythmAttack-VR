@@ -14,4 +14,5 @@ public class LevelSettings : ScriptableObject
     public float minCutSpeed;
     public float PlayerHealValue;
     public float MissNoteDamage;
+    public float scoreFactor;
 }
