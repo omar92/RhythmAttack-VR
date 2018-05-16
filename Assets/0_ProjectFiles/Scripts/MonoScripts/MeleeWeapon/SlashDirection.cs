@@ -13,21 +13,30 @@ public class SlashDirection : MonoBehaviour
 
     Vector2 precviousPosition;
     Vector2 currentPosition;
+    Vector2 myPosition;
+    Vector2 pointDirection;
 
+    private void Update()
+    {
+        myPosition = new Vector2(transform.position.x, transform.position.y);
+    }
     private void OnTriggerEnter(Collider other)
     {
 
 
         if (other.tag == "Sword")
         {
-
-            currentPosition = new Vector2(other.transform.position.x,other.transform.position.y);
-            precviousPosition = other.GetComponent<Sword>().xyPositions[0];
-            hitDirection = (currentPosition - precviousPosition).normalized;
-
-            if (Vector2.Dot(hitDirection,transform.up)<0)
+            if (other.GetComponent<Sword>().xyPositions.Count > 0)
             {
-                Debug.Log(" you are hitting from above")
+                currentPosition = new Vector2(other.transform.position.x, other.transform.position.y);
+                precviousPosition = (Vector2)other.GetComponent<Sword>().xyPositions[0];
+                hitDirection = (currentPosition - precviousPosition).normalized;
+                //pointDirection = ()
+                
+                if (Vector2.Dot(hitDirection, transform.up) < 0 && Vector2.Dot(currentPosition,myPosition)<0)
+                {
+                    Debug.Log(" you are hitting from above");
+                }
             }
             //positionOnTrigger = cam.InverseTransformPoint(other.transform.position);
             //hitDirection = (transform.position - positionOnTrigger).normalized;

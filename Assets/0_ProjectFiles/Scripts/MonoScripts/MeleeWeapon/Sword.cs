@@ -15,12 +15,14 @@ public class Sword : MonoBehaviour
     Vector3 previuosPos;
     AudioSource audioSource;
 
-    public List<Vector2> xyPositions;
-
+    public ArrayList xyPositions;
+   
     void Start()
     {
         previuosPos = Vector3.zero;
         audioSource = GetComponent<AudioSource>();
+        xyPositions = new ArrayList ();
+        xyPositions.Add(new Vector2(transform.position.x, transform.position.y));
     }
 
     void Update()
@@ -31,16 +33,15 @@ public class Sword : MonoBehaviour
         // VRTK_ControllerHaptics.TriggerHapticPulse
         //(VRTK_ControllerReference.GetControllerReference(transform.parent.gameObject), speed.value);
 
-        if (xyPositions.Capacity<10)
+        if (xyPositions.Count<10)
         {
             xyPositions.Add(new Vector2(transform.position.x, transform.position.y));
+           // Debug.Log("dh el array capacity " + xyPositions.Capacity);
         }
         else
-        {
-            for (int i=0; i<xyPositions.Capacity;i++)
-            {
+        {    
                 xyPositions.Clear();
-            }
+            //print(xyPositions.Count);
         }
         
     }
@@ -49,6 +50,7 @@ public class Sword : MonoBehaviour
     {
         if (collision.gameObject.tag == "Minion")
         {
+            
             audioSource.Play();
         }
     }
