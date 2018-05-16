@@ -10,6 +10,9 @@ public class GameDataInitialiser : MonoBehaviour
     [Header("Game Data")]
     public FloatVariable PlayerHealth;
     public FloatVariable BossHealth;
+    public FloatVariable finalScore;
+    public FloatVariable combo;
+
     [Space()]
     [Header("Data To Clean")]
     public StateMachine stateMachine;
@@ -20,6 +23,8 @@ public class GameDataInitialiser : MonoBehaviour
         //
         PlayerHealth.value = levelSettings.PlayerHealth;
         BossHealth.value = levelSettings.BossHealth;
+        finalScore.value = 0f;
+        combo.value = 0f;
 
         //clean
         stateMachine.Init();
