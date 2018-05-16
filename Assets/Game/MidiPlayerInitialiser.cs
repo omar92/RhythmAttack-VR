@@ -19,7 +19,7 @@ public class MidiPlayerInitialiser
                 {
                     var fileName = MidiPlayerGlobal.CurrentMidiSet.MidiFiles[i];
                     DeleteResource(MidiLoad.BuildOSPath(MidiPlayerGlobal.CurrentMidiSet.MidiFiles[i]));
-                    Debug.Log(MidiPlayerGlobal.CurrentMidiSet.MidiFiles);
+                    //Debug.Log(MidiPlayerGlobal.CurrentMidiSet.MidiFiles);
                 }
             }
         }
@@ -78,7 +78,7 @@ public class MidiPlayerInitialiser
             File.Delete(filepath);
             // delete also meta
             string meta = filepath + ".meta";
-            Debug.Log("Delete " + meta);
+            //Debug.Log("Delete " + meta);
             File.Delete(meta);
 
         }

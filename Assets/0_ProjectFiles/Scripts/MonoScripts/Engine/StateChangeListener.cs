@@ -12,7 +12,7 @@ public class StateChangeListener : MonoBehaviour
         {
             if (states[i].state.GetInstanceID() == state.GetInstanceID())
             {
-                Debug.Log(states[i].state +": "+gameObject.name+ ": OnEnter invoke( ) "+ states[i].onEnter);
+               // Debug.Log(states[i].state +": "+gameObject.name+ ": OnEnter invoke( ) "+ states[i].onEnter);
                 states[i].onEnter.Invoke();
             }
         }
