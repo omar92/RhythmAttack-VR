@@ -69,7 +69,7 @@ public class Sword : MonoBehaviour
         if (angle <= -.5)
         {
              color = Color.blue;
-            dir = Direction.up;
+            dir = Direction.UP;
         }
         if (angle >= .5)
         {
