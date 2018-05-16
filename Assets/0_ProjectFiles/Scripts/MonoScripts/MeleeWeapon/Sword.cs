@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
@@ -9,9 +10,9 @@ public class Sword : MonoBehaviour
     public FloatVariable speed;
     public Direction dir;
 
-    bool triggerEntered = false;
+    Coroutine collidedSwordsVibration;
 
-    public float swordssVibrationStrength = 1f;
+    public float swordssVibrationStrength = .9f;
     public float swordssVibrationInterval = 0.01f;
 
     public GameEvent swordCut;
@@ -36,10 +37,6 @@ public class Sword : MonoBehaviour
         speed.value = (currentPos.value - previuosPos).magnitude / Time.deltaTime;
         CalculateDierection();
         previuosPos = currentPos.value;
-
-        //if (triggerEntered)
-        //{
-        //}
 
         if (xyPositions.Count<10)
         {
@@ -90,7 +87,8 @@ public class Sword : MonoBehaviour
     {
         if (other.gameObject.tag == "Sword")
         {
-            triggerEntered = true;
+            if(collidedSwordsVibration == null)
+                collidedSwordsVibration = StartCoroutine(CollidedSwordsVibrationFun());
         }
 
         if (other.gameObject.tag == "Note")
@@ -100,13 +98,22 @@ public class Sword : MonoBehaviour
             audioSource.Play();
         }
     }
-    private void OnTriggerStay(Collider other)
+
+    private IEnumerator CollidedSwordsVibrationFun()
     {
-        //if (other.gameObject.tag == "Sword")
+        while (true)
+        {
             VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(transform.parent.gameObject), swordssVibrationStrength);
+            yield return new WaitForSeconds(swordssVibrationInterval);
+        }
     }
+
     private void OnTriggerExit(Collider other)
     {
-        triggerEntered = false;
+        if (collidedSwordsVibration != null)
+        {
+            StopCoroutine(collidedSwordsVibration);
+            collidedSwordsVibration = null;
+        }
     }
 }
