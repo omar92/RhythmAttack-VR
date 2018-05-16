@@ -18,7 +18,7 @@ public class NotesPoolScript : MonoBehaviour
         inistance = this;
     }
 
-    public NoteScript PullNote(Vector3 position , int lane)
+    public NoteScript PullNote(Vector3 position , int lane , Direction slashDirection)
     {
         NoteScript noteScript;
         if (transform.childCount > 0)
@@ -29,7 +29,7 @@ public class NotesPoolScript : MonoBehaviour
         {
             noteScript = InstantiateNoteTransform();
         }
-        noteScript.Spawn(position , lane);
+        noteScript.Spawn(position , lane , slashDirection);
         return noteScript;
     }
 
