@@ -7,7 +7,8 @@ using VRTK;
 public class Sword : MonoBehaviour
 {
     public FloatVariable speed;
-    
+    public Direction dir;
+
     public GameEvent ballCut;
     public GameEvent swordCut;
     // Use this for initialization
@@ -29,21 +30,54 @@ public class Sword : MonoBehaviour
     {
         currentPos.value = transform.position;
         speed.value = (currentPos.value - previuosPos).magnitude / Time.deltaTime;
+        CalculateDierection();
         previuosPos = currentPos.value;
-        // VRTK_ControllerHaptics.TriggerHapticPulse
-        //(VRTK_ControllerReference.GetControllerReference(transform.parent.gameObject), speed.value);
+
+
 
         if (xyPositions.Count<10)
         {
             xyPositions.Add(new Vector2(transform.position.x, transform.position.y));
-           // Debug.Log("dh el array capacity " + xyPositions.Capacity);
         }
         else
         {    
                 xyPositions.Clear();
-            //print(xyPositions.Count);
         }
         
+    }
+
+    void CalculateDierection()
+    {
+        var direction = (previuosPos - currentPos.value).normalized;
+        var angle = Vector2.Dot(direction, Vector3.up) / direction.magnitude;
+         dir = Direction.NONE;
+        Color color = Color.red;
+      //  Debug.Log("angle " + angle);
+        if (angle > -.5 && angle < .5)
+        {
+            if (direction.x > 0)
+            {
+                  color = Color.red;
+                dir = Direction.LEFT;
+            }
+            else
+            {
+                  color = Color.green;
+                dir = Direction.RIGHT;
+            }
+        }
+        if (angle <= -.5)
+        {
+             color = Color.blue;
+            dir = Direction.up;
+        }
+        if (angle >= .5)
+        {
+             color = Color.yellow;
+            dir = Direction.DOWN;
+        }
+        //   Debug.Log(Dir+": " + angle + " : " + direction);
+          Debug.DrawLine(previuosPos , currentPos.value, color, 5);
     }
 
     private void OnCollisionEnter(Collision collision)

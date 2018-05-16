@@ -13,6 +13,7 @@ public class NoteScript : MonoBehaviour
     public LevelSounds levelSounds;
     public FloatVariable SwordSpeed;
     public GameEvent NoteCutE;
+    public GameEvent NoteMissE;
 
     [Space()]
     public GameObject UP;
@@ -50,16 +51,19 @@ public class NoteScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
+      
         if (collision.tag == "Sword")
         {
-            if (SwordSpeed.value > settings.minCutSpeed)
+            var swordScript = collision.GetComponent<Sword>();
+            Debug.Log("swordScript.dir :" + swordScript.dir + " :::: slashDirection: " + slashDirection);
+            if (swordScript.dir== slashDirection && SwordSpeed.value > settings.minCutSpeed)
             {
                 OnNoteCut();
-
             }
             else
             {
-                //sebo fe 7alo 
+                NoteMissE.Raise();
+             //   DestroyNote();
             }
         }
         else
@@ -71,8 +75,13 @@ public class NoteScript : MonoBehaviour
 
     private void OnNoteCut()
     {
-        Debug.Log("OnNoteCut");
+        //Debug.Log("OnNoteCut");
         NoteCutE.Raise();
+        DestroyNote();
+    }
+
+    public void DestroyNote()
+    {
         rb.GetComponent<Renderer>().enabled = false;
         rb.GetComponent<Collider>().enabled = false;
         rb.velocity = new Vector3(0, 0, 0);
