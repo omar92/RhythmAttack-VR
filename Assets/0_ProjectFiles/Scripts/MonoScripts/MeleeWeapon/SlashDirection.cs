@@ -27,7 +27,7 @@ public class SlashDirection : MonoBehaviour
 
             if (Vector2.Dot(hitDirection,transform.up)<0)
             {
-                Debug.Log(" you are hitting from above")
+				Debug.Log (" you are hitting from above");
             }
             //positionOnTrigger = cam.InverseTransformPoint(other.transform.position);
             //hitDirection = (transform.position - positionOnTrigger).normalized;
