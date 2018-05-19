@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,12 +10,13 @@ public class MidiHandler : MonoBehaviour
     public LevelSounds levelSounds;
     public string tracksResurcesFolder;
     public UnityEvent OnInitDone;
-    public void InitMidi()
+    string[] tracksPaths;
+    public void Awake()
     {
-        var tracksPaths = new string[]
+        tracksPaths = new string[]
         {
-            tracksResurcesFolder+levelSounds.DefenceMIDI,
-            tracksResurcesFolder+levelSounds.AttackMIDI
+          tracksResurcesFolder+levelSounds.DefenceMIDI,
+          tracksResurcesFolder+levelSounds.AttackMIDI
         };
         MidiPlayerInitialiser.Init(tracksPaths);
 
@@ -30,14 +32,18 @@ public class MidiHandler : MonoBehaviour
             Array.Sort(notes);
             for (int x = 0; x < notes.Length; x++)
             {
-                //Debug.Log(notes[x] + ": " + x);
-                trackMapper.Add(notes[x], x);
+                Debug.Log(notes[x] + ": " + (notes[x] - notes[0]));
+                trackMapper.Add(notes[x], notes[x] - notes[0]);
             }
             GlobalData.tracksNotesLanesMaper.Add(trackMapper);
             //Debug.Log("-----------------------------------------------");
         }
-        OnInitDone.Invoke();
+    }
 
+    public void InitMidi()
+    {
+
+        OnInitDone.Invoke();
     }
 
 }
