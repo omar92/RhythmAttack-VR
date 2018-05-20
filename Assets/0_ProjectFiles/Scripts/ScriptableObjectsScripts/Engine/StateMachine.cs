@@ -16,12 +16,15 @@ public class StateMachine : ScriptableObject
 
         if (currentState != null)
         {
+           // Debug.Log("newState (" + newState + ") == PauseState(" + PauseState + " ) : " + (newState == PauseState));
             if (newState == PauseState)
             {
+               // Debug.Log(currentState + " OnPause");
                 currentState.OnPause();
             }
             else
             {
+               // Debug.Log(currentState + " OnExit");
                 currentState.OnExit();
             }
         }
@@ -32,16 +35,19 @@ public class StateMachine : ScriptableObject
 
         if (previousState == PauseState && PrePreviousState == newState)
         {
+         //   Debug.Log(currentState + " OnUnPause");
             currentState.OnUnPause();
         }
         else
         {
+        //    Debug.Log(currentState + " OnEnter");
             currentState.OnEnter();
         }
     }
 
     internal void Init()
     {
+        PrePreviousState = null;
         previousState = null;
         currentState = null;
     }
@@ -61,16 +67,16 @@ public class StateMachine : ScriptableObject
 
         if (currentState != null)
         {
-            if (currentState.IsAllListenersDone())
-            {
-                ChangeStateForced(newState);
-                return true;//success
-            }
-            else
-            {
-                Debug.LogWarning("IsAllListenersDone: false");
-                return false;//fail
-            }
+            //if (currentState.IsAllListenersDone())
+            //{
+            ChangeStateForced(newState);
+            return true;//success
+            //}
+            //else
+            //{
+            //    Debug.LogWarning("IsAllListenersDone: false");
+            //    return false;//fail
+            //}
         }
         else
         {

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.Events;
 
 public class GameEventListener : MonoBehaviour
@@ -16,6 +17,7 @@ public class GameEventListener : MonoBehaviour
     }
     internal void OnEventRaised()
     {
+        // if (co == null)
         Response.Invoke();
     }
 }

@@ -7,14 +7,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "GameState", menuName = "Engine/GameState", order = 2)]
 public class GameState : ScriptableObject
 {
-    private Dictionary<StateChangeListener, bool> Listeners = new Dictionary<StateChangeListener, bool>();
+    private List<StateChangeListener> Listeners = new List<StateChangeListener>();
 
     public void OnEnter()
     {
         //Debug.Log(Listeners.Count);
         for (int i = Listeners.Count - 1; i >= 0; i--)
         {
-            Listeners.Keys.ElementAt(i).OnEnter(this);
+            Listeners[i].OnEnter(this);
         }
     }
 
@@ -23,7 +23,7 @@ public class GameState : ScriptableObject
         Debug.Log(Listeners.Count);
         for (int i = Listeners.Count - 1; i >= 0; i--)
         {
-            Listeners.Keys.ElementAt(i).OnPause(this);
+            Listeners[i].OnPause(this);
         }
     }
 
@@ -32,7 +32,7 @@ public class GameState : ScriptableObject
         Debug.Log(Listeners.Count);
         for (int i = Listeners.Count - 1; i >= 0; i--)
         {
-            Listeners.Keys.ElementAt(i).OnUnPause(this);
+            Listeners[i].OnUnPause(this);
         }
     }
 
@@ -40,43 +40,44 @@ public class GameState : ScriptableObject
     {
         for (int i = Listeners.Count - 1; i >= 0; i--)
         {
-            Listeners.Keys.ElementAt(i).OnExit(this);
+        //    Debug.Log(Listeners[i].gameObject.name + " " + this + " OnExit");
+            Listeners[i].OnExit(this);
         }
     }
 
-    internal void SetDone(StateChangeListener listener, bool isDone)
-    {
-        if (Listeners.Keys.Contains(listener))
-        {
-            //Debug.Log("listener of " + listener.gameObject.name + " isDone: "+ isDone);
-            Listeners[listener] = isDone;
-        }
-        else
-            Debug.LogError("listener of " + listener.gameObject.name + " not found");
-    }
+    //internal void SetDone(StateChangeListener listener, bool isDone)
+    //{
+    //    if (Listeners.Contains(listener))
+    //    {
+    //        //Debug.Log("listener of " + listener.gameObject.name + " isDone: "+ isDone);
+    //        Listeners[listener] = isDone;
+    //    }
+    //    else
+    //        Debug.LogError("listener of " + listener.gameObject.name + " not found");
+    //}
 
     public void RegisterListener(StateChangeListener listener)
     {
-        if (!Listeners.Keys.Contains(listener)) Listeners.Add(listener, false);
+        if (!Listeners.Contains(listener)) Listeners.Add(listener);
         else
             Debug.LogError("listener of " + listener.gameObject.name + " already exiist");
     }
 
     public void UnregisterListener(StateChangeListener listener)
     {
-        if (Listeners.Keys.Contains(listener)) Listeners.Remove(listener);
+        if (Listeners.Contains(listener)) Listeners.Remove(listener);
     }
 
-    internal bool IsAllListenersDone()
-    {
-        for (int i = Listeners.Count - 1; i >= 0; i--)
-        {
-            if (Listeners.Values.ElementAt(i) == false)
-            {
-                Debug.LogWarning(Listeners.Keys.ElementAt(i).name + " not ready");
-                return false;
-            }
-        }
-        return true;
-    }
+    //internal bool IsAllListenersDone()
+    //{
+    //    for (int i = Listeners.Count - 1; i >= 0; i--)
+    //    {
+    //        if (Listeners.Values.ElementAt(i) == false)
+    //        {
+    //            Debug.LogWarning(Listeners.Keys.ElementAt(i).name + " not ready");
+    //            return false;
+    //        }
+    //    }
+    //    return true;
+    //}
 }

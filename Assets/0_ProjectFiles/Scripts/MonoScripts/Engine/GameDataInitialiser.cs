@@ -17,7 +17,15 @@ public class GameDataInitialiser : MonoBehaviour
     [Header("Data To Clean")]
     public StateMachine stateMachine;
 
+    [Space()]
+    [Header("Events")]
+    public GameEvent BossHealthChanged;
+    public GameEvent PlayerHealthChanged;
+    public GameEvent ScoreHealthChanged;
+    // public GameEvent ComboHealthChanged;
 
+
+    private bool IsFirstInit = true;
     public void InitGameData()
     {
         //
@@ -27,6 +35,17 @@ public class GameDataInitialiser : MonoBehaviour
         combo.value = 0f;
 
         //clean
-        stateMachine.Init();
+        if (IsFirstInit)
+        {
+            stateMachine.Init();
+        }
+
+        //fire view events
+        BossHealthChanged.Raise();
+        PlayerHealthChanged.Raise();
+        ScoreHealthChanged.Raise();
+        //  ComboHealthChanged.Raise();
+
+        IsFirstInit = false;
     }
 }
