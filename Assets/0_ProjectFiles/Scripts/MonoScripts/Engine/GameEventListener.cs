@@ -6,7 +6,6 @@ public class GameEventListener : MonoBehaviour
 {
     public GameEvent Event;
     public UnityEvent Response;
-    Coroutine co;
 
     internal void OnEnable()
     {
@@ -18,14 +17,7 @@ public class GameEventListener : MonoBehaviour
     }
     internal void OnEventRaised()
     {
-       // if (co == null)
-            co = StartCoroutine(WaitForEndOfFrame());
-    }
-
-    private IEnumerator WaitForEndOfFrame()
-    {
-        yield return new WaitForEndOfFrame();
+        // if (co == null)
         Response.Invoke();
-      //  co = null;
     }
 }
