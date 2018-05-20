@@ -399,12 +399,13 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114828121595953252}
-        m_MethodName: RestartGame
-        m_Mode: 1
+      - m_Target: {fileID: 114617843008592658}
+        m_MethodName: ChangeStateSmooth
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 5bf552b8bf9217c4bba3eb425cd43b88,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: GameState, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
