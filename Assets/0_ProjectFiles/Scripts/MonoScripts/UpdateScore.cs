@@ -11,16 +11,16 @@ public class UpdateScore : MonoBehaviour {
 
     public void ScoreIncUpdate()
     {
-        scoreChanged.Raise();
         finalScore.value += combo.value;
         combo.value++;
         finalScore.value += levelSettings.scoreFactor;
+        scoreChanged.Raise();
     }
     public void ScoreDecUpdate()
     {
-        scoreChanged.Raise();
         combo.value = 0f;
-       // upScore.value -= scoreFactor.value;
-       // finalScore.value = upScore.value;
+        scoreChanged.Raise();
+        // upScore.value -= scoreFactor.value;
+        // finalScore.value = upScore.value;
     }
 }
