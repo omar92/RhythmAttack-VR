@@ -11,14 +11,26 @@ public class MidiHandler : MonoBehaviour
     public string tracksResurcesFolder;
     public UnityEvent OnInitDone;
     string[] tracksPaths;
-    public void Awake()
+    Coroutine co;
+
+    public void InitMidi()
     {
+        if (co == null)
+            co = StartCoroutine(InitMidiData());
+
+    }
+
+    private IEnumerator InitMidiData()
+    {
+      //  yield return new WaitForEndOfFrame();
         tracksPaths = new string[]
         {
           tracksResurcesFolder+levelSounds.DefenceMIDI,
           tracksResurcesFolder+levelSounds.AttackMIDI
         };
         MidiPlayerInitialiser.Init(tracksPaths);
+
+      //  yield return new WaitForEndOfFrame();
 
         string[] tracks = new string[2];
         tracks[0] = levelSounds.DefenceMIDI;
@@ -37,13 +49,10 @@ public class MidiHandler : MonoBehaviour
             }
             GlobalData.tracksNotesLanesMaper.Add(trackMapper);
             //Debug.Log("-----------------------------------------------");
+            co = null;
         }
-    }
 
-    public void InitMidi()
-    {
-
+        yield return new WaitForEndOfFrame();
         OnInitDone.Invoke();
     }
-
 }

@@ -50,10 +50,10 @@ public class StateChangeListener : MonoBehaviour
         for (int i = 0; i < states.Length; i++)
         {
             states[i].state.RegisterListener(this);
-            if (!states[i].MustBeDone)
-            {
-                SetDone(states[i].state);
-            }
+            //if (!states[i].MustBeDone)
+            //{
+            //    SetDone(states[i].state);
+            //}
         }
     }
 
@@ -66,14 +66,14 @@ public class StateChangeListener : MonoBehaviour
 
     }
 
-    public void SetDone(GameState state)
-    {
-        state.SetDone(this, true);
-    }
-    public void SetUnDone(GameState state)
-    {
-        state.SetDone(this, false);
-    }
+    //public void SetDone(GameState state)
+    //{
+    //    state.SetDone(this, true);
+    //}
+    //public void SetUnDone(GameState state)
+    //{
+    //    state.SetDone(this, false);
+    //}
 
 }
 [System.Serializable]
@@ -83,7 +83,7 @@ public struct StatesHandling
     /// <summary>
     /// Can this listener change state before Done
     /// </summary>
-    public bool MustBeDone;
+   // public bool MustBeDone;
     public UnityEvent onEnter;
     public UnityEvent onPause;
     public UnityEvent onUnPause;

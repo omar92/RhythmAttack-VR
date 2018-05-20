@@ -5,24 +5,28 @@ using System;
 public class GameStateHandler : MonoBehaviour
 {
     public StateMachine stateMachine;
-
+    Coroutine co;
     public void ChangeStateSmooth(GameState nextState)
     {
-        StartCoroutine(WaitForFrame(() =>
-        {
-            Debug.Log(gameObject.name + ": GameState >> " + nextState + " -S- ");
-            stateMachine.ChangeStateSmooth(nextState);
-        }));
+      //  if (co == null)
+            co = StartCoroutine(WaitForFrame(() =>
+            {
+              //  Debug.Log(gameObject.name + ": GameState >> " + nextState + " -S- ");
+                stateMachine.ChangeStateSmooth(nextState);
+           //     co = null;
+            }));
 
     }
 
     public void ChangeStateForced(GameState nextState)
     {
-        StartCoroutine(WaitForFrame(() =>
-        {
-            Debug.Log(gameObject.name + ": GameState >> " + nextState + " -F- ");
-            stateMachine.ChangeStateForced(nextState);
-        }));
+       // if (co == null)
+            co = StartCoroutine(WaitForFrame(() =>
+           {
+           //    Debug.Log(gameObject.name + ": GameState >> " + nextState + " -F- ");
+               stateMachine.ChangeStateForced(nextState);
+          //     co = null;
+           }));
     }
     public void ReturnToPrevious(bool isForced)
     {
@@ -34,11 +38,13 @@ public class GameStateHandler : MonoBehaviour
 
     public void ReloadGameState(bool isForced)
     {
-        StartCoroutine(WaitForFrame(() =>
-        {
-            Debug.Log(gameObject.name + ": ReloadState >> " + stateMachine.currentState + " -" + (isForced ? 'F' : 'S') + "- ");
-            stateMachine.ReloadCurrentState(isForced);
-        }));
+      //  if (co == null)
+            co = StartCoroutine(WaitForFrame(() =>
+          {
+            //  Debug.Log(gameObject.name + ": ReloadState >> " + stateMachine.currentState + " -" + (isForced ? 'F' : 'S') + "- ");
+              stateMachine.ReloadCurrentState(isForced);
+          //    co = null;
+          }));
     }
 
 

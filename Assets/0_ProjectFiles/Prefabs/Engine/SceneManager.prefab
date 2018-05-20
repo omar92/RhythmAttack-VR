@@ -114,11 +114,22 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 114638235098816384}
+        m_MethodName: InitGameData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 114617843008592658}
         m_MethodName: ChangeStateSmooth
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 4b6e5d1a5e793e24d88c3619245971d4,
+          m_ObjectArgument: {fileID: 11400000, guid: 612f8137cb83f544ca4e0534bc3f1cd8,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: GameState, Assembly-CSharp
           m_IntArgument: 0
@@ -199,6 +210,10 @@ MonoBehaviour:
   finalScore: {fileID: 11400000, guid: 22aa7c7929e2bf24b988e7fb3b86e8c1, type: 2}
   combo: {fileID: 11400000, guid: 7f07dacaae0fa3a4793477326d4d1b8c, type: 2}
   stateMachine: {fileID: 11400000, guid: 0d6f9a26e0f52fe4ebf9a67e4bd633d9, type: 2}
+  BossHealthChanged: {fileID: 11400000, guid: 4228c57cbc66d5c47851b7441ebe321e, type: 2}
+  PlayerHealthChanged: {fileID: 11400000, guid: 1652e94871cc1de49b5058195a9e4593,
+    type: 2}
+  ScoreHealthChanged: {fileID: 11400000, guid: a0ae95781989ed8448cf3886762e543d, type: 2}
 --- !u!114 &114659148306650782
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -212,7 +227,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   states:
   - state: {fileID: 11400000, guid: 612f8137cb83f544ca4e0534bc3f1cd8, type: 2}
-    MustBeDone: 0
     onEnter:
       m_PersistentCalls:
         m_Calls:
@@ -293,7 +307,7 @@ MonoBehaviour:
         m_MethodName: ChangeStateSmooth
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 612f8137cb83f544ca4e0534bc3f1cd8,
+          m_ObjectArgument: {fileID: 11400000, guid: 5bf552b8bf9217c4bba3eb425cd43b88,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: GameState, Assembly-CSharp
           m_IntArgument: 0
@@ -482,10 +496,10 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 114617843008592658}
-        m_MethodName: ChangeStateForced
+        m_MethodName: ChangeStateSmooth
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 5bf552b8bf9217c4bba3eb425cd43b88,
+          m_ObjectArgument: {fileID: 11400000, guid: 4b6e5d1a5e793e24d88c3619245971d4,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: GameState, Assembly-CSharp
           m_IntArgument: 0
