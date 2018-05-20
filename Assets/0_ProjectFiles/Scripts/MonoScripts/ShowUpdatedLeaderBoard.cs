@@ -14,6 +14,7 @@ public class ShowUpdatedLeaderBoard : MonoBehaviour
     {
         for (int i = 0; i < Mathf.Min(dictionary.Value.Count, transform.childCount); i++)
         {
+            transform.GetChild(i).gameObject.SetActive(true);
             transform.GetChild(i).GetComponentsInChildren<Text>()[1].text = dictionary.Value.Keys.ElementAt(i).ToString();
         }
     }
