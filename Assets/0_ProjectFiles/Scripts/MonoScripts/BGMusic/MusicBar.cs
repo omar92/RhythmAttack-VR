@@ -14,7 +14,8 @@ public class MusicBar : MonoBehaviour
     
     void Start()
     {
-        musicLenght = FindObjectOfType<BGMusicHandler>().GetComponent<AudioSource>().clip.length;
+        bar.fillAmount = 1;
+         musicLenght = FindObjectOfType<BGMusicHandler>().GetComponent<AudioSource>().clip.length;
        // bar = transform.GetChild(0).gameObject.GetComponentsInChildren<Image>()[0];
         StartCoroutine(Count());
     }

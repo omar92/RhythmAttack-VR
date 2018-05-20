@@ -11,9 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdb4bc2b303212248b7083cf8a53f6af, type: 3}
   m_Name: LevelSounds
   m_EditorClassIdentifier: 
-  DefenceBG: {fileID: 8300000, guid: 6335d4d4156a2a9438b1befd42a3bbd3, type: 3}
-  DefenceMIDI: Tracks/test.mid
-  AttackBG: {fileID: 8300000, guid: 6335d4d4156a2a9438b1befd42a3bbd3, type: 3}
+  DefenceBG: {fileID: 8300000, guid: 35c0e2d1a38499e408d1fdb7db802689, type: 3}
+  DefenceMIDI: Tracks/test 4.mid
+  AttackBG: {fileID: 8300000, guid: 43159006ec00fdd4fbc986e39fbf7706, type: 3}
   AttackMIDI: Tracks/test.mid
   LaneSounds:
   - {fileID: 8300000, guid: ddb2c183acfd788419583254cd853e26, type: 3}

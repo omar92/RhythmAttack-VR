@@ -12,11 +12,11 @@ public class SortedDictionaryVariable : ScriptableObject
     {
         get
         {
-            if (Value == null)
+            if (this.value == null)
             {
-               return Value = new SortedDictionary<float, string>();
+                this.value = new SortedDictionary<float, string>();
             }
-            return value;
+            return this.value;
         }
 
         set
