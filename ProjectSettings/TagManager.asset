@@ -11,6 +11,7 @@ TagManager:
   - Note
   - Gun
   - Targets
+  - MusicBar
   layers:
   - Default
   - TransparentFX
