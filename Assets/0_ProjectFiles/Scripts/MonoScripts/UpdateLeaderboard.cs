@@ -9,21 +9,23 @@ public class UpdateLeaderboard : MonoBehaviour {
     public int maxNumOfBoard = 10;
     public SortedDictionaryVariable boardList;
     public GameEvent LeaderboardChanged;
+    int i = 0;
 
     public void LeaderboadrUpdate()
     {
         if (boardList.Value.Count == 0 || boardList.Value.Count < maxNumOfBoard)
         {
-            boardList.Value.Add(finalScore.value, "blablabla");
+            boardList.Value.Add(finalScore.value, i.ToString());
         }
         else
         {
             if (finalScore.value > boardList.Value.Keys.ElementAt(boardList.Value.Count - 1))
             {
                 boardList.Value.Remove(boardList.Value.Keys.ElementAt(boardList.Value.Count - 1));
-                boardList.Value.Add(finalScore.value, "blablabla");
+                boardList.Value.Add(finalScore.value, i.ToString());
             }
         }
+        i++;
         LeaderboardChanged.Raise();
     }
 }
