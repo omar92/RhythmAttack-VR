@@ -12,6 +12,7 @@ public class winMonitor : MonoBehaviour {
         if (health.value <= 0)
         {
             winEvent.Raise();
+            health.value = 1;
         }
     }
 }

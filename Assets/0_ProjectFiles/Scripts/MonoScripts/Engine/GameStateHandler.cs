@@ -11,7 +11,7 @@ public class GameStateHandler : MonoBehaviour
       //  if (co == null)
             co = StartCoroutine(WaitForFrame(() =>
             {
-              //  Debug.Log(gameObject.name + ": GameState >> " + nextState + " -S- ");
+                Debug.Log(gameObject.name + ": GameState >> " + nextState + " -S- ");
                 stateMachine.ChangeStateSmooth(nextState);
            //     co = null;
             }));
