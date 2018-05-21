@@ -10,12 +10,17 @@ public class UpdateLeaderboard : MonoBehaviour {
     public SortedDictionaryVariable boardList;
     public GameEvent LeaderboardChanged;
     int i = 0;
+    float newScore = -1f;
 
     public void LeaderboadrUpdate()
-    {
+    {     
         if (boardList.Value.Count == 0 || boardList.Value.Count < maxNumOfBoard)
         {
-            boardList.Value.Add(finalScore.value, i.ToString());
+            if (finalScore.value != newScore)
+            {
+                boardList.Value.Add(finalScore.value, i.ToString());
+            }
+
         }
         else
         {
@@ -26,6 +31,7 @@ public class UpdateLeaderboard : MonoBehaviour {
             }
         }
         i++;
+        newScore = finalScore.value;
         LeaderboardChanged.Raise();
     }
 }

@@ -38,8 +38,8 @@ public class MusicBar : MonoBehaviour
         while (true)
         {
           
-            Debug.Log("  percentage.value " + percentage.value);
-            Debug.Log("  percentage over 100 " + percentage.value/100);
+            //Debug.Log("  percentage.value " + percentage.value);
+            //Debug.Log("  percentage over 100 " + percentage.value/100);
             bar.fillAmount -=  percentage.value/100;
             yield return new WaitForSeconds(1);
         }
