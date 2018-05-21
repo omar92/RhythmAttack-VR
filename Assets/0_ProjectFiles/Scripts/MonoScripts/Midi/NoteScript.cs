@@ -55,7 +55,7 @@ public class NoteScript : MonoBehaviour
         if (collision.tag == "Sword")
         {
             var swordScript = collision.GetComponent<Sword>();
-            Debug.Log("swordScript.dir :" + swordScript.dir + " :::: slashDirection: " + slashDirection);
+          //  Debug.Log("swordScript.dir :" + swordScript.dir + " :::: slashDirection: " + slashDirection);
             if (swordScript.dir== slashDirection && SwordSpeed.value > settings.minCutSpeed)
             {
                 OnNoteCut();

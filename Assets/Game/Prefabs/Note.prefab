@@ -541,7 +541,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1362685045808908}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -907,6 +907,7 @@ MonoBehaviour:
   Half1: {fileID: 54676268164302188}
   Half2: {fileID: 54881602433012436}
   SlicesContainer: {fileID: 4134739671795306}
+  ForceMultiplier: 5
 --- !u!114 &114063344499371038
 MonoBehaviour:
   m_ObjectHideFlags: 1
