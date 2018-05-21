@@ -16,7 +16,8 @@ public class NoteCuttingEffect : MonoBehaviour
     {
         Half1.isKinematic = true;
         Half2.isKinematic = true;
-
+        Half1.gameObject.SetActive(false);
+        Half2.gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -43,6 +44,8 @@ public class NoteCuttingEffect : MonoBehaviour
 
     void Slice()
     {
+        Half1.gameObject.SetActive(true);
+        Half2.gameObject.SetActive(true);
         Half1.transform.parent = null;
         Half2.transform.parent = null;
         Half1.isKinematic = false;
@@ -62,6 +65,7 @@ public class NoteCuttingEffect : MonoBehaviour
         Half2.transform.position = SlicesContainer.position;
         Half2.transform.rotation = Quaternion.identity;
         Half2.transform.rotation = Quaternion.identity;
-
+        Half1.gameObject.SetActive(false);
+        Half2.gameObject.SetActive(false);
     }
 }
