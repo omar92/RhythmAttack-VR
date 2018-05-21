@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 114680490941250596}
+  percentage: {fileID: 11400000, guid: 13d84946f25e05e46a127833db77cdf0, type: 2}
 --- !u!114 &114680490941250596
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -158,13 +159,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   states:
   - state: {fileID: 11400000, guid: 76ba043e56f4de248b95202d32152f61, type: 2}
-    MustBeDone: 0
     onEnter:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1507676566190422}
           m_MethodName: SetActive
           m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 114439381935182258}
+          m_MethodName: Reset
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
