@@ -6,19 +6,18 @@ using UnityEngine;
 public class SortedDictionaryVariable : ScriptableObject
 {
 
-    private SortedDictionary<float, string> value=null;
+    private SortedList<float, string> value=null;
 
-    public SortedDictionary<float, string> Value
+    public SortedList<float, string> Value
     {
         get
         {
             if (this.value == null)
             {
-                this.value = new SortedDictionary<float, string>();
+                this.value = new SortedList<float, string>();
             }
             return this.value;
         }
-
         set
         {
             this.value = value;
