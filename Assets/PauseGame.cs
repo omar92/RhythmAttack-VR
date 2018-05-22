@@ -6,7 +6,6 @@ public class PauseGame : MonoBehaviour
 {
 
     public GameEvent pauseEvent;
-    public GameEvent unPauseEvent;
 
     public GameObject bgMusic;
     AudioSource bgSource;
@@ -19,20 +18,14 @@ public class PauseGame : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J))
+
+        //Debug.Log("pause the game");
+        if (false )
         {
-            Debug.Log("pause the game");
-            if (!pausePanel.activeInHierarchy)
-            {
-                pauseEvent.Raise();
-            }
-            
+            pauseEvent.Raise();
         }
-        //if (Input.GetKeyDown(KeyCode.L))
-        //{
-        //    ContinueGame();
-        //    // 
-        //}
+            
+       
     }
     public void Pause()
     {
