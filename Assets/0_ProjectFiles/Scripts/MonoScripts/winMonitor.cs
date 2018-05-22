@@ -7,12 +7,11 @@ public class winMonitor : MonoBehaviour {
     public FloatVariable health;
     public GameEvent winEvent;
 
-    void Update()
+    public void CheckWin()
     {
         if (health.value <= 0)
         {
             winEvent.Raise();
-            health.value = 1;
         }
     }
 }

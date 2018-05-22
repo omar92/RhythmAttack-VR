@@ -50,6 +50,7 @@ GameObject:
   - component: {fileID: 114508952336249930}
   - component: {fileID: 114828121595953252}
   - component: {fileID: 114865929736271398}
+  - component: {fileID: 114309044639633642}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -65,7 +66,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4361791574186382}
-  - component: {fileID: 114679722451887250}
+  - component: {fileID: 114897255288582934}
   - component: {fileID: 114017424783485244}
   m_Layer: 0
   m_Name: LeaderboardHandler
@@ -130,8 +131,8 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114679722451887250}
-        m_MethodName: LeaderboadrUpdate
+      - m_Target: {fileID: 114897255288582934}
+        m_MethodName: SaveJson
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -158,6 +159,34 @@ MonoBehaviour:
   levelSettings: {fileID: 11400000, guid: b9631101d1d296346a4108d7517f2217, type: 2}
   combo: {fileID: 11400000, guid: 7f07dacaae0fa3a4793477326d4d1b8c, type: 2}
   scoreChanged: {fileID: 11400000, guid: a0ae95781989ed8448cf3886762e543d, type: 2}
+--- !u!114 &114309044639633642
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1215017269107966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79c7ae08bc75c7e43a13e01367bad9b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 4228c57cbc66d5c47851b7441ebe321e, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114508952336249930}
+        m_MethodName: CheckWin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114400839388140806
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -347,21 +376,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114679722451887250
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1313553077887272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4bc3bdcf42f42d4a83fbed430aa0d3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  finalScore: {fileID: 11400000, guid: 22aa7c7929e2bf24b988e7fb3b86e8c1, type: 2}
-  maxNumOfBoard: 10
-  boardList: {fileID: 11400000, guid: 0cd3896a8cadd794885578aa9143b918, type: 2}
-  LeaderboardChanged: {fileID: 11400000, guid: a71a32434d602ee42a8d29476e0d5dff, type: 2}
 --- !u!114 &114692386674749402
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -516,6 +530,21 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114897255288582934
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1313553077887272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b4802b493337e1458908ad13210f909, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finalScore: {fileID: 11400000, guid: 22aa7c7929e2bf24b988e7fb3b86e8c1, type: 2}
+  maxNumOfBoard: 10
+  LeaderboardChanged: {fileID: 11400000, guid: a71a32434d602ee42a8d29476e0d5dff, type: 2}
+  playerList: []
 --- !u!114 &114946373788741780
 MonoBehaviour:
   m_ObjectHideFlags: 1

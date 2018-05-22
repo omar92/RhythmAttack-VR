@@ -6,17 +6,14 @@ using UnityEngine.UI;
 
 public class ShowUpdatedLeaderBoard : MonoBehaviour
 {
-    public SortedDictionaryVariable dictionary;
-   // public List<GameObject> list;
-
-
     public void ShowLeaderboard()
     {
-        for (int i = 0; i < Mathf.Min(dictionary.Value.Count, transform.childCount); i++)
+        List<Player> playerList = JsonUtility.FromJson<List<Player>>(PlayerPrefs.GetString("scoreJson"));
+        for (int i = 0; i < Mathf.Min(playerList.Count, transform.childCount); i++)
         {
             transform.GetChild(i+1).gameObject.SetActive(true);
-            transform.GetChild(i + 1).GetComponentsInChildren<Text>()[1].text = dictionary.Value.Keys.ElementAt(i).ToString();
-            transform.GetChild(i + 1).GetComponentsInChildren<Text>()[0].text = dictionary.Value.Values.ElementAt(i).ToString();
+            transform.GetChild(i + 1).GetComponentsInChildren<Text>()[1].text = playerList[i].playerScore.ToString();
+            transform.GetChild(i + 1).GetComponentsInChildren<Text>()[0].text = playerList[i].playerName.ToString();
         }
     }
 }

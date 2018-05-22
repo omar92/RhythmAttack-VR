@@ -668,18 +668,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c2871ac61b3fd47ad68d90693443dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dictionary: {fileID: 11400000, guid: 0cd3896a8cadd794885578aa9143b918, type: 2}
-  list:
-  - {fileID: 1542213332638058}
-  - {fileID: 1024125742220620}
-  - {fileID: 1830130949117612}
-  - {fileID: 1017486885086620}
-  - {fileID: 1574488711008062}
-  - {fileID: 1544823320561200}
-  - {fileID: 1224433305192842}
-  - {fileID: 1091635762112594}
-  - {fileID: 1549578224622886}
-  - {fileID: 1866603930295552}
 --- !u!114 &114108642945572712
 MonoBehaviour:
   m_ObjectHideFlags: 1
