@@ -6362,7 +6362,7 @@ MonoBehaviour:
   space: {fileID: 114541309505634882}
   referencedPixels: 1
   centerPointDistance: 8.2223
-  wasStaticOnStart: 1
+  wasStaticOnStart: 0
 --- !u!114 &114631362223570348
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8843,7 +8843,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00000033350102, y: -1}
+  m_AnchoredPosition: {x: -0.00000057548004, y: -1}
   m_SizeDelta: {x: 10, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224332640791844128
@@ -9587,7 +9587,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00000048251263, y: -3.0000005}
+  m_AnchoredPosition: {x: -0.0000002476545, y: -3.0000005}
   m_SizeDelta: {x: 10, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224947303456988498
