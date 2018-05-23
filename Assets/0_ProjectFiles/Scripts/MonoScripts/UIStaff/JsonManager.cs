@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class JsonManager : MonoBehaviour {
 
@@ -11,6 +12,8 @@ public class JsonManager : MonoBehaviour {
     string json;
     Player player;
     public ListVariable playerList;
+    public InputField inputField;
+
 
     //void Awake()
     //{
@@ -21,7 +24,7 @@ public class JsonManager : MonoBehaviour {
     //    //{
     //     //   playerList = JsonUtility.FromJson<ListVariable>(PlayerPrefs.GetString("scoreJson"));
     //    //}
-        
+
     //} 
 
     public void SaveJson()
@@ -30,7 +33,7 @@ public class JsonManager : MonoBehaviour {
         {
             //if (finalScore.value != newScore)
             //{
-                player = new Player("BlaBlaBla", finalScore.value);
+                player = new Player(inputField.text, finalScore.value);
                 playerList.list.Add(player);
             //}
         }
@@ -39,6 +42,7 @@ public class JsonManager : MonoBehaviour {
             if (finalScore.value > playerList.list[playerList.list.Count-1].playerScore)
             {
                 playerList.list[playerList.list.Count - 1].playerScore = finalScore.value;
+                playerList.list[playerList.list.Count - 1].playerName = inputField.text;
             }
         }
         //newScore = finalScore.value;
