@@ -6,38 +6,37 @@ using VRTK;
 public class PauseGame : MonoBehaviour
 {
 
+    public GameEvent pauseEvent;
     
-
    
     void Start()
     {
         OVRManager.HMDLost += HandleHMDLost;
-        OVRManager.HMDMounted += HandleHMDMounted;
+        //OVRManager.HMDMounted += HandleHMDMounted;
         OVRManager.HMDUnmounted += HandleHMDUnmounted;
     }
     void Update()
     {
-
-        //Debug.Log("pause the game");
-        //if (false )
-        //{
-        //    pauseEvent.Raise();
-        //}
-            
-       
+        ApplicationNotFocused();
     }
-    void HandleHMDMounted()
-    {
-        Debug.Log("headset removed ");
-    }
+    
 
     void HandleHMDUnmounted()
     {
-        Debug.Log("headset on head ");
+        pauseEvent.Raise();
     }
 
     void HandleHMDLost()
     {
-        Debug.Log("headset deattached ");
+        pauseEvent.Raise();
+
+    }
+    void ApplicationNotFocused()
+    {
+        if (!Application.isFocused)
+        {
+            pauseEvent.Raise();
+        }
+           
     }
 }
