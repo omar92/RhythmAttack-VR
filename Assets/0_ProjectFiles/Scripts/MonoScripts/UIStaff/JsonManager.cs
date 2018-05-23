@@ -12,17 +12,17 @@ public class JsonManager : MonoBehaviour {
     Player player;
     public ListVariable playerList;
 
-    void Awake()
-    {
-        //if (PlayerPrefs.GetString("scoreJson") == null)
-        //{
-        //    playerList = new List<Player>();
-        //}else
-        //{
-         //   playerList = JsonUtility.FromJson<ListVariable>(PlayerPrefs.GetString("scoreJson"));
-        //}
+    //void Awake()
+    //{
+    //    //if (PlayerPrefs.GetString("scoreJson") == null)
+    //    //{
+    //    //    playerList = new List<Player>();
+    //    //}else
+    //    //{
+    //     //   playerList = JsonUtility.FromJson<ListVariable>(PlayerPrefs.GetString("scoreJson"));
+    //    //}
         
-    } 
+    //} 
 
     public void SaveJson()
     {

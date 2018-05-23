@@ -8,6 +8,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7efec6938f7fa1a4dae2e0fff30a852a, type: 3}
-  m_Name: LederboardList
+  m_Script: {fileID: 11500000, guid: 233dd06bce8580243b76a9e2f43505b1, type: 3}
+  m_Name: LeaderboardList
   m_EditorClassIdentifier: 
+  list: []

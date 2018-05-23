@@ -666,7 +666,7 @@ MonoBehaviour:
   finalScore: {fileID: 11400000, guid: 22aa7c7929e2bf24b988e7fb3b86e8c1, type: 2}
   maxNumOfBoard: 10
   LeaderboardChanged: {fileID: 11400000, guid: a71a32434d602ee42a8d29476e0d5dff, type: 2}
-  playerList: {fileID: 0}
+  playerList: {fileID: 11400000, guid: b92e71ab90c9ee94386f3fa518c8b68b, type: 2}
 --- !u!114 &114946373788741780
 MonoBehaviour:
   m_ObjectHideFlags: 1
