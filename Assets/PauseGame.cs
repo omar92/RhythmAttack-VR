@@ -1,44 +1,42 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VRTK;
 
 public class PauseGame : MonoBehaviour
 {
 
-    //public GameEvent pauseEvent;
-
-    //public GameObject bgMusic;
-   // AudioSource bgSource;
-
-   // [SerializeField] private GameObject pausePanel;
+    public GameEvent pauseEvent;
+    
+   
     void Start()
     {
-      //  bgSource = bgMusic.GetComponent<AudioSource>();
-
+        OVRManager.HMDLost += HandleHMDLost;
+        //OVRManager.HMDMounted += HandleHMDMounted;
+        OVRManager.HMDUnmounted += HandleHMDUnmounted;
     }
     void Update()
     {
+        ApplicationNotFocused();
+    }
+    
 
-        //Debug.Log("pause the game");
-        //if (false )
-        //{
-        //    pauseEvent.Raise();
-        //}
-            
-       
-    }
-    public void Pause()
+    void HandleHMDUnmounted()
     {
-       // bgSource.Pause();
-      //  Time.timeScale = 0;
-      //  pausePanel.SetActive(true);
-        //Disable scripts that still work while timescale is set to 0
+        pauseEvent.Raise();
     }
-    public void ContinueGame()
+
+    void HandleHMDLost()
     {
-       // bgSource.Play();
-     //   Time.timeScale = 1;
-      //  pausePanel.SetActive(false);
-        //enable the scripts again
+        pauseEvent.Raise();
+
+    }
+    void ApplicationNotFocused()
+    {
+        if (!Application.isFocused)
+        {
+            pauseEvent.Raise();
+        }
+           
     }
 }
