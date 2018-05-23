@@ -1,20 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VRTK;
 
 public class PauseGame : MonoBehaviour
 {
 
-    //public GameEvent pauseEvent;
+    
 
-    //public GameObject bgMusic;
-   // AudioSource bgSource;
-
-   // [SerializeField] private GameObject pausePanel;
+   
     void Start()
     {
-      //  bgSource = bgMusic.GetComponent<AudioSource>();
-
+        OVRManager.HMDLost += HandleHMDLost;
+        OVRManager.HMDMounted += HandleHMDMounted;
+        OVRManager.HMDUnmounted += HandleHMDUnmounted;
     }
     void Update()
     {
@@ -27,18 +26,18 @@ public class PauseGame : MonoBehaviour
             
        
     }
-    public void Pause()
+    void HandleHMDMounted()
     {
-       // bgSource.Pause();
-      //  Time.timeScale = 0;
-      //  pausePanel.SetActive(true);
-        //Disable scripts that still work while timescale is set to 0
+        Debug.Log("headset removed ");
     }
-    public void ContinueGame()
+
+    void HandleHMDUnmounted()
     {
-       // bgSource.Play();
-     //   Time.timeScale = 1;
-      //  pausePanel.SetActive(false);
-        //enable the scripts again
+        Debug.Log("headset on head ");
+    }
+
+    void HandleHMDLost()
+    {
+        Debug.Log("headset deattached ");
     }
 }
