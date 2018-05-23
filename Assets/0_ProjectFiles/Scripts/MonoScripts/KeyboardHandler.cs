@@ -6,9 +6,12 @@ using UnityEngine.UI;
 public class KeyboardHandler : MonoBehaviour {
 
     public GameEvent doneEditing;
+    public Text myText;
+    public StringVariable playerName;
 
-    public void DoneEditing( string myText)
+    public void DoneEditing( )
     {
+        playerName.value = myText.text;
         doneEditing.Raise();
     }
 }

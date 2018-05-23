@@ -646,7 +646,7 @@ MonoBehaviour:
   maxNumOfBoard: 10
   LeaderboardChanged: {fileID: 11400000, guid: a71a32434d602ee42a8d29476e0d5dff, type: 2}
   playerList: {fileID: 11400000, guid: b92e71ab90c9ee94386f3fa518c8b68b, type: 2}
-  inputField: {fileID: 0}
+  playerName: {fileID: 11400000, guid: 05836580a75f8b7419a0a50215d2eea4, type: 2}
 --- !u!114 &114946373788741780
 MonoBehaviour:
   m_ObjectHideFlags: 1

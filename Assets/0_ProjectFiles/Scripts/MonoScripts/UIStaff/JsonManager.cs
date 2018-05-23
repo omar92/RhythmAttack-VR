@@ -12,7 +12,7 @@ public class JsonManager : MonoBehaviour {
     string json;
     Player player;
     public ListVariable playerList;
-    public InputField inputField;
+    public StringVariable playerName;
 
 
     //void Awake()
@@ -33,7 +33,7 @@ public class JsonManager : MonoBehaviour {
         {
             //if (finalScore.value != newScore)
             //{
-                player = new Player(inputField.text, finalScore.value);
+                player = new Player(playerName.value, finalScore.value);
                 playerList.list.Add(player);
             //}
         }
@@ -42,7 +42,7 @@ public class JsonManager : MonoBehaviour {
             if (finalScore.value > playerList.list[playerList.list.Count-1].playerScore)
             {
                 playerList.list[playerList.list.Count - 1].playerScore = finalScore.value;
-                playerList.list[playerList.list.Count - 1].playerName = inputField.text;
+                playerList.list[playerList.list.Count - 1].playerName = playerName.value;
             }
         }
         //newScore = finalScore.value;
