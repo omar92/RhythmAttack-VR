@@ -14,7 +14,7 @@ public class NoteScript : MonoBehaviour
     public FloatVariable SwordSpeed;
     public GameEvent NoteCutE;
     public GameEvent NoteMissE;
-
+    public Vector3 velocityBeforePause;
     [Space()]
     public GameObject UP;
     public GameObject Down;
@@ -114,4 +114,18 @@ public class NoteScript : MonoBehaviour
     {
         NotesPoolScript.inistance.PushNote(transform);
     }
+
+    public void VelocityBeforePause()
+    {
+        
+        velocityBeforePause = rb.velocity;
+        rb.velocity = Vector3.zero;
+    }
+    public void VelocityAfterPause()
+    {
+        rb.velocity = velocityBeforePause;
+        
+    }
+
+
 }
