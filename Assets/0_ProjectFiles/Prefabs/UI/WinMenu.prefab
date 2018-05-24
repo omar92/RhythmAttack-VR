@@ -61,7 +61,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1018996552847490
 GameObject:
   m_ObjectHideFlags: 1
@@ -571,7 +571,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1301570633677146
 GameObject:
   m_ObjectHideFlags: 1
@@ -4160,7 +4160,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 179.45, y: 35.3, z: 0.1}
-  m_Center: {x: -19.66, y: -20.76, z: 0.20180452}
+  m_Center: {x: -1.1, y: 1.2, z: 0.02}
 --- !u!65 &65216186289112086
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -5790,7 +5790,7 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 0
+            m_BoolArgument: 1
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
@@ -9157,7 +9157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00000058260093, y: -1}
+  m_AnchoredPosition: {x: -0.0000003477428, y: -1}
   m_SizeDelta: {x: 10, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224332640791844128
@@ -9810,7 +9810,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1439531092545062}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.238}
+  m_LocalPosition: {x: 0, y: 0, z: -0.441}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 224530517509196940}
@@ -9917,7 +9917,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000002547754, y: -3.0000005}
+  m_AnchoredPosition: {x: -0.0000004967544, y: -3.0000005}
   m_SizeDelta: {x: 10, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224947303456988498
