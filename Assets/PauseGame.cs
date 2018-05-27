@@ -18,6 +18,14 @@ public class PauseGame : MonoBehaviour
     void Update()
     {
         ApplicationNotFocused();
+        if (OVRInput.Get(OVRInput.Button.Start))
+        {
+            pauseEvent.Raise();
+        }
+        //if (OVRInput.Get(OVRInput.re))
+        //{
+        //    pauseEvent.Raise();
+        //}
     }
     
 
