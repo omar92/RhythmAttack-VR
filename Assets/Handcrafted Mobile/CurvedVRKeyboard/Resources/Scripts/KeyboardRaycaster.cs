@@ -22,6 +22,8 @@ namespace CurvedVRKeyboard {
         [SerializeField, HideInInspector]
         private string clickInputName;
 
+        public BoolVariable triggerClicked;
+
         void Start () {
             keyboardStatus = gameObject.GetComponent<KeyboardStatus>();
             int layerNumber = gameObject.layer;
@@ -32,6 +34,7 @@ namespace CurvedVRKeyboard {
             // * sum of all scales so keys are never to far
             rayLength = Vector3.Distance(raycastingSource.position, target.transform.position) * (minRaylengthMultipler + 
                  (Mathf.Abs(target.transform.lossyScale.x) + Mathf.Abs(target.transform.lossyScale.y) + Mathf.Abs(target.transform.lossyScale.z)));
+            Debug.DrawRay(raycastingSource.position, target.transform.position, Color.blue);
             RayCastKeyboard();
         }
 
@@ -47,7 +50,7 @@ namespace CurvedVRKeyboard {
                     ChangeCurrentKeyItem(focusedKeyItem);
                     keyItemCurrent.Hovering();
 #if !UNITY_HAS_GOOGLEVR
-                    if(Input.GetButtonDown(clickInputName)) {// If key clicked
+                    if(triggerClicked) {// If key clicked
 #else
                     if(GvrController.TouchDown) {
 #endif

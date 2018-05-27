@@ -12,6 +12,7 @@ public class KeyboardHandler : MonoBehaviour {
     public void DoneEditing( )
     {
         playerName.value = myText.text;
+        Debug.Log("==========> "+playerName.value);
         doneEditing.Raise();
     }
 }

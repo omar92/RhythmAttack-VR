@@ -39,13 +39,19 @@ public class JsonManager : MonoBehaviour {
         }
         else
         {
-            if (finalScore.value > playerList.list[playerList.list.Count-1].playerScore)
+            for (int i = 0; i < playerList.list.Count; i++)
             {
-                playerList.list[playerList.list.Count - 1].playerScore = finalScore.value;
-                playerList.list[playerList.list.Count - 1].playerName = playerName.value;
+                if (finalScore.value > playerList.list[i].playerScore)
+                {
+                    playerList.list[i].playerScore = finalScore.value;
+                    playerList.list[i].playerName = playerName.value;
+                }
             }
+            
         }
         //newScore = finalScore.value;
+        playerList.list.Sort();
+        playerList.list.Reverse();
         json = JsonUtility.ToJson(playerList);
         //PlayerPrefs.SetString("scoreJson", json);
         LeaderboardChanged.Raise();        

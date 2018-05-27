@@ -11,6 +11,7 @@ public class VRController : MonoBehaviour
     //public TransformVariable AssociatedTransform;
     public FloatVariable slashSpeed;
     public LevelSettings settings;
+    public BoolVariable triggerClicked;
     public float strength = 1f;
     public float duration = 0.2f;
     public float interval = 0.01f;
@@ -34,6 +35,7 @@ public class VRController : MonoBehaviour
     }
     private void TriggerClick(object sender, ControllerInteractionEventArgs e)
     {
+        triggerClicked.value = true;
        // Viprate();
         ExcuteInChildren((child) =>
         {
@@ -42,6 +44,7 @@ public class VRController : MonoBehaviour
     }
     private void GripReleased(object sender, ControllerInteractionEventArgs e)
     {
+        triggerClicked.value = false;
         ExcuteInChildren((child) =>
         {
             child.OnTrigger(false);
