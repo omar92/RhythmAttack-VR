@@ -366,7 +366,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   states:
   - state: {fileID: 11400000, guid: 2d5e2e887c9109c41bcd1d601be7543d, type: 2}
-    MustBeDone: 0
     onEnter:
       m_PersistentCalls:
         m_Calls:
@@ -432,7 +431,6 @@ MonoBehaviour:
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
   - state: {fileID: 11400000, guid: 4b6e5d1a5e793e24d88c3619245971d4, type: 2}
-    MustBeDone: 0
     onEnter:
       m_PersistentCalls:
         m_Calls:
