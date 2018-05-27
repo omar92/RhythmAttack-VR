@@ -74,7 +74,7 @@ public class Emitter : MonoBehaviour
         }
 
 
-        laneNum = GlobalData.tracksNotesLanesMaper[(int)currentTrackIndex.value][note.note.Midi];
+        laneNum = GlobalData.DefenceTracksNotesLanesMaper[(int)currentTrackIndex.value][note.note.Midi];
         var em = GetLane(laneNum);
         NoteScript clone = NotesPoolScript.inistance.PullNote(em.position, laneNum, slashDir);
     }

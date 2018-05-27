@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public static class GlobalData
 {
-    public static List<Dictionary<int, int>> tracksNotesLanesMaper = new List<Dictionary<int, int>>();
+    public static List<Dictionary<int, int>> AttackTracksNotesLanesMaper = new List<Dictionary<int, int>>();
+    public static List<Dictionary<int, int>> DefenceTracksNotesLanesMaper = new List<Dictionary<int, int>>();
+
 
 }

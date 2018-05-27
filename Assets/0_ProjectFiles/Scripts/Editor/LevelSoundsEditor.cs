@@ -1,25 +1,21 @@
 ﻿using UnityEngine;
 using UnityEditor;
-
+using System.Collections.Generic;
 
 [CustomEditor(typeof(LevelSounds))]
 [CanEditMultipleObjects]
 public class LevelSoundsEditor : Editor
 {
-    SerializedProperty DefenceBG;
-    SerializedProperty DefenceMIDI;
-    SerializedProperty AttackBG;
-    SerializedProperty AttackMIDI;
+    SerializedProperty DefenceLevels;
+    SerializedProperty AttackLevels;
 
     SerializedProperty LaneSounds;
 
     void OnEnable()
     {
         // Setup the SerializedProperties.
-        DefenceBG = serializedObject.FindProperty("DefenceBG");
-        DefenceMIDI = serializedObject.FindProperty("DefenceMIDI");
-        AttackBG = serializedObject.FindProperty("AttackBG");
-        AttackMIDI = serializedObject.FindProperty("AttackMIDI");
+        DefenceLevels = serializedObject.FindProperty("DefenceLevels");
+        AttackLevels = serializedObject.FindProperty("AttackLevels");
 
         LaneSounds = serializedObject.FindProperty("LaneSounds");
 
@@ -27,32 +23,22 @@ public class LevelSoundsEditor : Editor
 
     public override void OnInspectorGUI()
     {
+        var originalColor = GUI.color;
         LevelSounds me = (LevelSounds)target;
 
         serializedObject.Update();
-        EditorGUILayout.PropertyField(DefenceBG);
 
-        GUILayout.Label("Midi: " + me.DefenceMIDI);
-        if (GUILayout.Button("DefenceMIDI"))
-        {
-            string selectedFile = EditorUtility.OpenFilePanel("Open and import Midi file", "Assets/0_ProjectFiles/Resources/Tracks/", "mid");
-            var trimIndex = selectedFile.IndexOf("/Resources/");
-            me.DefenceMIDI = selectedFile.Remove(0, trimIndex + "/Resources/".Length);
-        }
+        GUILayout.Label("Defence mode");
+        AddLevelsMapper(originalColor, DefenceLevels, me.DefenceLevels);
 
-        EditorGUILayout.PropertyField(AttackBG);
+        GUILayout.Space(10);
 
-        GUILayout.Label("Midi: " + me.AttackMIDI);
-        if (GUILayout.Button("AttackMIDI"))
-        {
-            string selectedFile = EditorUtility.OpenFilePanel("Open and import Midi file", "Assets/0_ProjectFiles/Resources/Tracks/", "mid");
-            var trimIndex = selectedFile.IndexOf("/Resources/");
-            me.AttackMIDI = selectedFile.Remove(0, trimIndex + "/Resources/".Length);
-        }
+        GUILayout.Label("Attack mode");
+        AddLevelsMapper(originalColor, AttackLevels, me.AttackLevels);
 
         //to display array
         EditorGUI.BeginChangeCheck();
-        SerializedProperty LaneSounds = serializedObject.FindProperty("LaneSounds");   
+        SerializedProperty LaneSounds = serializedObject.FindProperty("LaneSounds");
         EditorGUILayout.PropertyField(LaneSounds, true);
         if (EditorGUI.EndChangeCheck())
             serializedObject.ApplyModifiedProperties();
@@ -60,4 +46,49 @@ public class LevelSoundsEditor : Editor
         serializedObject.ApplyModifiedProperties();
     }
 
+    private void AddLevelsMapper(Color originalColor, SerializedProperty property, List<LevelBgMidiMapper> list)
+    {
+        for (int i = 0; i < list.Count; i++)
+        {
+            EditorGUILayout.PropertyField(property.GetArrayElementAtIndex(i), true);
+            if (list[i].MIDI.Length < 1)
+            {
+                GUI.color = Color.red;
+                if (GUILayout.Button("Select MIDI"))
+                {
+                    AddMidiFile(i, list);
+                }
+            }
+            else
+            {
+                if (GUILayout.Button("Midi: " + list[i].MIDI))
+                {
+                    AddMidiFile(i, list);
+                }
+            }
+
+            GUI.color = originalColor;
+
+            if (GUILayout.Button("Remove Level"))
+            {
+                var n = i;
+                list.RemoveAt(n);
+            }
+            GUILayout.Space(10);
+        }
+        if (GUILayout.Button("Add Level"))
+        {
+            list.Add(new LevelBgMidiMapper());
+            list[list.Count - 1] = new LevelBgMidiMapper(null, "");
+        }
+    }
+
+    private static void AddMidiFile(int i, List<LevelBgMidiMapper> list)
+    {
+        string selectedFile = EditorUtility.OpenFilePanel("Open and import Midi file", "Assets/0_ProjectFiles/Resources/Tracks/", "mid");
+        var trimIndex = selectedFile.IndexOf("/Resources/");
+        var data = list[i];
+        data.MIDI = selectedFile.Remove(0, trimIndex + "/Resources/".Length);
+        list[i] = data;
+    }
 }

@@ -12,6 +12,7 @@ public class GameDataInitialiser : MonoBehaviour
     public FloatVariable BossHealth;
     public FloatVariable finalScore;
     public FloatVariable combo;
+    public FloatVariable GameLevel;
 
     [Space()]
     [Header("Data To Clean")]
@@ -33,6 +34,7 @@ public class GameDataInitialiser : MonoBehaviour
         BossHealth.value = levelSettings.BossHealth;
         finalScore.value = 0f;
         combo.value = 0f;
+        GameLevel.value = 0f;
 
         //clean
         if (IsFirstInit)

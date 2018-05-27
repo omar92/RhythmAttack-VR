@@ -182,7 +182,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   states:
   - state: {fileID: 11400000, guid: 4b6e5d1a5e793e24d88c3619245971d4, type: 2}
-    MustBeDone: 1
     onEnter:
       m_PersistentCalls:
         m_Calls:
@@ -226,13 +225,23 @@ MonoBehaviour:
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
   - state: {fileID: 11400000, guid: 76ba043e56f4de248b95202d32152f61, type: 2}
-    MustBeDone: 0
     onEnter:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 114960561462563294}
           m_MethodName: set_enabled
           m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 114827566460869920}
+          m_MethodName: SetLevelDefenceMidi
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -343,6 +352,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  GameLevel: {fileID: 11400000, guid: add440bee087c414bb9a556b975887c6, type: 2}
 --- !u!114 &114835804754870976
 MonoBehaviour:
   m_ObjectHideFlags: 1

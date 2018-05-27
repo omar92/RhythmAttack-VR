@@ -8,7 +8,7 @@ public class MidiPlayerInitialiser
 {
 
 
-    public static void Init(string[] tracks)
+    public static void Init(string[] tracks, string tracksResurcesFolder)
     {
         //clean old data
         try
@@ -31,7 +31,7 @@ public class MidiPlayerInitialiser
         //load tracks files 
         for (int i = 0; i < tracks.Length; i++)
         {
-            DirectoryInfo dir = new DirectoryInfo(tracks[i]);
+            DirectoryInfo dir = new DirectoryInfo(tracksResurcesFolder+tracks[i]);
             FileInfo[] FilesInfo = dir.GetFiles("*.mid");
             foreach (FileInfo track in FilesInfo)
             {

@@ -10,9 +10,12 @@ public class MidiHandler : MonoBehaviour
     public LevelSounds levelSounds;
     public string tracksResurcesFolder;
     public UnityEvent OnInitDone;
-    string[] tracksPaths;
-    Coroutine co;
+    public FloatVariable GameLevel;
 
+
+    List<string> tracksPaths;
+    Coroutine co;
+    private MidiPlayerTK.MidiFilePlayer player;
     public void InitMidi()
     {
         if (co == null)
@@ -22,37 +25,74 @@ public class MidiHandler : MonoBehaviour
 
     private IEnumerator InitMidiData()
     {
-      //  yield return new WaitForEndOfFrame();
-        tracksPaths = new string[]
+        tracksPaths = new List<string>();
+        player = GetComponent<MidiPlayerTK.MidiFilePlayer>();
+
+        for (int i = 0; i < levelSounds.DefenceLevels.Count; i++)
         {
-          tracksResurcesFolder+levelSounds.DefenceMIDI,
-          tracksResurcesFolder+levelSounds.AttackMIDI
-        };
-        MidiPlayerInitialiser.Init(tracksPaths);
+            tracksPaths.Add(levelSounds.DefenceLevels[i].MIDI);
+        }
+        for (int i = 0; i < levelSounds.AttackLevels.Count; i++)
+        {
+            tracksPaths.Add(levelSounds.AttackLevels[i].MIDI);
+        }
+        MidiPlayerInitialiser.Init(tracksPaths.ToArray(), tracksResurcesFolder);
 
-      //  yield return new WaitForEndOfFrame();
-
-        string[] tracks = new string[2];
-        tracks[0] = levelSounds.DefenceMIDI;
-        tracks[1] = levelSounds.AttackMIDI;
 
         Dictionary<int, int> trackMapper;
-        for (int i = 0; i < tracks.Length; i++)
+
+        //defence tracks lanes mapper
+        for (int i = 0; i < levelSounds.DefenceLevels.Count; i++)
         {
             trackMapper = new Dictionary<int, int>();
-            var notes = MidiAnalyiser.GetMidiNotesTypes(tracksResurcesFolder + tracks[i]);
+            var notes = MidiAnalyiser.GetMidiNotesTypes(tracksResurcesFolder + levelSounds.DefenceLevels[i].MIDI);
             Array.Sort(notes);
             for (int x = 0; x < notes.Length; x++)
             {
                 Debug.Log(notes[x] + ": " + (notes[x] - notes[0]));
                 trackMapper.Add(notes[x], notes[x] - notes[0]);
             }
-            GlobalData.tracksNotesLanesMaper.Add(trackMapper);
+            GlobalData.DefenceTracksNotesLanesMaper.Add(trackMapper);
             //Debug.Log("-----------------------------------------------");
-            co = null;
+        }
+
+        //Attack tracks lanes mapper
+        for (int i = 0; i < levelSounds.AttackLevels.Count; i++)
+        {
+            trackMapper = new Dictionary<int, int>();
+            var notes = MidiAnalyiser.GetMidiNotesTypes(tracksResurcesFolder + levelSounds.AttackLevels[i].MIDI);
+            Array.Sort(notes);
+            for (int x = 0; x < notes.Length; x++)
+            {
+                Debug.Log(notes[x] + ": " + (notes[x] - notes[0]));
+                trackMapper.Add(notes[x], notes[x] - notes[0]);
+            }
+            GlobalData.AttackTracksNotesLanesMaper.Add(trackMapper);
+            //Debug.Log("-----------------------------------------------");
         }
 
         yield return new WaitForEndOfFrame();
+        co = null;
         OnInitDone.Invoke();
+    }
+
+    public void SetLevelDefenceMidi(int levelNum)
+    {
+        player.MPTK_MidiIndex = levelNum - 1;
+    }
+
+    public void SetLevelDefenceMidi()
+    {
+        SetLevelDefenceMidi((int)GameLevel.value);
+    }
+
+    public void SetLevelAttackMidi(int levelNum)
+    {
+        player.MPTK_MidiIndex = levelSounds.DefenceLevels.Count + levelNum - 1;
+    }
+
+    public void SetLevelAttackMidi()
+    {
+        SetLevelAttackMidi((int)GameLevel.value);
     }
 }
