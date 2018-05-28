@@ -15,7 +15,7 @@ public class ShowUpdatedLeaderBoard : MonoBehaviour
         {
             transform.GetChild(i+1).gameObject.SetActive(true);
             transform.GetChild(i + 1).GetComponentsInChildren<Text>()[1].text = playerList.list[i].playerScore.ToString();
-            transform.GetChild(i + 1).GetComponentsInChildren<Text>()[0].text = playerList.list[i].playerName.ToString();
+            transform.GetChild(i + 1).GetComponentsInChildren<Text>()[0].text = playerList.list[i].playerName;
         } 
     }
 }

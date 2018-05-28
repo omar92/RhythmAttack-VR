@@ -4,12 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using VRTK;
 
-public class UIStaff : MonoBehaviour, IControllable
+public class UIStaff : MonoBehaviour
 {
-    public void OnTrigger(bool isDown)
-    {
-        // throw new System.NotImplementedException();
-    }
 
     private void OnTriggerEnter(Collider collision)
     {
