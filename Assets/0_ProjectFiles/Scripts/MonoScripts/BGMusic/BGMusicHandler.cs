@@ -15,12 +15,18 @@ public class BGMusicHandler : MonoBehaviour
     }
     public void AssignDefenceClip()
     {
-        audioSource.clip = levelSounds.DefenceLevels[(int)GameLevel.value - 1].BG;
+        int index = GetBgIndex();
+        audioSource.clip = levelSounds.DefenceLevels[index].BG;
     }
-
     public void AssignAttackClip()
     {
-        audioSource.clip = levelSounds.AttackLevels[(int)GameLevel.value - 1].BG;
+        int index = GetBgIndex();
+        audioSource.clip = levelSounds.AttackLevels[index].BG;
+    }
+
+    private int GetBgIndex()
+    {
+        return GameLevel.value <= levelSounds.DefenceLevels.Count ? (int)GameLevel.value - 1 : levelSounds.DefenceLevels.Count - 1;
     }
 
 }

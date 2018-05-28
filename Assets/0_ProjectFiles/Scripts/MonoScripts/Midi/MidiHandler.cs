@@ -83,16 +83,21 @@ public class MidiHandler : MonoBehaviour
 
     public void SetLevelDefenceMidi()
     {
-        SetLevelDefenceMidi((int)GameLevel.value);
+        SetLevelDefenceMidi(GetMIDIIndex());
     }
 
     public void SetLevelAttackMidi(int levelNum)
     {
-        player.MPTK_MidiIndex = levelSounds.DefenceLevels.Count + levelNum - 1;
+        player.MPTK_MidiIndex = levelSounds.DefenceLevels.Count + GetMIDIIndex();
     }
 
     public void SetLevelAttackMidi()
     {
         SetLevelAttackMidi((int)GameLevel.value);
+    }
+
+    private int GetMIDIIndex()
+    {
+        return GameLevel.value <= levelSounds.DefenceLevels.Count ? (int)GameLevel.value - 1 : levelSounds.DefenceLevels.Count - 1;
     }
 }
