@@ -75,6 +75,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1948445120769560
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4649520976576800}
+  - component: {fileID: 114920298274175106}
+  - component: {fileID: 114026565895578678}
+  m_Layer: 0
+  m_Name: LevelHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1974564560011628
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,8 +162,22 @@ Transform:
   - {fileID: 4613694137084276}
   - {fileID: 4361791574186382}
   - {fileID: 4168339813144224}
+  - {fileID: 4649520976576800}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4649520976576800
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1948445120769560}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4616463070933624}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114017424783485244
 MonoBehaviour:
@@ -159,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79c7ae08bc75c7e43a13e01367bad9b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 5210c0afb6c39a2478e694d11805eff7, type: 2}
+  Event: {fileID: 11400000, guid: c8188db4d97cb4643aac1758a70e414d, type: 2}
   Response:
     m_PersistentCalls:
       m_Calls:
@@ -176,6 +207,82 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114026565895578678
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1948445120769560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07c91019330db914bac5c8ee05628426, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  states:
+  - state: {fileID: 11400000, guid: 612f8137cb83f544ca4e0534bc3f1cd8, type: 2}
+    onEnter:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114920298274175106}
+          m_MethodName: IncreaseLevel
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    onPause:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    onUnPause:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    onExit:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - state: {fileID: 11400000, guid: 2d5e2e887c9109c41bcd1d601be7543d, type: 2}
+    onEnter:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    onPause:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    onUnPause:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    onExit:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114920298274175106}
+          m_MethodName: IncreaseLevel
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
 --- !u!114 &114058513104151214
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -218,6 +325,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 114273665743374470}
+        m_MethodName: Pause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114273665743374470
@@ -226,12 +344,11 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1974564560011628}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 290e73b6533e0fc478596637feda6ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseEvent: {fileID: 11400000, guid: 9386068fc96af634cbaccc1a5e751823, type: 2}
 --- !u!114 &114309044639633642
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -368,6 +485,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 114273665743374470}
+        m_MethodName: ContinueGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114617843008592658
@@ -398,6 +526,7 @@ MonoBehaviour:
   BossHealth: {fileID: 11400000, guid: ff2ce29ae32063f428957af63590ee04, type: 2}
   finalScore: {fileID: 11400000, guid: 22aa7c7929e2bf24b988e7fb3b86e8c1, type: 2}
   combo: {fileID: 11400000, guid: 7f07dacaae0fa3a4793477326d4d1b8c, type: 2}
+  GameLevel: {fileID: 11400000, guid: add440bee087c414bb9a556b975887c6, type: 2}
   stateMachine: {fileID: 11400000, guid: 0d6f9a26e0f52fe4ebf9a67e4bd633d9, type: 2}
   BossHealthChanged: {fileID: 11400000, guid: 4228c57cbc66d5c47851b7441ebe321e, type: 2}
   PlayerHealthChanged: {fileID: 11400000, guid: 1652e94871cc1de49b5058195a9e4593,
@@ -646,7 +775,19 @@ MonoBehaviour:
   maxNumOfBoard: 10
   LeaderboardChanged: {fileID: 11400000, guid: a71a32434d602ee42a8d29476e0d5dff, type: 2}
   playerList: {fileID: 11400000, guid: b92e71ab90c9ee94386f3fa518c8b68b, type: 2}
-  playerName: {fileID: 11400000, guid: 05836580a75f8b7419a0a50215d2eea4, type: 2}
+--- !u!114 &114920298274175106
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1948445120769560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcfbe6b878be7d94a80fb4dd48c2bc7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameLevel: {fileID: 11400000, guid: add440bee087c414bb9a556b975887c6, type: 2}
+  LevelChangedE: {fileID: 11400000, guid: e0e31d08cbc56c24ebc50c3e9db4bf6b, type: 2}
 --- !u!114 &114946373788741780
 MonoBehaviour:
   m_ObjectHideFlags: 1
