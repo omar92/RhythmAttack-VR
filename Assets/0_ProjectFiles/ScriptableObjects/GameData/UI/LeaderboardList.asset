@@ -11,4 +11,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 233dd06bce8580243b76a9e2f43505b1, type: 3}
   m_Name: LeaderboardList
   m_EditorClassIdentifier: 
-  list: []
+  list:
+  - playerName: vee
+    playerScore: 645
+  - playerName: neveen
+    playerScore: 961
+  - playerName: offff
+    playerScore: 223
+  - playerName: wow
+    playerScore: 366
+  - playerName: 3aaaaa
+    playerScore: 690
+  - playerName: perfecto
+    playerScore: 1180
+  - playerName: Noooo
+    playerScore: 704
+  - playerName: middle
+    playerScore: 680
+  - playerName: vevo
+    playerScore: 616

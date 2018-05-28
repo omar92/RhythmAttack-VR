@@ -6154,6 +6154,7 @@ MonoBehaviour:
   raycastingSource: {fileID: 0}
   target: {fileID: 1122963886126970}
   clickInputName: Oculus_GearVR_RIndexTrigger
+  triggerClicked: {fileID: 11400000, guid: 475f6c9d0bc752d4d876f8a6c0fc6242, type: 2}
 --- !u!114 &114548306733852398
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6328,7 +6329,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114543787922778430}
-        m_MethodName: clickKey
+        m_MethodName: ClickKey
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7638,7 +7639,7 @@ MonoBehaviour:
   space: {fileID: 114244257216936110}
   referencedPixels: 1
   centerPointDistance: 8.2223
-  wasStaticOnStart: 1
+  wasStaticOnStart: 0
 --- !u!114 &114974461238677384
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9112,7 +9113,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00000014499426, y: -1}
+  m_AnchoredPosition: {x: -0.0000002766651, y: -1}
   m_SizeDelta: {x: 10, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224483534961355796
@@ -9867,7 +9868,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00000029400587, y: -3.0000005}
+  m_AnchoredPosition: {x: -0.00000042567672, y: -3.0000005}
   m_SizeDelta: {x: 10, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224962566680768904

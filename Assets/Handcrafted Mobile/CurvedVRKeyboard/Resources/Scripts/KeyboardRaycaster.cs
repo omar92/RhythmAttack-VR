@@ -50,7 +50,7 @@ namespace CurvedVRKeyboard {
                     ChangeCurrentKeyItem(focusedKeyItem);
                     keyItemCurrent.Hovering();
 #if !UNITY_HAS_GOOGLEVR
-                    if(triggerClicked) {// If key clicked
+                    if(false) {// If key clicked
 #else
                     if(GvrController.TouchDown) {
 #endif
@@ -59,6 +59,31 @@ namespace CurvedVRKeyboard {
                     }
                 }
             } else if(keyItemCurrent != null) {// If no target hit and lost focus on item
+                ChangeCurrentKeyItem(null);
+            }
+        }
+        public void ClickKey()
+        {
+            ray = new Ray(raycastingSource.position, raycastingSource.forward);
+            if (Physics.Raycast(ray, out hit, rayLength, layer))
+            { // If any key was hit
+                KeyboardItem focusedKeyItem = hit.transform.gameObject.GetComponent<KeyboardItem>();
+                if (focusedKeyItem != null)
+                { // Hit may occur on item without script
+                    ChangeCurrentKeyItem(focusedKeyItem);
+                    keyItemCurrent.Hovering();
+#if !UNITY_HAS_GOOGLEVR
+                    {// If key clicked
+#else
+                    if(GvrController.TouchDown) {
+#endif
+                        keyItemCurrent.Click();
+                        keyboardStatus.HandleClick(keyItemCurrent);
+                    }
+                }
+            }
+            else if (keyItemCurrent != null)
+            {// If no target hit and lost focus on item
                 ChangeCurrentKeyItem(null);
             }
         }

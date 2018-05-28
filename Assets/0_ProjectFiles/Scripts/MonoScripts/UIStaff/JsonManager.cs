@@ -56,9 +56,9 @@ public class JsonManager : MonoBehaviour {
             Debug.Log("Listaaa Name"+ item.playerName+ "Listaaa Score" + item.playerScore);
         }
         json = JsonUtility.ToJson(playerList);
-        playerName.value = "";
         //PlayerPrefs.SetString("scoreJson", json);
-        LeaderboardChanged.Raise();        
+        LeaderboardChanged.Raise();
+        playerName.value = "";
     }
 
 }
