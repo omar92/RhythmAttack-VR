@@ -29,30 +29,34 @@ public class JsonManager : MonoBehaviour {
 
     public void SaveJson()
     {
+
         if (playerList.list.Count == 0 || playerList.list.Count < maxNumOfBoard)
         {
             //if (finalScore.value != newScore)
             //{
-                player = new Player(playerName.value, finalScore.value);
+                player = new Player(finalScore.value , playerName.value);
                 playerList.list.Add(player);
+            Debug.Log("D5al fl ola ahooo");
             //}
         }
         else
         {
-            for (int i = 0; i < playerList.list.Count; i++)
+            Debug.Log("D5al fl else ahooo");
+            if (finalScore.value > playerList.list[playerList.list.Count-1].playerScore)
             {
-                if (finalScore.value > playerList.list[i].playerScore)
-                {
-                    playerList.list[i].playerScore = finalScore.value;
-                    playerList.list[i].playerName = playerName.value;
-                }
-            }
-            
+                playerList.list[playerList.list.Count - 1].playerScore = finalScore.value;
+                playerList.list[playerList.list.Count - 1].playerName = playerName.value;
+            }            
         }
         //newScore = finalScore.value;
         playerList.list.Sort();
         playerList.list.Reverse();
+        foreach (var item in playerList.list)
+        {
+            Debug.Log("Listaaa Name"+ item.playerName+ "Listaaa Score" + item.playerScore);
+        }
         json = JsonUtility.ToJson(playerList);
+        playerName.value = "";
         //PlayerPrefs.SetString("scoreJson", json);
         LeaderboardChanged.Raise();        
     }

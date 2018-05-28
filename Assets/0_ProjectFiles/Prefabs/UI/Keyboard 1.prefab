@@ -4461,6 +4461,7 @@ MonoBehaviour:
   raycastingSource: {fileID: 0}
   target: {fileID: 1693956265445934}
   clickInputName: 
+  triggerClicked: {fileID: 0}
 --- !u!114 &114070568506831272
 MonoBehaviour:
   m_ObjectHideFlags: 1

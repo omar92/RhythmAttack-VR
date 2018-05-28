@@ -7,16 +7,17 @@ public class PauseGame : MonoBehaviour
 {
 
     public GameEvent pauseEvent;
-    bool firstWear =false;
-   
+    //bool firstWear =false;
+    
     void Start()
     {
         OVRManager.HMDLost += HandleHMDLost;
-        OVRManager.HMDMounted += FirstWearSetDirty;
+       // OVRManager.HMDMounted += FirstWearSetDirty;
         OVRManager.HMDUnmounted += HandleHMDUnmounted;
     }
     void Update()
     {
+
         ApplicationNotFocused();
         if (OVRInput.Get(OVRInput.Button.Start))
         {
@@ -31,11 +32,11 @@ public class PauseGame : MonoBehaviour
 
     void HandleHMDUnmounted()
     {
-        if (firstWear)
-        {
+        //if (firstWear)
+        //{
             pauseEvent.Raise();
-            firstWear = false;
-        }
+            //firstWear = false;
+        //}
         
     }
 
@@ -52,8 +53,8 @@ public class PauseGame : MonoBehaviour
         }
            
     }
-    void FirstWearSetDirty()
-    {
-        firstWear = true ;
-    }
+    //void FirstWearSetDirty()
+    //{
+    //    firstWear = true ;
+    //}
 }

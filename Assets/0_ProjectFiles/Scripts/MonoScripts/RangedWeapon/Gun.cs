@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Gun : MonoBehaviour, IControllable {
 
@@ -40,5 +41,10 @@ public class Gun : MonoBehaviour, IControllable {
             }
             Destroy(clone.gameObject, destroyAfter);
         }
+    }
+
+    public void OnSqueez(bool isDown)
+    {
+        //throw new NotImplementedException();
     }
 }

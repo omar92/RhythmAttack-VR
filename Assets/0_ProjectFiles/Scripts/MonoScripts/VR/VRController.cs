@@ -19,24 +19,27 @@ public class VRController : MonoBehaviour
     //Private
     VRTK_ControllerEvents trackObject = null;
 
-
-
    // public static int currentDeviceIndex;
     Color currentColler;
     int ChildCount = 0;
     IControllable child;
+
     void Awake()
     {
         trackObject = GetComponent<VRTK_ControllerEvents>();
         //register events
         trackObject.TriggerPressed += TriggerClick;
         trackObject.TriggerReleased += GripReleased;
+        trackObject.TriggerClicked += TriggerSqueezed;
 
     }
+
+    // L triggerClicked boolVariable msh 48al test why instead the Event working well;
+
     private void TriggerClick(object sender, ControllerInteractionEventArgs e)
     {
         triggerClicked.value = true;
-       // Viprate();
+        NormalViprate();
         ExcuteInChildren((child) =>
         {
             child.OnTrigger(true);
@@ -50,7 +53,14 @@ public class VRController : MonoBehaviour
             child.OnTrigger(false);
         });
     }
-
+    private void TriggerSqueezed(object sender, ControllerInteractionEventArgs e)
+    {
+        triggerClicked.value = true;
+        ExcuteInChildren((child) =>
+        {
+            child.OnSqueez(true);
+        });
+    }
     void ExcuteInChildren(Action<IControllable> action)
     {
         ChildCount = transform.childCount;
@@ -69,6 +79,10 @@ public class VRController : MonoBehaviour
         VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(gameObject), strength, 0.009f, interval-.009f);   
     }
     public void ViprateGun()
+    {
+        VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(gameObject), strength, duration, interval);
+    }
+    public void NormalViprate()
     {
         VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(gameObject), strength, duration, interval);
     }
