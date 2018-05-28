@@ -13,20 +13,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   list:
   - playerName: vee
-    playerScore: 645
-  - playerName: neveen
-    playerScore: 961
-  - playerName: offff
-    playerScore: 223
-  - playerName: wow
-    playerScore: 366
-  - playerName: 3aaaaa
-    playerScore: 690
-  - playerName: perfecto
-    playerScore: 1180
-  - playerName: Noooo
-    playerScore: 704
-  - playerName: middle
-    playerScore: 680
-  - playerName: vevo
-    playerScore: 616
+    playerScore: 421
+  - playerName: Evoh
+    playerScore: 856
+  - playerName: ovve
+    playerScore: 267
+  - playerName: Hello
+    playerScore: 487
+  - playerName: 5osara
+    playerScore: 696
