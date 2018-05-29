@@ -7,7 +7,9 @@ public class NoteCuttingEffect : MonoBehaviour
 {
 
     public Rigidbody Half1;
+    public Transform Stencel1;
     public Rigidbody Half2;
+    public Transform Stencel2;
     public Transform SlicesContainer;
 
     public float ForceMultiplier = 1;
@@ -78,7 +80,8 @@ public class NoteCuttingEffect : MonoBehaviour
 
         if (dir == Direction.UP || dir == Direction.DOWN)
         {
-            SlicesContainer.rotation = Quaternion.identity;
+            Stencel1.rotation = Quaternion.Euler(0, 90, 0);
+            Stencel2.rotation = Quaternion.Euler(0, -90, 0);
             Half1.isKinematic = false;
             Half2.isKinematic = false;
 
@@ -87,7 +90,8 @@ public class NoteCuttingEffect : MonoBehaviour
         }
         else
         {
-            SlicesContainer.rotation = Quaternion.Euler(0, 0, 90);
+            Stencel1.rotation = Quaternion.Euler(-90, 90, -90);
+            Stencel2.rotation = Quaternion.Euler(90, 90, 0);
             Half1.isKinematic = false;
             Half2.isKinematic = false;
 
@@ -111,8 +115,8 @@ public class NoteCuttingEffect : MonoBehaviour
         Half1.transform.position = SlicesContainer.position;
         Half2.transform.position = SlicesContainer.position;
 
-        Half1.transform.localRotation = Quaternion.identity;
-        Half2.transform.localRotation = Quaternion.identity;
+        Stencel1.rotation = Quaternion.Euler(0, 90, 0);
+        Stencel2.rotation = Quaternion.Euler(0, -90, 0);
 
         Half1.gameObject.SetActive(false);
         Half2.gameObject.SetActive(false);
