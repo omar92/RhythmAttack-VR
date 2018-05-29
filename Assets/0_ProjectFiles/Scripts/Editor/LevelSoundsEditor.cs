@@ -29,11 +29,13 @@ public class LevelSoundsEditor : Editor
         serializedObject.Update();
 
         GUILayout.Label("Defence mode");
+        if (me.DefenceLevels == null) { me.DefenceLevels = new List<LevelBgMidiMapper>(); }
         AddLevelsMapper(originalColor, DefenceLevels, me.DefenceLevels);
 
         GUILayout.Space(10);
 
         GUILayout.Label("Attack mode");
+        if (me.AttackLevels == null) { me.AttackLevels = new List<LevelBgMidiMapper>(); }
         AddLevelsMapper(originalColor, AttackLevels, me.AttackLevels);
 
         //to display array
