@@ -13,7 +13,9 @@ public class Emitter : MonoBehaviour
     [Header("GameEvents")]
     public GameEvent startBgMusicE;
     public GameEvent stopBgMusicE;
-    // public UnityEvent OnDone;
+
+    public TransformVariable bossRightHand;
+    public TransformVariable bossLeftHand;
 
     public void Awake()
     {
@@ -23,12 +25,17 @@ public class Emitter : MonoBehaviour
     void Start()
     {
         var eventCollectorPos = EventEmitter.position;
-        eventCollectorPos.z = player.value.position.z;
+        eventCollectorPos.z = GetZOfNotesReach();
         var emitter = GameObject.Instantiate(EventEmitter, eventCollectorPos, Quaternion.identity);
         emitter.gameObject.AddComponent<EmitterEventsCollector>();
         emitter.GetComponent<Collider>().enabled = true;
-
     }
+
+    private float GetZOfNotesReach( )
+    {
+       return player.value.position.z + (player.value.lossyScale.z );
+    }
+
     public void StartEmitiing()
     {
         EmitEvent(startBgMusicE);
@@ -37,24 +44,53 @@ public class Emitter : MonoBehaviour
     public void OnMidiNoteAudio(ObjectVariable data)
     {
         var noteAudio = (MidiNoteAudio)data.value;
-        //  Debug.Log(noteAudio.note.Midi);
         SpawnNote(noteAudio);
     }
 
     int laneNum;
     void SpawnNote(MidiNoteAudio note)
     {
-        //Debug.Log("note Midi" + note.note.Midi
+        //  Debug.Log("note Midi" + note.note.Midi
         //+ "\n" + "note Pitch" + note.note.Pitch
         //+ "\n" + "note Patch" + note.note.Patch
         //+ "\n" + "note AbsoluteQuantize" + note.note.AbsoluteQuantize
-        //+ "\n" + "note Chanel" + note.note.Chanel
-        //+ "\n" + "note Delay" + note.note.Delay
-        //+ "\n" + "note Drum" + note.note.Drum
-        //+ "\n" + "note Duration" + note.note.Duration
+        //+ "\n" + "note Chanel" + note.note.Chanel      
+        //+ "\n" + "note Delay" + note.note.Delay        
+        //+ "\n" + "note Drum" + note.note.Drum          
+        //+ "\n" + "note Duration" + note.note.Duration  
         //+ "\n" + "note Velocity" + note.note.Velocity);
-        // var velocityRatio = (float)(note.note.Velocity * 100) / (125);
+        //  var velocityRatio = (float)(note.note.Velocity * 100) / (125);
 
+        Direction slashDir = ExtractSlashDir(note);
+        Transform source;
+        Vector3 distination;
+        float originalDistance;
+        CalculateNoteData(note, out source, out distination, out originalDistance);
+        NotesPoolScript.inistance.PullNote(source.position, distination, originalDistance, laneNum, slashDir);
+        //note.note.Midi++;
+        //CalculateNoteData(note, out source, out distination, out originalDistance);
+        //NotesPoolScript.inistance.PullNote(source.position, distination, originalDistance, laneNum, slashDir);
+    }
+
+    private void CalculateNoteData(MidiNoteAudio note, out Transform source, out Vector3 distination, out float originalDistance)
+    {
+        laneNum = GlobalData.DefenceTracksNotesLanesMaper[(int)currentTrackIndex.value][note.note.Midi];
+        if (laneNum % 4 < 2)
+        {
+            source = bossLeftHand.value;
+        }
+        else
+        {
+            source = bossRightHand.value;
+        }
+
+        distination = GetLane(laneNum).position;
+        originalDistance = Vector3.Distance(source.position, distination);
+        distination.z = GetZOfNotesReach();
+    }
+
+    private static Direction ExtractSlashDir(MidiNoteAudio note)
+    {
         Direction slashDir;
         if (note.note.Velocity >= 0 && note.note.Velocity < 31.5)//25%
         {
@@ -73,12 +109,8 @@ public class Emitter : MonoBehaviour
             slashDir = Direction.DOWN;
         }
 
-
-        laneNum = GlobalData.DefenceTracksNotesLanesMaper[(int)currentTrackIndex.value][note.note.Midi];
-        var em = GetLane(laneNum);
-        NoteScript clone = NotesPoolScript.inistance.PullNote(em.position, laneNum, slashDir);
+        return slashDir;
     }
-
 
     Transform GetLane(int row, int col)
     {

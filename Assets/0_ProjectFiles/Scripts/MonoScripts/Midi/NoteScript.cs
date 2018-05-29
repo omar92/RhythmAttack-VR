@@ -36,14 +36,28 @@ public class NoteScript : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void Spawn(Vector3 pos, int lane, Direction slashDirection)
+    public void Spawn(Vector3 source, Vector3 dist, float originalDistance, int lane, Direction slashDirection)
     {
         // this.enabled = true;
         transform.SetParent(null);
-        transform.position = pos;
+        transform.position = source;
         rb.GetComponent<Renderer>().enabled = true;
         rb.GetComponent<Collider>().enabled = true;
-        rb.velocity = new Vector3(0, 0, -settings.NoteVelocity);
+
+
+
+        var newDistance = Vector3.Distance(source, dist);
+
+        float newVelocity = newDistance / settings.NoteVelocity;
+        print("lane: " + lane
+              + "OD: " + originalDistance + "\n"
+              + "ND: " + newDistance + "\n"
+              + "OV: " + settings.NoteVelocity + "\n"
+              + "NV: " + newVelocity + "\n"
+              );
+        var dir = (dist - source).normalized * newVelocity;
+
+        rb.velocity = dir;
         SourceLane = lane;
         this.slashDirection = slashDirection;
         SetDirection(slashDirection);
@@ -51,19 +65,19 @@ public class NoteScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-      
+
         if (collision.tag == "Sword")
         {
             var swordScript = collision.GetComponent<Sword>();
-          //  Debug.Log("swordScript.dir :" + swordScript.dir + " :::: slashDirection: " + slashDirection);
-            if (swordScript.dir== slashDirection && SwordSpeed.value > settings.minCutSpeed)
+            //  Debug.Log("swordScript.dir :" + swordScript.dir + " :::: slashDirection: " + slashDirection);
+            if (swordScript.dir == slashDirection && SwordSpeed.value > settings.minCutSpeed)
             {
                 OnNoteCut();
             }
             else
             {
                 NoteMissE.Raise();
-             //   DestroyNote();
+                //   DestroyNote();
             }
         }
         else
@@ -117,14 +131,14 @@ public class NoteScript : MonoBehaviour
 
     public void VelocityBeforePause()
     {
-        
+
         velocityBeforePause = rb.velocity;
         rb.velocity = Vector3.zero;
     }
     public void VelocityAfterPause()
     {
         rb.velocity = velocityBeforePause;
-        
+
     }
 
 
