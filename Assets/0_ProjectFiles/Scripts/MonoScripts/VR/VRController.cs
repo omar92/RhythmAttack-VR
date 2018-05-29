@@ -39,7 +39,7 @@ public class VRController : MonoBehaviour
     private void TriggerClick(object sender, ControllerInteractionEventArgs e)
     {
         triggerClicked.value = true;
-        NormalViprate();
+       // NormalViprate();
         ExcuteInChildren((child) =>
         {
             child.OnTrigger(true);
@@ -66,8 +66,9 @@ public class VRController : MonoBehaviour
         ChildCount = transform.childCount;
         for (int i = 0; i < ChildCount; i++)
         {
-            child = transform.GetChild(i).GetComponent<IControllable>();
-            if (child != null)
+           var childGO = transform.GetChild(i);
+            child = childGO.GetComponent<IControllable>();
+            if (child != null&& childGO.gameObject.activeInHierarchy)
             {
                 action(child);
             }

@@ -7,7 +7,7 @@ using VRTK;
 
 public class UIStaff : MonoBehaviour , IControllable
 {
-    public float rayLength = 10f;
+    public float rayLength = 1000f;
     public Ray ray;
     public RaycastHit hit;
     public GameEvent clickUIEvent ;
@@ -33,28 +33,32 @@ public class UIStaff : MonoBehaviour , IControllable
     }
     private void RayCastUI()
     {
-        line.SetPosition(0, hand.localPosition);
-        ray = new Ray(hand.position, hand.forward);
-        Debug.DrawRay(hand.position, hand.forward, Color.blue);
+        line.SetPosition(0, hand.position);
+        ray = new Ray(hand.position, -hand.up);
+        Debug.DrawRay(hand.position, -hand.up, Color.blue);
         if (Physics.Raycast(ray, out hit, rayLength))
-        { 
-            line.SetPosition(1, hit.transform.localPosition);
-            if (hit.transform != currentButton.transform)
+        {
+         //   print("hit(" + hit.transform.name + ")");
+            line.SetPosition(1, hit.transform.position);
+            if (currentButton==null || hit.transform != currentButton.transform)
             {
                 if (currentButton != null)
                 {
+                  //  print("UnHovering(" + currentButton.name + ")");
                     UnHovering(currentButton);
                 }
                 currentButton = hit.transform.GetComponent<Button>();
                 if (currentButton != null)
                 {
+                   // print("Hovering("+ currentButton .name+ ")");
                     Hovering(currentButton);
                 }
             }
         }
         else
         {
-            line.SetPosition(1, hand.forward * -rayLength);
+            line.SetPosition(1, -hand.up * rayLength);
+            currentButton = null;
         }
     }
 
@@ -74,18 +78,11 @@ public class UIStaff : MonoBehaviour , IControllable
             if (currentButton != null)
             {
                 VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(transform.parent.gameObject), 1f);
+             //   print("OnClick(" + currentButton.name + ")");
                 currentButton.onClick.Invoke();
             }
         }
     }
 
-    //private void OnTriggerEnter(Collider collision)
-    //{
-        //var uiButton = collision.gameObject.GetComponent<Button>();
-        //if (uiButton)
-        //{
 
-        //    uiButton.onClick.Invoke();
-        //}
-    //}
 }
