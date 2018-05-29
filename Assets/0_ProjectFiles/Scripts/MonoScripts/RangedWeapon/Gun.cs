@@ -11,7 +11,12 @@ public class Gun : MonoBehaviour, IControllable {
     public GameEvent GunVibrate;
     float nextTimeToFire = 0f; 
     public Rigidbody projectile;
-
+    public GeneralSounds sounds;
+    AudioSource Source;
+    private void Awake()
+    {
+        Source = GetComponent<AudioSource>();
+    }
     public void OnTrigger(bool isDown)
     {
         if (isDown)
@@ -23,6 +28,9 @@ public class Gun : MonoBehaviour, IControllable {
 
     void Shoot()
     {
+
+        Source.clip = sounds.RangedShoot;
+        Source.Play();
         GunVibrate.Raise();
         if (this.gameObject.activeInHierarchy == true)
         {
