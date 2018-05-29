@@ -12,13 +12,5 @@ MonoBehaviour:
   m_Name: LeaderboardList
   m_EditorClassIdentifier: 
   list:
-  - playerName: vee
-    playerScore: 421
-  - playerName: Evoh
-    playerScore: 856
-  - playerName: ovve
-    playerScore: 267
-  - playerName: Hello
-    playerScore: 487
-  - playerName: 5osara
-    playerScore: 696
+  - playerName: 
+    playerScore: 0
