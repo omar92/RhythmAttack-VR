@@ -28,30 +28,18 @@ public struct LevelBgMidiMapper
 {
     public AudioClip BG;
 
-    private string mIDI;
+    public string MIDI;
 
-    public string MIDI
-    {
-        get
-        {
-            return mIDI;
-        }
-
-        set
-        {
-            mIDI = value;
-        }
-    }
 
     public LevelBgMidiMapper(AudioClip BG, string MIDI)
     {
         this.BG = BG;
-        mIDI = MIDI;
+        this.MIDI = MIDI;
     }
 
     public LevelBgMidiMapper(LevelBgMidiMapper levelBgMidiMapper)
     {
         this.BG = levelBgMidiMapper.BG;
-        mIDI = levelBgMidiMapper.MIDI;
+        this.MIDI = levelBgMidiMapper.MIDI;
     }
 }

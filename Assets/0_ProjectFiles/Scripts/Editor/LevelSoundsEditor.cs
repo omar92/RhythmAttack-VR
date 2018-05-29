@@ -53,7 +53,7 @@ public class LevelSoundsEditor : Editor
         for (int i = 0; i < list.Count; i++)
         {
             EditorGUILayout.PropertyField(property.GetArrayElementAtIndex(i), true);
-            if (list[i].MIDI.Length < 1)
+            if (list[i].MIDI!=null && list[i].MIDI.Length < 1)
             {
                 GUI.color = Color.red;
                 if (GUILayout.Button("Select MIDI"))
