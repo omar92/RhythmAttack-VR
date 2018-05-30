@@ -23,6 +23,7 @@ public class GameDataInitialiser : MonoBehaviour
     public GameEvent BossHealthChanged;
     public GameEvent PlayerHealthChanged;
     public GameEvent ScoreHealthChanged;
+    public GameEvent GameLevelChanged;
     // public GameEvent ComboHealthChanged;
 
 
@@ -46,6 +47,7 @@ public class GameDataInitialiser : MonoBehaviour
         BossHealthChanged.Raise();
         PlayerHealthChanged.Raise();
         ScoreHealthChanged.Raise();
+        GameLevelChanged.Raise();
         //  ComboHealthChanged.Raise();
 
         IsFirstInit = false;

@@ -76,28 +76,46 @@ public class MidiHandler : MonoBehaviour
         OnInitDone.Invoke();
     }
 
-    public void SetLevelDefenceMidi(int levelNum)
-    {
-        player.MPTK_MidiIndex = levelNum - 1;
-    }
 
     public void SetLevelDefenceMidi()
     {
-        SetLevelDefenceMidi(GetMIDIIndex());
+        
+        SetLevelDefenceMidi(GetMIDIIndex(levelSounds.DefenceLevels));
+    }
+    public void SetLevelDefenceMidi(int index)
+    {
+
+      //  Debug.Log("index " + index);
+        player.MPTK_MidiIndex = index;
+        player.MPTK_Position = 0;
     }
 
-    public void SetLevelAttackMidi(int levelNum)
-    {
-        player.MPTK_MidiIndex = levelSounds.DefenceLevels.Count + GetMIDIIndex();
-    }
 
     public void SetLevelAttackMidi()
     {
-        SetLevelAttackMidi((int)GameLevel.value);
+        SetLevelAttackMidi(GetMIDIIndex(levelSounds.AttackLevels));
+    }
+    public void SetLevelAttackMidi(int index)
+    {
+      //  Debug.Log("levelSounds.DefenceLevels.Count + index " + (levelSounds.DefenceLevels.Count + index));
+        player.MPTK_MidiIndex = levelSounds.DefenceLevels.Count + index;
+        player.MPTK_Position = 0;
     }
 
-    private int GetMIDIIndex()
+
+
+    //private int GetMIDIIndex()
+    //{
+    //    return GameLevel.value <= levelSounds.DefenceLevels.Count ? (int)GameLevel.value - 1 : levelSounds.DefenceLevels.Count - 1;
+    //}
+
+    private int GetMIDIIndex(List<LevelBgMidiMapper> list)
     {
-        return GameLevel.value <= levelSounds.DefenceLevels.Count ? (int)GameLevel.value - 1 : levelSounds.DefenceLevels.Count - 1;
+        return GameLevel.value < list.Count ? (int)GameLevel.value - 1 : list.Count -1 ;
+    }
+
+    public int GetMIDIIndex(int listCount)
+    {
+        return GameLevel.value < listCount ? (int)GameLevel.value - 1 : listCount - 1;
     }
 }
