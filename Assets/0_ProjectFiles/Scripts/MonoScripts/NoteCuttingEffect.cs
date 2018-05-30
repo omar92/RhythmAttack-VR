@@ -85,8 +85,8 @@ public class NoteCuttingEffect : MonoBehaviour
             Half1.isKinematic = false;
             Half2.isKinematic = false;
 
-            Half1.AddForce(transform.right * ForceMultiplier, ForceMode.Impulse);
-            Half2.AddForce(-transform.right * ForceMultiplier, ForceMode.Impulse);
+            Half1.AddForce(-transform.right * ForceMultiplier, ForceMode.Impulse);
+            Half2.AddForce(transform.right * ForceMultiplier, ForceMode.Impulse);
         }
         else
         {
