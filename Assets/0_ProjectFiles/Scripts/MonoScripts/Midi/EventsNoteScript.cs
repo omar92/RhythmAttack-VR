@@ -15,11 +15,16 @@ public class EventsNoteScript : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    internal void Spawn(Vector3 position, GameEvent gameEvent, Emitter emitter)
+    internal void Spawn(Vector3 source, Vector3 dist, GameEvent gameEvent, Emitter emitter)
     {
         transform.SetParent(null);
-        transform.position = position;
-        rb.velocity = new Vector3(0, 0, -settings.NoteVelocity);
+        transform.position = source;
+
+        var newDistance = Vector3.Distance(source, dist);
+        float newVelocity = newDistance / settings.NoteVelocity;
+        var dir = (dist - source).normalized * newVelocity;
+        rb.velocity = dir;
+
         this.gameEvent = gameEvent;
     }
 

@@ -36,7 +36,7 @@ public class NoteScript : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void Spawn(Vector3 source, Vector3 dist, float originalDistance, int lane, Direction slashDirection)
+    public void Spawn(Vector3 source, Vector3 dist, int lane, Direction slashDirection)
     {
         // this.enabled = true;
         transform.SetParent(null);
@@ -49,12 +49,12 @@ public class NoteScript : MonoBehaviour
         var newDistance = Vector3.Distance(source, dist);
 
         float newVelocity = newDistance / settings.NoteVelocity;
-        print("lane: " + lane
-              + "OD: " + originalDistance + "\n"
-              + "ND: " + newDistance + "\n"
-              + "OV: " + settings.NoteVelocity + "\n"
-              + "NV: " + newVelocity + "\n"
-              );
+        //print("lane: " + lane
+        //      + "OD: " + originalDistance + "\n"
+        //      + "ND: " + newDistance + "\n"
+        //      + "OV: " + settings.NoteVelocity + "\n"
+        //      + "NV: " + newVelocity + "\n"
+        //      );
         var dir = (dist - source).normalized * newVelocity;
 
         rb.velocity = dir;

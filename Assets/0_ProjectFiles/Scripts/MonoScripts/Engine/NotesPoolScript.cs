@@ -29,7 +29,7 @@ public class NotesPoolScript : MonoBehaviour
         {
             noteScript = InstantiateNoteTransform();
         }
-        noteScript.Spawn(source,dist, originalDistance, lane , slashDirection);
+        noteScript.Spawn(source,dist,  lane , slashDirection);
         return noteScript;
     }
 

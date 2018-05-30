@@ -17,6 +17,8 @@ public class Emitter : MonoBehaviour
     public TransformVariable bossRightHand;
     public TransformVariable bossLeftHand;
 
+    Vector3 eventCollectorPos;
+
     public void Awake()
     {
         inistance = this;
@@ -24,7 +26,7 @@ public class Emitter : MonoBehaviour
 
     void Start()
     {
-        var eventCollectorPos = EventEmitter.position;
+         eventCollectorPos = EventEmitter.position;
         eventCollectorPos.z = GetZOfNotesReach();
         var emitter = GameObject.Instantiate(EventEmitter, eventCollectorPos, Quaternion.identity);
         emitter.gameObject.AddComponent<EmitterEventsCollector>();
@@ -126,7 +128,7 @@ public class Emitter : MonoBehaviour
         var eventNote = Instantiate(eventNotePref).GetComponent<EventsNoteScript>();
         // note.ObjectBool = transform;
         eventNote.tag = "Note";
-        eventNote.Spawn(EventEmitter.position, gameEvent, this);
+        eventNote.Spawn(EventEmitter.position, eventCollectorPos ,gameEvent, this);
     }
 
     public void OnMidiEnd()
