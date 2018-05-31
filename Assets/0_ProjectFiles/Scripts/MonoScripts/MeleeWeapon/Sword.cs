@@ -15,6 +15,8 @@ public class Sword : MonoBehaviour
     public float swordssVibrationStrength = .9f;
     public float swordssVibrationInterval = 0.01f;
 
+    public GeneralSounds sounds;
+
     public GameEvent swordCut;
     // Use this for initialization
     public Vector3Variable currentPos;
@@ -22,12 +24,18 @@ public class Sword : MonoBehaviour
     AudioSource audioSource;
 
     public ArrayList xyPositions;
-   
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+        xyPositions = new ArrayList();
+    }
     void Start()
     {
+        audioSource.clip = sounds.MeleeSwing;
+        audioSource.Play();
+
         previuosPos = Vector3.zero;
-        audioSource = GetComponent<AudioSource>();
-        xyPositions = new ArrayList ();
         xyPositions.Add(new Vector2(transform.position.x, transform.position.y));
     }
 
@@ -35,6 +43,9 @@ public class Sword : MonoBehaviour
     {
         currentPos.value = transform.position;
         speed.value = (currentPos.value - previuosPos).magnitude / Time.deltaTime;
+
+        audioSource.volume = speed.value / 5;
+
         CalculateDierection();
         previuosPos = currentPos.value;
 
@@ -94,8 +105,6 @@ public class Sword : MonoBehaviour
         if (other.gameObject.tag == "Note")
         {
             swordCut.Raise();
-            NoteScript sc = other.GetComponent<NoteScript>();
-            audioSource.Play();
         }
     }
 

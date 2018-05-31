@@ -11,6 +11,7 @@ public class GeneralSounds : ScriptableObject
     [Header("Melee sounds")]
     public AudioClip MeleeSlash;
     public AudioClip MeleeMiss;
+    public AudioClip MeleeSwing;
     [Header("Ranged sounds")]
     public AudioClip RangedShoot;
     public AudioClip RangedHit;
@@ -18,6 +19,7 @@ public class GeneralSounds : ScriptableObject
     public AudioClip NoteMiss;
     public AudioClip GameWin;
     public AudioClip GameLose;
+    public AudioClip ChangeWeapon;
 
 }
 
