@@ -28,24 +28,27 @@ public class MidiHandler : MonoBehaviour
         tracksPaths = new List<string>();
         player = GetComponent<MidiPlayerTK.MidiFilePlayer>();
 
-        for (int i = 0; i < levelSounds.DefenceLevels.Count; i++)
+        for (int i = 0; i < levelSounds.defenceLevelsNum; i++)
         {
-            tracksPaths.Add(levelSounds.DefenceLevels[i].MIDI);
+            tracksPaths.Add(levelSounds.DefenceLevelsMIDI(i));
         }
-        for (int i = 0; i < levelSounds.AttackLevels.Count; i++)
+        for (int i = 0; i < levelSounds.attackLevelsNum; i++)
         {
-            tracksPaths.Add(levelSounds.AttackLevels[i].MIDI);
+            tracksPaths.Add(levelSounds.AttackLevelsMIDI(i));
         }
+
+
+
         MidiPlayerInitialiser.Init(tracksPaths.ToArray(), tracksResurcesFolder);
 
 
         Dictionary<int, int> trackMapper;
 
         //defence tracks lanes mapper
-        for (int i = 0; i < levelSounds.DefenceLevels.Count; i++)
+        for (int i = 0; i < levelSounds.defenceLevelsNum; i++)
         {
             trackMapper = new Dictionary<int, int>();
-            var notes = MidiAnalyiser.GetMidiNotesTypes(tracksResurcesFolder + levelSounds.DefenceLevels[i].MIDI);
+            var notes = MidiAnalyiser.GetMidiNotesTypes(tracksResurcesFolder + levelSounds.DefenceLevelsMIDI(i));
             Array.Sort(notes);
             for (int x = 0; x < notes.Length; x++)
             {
@@ -57,10 +60,10 @@ public class MidiHandler : MonoBehaviour
         }
 
         //Attack tracks lanes mapper
-        for (int i = 0; i < levelSounds.AttackLevels.Count; i++)
+        for (int i = 0; i < levelSounds.attackLevelsNum; i++)
         {
             trackMapper = new Dictionary<int, int>();
-            var notes = MidiAnalyiser.GetMidiNotesTypes(tracksResurcesFolder + levelSounds.AttackLevels[i].MIDI);
+            var notes = MidiAnalyiser.GetMidiNotesTypes(tracksResurcesFolder + levelSounds.AttackLevelsMIDI(i));
             Array.Sort(notes);
             for (int x = 0; x < notes.Length; x++)
             {
@@ -80,12 +83,12 @@ public class MidiHandler : MonoBehaviour
     public void SetLevelDefenceMidi()
     {
         
-        SetLevelDefenceMidi(GetMIDIIndex(levelSounds.DefenceLevels));
+        SetLevelDefenceMidi(GetMIDIIndex(levelSounds.defenceLevelsNum));
     }
     public void SetLevelDefenceMidi(int index)
     {
 
-      //  Debug.Log("index " + index);
+        Debug.Log("index " + index);
         player.MPTK_MidiIndex = index;
         player.MPTK_Position = 0;
     }
@@ -93,12 +96,12 @@ public class MidiHandler : MonoBehaviour
 
     public void SetLevelAttackMidi()
     {
-        SetLevelAttackMidi(GetMIDIIndex(levelSounds.AttackLevels));
+        SetLevelAttackMidi(GetMIDIIndex(levelSounds.attackLevelsNum));
     }
     public void SetLevelAttackMidi(int index)
     {
-      //  Debug.Log("levelSounds.DefenceLevels.Count + index " + (levelSounds.DefenceLevels.Count + index));
-        player.MPTK_MidiIndex = levelSounds.DefenceLevels.Count + index;
+        Debug.Log("levelSounds.DefenceLevels.Count + index " + (levelSounds.defenceLevelsNum + index));
+        player.MPTK_MidiIndex = levelSounds.defenceLevelsNum + index;
         player.MPTK_Position = 0;
     }
 
