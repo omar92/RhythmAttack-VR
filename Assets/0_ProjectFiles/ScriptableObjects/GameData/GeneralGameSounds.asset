@@ -13,8 +13,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MeleeSlash: {fileID: 0}
   MeleeMiss: {fileID: 0}
-  RangedShoot: {fileID: 0}
+  MeleeSwing: {fileID: 8300000, guid: 2f41a310a8766f742bec4ed7add10010, type: 3}
+  RangedShoot: {fileID: 8300000, guid: 9af56bac4b63a2146b9543986fcc7d16, type: 3}
   RangedHit: {fileID: 0}
   NoteMiss: {fileID: 0}
   GameWin: {fileID: 0}
   GameLose: {fileID: 0}
+  ChangeWeapon: {fileID: 8300000, guid: 74f7c55382bf8674a94fd74c5f3c5c23, type: 3}
