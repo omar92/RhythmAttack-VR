@@ -91,7 +91,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _noisetexture:
-        m_Texture: {fileID: 2800000, guid: 5f6015725b1e6ca4fb862866340e088d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 28c7aad1372ff114b90d330f8a2dd938, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ramp:
@@ -124,16 +124,16 @@ Material:
     - _ZWrite: 1
     - _node_22: 0
     - _node_5739: 0
-    - _noise: 0.392
+    - _noise: 0.7
     - _x_speed_main: 1
     - _x_speed_main_copy: 1
-    - _xspeed: 0
-    - _xspeed_copy: 0
+    - _xspeed: 0.42
+    - _xspeed_copy: -0.01
     - _y_speed_main: 0
-    - _yspeed: -0.2
-    - _yspeed_copy: 0.2
+    - _yspeed: 0.2
+    - _yspeed_copy: -0.1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GlowColor: {r: 1, g: 0.2391481, b: 0.1102941, a: 1}
-    - _TintColor: {r: 0.4724138, g: 0.4724138, b: 0.4724138, a: 0.5}
+    - _TintColor: {r: 0, g: 0.9819999, b: 1, a: 1}
