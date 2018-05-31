@@ -21,6 +21,7 @@ public class NoteScript : MonoBehaviour
     public GameObject Left;
     public GameObject Right;
 
+    public GameObject Body;
 
     private Rigidbody rb;
     private AudioSource audioSource;
@@ -38,26 +39,17 @@ public class NoteScript : MonoBehaviour
 
     public void Spawn(Vector3 source, Vector3 dist, int lane, Direction slashDirection)
     {
-        // this.enabled = true;
         transform.SetParent(null);
-        transform.position = source;
-        rb.GetComponent<Renderer>().enabled = true;
+        Body.SetActive(true);
         rb.GetComponent<Collider>().enabled = true;
 
 
-
+        transform.position = source;
+    
         var newDistance = Vector3.Distance(source, dist);
-
         float newVelocity = newDistance / settings.NoteVelocity;
-        //print("lane: " + lane
-        //      + "OD: " + originalDistance + "\n"
-        //      + "ND: " + newDistance + "\n"
-        //      + "OV: " + settings.NoteVelocity + "\n"
-        //      + "NV: " + newVelocity + "\n"
-        //      );
-        var dir = (dist - source).normalized * newVelocity;
+        rb.velocity = (dist - source).normalized * newVelocity;
 
-        rb.velocity = dir;
         SourceLane = lane;
         this.slashDirection = slashDirection;
         SetDirection(slashDirection);
@@ -65,19 +57,17 @@ public class NoteScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-
         if (collision.tag == "Sword")
         {
+            rb.GetComponent<Collider>().enabled = false;
             var swordScript = collision.GetComponent<Sword>();
-            //  Debug.Log("swordScript.dir :" + swordScript.dir + " :::: slashDirection: " + slashDirection);
             if (swordScript.dir == slashDirection && SwordSpeed.value > settings.minCutSpeed)
             {
                 OnNoteCut();
             }
             else
             {
-                NoteMissE.Raise();
-                //   DestroyNote();
+                OnNoteWorngCut();
             }
         }
         else
@@ -87,16 +77,21 @@ public class NoteScript : MonoBehaviour
         }
     }
 
+    private void OnNoteWorngCut()
+    {
+        DestroyNote();
+        NoteMissE.Raise();
+    }
+
     private void OnNoteCut()
     {
-        //Debug.Log("OnNoteCut");
-        NoteCutE.Raise();
         DestroyNote();
+        NoteCutE.Raise();
     }
 
     public void DestroyNote()
     {
-        rb.GetComponent<Renderer>().enabled = false;
+        Body.SetActive(false);
         rb.GetComponent<Collider>().enabled = false;
         rb.velocity = new Vector3(0, 0, 0);
         SetDirection(Direction.NONE);

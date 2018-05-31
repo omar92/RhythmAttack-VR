@@ -8,7 +8,13 @@ public class WriteVariableOnText : MonoBehaviour {
     public Text textField;
     public FloatVariable variable;
 
-	public void Write()
+    private void Start()
+    {
+        Write();
+    }
+
+    
+    public void Write()
     {
         textField.text = variable.value + "";
     }
