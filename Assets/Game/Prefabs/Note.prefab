@@ -164,7 +164,8 @@ GameObject:
   - component: {fileID: 23579533558301180}
   - component: {fileID: 114284806783545288}
   - component: {fileID: 54676268164302188}
-  m_Layer: 8
+  - component: {fileID: 65737766233747476}
+  m_Layer: 11
   m_Name: Sphere
   m_TagString: Note
   m_Icon: {fileID: 0}
@@ -272,7 +273,8 @@ GameObject:
   - component: {fileID: 23415743859062280}
   - component: {fileID: 114386364150790910}
   - component: {fileID: 54881602433012436}
-  m_Layer: 8
+  - component: {fileID: 65341792801288932}
+  m_Layer: 11
   m_Name: Sphere (1)
   m_TagString: Note
   m_Icon: {fileID: 0}
@@ -984,6 +986,18 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &65341792801288932
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1840087961798908}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 1, z: 1}
+  m_Center: {x: -0.25, y: 0, z: 0}
 --- !u!65 &65419936775742504
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -996,6 +1010,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000002, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65737766233747476
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1475150959527358}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 1, z: 1}
+  m_Center: {x: 0.25, y: 0, z: 0}
 --- !u!82 &82896363464406890
 AudioSource:
   m_ObjectHideFlags: 1
