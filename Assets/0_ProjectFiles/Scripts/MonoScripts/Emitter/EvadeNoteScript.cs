@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EvadeNoteScript : ANote
 {
+    public GameEvent EvadeHit;
     public void Spawn(Vector3 source, Vector3 dist, Direction dir)
     {
         Spawn(source, dist);
@@ -28,7 +29,10 @@ public class EvadeNoteScript : ANote
         {
             Hide();
         }
-       
+        else if (other.tag == "Player")
+        {
+            EvadeHit.Raise();
+        }
     }
 
     private new void Hide()
