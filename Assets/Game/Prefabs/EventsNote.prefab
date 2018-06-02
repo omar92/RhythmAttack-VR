@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1362685045808908}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.629517, y: 8.448302, z: 12.629317}
+  m_LocalPosition: {x: 3.329782, y: -1.9630404, z: 4.1879992}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -58,7 +58,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 3f5766a8b67794141ac19c1a51d27083, type: 2}
   m_StaticBatchInfo:
@@ -127,7 +126,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   states:
   - state: {fileID: 11400000, guid: 76ba043e56f4de248b95202d32152f61, type: 2}
-    MustBeDone: 0
     onEnter:
       m_PersistentCalls:
         m_Calls: []
@@ -170,5 +168,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b52a2e32fbcec4b83690caf0483276, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: d41f6cf58a61b4e4a9b85f199341a1ed, type: 2}
   settings: {fileID: 11400000, guid: b9631101d1d296346a4108d7517f2217, type: 2}
+  gameEvent: {fileID: 11400000, guid: d41f6cf58a61b4e4a9b85f199341a1ed, type: 2}

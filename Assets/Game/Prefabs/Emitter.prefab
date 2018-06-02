@@ -806,12 +806,15 @@ MonoBehaviour:
   EventEmitter: {fileID: 4759805464520270}
   eventNotePref: {fileID: 114718006405924004, guid: 9a06d2522e7546c428ae450546e40842,
     type: 2}
+  evadeNotePref: {fileID: 114168702610011170, guid: b36aee2a5265e8e4dae673a5d3878420,
+    type: 2}
   player: {fileID: 11400000, guid: 2a328382eac28d44492407695e84a265, type: 2}
   currentTrackIndex: {fileID: 11400000, guid: 22293211273e6d140a31d1cbcdfd54f9, type: 2}
   startBgMusicE: {fileID: 11400000, guid: 74c0754ad01f5fd429f4dd7576b2e6aa, type: 2}
   stopBgMusicE: {fileID: 11400000, guid: 78a79799fb8a83c478123b03948d79ec, type: 2}
   bossRightHand: {fileID: 11400000, guid: 4b6ff107bd27db840aaa7a55f19b8bca, type: 2}
   bossLeftHand: {fileID: 11400000, guid: 183cfda8483f7ee42a96f81c2943c7d0, type: 2}
+  bossMeleeHand: {fileID: 11400000, guid: df093f0ad0eaf0a4c89ea77e0b3f65cf, type: 2}
 --- !u!114 &114069279152157112
 MonoBehaviour:
   m_ObjectHideFlags: 1

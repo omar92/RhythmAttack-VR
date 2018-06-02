@@ -55,7 +55,7 @@ public class MidiHandler : MonoBehaviour
                 Debug.Log(notes[x] + ": " + (notes[x] - notes[0]));
                 trackMapper.Add(notes[x], notes[x] - notes[0]);
             }
-            GlobalData.DefenceTracksNotesLanesMaper.Add(trackMapper);
+            GlobalData.DefenceTracksNotesIndicies.Add(trackMapper);
             //Debug.Log("-----------------------------------------------");
         }
 
@@ -70,7 +70,7 @@ public class MidiHandler : MonoBehaviour
                 Debug.Log(notes[x] + ": " + (notes[x] - notes[0]));
                 trackMapper.Add(notes[x], notes[x] - notes[0]);
             }
-            GlobalData.AttackTracksNotesLanesMaper.Add(trackMapper);
+            GlobalData.AttackTracksNotesIndicies.Add(trackMapper);
             //Debug.Log("-----------------------------------------------");
         }
 

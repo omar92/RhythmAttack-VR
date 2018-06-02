@@ -28,7 +28,7 @@ public class InitialState : IState
                 //Debug.Log(notes[x] + ": "+ x);
                 trackMapper.Add(notes[x], x);
             }
-            GlobalData.DefenceTracksNotesLanesMaper.Add(trackMapper);
+            GlobalData.DefenceTracksNotesIndicies.Add(trackMapper);
             Debug.Log("-----------------------------------------------");
         }
       

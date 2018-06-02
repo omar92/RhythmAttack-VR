@@ -12,6 +12,8 @@ TagManager:
   - Gun
   - Targets
   - MusicBar
+  - Miss
+  - Evade
   layers:
   - Default
   - TransparentFX

@@ -1168,6 +1168,11 @@ namespace VRTK
                                                string.Join(", ", removedSymbols)));
             }
         }
+
+        internal void AddBehaviourToToggleOnLoadedSetupChange(object x)
+        {
+            throw new NotImplementedException();
+        }
 #endif
     }
 }

@@ -18,7 +18,7 @@ public class NotesPoolScript : MonoBehaviour
         inistance = this;
     }
 
-    public NoteScript PullNote(Vector3 source , Vector3 dist , float originalDistance, int lane,  Direction slashDirection)
+    public NoteScript PullNote(Vector3 source , Vector3 dist , int lane,  Direction slashDirection)
     {
         NoteScript noteScript;
         if (transform.childCount > 0)
