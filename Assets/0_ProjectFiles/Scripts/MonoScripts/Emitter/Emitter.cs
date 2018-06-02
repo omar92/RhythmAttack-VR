@@ -65,7 +65,7 @@ public class Emitter : MonoBehaviour
         Vector3 distination;
         CalculateNoteDirection(note, out source, out distination);
 
-        if (GetNoteIndex(note) < 7)
+        if (GetNoteIndex(note) == 7)
         {
             SpawnEvade(source, distination, slashDir);
         }
