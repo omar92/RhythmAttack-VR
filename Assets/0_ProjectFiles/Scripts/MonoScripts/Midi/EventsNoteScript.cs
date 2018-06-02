@@ -20,6 +20,7 @@ public class EventsNoteScript : ANote
         {
             gameEvent.Raise();
         }
+        Hide();
     }
 
 }

@@ -7,11 +7,12 @@ public class EvadeNoteScript : ANote
     public void Spawn(Vector3 source, Vector3 dist, Direction dir)
     {
         Spawn(source, dist);
+        transform.LookAt(dist);
         switch (dir)
         {
             case Direction.UP:
             case Direction.DOWN:
-
+                transform.localRotation = Quaternion.Euler(0, 0, 90);
                 break;
             case Direction.NONE:
             case Direction.RIGHT:
@@ -20,5 +21,18 @@ public class EvadeNoteScript : ANote
 
                 break;
         }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Miss")
+        {
+            Hide();
+        }
+       
+    }
+
+    private new void Hide()
+    {
+        Destroy(gameObject, 1f);
     }
 }

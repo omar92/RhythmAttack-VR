@@ -38,6 +38,7 @@ public class NoteScript : ANote
     public void Spawn(Vector3 source, Vector3 dist, int lane, Direction slashDirection)
     {
         Spawn(source, dist);
+        transform.LookAt(dist);
         Body.SetActive(true);
         Rb.GetComponent<Collider>().enabled = true;
         SourceLane = lane;
@@ -59,6 +60,10 @@ public class NoteScript : ANote
             {
                 OnNoteWorngCut();
             }
+        }
+       else if (collision.tag == "Miss")
+        {
+            NoteMissE.Raise();
         }
         else
         {
