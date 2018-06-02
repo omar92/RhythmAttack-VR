@@ -26,7 +26,7 @@ public class Emitter : MonoBehaviour
 
     void Start()
     {
-         eventCollectorPos = EventEmitter.position;
+        eventCollectorPos = EventEmitter.position;
         eventCollectorPos.z = GetZOfNotesReach();
         var emitter = GameObject.Instantiate(EventEmitter, eventCollectorPos, Quaternion.identity);
         emitter.gameObject.AddComponent<EmitterEventsCollector>();
@@ -66,15 +66,13 @@ public class Emitter : MonoBehaviour
         Direction slashDir = ExtractSlashDir(note);
         Transform source;
         Vector3 distination;
-        float originalDistance;
-        CalculateNoteData(note, out source, out distination, out originalDistance);
-        NotesPoolScript.inistance.PullNote(source.position, distination, originalDistance, laneNum, slashDir);
-        //note.note.Midi++;
-        //CalculateNoteData(note, out source, out distination, out originalDistance);
-        //NotesPoolScript.inistance.PullNote(source.position, distination, originalDistance, laneNum, slashDir);
+
+        CalculateNoteDirection(note, out source, out distination);
+        NotesPoolScript.inistance.PullNote(source.position, distination, laneNum, slashDir);
+
     }
 
-    private void CalculateNoteData(MidiNoteAudio note, out Transform source, out Vector3 distination, out float originalDistance)
+    private void CalculateNoteDirection(MidiNoteAudio note, out Transform source, out Vector3 distination)
     {
         laneNum = GlobalData.DefenceTracksNotesLanesMaper[(int)currentTrackIndex.value][note.note.Midi];
         if (laneNum % 4 < 2)
@@ -87,7 +85,6 @@ public class Emitter : MonoBehaviour
         }
 
         distination = GetLane(laneNum).position;
-        originalDistance = Vector3.Distance(source.position, distination);
         distination.z = GetZOfNotesReach();
     }
 
