@@ -2378,7 +2378,7 @@ GameObject:
   - component: {fileID: 33583075151853438}
   - component: {fileID: 23293599230295296}
   - component: {fileID: 114162482820485522}
-  - component: {fileID: 114281575595916766}
+  - component: {fileID: 114939877613896592}
   m_Layer: 0
   m_Name: weapon:PM3D_Cube3D_1 right
   m_TagString: Untagged
@@ -5185,7 +5185,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1767532751583084}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.137, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4533878274746622}
@@ -11062,18 +11062,6 @@ MonoBehaviour:
     fallbackTypeName: VRTK.SDK_FallbackController
     typeName: VRTK.SDK_SteamVRController
     descriptionIndex: 0
---- !u!114 &114281575595916766
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1667670364805914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67e9a51e756d6cd42802275844a05381, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  meleeWaepon: {fileID: 0}
 --- !u!114 &114283045417071664
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12281,10 +12269,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1169159298483588}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67e9a51e756d6cd42802275844a05381, type: 3}
+  m_Script: {fileID: 11500000, guid: 28bf51a2c76664c41b64fdb8f18698c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeWaepon: {fileID: 0}
+  followPosition: 1
+  followRotation: 1
+  target: {fileID: 4217473344657816}
 --- !u!114 &114473223786273190
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13981,6 +13971,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vrcam: {fileID: 0}
+--- !u!114 &114939877613896592
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1667670364805914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28bf51a2c76664c41b64fdb8f18698c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followPosition: 1
+  followRotation: 1
+  target: {fileID: 4790746155620676}
 --- !u!114 &114954156741875726
 MonoBehaviour:
   m_ObjectHideFlags: 1
