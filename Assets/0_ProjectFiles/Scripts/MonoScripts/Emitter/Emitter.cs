@@ -20,6 +20,7 @@ public class Emitter : MonoBehaviour
     public GameEvent stopBgMusicE;
     public GameEvent attakEndE;
 
+    [Header("Boss Hands")]
     public TransformVariable bossRightHand;
     public TransformVariable bossLeftHand;
     public TransformVariable bossMeleeHand;
@@ -231,10 +232,12 @@ public class Emitter : MonoBehaviour
     {
         if (mode == EmitterMode.Defence)
         {
+            print("Defence End");
             EmitEvent(stopBgMusicE);
         }
         else
         {
+            print("Attack End");
             StartCoroutine(StartAfterDelay(2f,()=> { attakEndE.Raise(); }));
             
         }
@@ -246,7 +249,7 @@ public class Emitter : MonoBehaviour
         p();
     }
 
-    public void EmitEvent(GameEvent gameEvent)
+    private void EmitEvent(GameEvent gameEvent)
     {
         var eventNote = Instantiate(eventNotePref).GetComponent<EventsNoteScript>();
         // note.ObjectBool = transform;
