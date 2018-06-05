@@ -14,10 +14,12 @@ public class BossHealthHandler : MonoBehaviour {
     {
         BossHealth.value -= settings.GunDamage;
         if (BossHealth.value < 0) { BossHealth.value = 0; }
+        print("Boss health" + BossHealth.value);
         healthChangedE.Raise();
         if (BossHealth.value == 0)
         {
             WinE.Raise();
+            print("Win");
         }
 
     }
