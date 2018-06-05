@@ -54,34 +54,39 @@ public class NoteScript : ANote
             var swordScript = collision.GetComponent<Sword>();
             if (swordScript.dir == slashDirection && SwordSpeed.value > settings.minCutSpeed)
             {
+                print("NoteCut");
                 OnNoteCut();
             }
             else
             {
+                print("NoteWrongCut");
                 OnNoteWorngCut();
             }
         }
        else if (collision.tag == "Miss")
         {
+            print("NoteMiss");
+            Rb.velocity = new Vector3(0, 0, 0);         
             NoteMissE.Raise();
+            Hide();
         }
         else
         {
-            Hide();
-            Rb.velocity = new Vector3(0, 0, 0);
+            //Hide();
+            //Rb.velocity = new Vector3(0, 0, 0);
         }
     }
 
     private void OnNoteWorngCut()
     {
-        DestroyNote();
         NoteMissE.Raise();
+        DestroyNote();
     }
 
     private void OnNoteCut()
     {
-        DestroyNote();
         NoteCutE.Raise();
+        DestroyNote(); 
     }
 
     public void DestroyNote()
