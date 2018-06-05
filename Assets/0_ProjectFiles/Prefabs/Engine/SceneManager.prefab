@@ -84,6 +84,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4294051604268512}
   - component: {fileID: 114693781676821948}
+  - component: {fileID: 114521480996903476}
   m_Layer: 0
   m_Name: PlayerHealthHandler
   m_TagString: Untagged
@@ -613,6 +614,34 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 114273665743374470}
         m_MethodName: ContinueGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &114521480996903476
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1442226106455102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79c7ae08bc75c7e43a13e01367bad9b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 12a2500e664738c47be8aadb43cf2330, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114693781676821948}
+        m_MethodName: OnNoteMiss
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
