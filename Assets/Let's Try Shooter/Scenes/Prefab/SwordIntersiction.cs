@@ -17,11 +17,11 @@ public class SwordIntersiction : MonoBehaviour {
     {
         myMask = 1 << 12;
         RaycastHit hit;
-        if (Physics.SphereCast(transform.position, .057f, Vector3.Cross(transform.up, transform.right), out hit, 1.2f,myMask))
+        if (Physics.SphereCast(transform.position, .025f, Vector3.Cross(transform.forward, transform.right), out hit, 1f,myMask))
         {
             if (hit.transform.tag == "Blade")
             {
-                Debug.Log("fooooooooooooooool");
+                
                 intersictionParticle.transform.position = hit.point;
                 intersictionParticle.gameObject.SetActive(true);
             }
@@ -42,8 +42,8 @@ public class SwordIntersiction : MonoBehaviour {
 
     private void OnDrawGizmos()
     {
-        Debug.DrawRay(transform.position, Vector3.Cross(transform.up, transform.right) * 1.2f, Color.red);
-        Gizmos.DrawSphere(transform.position, .057f);
+        Debug.DrawRay(transform.position, Vector3.Cross(transform.forward, transform.right) * 1f, Color.red);
+        Gizmos.DrawSphere(transform.position, .025f);
     }
 
 }

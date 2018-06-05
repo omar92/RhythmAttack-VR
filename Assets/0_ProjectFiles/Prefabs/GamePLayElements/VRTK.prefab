@@ -578,7 +578,6 @@ GameObject:
   - component: {fileID: 33906495359494122}
   - component: {fileID: 23072250406492504}
   - component: {fileID: 136707815947046390}
-  - component: {fileID: 114462889491722760}
   m_Layer: 12
   m_Name: weapon:PM3D_Cube3D_1 left
   m_TagString: Blade
@@ -2378,7 +2377,6 @@ GameObject:
   - component: {fileID: 33583075151853438}
   - component: {fileID: 23293599230295296}
   - component: {fileID: 114162482820485522}
-  - component: {fileID: 114939877613896592}
   m_Layer: 0
   m_Name: weapon:PM3D_Cube3D_1 right
   m_TagString: Untagged
@@ -10595,8 +10593,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dac0b865fda7bc418ec7fc74a29ec39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Melee: {fileID: 0}
-  Ranged: {fileID: 114204717575771618}
 --- !u!114 &114152843560002574
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12261,20 +12257,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &114462889491722760
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1169159298483588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28bf51a2c76664c41b64fdb8f18698c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followPosition: 1
-  followRotation: 1
-  target: {fileID: 4217473344657816}
 --- !u!114 &114473223786273190
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12841,8 +12823,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dac0b865fda7bc418ec7fc74a29ec39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Melee: {fileID: 114355830517005992}
-  Ranged: {fileID: 114020163463611020}
 --- !u!114 &114558831450109156
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13971,20 +13951,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vrcam: {fileID: 0}
---- !u!114 &114939877613896592
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1667670364805914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28bf51a2c76664c41b64fdb8f18698c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followPosition: 1
-  followRotation: 1
-  target: {fileID: 4790746155620676}
 --- !u!114 &114954156741875726
 MonoBehaviour:
   m_ObjectHideFlags: 1
