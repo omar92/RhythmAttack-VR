@@ -30,7 +30,7 @@ public class JsonManager : MonoBehaviour {
     public void SaveJson()
     {
 
-        if (playerList.list.Count == 0 || playerList.list.Count < maxNumOfBoard)
+        if (playerList.list.Count != 0 || playerList.list.Count < maxNumOfBoard)
         {
             //if (finalScore.value != newScore)
             //{
@@ -58,8 +58,7 @@ public class JsonManager : MonoBehaviour {
         json = JsonUtility.ToJson(playerList);
         //PlayerPrefs.SetString("scoreJson", json);
         LeaderboardChanged.Raise();
-        playerName.value = "";
+        playerName.value = "Player";
     }
-
 }
 
