@@ -1,6 +1,9 @@
-﻿using System;
+﻿//using System;
+
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
+
 
 public class Emitter : MonoBehaviour
 {
@@ -15,21 +18,44 @@ public class Emitter : MonoBehaviour
     [Header("GameEvents")]
     public GameEvent startBgMusicE;
     public GameEvent stopBgMusicE;
+    public GameEvent attakEndE;
 
     public TransformVariable bossRightHand;
     public TransformVariable bossLeftHand;
     public TransformVariable bossMeleeHand;
 
+    EmitterMode mode = EmitterMode.Defence;
+
     Vector3 eventCollectorPos;
+
+    GameObject[] AttackTargets;
+    List<GameObject> ActiveAttackTargets = new List<GameObject>();
 
     public void Awake()
     {
         inistance = this;
+        AttackTargets = GameObject.FindGameObjectsWithTag("Targets");
     }
 
     void Start()
     {
         CreateEventNoteTrigger();
+        HideAttackTargets();
+
+    }
+
+
+    public void SetAttackMode()
+    {
+        mode = EmitterMode.Attack;
+    }
+
+    public void HideAttackTargets()
+    {
+        for (int i = 0; i < AttackTargets.Length; i++)
+        {
+            AttackTargets[i].SetActive(false);
+        }
     }
 
     private void CreateEventNoteTrigger()
@@ -50,8 +76,43 @@ public class Emitter : MonoBehaviour
 
     public void OnMidiNoteAudio(ObjectVariable data)
     {
-        var noteAudio = (MidiNoteAudio)data.value;
-        SpawnNote(noteAudio);
+        switch (mode)
+        {
+            case EmitterMode.Defence:
+                var noteAudio = (MidiNoteAudio)data.value;
+                SpawnNote(noteAudio);
+                break;
+            case EmitterMode.Attack:
+                ActivateRangedTarget();
+                break;
+            default:
+                break;
+        }
+
+    }
+
+    private void ActivateRangedTarget()
+    {
+        StartCoroutine(ShowTargetForTime(2f));
+    }
+
+    private IEnumerator ShowTargetForTime(float time)
+    {
+        int traials = 10;
+        var target = AttackTargets[Random.Range(0, AttackTargets.Length)];// AttackTargets.get
+        while (target.activeInHierarchy && --traials >= 0) 
+        {
+            yield return true; 
+            target = AttackTargets[Random.Range(0, AttackTargets.Length)];// AttackTargets.get
+        }
+        if (traials > 0)
+        {
+            ActiveAttackTargets.Add(target);
+            target.SetActive(true);
+            yield return new WaitForSeconds(time);
+            target.SetActive(false);
+            ActiveAttackTargets.Remove(target);
+        }
     }
 
     int noteIndex;
@@ -70,7 +131,7 @@ public class Emitter : MonoBehaviour
             SpawnEvade(source, distination, slashDir);
         }
         else
-        NotesPoolScript.inistance.PullNote(source.position, distination, noteIndex, slashDir);
+            NotesPoolScript.inistance.PullNote(source.position, distination, noteIndex, slashDir);
 
     }
 
@@ -163,12 +224,28 @@ public class Emitter : MonoBehaviour
 
     public void StartEmitiing()
     {
+        mode = EmitterMode.Defence;
         EmitEvent(startBgMusicE);
     }
     public void OnMidiEnd()
     {
-        EmitEvent(stopBgMusicE);
+        if (mode == EmitterMode.Defence)
+        {
+            EmitEvent(stopBgMusicE);
+        }
+        else
+        {
+            StartCoroutine(StartAfterDelay(2f,()=> { attakEndE.Raise(); }));
+            
+        }
     }
+
+    private IEnumerator StartAfterDelay(float v, System.Action p)
+    {
+        yield return new WaitForSeconds(v);
+        p();
+    }
+
     public void EmitEvent(GameEvent gameEvent)
     {
         var eventNote = Instantiate(eventNotePref).GetComponent<EventsNoteScript>();
@@ -177,4 +254,8 @@ public class Emitter : MonoBehaviour
         eventNote.Spawn(EventEmitter.position, eventCollectorPos, gameEvent, this);
     }
 
+    enum EmitterMode
+    {
+        Defence, Attack
+    }
 }

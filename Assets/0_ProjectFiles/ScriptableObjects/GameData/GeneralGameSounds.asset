@@ -11,12 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 878f5cd6d7972864e85b8afde6fdb90c, type: 3}
   m_Name: GeneralGameSounds
   m_EditorClassIdentifier: 
-  MeleeSlash: {fileID: 0}
-  MeleeMiss: {fileID: 0}
+  MeleeSlash: {fileID: 8300000, guid: e95cc5dd55bc7cb41aa042e3040b13a3, type: 3}
+  MeleeMiss: {fileID: 8300000, guid: e95cc5dd55bc7cb41aa042e3040b13a3, type: 3}
   MeleeSwing: {fileID: 8300000, guid: 2f41a310a8766f742bec4ed7add10010, type: 3}
   RangedShoot: {fileID: 8300000, guid: 9af56bac4b63a2146b9543986fcc7d16, type: 3}
-  RangedHit: {fileID: 0}
-  NoteMiss: {fileID: 0}
-  GameWin: {fileID: 0}
-  GameLose: {fileID: 0}
+  RangedHit: {fileID: 8300000, guid: 9ca01fd06909f1e4eaf7ba30310630ee, type: 3}
+  NoteMiss: {fileID: 8300000, guid: 7b283ccad0acf8a4cb40b458c1487b9d, type: 3}
+  GameWin: {fileID: 8300000, guid: e0af9573980af704e91bbc76f8f8eaa7, type: 3}
+  GameLose: {fileID: 8300000, guid: 3b9ed68730cebf74cb20e5f6ed1b1e83, type: 3}
   ChangeWeapon: {fileID: 8300000, guid: 74f7c55382bf8674a94fd74c5f3c5c23, type: 3}

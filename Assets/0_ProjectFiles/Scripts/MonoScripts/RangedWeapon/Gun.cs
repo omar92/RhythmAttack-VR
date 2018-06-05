@@ -3,12 +3,13 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour, IControllable {
 
-    public float damage = 35;
+
     public float range = 100f;
     public float fireRate = 15f;
     public float destroyAfter = 0.1f;
-    public GameEvent ballCaut;
+
     public GameEvent GunVibrate;
+    public GameEvent BossHitE;
     float nextTimeToFire = 0f; 
     public Rigidbody projectile;
     public GeneralSounds sounds;
@@ -41,10 +42,11 @@ public class Gun : MonoBehaviour, IControllable {
             if (Physics.Raycast(this.transform.position, this.transform.forward, out hit, range))
             {
                 Debug.DrawRay(this.transform.position, this.transform.forward, Color.green, range, true);
-                TargetMonester target = hit.transform.GetComponent<TargetMonester>();
+                var target = hit.transform.GetComponent<TargetMonester>();
                 if (target)
                 {
-                    target.isHited(damage);
+                    target.OnHit();
+                    BossHitE.Raise();
                 }
             }
             Destroy(clone.gameObject, destroyAfter);
