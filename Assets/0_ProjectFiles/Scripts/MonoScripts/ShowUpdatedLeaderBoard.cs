@@ -11,7 +11,7 @@ public class ShowUpdatedLeaderBoard : MonoBehaviour
     public void ShowLeaderboard()
     {
      //   List<Player> playerList = JsonUtility.FromJson<List<Player>>(PlayerPrefs.GetString("scoreJson"));
-        for (int i = 0; i < Mathf.Min(playerList.list.Count, transform.childCount); i++)
+        for (int i = 0; i < Mathf.Min(playerList.list.Count-1, transform.childCount-1); i++)
         {
             transform.GetChild(i+1).gameObject.SetActive(true);
             transform.GetChild(i + 1).GetComponentsInChildren<Text>()[1].text = playerList.list[i].playerScore.ToString();
