@@ -10650,8 +10650,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dac0b865fda7bc418ec7fc74a29ec39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Melee: {fileID: 0}
-  Ranged: {fileID: 0}
+  Melee: {fileID: 114355830517005992}
+  Ranged: {fileID: 114020163463611020}
 --- !u!114 &114152843560002574
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12958,8 +12958,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dac0b865fda7bc418ec7fc74a29ec39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Melee: {fileID: 0}
-  Ranged: {fileID: 0}
+  Melee: {fileID: 114355830517005992}
+  Ranged: {fileID: 114020163463611020}
 --- !u!114 &114558831450109156
 MonoBehaviour:
   m_ObjectHideFlags: 1
