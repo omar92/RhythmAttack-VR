@@ -162,7 +162,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1029108964860436
 GameObject:
   m_ObjectHideFlags: 1
@@ -1924,7 +1924,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1550669991773874
 GameObject:
   m_ObjectHideFlags: 1
@@ -10522,6 +10522,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dac0b865fda7bc418ec7fc74a29ec39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Melee: {fileID: 0}
+  Ranged: {fileID: 0}
 --- !u!114 &114152843560002574
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12828,6 +12830,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dac0b865fda7bc418ec7fc74a29ec39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Melee: {fileID: 0}
+  Ranged: {fileID: 0}
 --- !u!114 &114558831450109156
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14164,9 +14168,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.01
-  m_Height: 0.37
-  m_Direction: 2
-  m_Center: {x: 0, y: 0.0012721892, z: -0.18157157}
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.42, z: 0}
 --- !u!136 &136339028467171272
 CapsuleCollider:
   m_ObjectHideFlags: 1
