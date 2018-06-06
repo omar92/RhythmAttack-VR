@@ -14,7 +14,7 @@ public class HeadController : MonoBehaviour {
     {
        var head = VRTK_DeviceFinder.DeviceTransform(VRTK_DeviceFinder.Devices.Headset);
         transform.parent = head;
-        transform.position = Vector3.zero;
+        transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity;
     }
     protected virtual void OnDestroy()
