@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Name: LeaderboardList
   m_EditorClassIdentifier: 
   list:
+  - playerName: nvbv
+    playerScore: 0
   - playerName: 
     playerScore: 0
