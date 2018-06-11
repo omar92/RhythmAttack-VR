@@ -233,7 +233,6 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -245,8 +244,8 @@ ModelImporter:
     - serializedVersion: 16
       name: BossTiredIdle
       takeName: Take 001
-      firstFrame: 200
-      lastFrame: 360
+      firstFrame: 65
+      lastFrame: 394
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
