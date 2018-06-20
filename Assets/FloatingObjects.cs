@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//[ExecuteInEditMode]
 public class FloatingObjects : MonoBehaviour {
 
 
@@ -25,11 +26,10 @@ public class FloatingObjects : MonoBehaviour {
     void Update()
     {
         
-        transform.Rotate(new Vector3(0f, Time.deltaTime * degreesPerSecond, 0f)/*, Space.World*/);
+        transform.Rotate(new Vector3(0f, Time.deltaTime * degreesPerSecond, 0f));
 
-        // Float up/down with a Sin()
         tempPos = posOffset;
-        tempPos.y += Mathf.Sin(Time.fixedTime *3 * frequency) * amplitude;
+        tempPos.y += Mathf.Sin((Time.fixedTime+transform.position.x) * frequency) * amplitude;
 
         transform.position = tempPos;
     }
