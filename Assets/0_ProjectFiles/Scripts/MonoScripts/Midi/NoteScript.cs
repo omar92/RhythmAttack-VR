@@ -14,6 +14,7 @@ public class NoteScript : ANote
     public GameEvent NoteCutE;
     public GameEvent NoteMissE;
 
+
     [Space()]
     public GameObject UP;
     public GameObject Down;
@@ -27,14 +28,22 @@ public class NoteScript : ANote
     private Coroutine cor;
     private int SourceLane;
     private Direction slashDirection;
+    private Vector3 colliderHitPosition;
+    private Collider noteCollider;
 
+    [SerializeField]
+    ParticleSystem cutParticle;
 
     void Awake()
     {
         coroutinrRule = new WaitWhile(() => { return audioSource.isPlaying; });
         audioSource = GetComponent<AudioSource>();
+        cutParticle.gameObject.SetActive(false);
     }
-
+    private void Start()
+    {
+        
+    }
     public void Spawn(Vector3 source, Vector3 dist, int lane, Direction slashDirection)
     {
         Spawn(source, dist);
@@ -50,12 +59,17 @@ public class NoteScript : ANote
     {
         if (collision.tag == "Sword")
         {
+            Collider noteCollider = GetComponent<Collider>();
             Co.enabled = false;
             var swordScript = collision.GetComponent<Sword>();
             if (swordScript.dir == slashDirection && SwordSpeed.value > settings.minCutSpeed)
             {
                 print("NoteCut");
                 OnNoteCut();
+                colliderHitPosition= noteCollider.ClosestPoint(collision.transform.position);
+                cutParticle.transform.position = colliderHitPosition;
+                cutParticle.gameObject.SetActive(true);
+
             }
             else
             {
@@ -74,6 +88,14 @@ public class NoteScript : ANote
         {
             //Hide();
             //Rb.velocity = new Vector3(0, 0, 0);
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Sword")
+        {
+            cutParticle.gameObject.SetActive(false);
+
         }
     }
 
@@ -96,6 +118,7 @@ public class NoteScript : ANote
         Rb.velocity = new Vector3(0, 0, 0);
         SetDirection(Direction.NONE);
         cor = StartCoroutine(PlayNote(levelSounds.LaneSounds[SourceLane], Hide));
+        
     }
 
     protected IEnumerator PlayNote(AudioClip audio, Action callback)

@@ -2,22 +2,42 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MusicPercentage : MonoBehaviour {
 
-    public FloatVariable percentage;
-    
-    
+public class MusicPercentage : MonoBehaviour
+{
+
+    public FloatVariable remainingTime;
     AudioSource source;
-    AudioClip clip;
-	void Start () {
+    float passedTime;
+    void Start()
+    {
         source = GetComponent<AudioSource>();
-        clip = source.clip;
-	}
-	
-	
-	void Update () {
 
-        percentage.value = Time.time / clip.length;
-        
-	}
+    }
+
+    void Update()
+    {
+        passedTime += Time.deltaTime;
+        remainingTime.value = (source.clip.length - passedTime) / source.clip.length;
+    }
 }
+
+//public class MusicPercentage : MonoBehaviour {
+
+//    public FloatVariable percentage;
+
+
+//    AudioSource source;
+//    AudioClip clip;
+//	void Start () {
+//        source = GetComponent<AudioSource>();
+//        clip = source.clip;
+//	}
+
+
+//	void Update () {
+
+//        percentage.value = Time.time / clip.length;
+
+//	}
+//}
