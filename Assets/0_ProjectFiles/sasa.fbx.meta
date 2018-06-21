@@ -1,0 +1,364 @@
+fileFormatVersion: 2
+guid: 057d98f3fc6fa454192e3dddc1bea55c
+timeCreated: 1528809393
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: back_be_l_foot
+    100002: back_be_r_foot
+    100004: back_l_foot
+    100006: back_l_hip4
+    100008: back_l_knee
+    100010: back_r_foot
+    100012: back_r_foot_ctrl
+    100014: back_r_foot_ctrl_grp
+    100016: back_r_hip1_ctrl
+    100018: back_r_hip1_ctrl_grp
+    100020: back_r_hip2
+    100022: back_r_knee_ctrl
+    100024: back_r_knee_ctrl_grp
+    100026: backl_foot_ctrl
+    100028: backl_foot_ctrl_grp
+    100030: backl_hip_ctrl
+    100032: backl_hip_ctrl_grp
+    100034: backl_knee_ctrl
+    100036: backl_knee_ctrl_grp
+    100038: backr_knee
+    100040: be_l_foot
+    100042: be_r_foot
+    100044: be_root
+    100046: Box001_002
+    100048: global_ctrl
+    100050: global_ctrl_grp
+    100052: group
+    100054: group 1
+    100056: group1
+    100058: group2
+    100060: l_eye
+    100062: l_eye003
+    100064: l_eye_002_ctrl
+    100066: l_eye_002_ctrl_grp
+    100068: l_eye_ctrl
+    100070: l_eye_ctrl_grp
+    100072: l_foot
+    100074: l_foot_ctrl
+    100076: l_foot_ctrl_grp
+    100078: l_hip
+    100080: l_hip_ctrl
+    100082: l_hip_ctrl_grp
+    100084: l_knee
+    100086: l_knee_ctrl
+    100088: l_knee_ctrl_grp
+    100090: monster_grp
+    100092: Object001
+    100094: Object002
+    100096: Object003
+    100098: Object004
+    100100: Object005
+    100102: Object006
+    100104: Object007
+    100106: Object008
+    100108: Object009
+    100110: Object010
+    100112: Object011
+    100114: Object012
+    100116: pasted__back_r_foot_ctrl
+    100118: pasted__back_r_foot_ctrl_grp
+    100120: pasted__back_r_hip1_ctrl
+    100122: pasted__back_r_hip1_ctrl 1
+    100124: pasted__back_r_hip1_ctrl_grp
+    100126: pasted__back_r_hip1_ctrl_grp 1
+    100128: pasted__back_r_hip1_ctrl_grp 2
+    100130: pasted__back_r_knee_ctrl
+    100132: pasted__back_r_knee_ctrl_grp
+    100134: pasted__back_r_knee_ctrl_grp 1
+    100136: pasted__global_ctrl
+    100138: pasted__global_ctrl 1
+    100140: pasted__global_ctrl 2
+    100142: pasted__global_ctrl 3
+    100144: pasted__global_ctrl_grp
+    100146: pasted__global_ctrl_grp 1
+    100148: pasted__global_ctrl_grp 2
+    100150: pasted__global_ctrl_grp 3
+    100152: pasted__l_eye_002_ctrl
+    100154: pasted__l_eye_002_ctrl_grp
+    100156: pasted__l_eye_ctrl
+    100158: pasted__l_eye_ctrl_grp
+    100160: pasted__monster_grp
+    100162: pasted__monster_grp 1
+    100164: pasted__monster_grp 2
+    100166: pasted__monster_grp 3
+    100168: pasted__r_eye002_ctrl
+    100170: pasted__r_eye002_ctrl_grp
+    100172: pasted__r_eye__ctrl
+    100174: pasted__r_eye_ctrl_grp
+    100176: pasted__root_ctrl
+    100178: pasted__root_ctrl_grp
+    100180: pasted__spine_ctrl
+    100182: pasted__spine_ctrl_grp
+    100184: r_eye
+    100186: r_eye002
+    100188: r_eye002_ctrl
+    100190: r_eye002_ctrl_grp
+    100192: r_eye_002
+    100194: r_eye_003
+    100196: r_eye__ctrl
+    100198: r_eye_ctrl_grp
+    100200: r_foot
+    100202: r_foot_ctrl
+    100204: r_foot_ctrl_grp
+    100206: r_hip
+    100208: r_hip_ctrl
+    100210: r_hip_ctrl_grp
+    100212: r_knee
+    100214: r_knee_ctrl
+    100216: r_knee_ctrl_grp
+    100218: root
+    100220: root_ctrl
+    100222: root_ctrl_grp
+    100224: //RootNode
+    100226: skeleton
+    100228: spine
+    100230: spine_ctrl
+    100232: spine_ctrl_grp
+    400000: back_be_l_foot
+    400002: back_be_r_foot
+    400004: back_l_foot
+    400006: back_l_hip4
+    400008: back_l_knee
+    400010: back_r_foot
+    400012: back_r_foot_ctrl
+    400014: back_r_foot_ctrl_grp
+    400016: back_r_hip1_ctrl
+    400018: back_r_hip1_ctrl_grp
+    400020: back_r_hip2
+    400022: back_r_knee_ctrl
+    400024: back_r_knee_ctrl_grp
+    400026: backl_foot_ctrl
+    400028: backl_foot_ctrl_grp
+    400030: backl_hip_ctrl
+    400032: backl_hip_ctrl_grp
+    400034: backl_knee_ctrl
+    400036: backl_knee_ctrl_grp
+    400038: backr_knee
+    400040: be_l_foot
+    400042: be_r_foot
+    400044: be_root
+    400046: Box001_002
+    400048: global_ctrl
+    400050: global_ctrl_grp
+    400052: group
+    400054: group 1
+    400056: group1
+    400058: group2
+    400060: l_eye
+    400062: l_eye003
+    400064: l_eye_002_ctrl
+    400066: l_eye_002_ctrl_grp
+    400068: l_eye_ctrl
+    400070: l_eye_ctrl_grp
+    400072: l_foot
+    400074: l_foot_ctrl
+    400076: l_foot_ctrl_grp
+    400078: l_hip
+    400080: l_hip_ctrl
+    400082: l_hip_ctrl_grp
+    400084: l_knee
+    400086: l_knee_ctrl
+    400088: l_knee_ctrl_grp
+    400090: monster_grp
+    400092: Object001
+    400094: Object002
+    400096: Object003
+    400098: Object004
+    400100: Object005
+    400102: Object006
+    400104: Object007
+    400106: Object008
+    400108: Object009
+    400110: Object010
+    400112: Object011
+    400114: Object012
+    400116: pasted__back_r_foot_ctrl
+    400118: pasted__back_r_foot_ctrl_grp
+    400120: pasted__back_r_hip1_ctrl
+    400122: pasted__back_r_hip1_ctrl 1
+    400124: pasted__back_r_hip1_ctrl_grp
+    400126: pasted__back_r_hip1_ctrl_grp 1
+    400128: pasted__back_r_hip1_ctrl_grp 2
+    400130: pasted__back_r_knee_ctrl
+    400132: pasted__back_r_knee_ctrl_grp
+    400134: pasted__back_r_knee_ctrl_grp 1
+    400136: pasted__global_ctrl
+    400138: pasted__global_ctrl 1
+    400140: pasted__global_ctrl 2
+    400142: pasted__global_ctrl 3
+    400144: pasted__global_ctrl_grp
+    400146: pasted__global_ctrl_grp 1
+    400148: pasted__global_ctrl_grp 2
+    400150: pasted__global_ctrl_grp 3
+    400152: pasted__l_eye_002_ctrl
+    400154: pasted__l_eye_002_ctrl_grp
+    400156: pasted__l_eye_ctrl
+    400158: pasted__l_eye_ctrl_grp
+    400160: pasted__monster_grp
+    400162: pasted__monster_grp 1
+    400164: pasted__monster_grp 2
+    400166: pasted__monster_grp 3
+    400168: pasted__r_eye002_ctrl
+    400170: pasted__r_eye002_ctrl_grp
+    400172: pasted__r_eye__ctrl
+    400174: pasted__r_eye_ctrl_grp
+    400176: pasted__root_ctrl
+    400178: pasted__root_ctrl_grp
+    400180: pasted__spine_ctrl
+    400182: pasted__spine_ctrl_grp
+    400184: r_eye
+    400186: r_eye002
+    400188: r_eye002_ctrl
+    400190: r_eye002_ctrl_grp
+    400192: r_eye_002
+    400194: r_eye_003
+    400196: r_eye__ctrl
+    400198: r_eye_ctrl_grp
+    400200: r_foot
+    400202: r_foot_ctrl
+    400204: r_foot_ctrl_grp
+    400206: r_hip
+    400208: r_hip_ctrl
+    400210: r_hip_ctrl_grp
+    400212: r_knee
+    400214: r_knee_ctrl
+    400216: r_knee_ctrl_grp
+    400218: root
+    400220: root_ctrl
+    400222: root_ctrl_grp
+    400224: //RootNode
+    400226: skeleton
+    400228: spine
+    400230: spine_ctrl
+    400232: spine_ctrl_grp
+    2100000: rock_1
+    2100002: body1
+    2100004: wire1
+    2100006: glass1
+    2100008: steel1
+    2100010: rusty_steel1
+    2100012: wire_088144225_003
+    2300000: Object001
+    2300002: Object002
+    2300004: Object003
+    2300006: Object004
+    2300008: Object005
+    2300010: Object006
+    2300012: Object007
+    2300014: Object008
+    3300000: Object001
+    3300002: Object002
+    3300004: Object003
+    3300006: Object004
+    3300008: Object005
+    3300010: Object006
+    3300012: Object007
+    3300014: Object008
+    4300000: Box001_002
+    4300002: Object012
+    4300004: Object011
+    4300006: Object010
+    4300008: Object009
+    4300010: Object001
+    4300012: Object005
+    4300014: Object004
+    4300016: Object008
+    4300018: Object006
+    4300020: Object003
+    4300022: Object007
+    4300024: Object002
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Box001_002
+    13700002: Object009
+    13700004: Object010
+    13700006: Object011
+    13700008: Object012
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
