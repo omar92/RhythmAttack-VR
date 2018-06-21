@@ -6,11 +6,13 @@ public class SwordIntersiction : MonoBehaviour {
 
     public ParticleSystem intersictionParticle;
     //public int layerMask =1<<13;
-    public int myMask ;
+    public int myMask;
+    AudioSource intersectionSound;
     private void Start()
     {
         //intersictionParticle=Instantiate(intersictionParticle.gameObject,Vector3.zero,Quaternion.identity);
         intersictionParticle.gameObject.SetActive(false);
+        intersectionSound = GetComponent<AudioSource>();
         
     }
     private void Update()
@@ -24,11 +26,12 @@ public class SwordIntersiction : MonoBehaviour {
                 
                 intersictionParticle.transform.position = hit.point;
                 intersictionParticle.gameObject.SetActive(true);
+                intersectionSound.Play();
             }
             else
             {
                 intersictionParticle.gameObject.SetActive(false);
-                
+                intersectionSound.Stop();
             }
 
         }

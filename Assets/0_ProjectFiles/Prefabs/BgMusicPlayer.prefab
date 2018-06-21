@@ -369,4 +369,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e356f13850160e4da916f392d7d4803, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  percentage: {fileID: 11400000, guid: 13d84946f25e05e46a127833db77cdf0, type: 2}
+  remainingTime: {fileID: 0}

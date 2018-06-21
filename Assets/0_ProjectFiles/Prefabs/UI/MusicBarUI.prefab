@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 114680490941250596}
-  percentage: {fileID: 11400000, guid: 13d84946f25e05e46a127833db77cdf0, type: 2}
+  remainingTime: {fileID: 11400000, guid: 13d84946f25e05e46a127833db77cdf0, type: 2}
 --- !u!114 &114680490941250596
 MonoBehaviour:
   m_ObjectHideFlags: 1
