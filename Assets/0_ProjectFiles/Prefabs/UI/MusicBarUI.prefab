@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bar: {fileID: 114680490941250596}
-  remainingTime: {fileID: 11400000, guid: 13d84946f25e05e46a127833db77cdf0, type: 2}
+  percentage: {fileID: 11400000, guid: 13d84946f25e05e46a127833db77cdf0, type: 2}
 --- !u!114 &114680490941250596
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -315,6 +315,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 5.695}
+  m_AnchoredPosition: {x: 0, y: 2.6757042}
   m_SizeDelta: {x: 5.005, y: 0.403}
   m_Pivot: {x: 0.5, y: 0.5}
