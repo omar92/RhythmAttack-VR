@@ -55,7 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4371644934935282}
   - component: {fileID: 114517477028772996}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: PauseMenueOnStates
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -783,7 +783,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.1878938}
   m_AnchorMax: {x: 1, y: 0.1878938}
-  m_AnchoredPosition: {x: 0.0029752245, y: -108}
+  m_AnchoredPosition: {x: 0.002960205, y: -108}
   m_SizeDelta: {x: -75.51575, y: 298.7453}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!224 &224325273096061744
