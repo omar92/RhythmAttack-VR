@@ -13,4 +13,10 @@ public class LevelManager : MonoBehaviour
         GameLevel.value += 1;
         LevelChangedE.Raise();
     }
+
+    public void SetLevel(int level)
+    {
+        GameLevel.value = level;
+        LevelChangedE.Raise();
+    }
 }
