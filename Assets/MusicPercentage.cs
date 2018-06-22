@@ -9,17 +9,33 @@ public class MusicPercentage : MonoBehaviour
     public FloatVariable remainingTime;
     AudioSource source;
     float passedTime;
+    bool bossStamina=false;
+
     void Start()
     {
         source = GetComponent<AudioSource>();
-
     }
 
     void Update()
     {
-        passedTime += Time.deltaTime;
-        remainingTime.value = (source.clip.length - passedTime) / source.clip.length;
+        if (bossStamina)
+        {
+            passedTime += Time.deltaTime;
+            remainingTime.value = (source.clip.length - passedTime) / source.clip.length;
+        }
+        
     }
+    public void StartBossStamina()
+    {
+        passedTime = 0;
+        remainingTime.value = 1f;
+        bossStamina = true;
+    }
+    public void EndBossStamina()
+    {
+        bossStamina = false;
+    }
+
 }
 
 //public class MusicPercentage : MonoBehaviour {
