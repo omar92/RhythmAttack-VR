@@ -20,6 +20,9 @@ public class Emitter : MonoBehaviour
     public GameEvent stopBgMusicE;
     public GameEvent attakEndE;
 
+    public GameEvent ThrowFromLeftHand;
+    public GameEvent ThrowFromRightHand;
+
     [Header("Boss Hands")]
     public TransformVariable bossRightHand;
     public TransformVariable bossLeftHand;
@@ -169,10 +172,12 @@ public class Emitter : MonoBehaviour
         {
             if (laneCords.x < 2)
             {
+                ThrowFromLeftHand.Raise();
                 source = bossLeftHand.value;
             }
             else
             {
+                ThrowFromRightHand.Raise();
                 source = bossRightHand.value;
             }
         }
