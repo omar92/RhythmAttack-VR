@@ -144,8 +144,6 @@ GameObject:
   - component: {fileID: 82896363464406890}
   - component: {fileID: 114220260988047690}
   - component: {fileID: 114062496031765570}
-  - component: {fileID: 114284206371863748}
-  - component: {fileID: 114836419015446110}
   m_Layer: 8
   m_Name: Note
   m_TagString: Note
@@ -336,7 +334,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1362685045808908}
   m_LocalRotation: {x: -0.017388552, y: -0.99965733, z: -0.00093990273, w: -0.019544922}
-  m_LocalPosition: {x: -12.59044, y: -2.024375, z: 7.52013}
+  m_LocalPosition: {x: -11.095107, y: 14.747774, z: -38.952488}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4413047206885072}
@@ -1201,19 +1199,6 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
---- !u!114 &114284206371863748
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1362685045808908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebdbf7f88ddf6eb4fabc11f9d1cf6ff1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  noteParticle: {fileID: 198294832460392998, guid: 69feb5326d64dd34785e3baa00873e3c,
-    type: 2}
 --- !u!114 &114284806783545288
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1346,34 +1331,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114836419015446110
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1362685045808908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79c7ae08bc75c7e43a13e01367bad9b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: a9f5acdfd9955e945a92a5d2373949b9, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114284206371863748}
-        m_MethodName: InstansiateParticle
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114892475220991470
 MonoBehaviour:
   m_ObjectHideFlags: 1
