@@ -38,7 +38,7 @@ public class NoteScript : ANote
     {
         coroutinrRule = new WaitWhile(() => { return audioSource.isPlaying; });
         audioSource = GetComponent<AudioSource>();
-        cutParticle.gameObject.SetActive(false);
+        
     }
     private void Start()
     {
@@ -59,17 +59,17 @@ public class NoteScript : ANote
     {
         if (collision.tag == "Sword")
         {
-            Collider noteCollider = GetComponent<Collider>();
+            
             Co.enabled = false;
             var swordScript = collision.GetComponent<Sword>();
             if (swordScript.dir == slashDirection && SwordSpeed.value > settings.minCutSpeed)
             {
                 print("NoteCut");
                 OnNoteCut();
-                colliderHitPosition= noteCollider.ClosestPoint(collision.transform.position);
-                cutParticle.transform.position = colliderHitPosition;
-                cutParticle.gameObject.SetActive(true);
-
+                
+                var slashParticle = Instantiate(cutParticle, transform.position, Quaternion.identity);
+                slashParticle.Play();
+                Destroy(slashParticle, 2f);
             }
             else
             {
@@ -90,14 +90,7 @@ public class NoteScript : ANote
             //Rb.velocity = new Vector3(0, 0, 0);
         }
     }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Sword")
-        {
-            cutParticle.gameObject.SetActive(false);
-
-        }
-    }
+    
 
     private void OnNoteWorngCut()
     {
