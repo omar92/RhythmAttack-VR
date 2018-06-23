@@ -38,12 +38,12 @@ public class LevelSoundsEditor : Editor
 
         GUILayout.Space(5);
         //Level 2
-        EditorGUILayout.PropertyField(Level3_D_BG, true);
+        EditorGUILayout.PropertyField(Level2_D_BG, true);
         AddMidiButton(ref me.Level2_D_MIDI);
 
         GUILayout.Space(5);
         //Level 3
-        EditorGUILayout.PropertyField(Level2_D_BG, true);
+        EditorGUILayout.PropertyField(Level3_D_BG, true);
         AddMidiButton(ref me.Level3_D_MIDI);
 
         GUILayout.Space(10);

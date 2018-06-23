@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 4649520976576800}
   - component: {fileID: 114920298274175106}
   - component: {fileID: 114026565895578678}
+  - component: {fileID: 114019693922697332}
   m_Layer: 0
   m_Name: LevelHandler
   m_TagString: Untagged
@@ -271,6 +272,34 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114019693922697332
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1948445120769560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79c7ae08bc75c7e43a13e01367bad9b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 54825b85692cc4c4f8a0398f11d9ec64, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114920298274175106}
+        m_MethodName: SetLevel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114026565895578678
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -302,13 +331,13 @@ MonoBehaviour:
     onExit:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 11400000, guid: add440bee087c414bb9a556b975887c6, type: 2}
-          m_MethodName: SetValue
-          m_Mode: 4
+        - m_Target: {fileID: 114920298274175106}
+          m_MethodName: SetLevel
+          m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
+            m_IntArgument: 1
             m_FloatArgument: 1
             m_StringArgument: 
             m_BoolArgument: 0
@@ -366,9 +395,9 @@ MonoBehaviour:
     onExit:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 11400000, guid: add440bee087c414bb9a556b975887c6, type: 2}
-          m_MethodName: SetValue
-          m_Mode: 4
+        - m_Target: {fileID: 114920298274175106}
+          m_MethodName: SetLevel
+          m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -398,9 +427,9 @@ MonoBehaviour:
     onExit:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 11400000, guid: add440bee087c414bb9a556b975887c6, type: 2}
-          m_MethodName: SetValue
-          m_Mode: 4
+        - m_Target: {fileID: 114920298274175106}
+          m_MethodName: SetLevel
+          m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -789,6 +818,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicLengyh: {fileID: 11400000, guid: 13d84946f25e05e46a127833db77cdf0, type: 2}
   introMusicEnd: {fileID: 11400000, guid: 84b98a7c59bd4cf42a481cac172a3dca, type: 2}
+  EndAt: 0.1
 --- !u!114 &114692386674749402
 MonoBehaviour:
   m_ObjectHideFlags: 1

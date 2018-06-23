@@ -24,7 +24,7 @@ public class LevelSounds : ScriptableObject
 
     //  public List<LevelBgMidiMapper> DefenceLevels = new List<LevelBgMidiMapper>();
     [HideInInspector]
-    public int attackLevelsNum = 3;
+    public int attackLevelsNum = 1;
 
     //[Header("Attack Level 1")]
     public AudioClip Level1_A_BG;

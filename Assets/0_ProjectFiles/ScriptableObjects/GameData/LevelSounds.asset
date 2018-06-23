@@ -14,13 +14,13 @@ MonoBehaviour:
   defenceLevelsNum: 3
   Level1_D_BG: {fileID: 8300000, guid: 2b5d483bca3c5b54482719d24d2df36e, type: 3}
   Level1_D_MIDI: Tracks/BG 1 A midi.mid
-  Level2_D_BG: {fileID: 8300000, guid: c2839b631e9a25d48888b979de62a48f, type: 3}
-  Level2_D_MIDI: Tracks/test 2.mid
-  Level3_D_BG: {fileID: 8300000, guid: c944026c2b6bc824da2b909c5cc87495, type: 3}
-  Level3_D_MIDI: Tracks/test 3.mid
+  Level2_D_BG: {fileID: 8300000, guid: 4eca3ffb809522e43bdeee99587747ec, type: 3}
+  Level2_D_MIDI: Tracks/BG 3 A midi.mid
+  Level3_D_BG: {fileID: 8300000, guid: f1d2aa8ddbba5664a96009e7a179254d, type: 3}
+  Level3_D_MIDI: Tracks/BG 2 A midi.mid
   attackLevelsNum: 3
-  Level1_A_BG: {fileID: 8300000, guid: 408e162751086fc4eba6c9b8367da69a, type: 3}
-  Level1_A_MIDI: Tracks/BG Intro midi.mid
+  Level1_A_BG: {fileID: 8300000, guid: 03d6cd92262733d4d9bfabbf65b882c7, type: 3}
+  Level1_A_MIDI: Tracks/BG 1 B midi.mid
   LaneSounds:
   - {fileID: 8300000, guid: ddb2c183acfd788419583254cd853e26, type: 3}
   - {fileID: 8300000, guid: ddb2c183acfd788419583254cd853e26, type: 3}

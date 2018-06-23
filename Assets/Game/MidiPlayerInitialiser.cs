@@ -19,7 +19,6 @@ public class MidiPlayerInitialiser
                 {
                     var fileName = MidiPlayerGlobal.CurrentMidiSet.MidiFiles[i];
                     DeleteResource(MidiLoad.BuildOSPath(MidiPlayerGlobal.CurrentMidiSet.MidiFiles[i]));
-                    //Debug.Log(MidiPlayerGlobal.CurrentMidiSet.MidiFiles);
                 }
             }
         }
@@ -36,7 +35,8 @@ public class MidiPlayerInitialiser
             foreach (FileInfo track in FilesInfo)
             {
                 //add to tracks list
-                AddMidifile(track.FullName);
+                Debug.Log(i + " " + track.FullName);
+                AddMidifile(i,track.FullName);
             }
         }
 
@@ -102,7 +102,7 @@ public class MidiPlayerInitialiser
         }
     }
 
-    public static void AddMidifile(string selectedFile)
+    public static void AddMidifile(int index,string selectedFile)
     {
         try
         {
@@ -124,11 +124,14 @@ public class MidiPlayerInitialiser
 
                 MidiPlayerGlobal.CurrentMidiSet.MidiFiles.Add(Path.GetFileNameWithoutExtension(selectedFile));
                 MidiPlayerGlobal.CurrentMidiSet.Save();
+
+                Debug.Log("Success");
             }
             //    AssetDatabase.Refresh();
         }
         catch (System.Exception ex)
         {
+            Debug.Log("fail");
             MidiPlayerGlobal.ErrorDetail(ex);
         }
     }
