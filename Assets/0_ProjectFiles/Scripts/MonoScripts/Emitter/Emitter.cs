@@ -54,6 +54,73 @@ public class Emitter : MonoBehaviour
         mode = EmitterMode.Attack;
     }
 
+    Coroutine TutorialCo;
+    int TutorialProgrees;
+    bool TutorialProceed;
+    public void StartTutorial()
+    {
+        mode = EmitterMode.Tutorial;
+
+        TutorialCo = StartCoroutine(TutorialCoFun());
+
+    }
+    public void StopTutorial()
+    {
+        StopCoroutine(TutorialCo);
+
+    }
+    IEnumerator TutorialCoFun()
+    {
+        TutorialProgrees = 0;
+        TutorialProceed = false;
+
+        while (true)
+        {
+            switch (TutorialProgrees)
+            {
+                case 0:
+                    var noteAudio = new MidiNoteAudio();
+            
+      //                          Debug.Log("note Midi" + note.note.Midi
+      //+ "\n" + "note Pitch" + note.note.Pitch
+      //+ "\n" + "note Patch" + note.note.Patch
+      //+ "\n" + "note AbsoluteQuantize" + note.note.AbsoluteQuantize
+      //+ "\n" + "note Chanel" + note.note.Chanel
+      //+ "\n" + "note Delay" + note.note.Delay
+      //+ "\n" + "note Drum" + note.note.Drum
+      //+ "\n" + "note Duration" + note.note.Duration
+      //+ "\n" + "note Velocity" + note.note.Velocity);
+      //              var velocityRatio = (float)(note.note.Velocity * 100) / (125);
+            
+                    SpawnNote(noteAudio);
+                    break;
+
+                default:
+
+
+
+                    break;
+            }
+
+            while (!TutorialProceed)
+            {
+                yield return new WaitForEndOfFrame();
+            }
+            yield return new WaitForEndOfFrame();
+        }
+
+    }
+
+    public void OnTutorialSuccess()
+    {
+        TutorialProgres++;
+        TutorialProceed = true;
+    }
+
+    public void OnTutorialFail()
+    {
+        TutorialProceed = true;
+    }
     public void HideAttackTargets()
     {
         for (int i = 0; i < AttackTargets.Length; i++)
@@ -104,9 +171,9 @@ public class Emitter : MonoBehaviour
     {
         int traials = 10;
         var target = AttackTargets[Random.Range(0, AttackTargets.Length)];// AttackTargets.get
-        while (target.activeInHierarchy && --traials >= 0) 
+        while (target.activeInHierarchy && --traials >= 0)
         {
-            yield return true; 
+            yield return true;
             target = AttackTargets[Random.Range(0, AttackTargets.Length)];// AttackTargets.get
         }
         if (traials > 0)
@@ -243,8 +310,8 @@ public class Emitter : MonoBehaviour
         else
         {
             print("Attack End");
-            StartCoroutine(StartAfterDelay(2f,()=> { attakEndE.Raise(); }));
-            
+            StartCoroutine(StartAfterDelay(2f, () => { attakEndE.Raise(); }));
+
         }
     }
 
@@ -264,6 +331,6 @@ public class Emitter : MonoBehaviour
 
     enum EmitterMode
     {
-        Defence, Attack
+        Defence, Attack, Tutorial
     }
 }

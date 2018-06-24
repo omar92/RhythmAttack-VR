@@ -44,6 +44,6 @@ public class BroadcastMidiWave : MonoBehaviour
 
 public struct MidiNoteAudio
 {
-    public AudioSource audioSource;
+ //   public AudioSource audioSource;
     public MidiNote note;
 }
