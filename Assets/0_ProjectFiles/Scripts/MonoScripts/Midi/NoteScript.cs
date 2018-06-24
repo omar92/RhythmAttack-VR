@@ -66,16 +66,18 @@ public class NoteScript : ANote
             {
                 print("NoteCut");
                 OnNoteCut();
-                
-                var slashParticle = Instantiate(cutParticle, transform.position, Quaternion.identity);
-                slashParticle.Play();
-                Destroy(slashParticle, 2f);
+               
             }
             else
             {
                 print("NoteWrongCut");
                 OnNoteWorngCut();
             }
+
+            var slashParticle = Instantiate(cutParticle, transform.position, Quaternion.identity);
+            slashParticle.gameObject.SetActive(true);
+            slashParticle.Play();
+            Destroy(slashParticle, 2f);
         }
        else if (collision.tag == "Miss")
         {

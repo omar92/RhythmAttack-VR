@@ -100,8 +100,8 @@ public class MidiHandler : MonoBehaviour
     }
     public void SetLevelAttackMidi(int index)
     {
-        Debug.Log("levelSounds.DefenceLevels.Count + index " + (levelSounds.defenceLevelsNum + index));
-        player.MPTK_MidiIndex = levelSounds.defenceLevelsNum + index;
+       // Debug.Log("levelSounds.DefenceLevels.Count + index " + (levelSounds.defenceLevelsNum + index));
+        player.MPTK_MidiIndex = 3;
         player.MPTK_Position = 0;
     }
 
