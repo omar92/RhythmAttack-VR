@@ -14,6 +14,12 @@ public class Gun : MonoBehaviour, IControllable {
     public Rigidbody projectile;
     public GeneralSounds sounds;
     AudioSource Source;
+    [SerializeField]
+    Transform gunFire;
+    [SerializeField]
+    ParticleSystem gunFireParticle;
+    [SerializeField]
+    ParticleSystem bossHitParticle;
     private void Awake()
     {
         Source = GetComponent<AudioSource>();
@@ -29,7 +35,8 @@ public class Gun : MonoBehaviour, IControllable {
 
     void Shoot()
     {
-
+        var gunParticle = Instantiate(gunFireParticle, gunFire.position, Quaternion.identity);
+        gunParticle.gameObject.SetActive(true);
         Source.clip = sounds.RangedShoot;
         Source.Play();
         GunVibrate.Raise();
@@ -47,6 +54,8 @@ public class Gun : MonoBehaviour, IControllable {
                 {
                     target.OnHit();
                     BossHitE.Raise();
+                    var bossParticle = Instantiate(bossHitParticle, hit.transform.position, Quaternion.Euler(hit.normal));
+                    bossParticle.gameObject.SetActive(true);
                 }
             }
             Destroy(clone.gameObject, destroyAfter);

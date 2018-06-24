@@ -38,7 +38,7 @@ public class SwordIntersiction : MonoBehaviour {
         else
         {
             intersictionParticle.gameObject.SetActive(false);
-
+            intersectionSound.Stop();
         }
 
     }
