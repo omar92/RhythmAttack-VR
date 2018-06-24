@@ -34,7 +34,7 @@ public class EvadeNoteScript : ANote
         else if (other.tag == "Player")
         {
             EvadeHit.Raise();
-            Destroy(gameObject, 1f);
+            Destroy(gameObject);
         }
     }
 

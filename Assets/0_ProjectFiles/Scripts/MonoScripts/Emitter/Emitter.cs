@@ -11,6 +11,7 @@ public class Emitter : MonoBehaviour
     public EventsNoteScript eventNotePref;
     public EvadeNoteScript evadeNotePref;
     public TransformVariable player;
+    public TransformVariable playerHead;
     public static Emitter inistance = null;
 
     public FloatVariable currentTrackIndex;
@@ -112,11 +113,14 @@ public class Emitter : MonoBehaviour
                     noteAudio.note.Midi = midiMidle;
                     noteAudio.note.Velocity = 10;
                     SpawnNote(noteAudio, true);
+                    //TutorialProgrees++;
+                    //TutorialProceed = true;
                     break;
                 case 3:
                     noteAudio.note.Midi = midiMidle;
                     noteAudio.note.Velocity = 100;
                     SpawnNote(noteAudio, true);
+                   
                     break;
                 case 4:
                     TutorialGun.Raise();
@@ -232,7 +236,7 @@ public class Emitter : MonoBehaviour
 
         if (GetNoteIndex(note) >= 7 || ForceEvade)
         {
-            distination.z = player.value.position.z;
+            distination.y = playerHead.value.position.y+1;
             SpawnEvade(source, distination, slashDir);
         }
         else

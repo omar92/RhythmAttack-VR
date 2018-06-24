@@ -10,24 +10,31 @@ public class PlayerHealthHandler : MonoBehaviour
     public LevelSettings levelSettings;
     public GameEvent playerHealthChangeE;
     public GameEvent LoseE;
+    public bool NoHealthLose = false;
 
     public void OnNoteMiss()
     {
-        if (playerHealth.value > 0)
-
-            playerHealth.value -= levelSettings.MissNoteDamage;
-        if (playerHealth.value < 0)
+        if (!NoHealthLose)
         {
-            playerHealth.value = 0;
-        }
-        print("playerHealth " + playerHealth.value);
-        playerHealthChangeE.Raise();
-        if (playerHealth.value == 0)
-        {
-            LoseE.Raise();
-            print("Lose");
-        }
+            if (playerHealth.value > 0)
 
+                playerHealth.value -= levelSettings.MissNoteDamage;
+            if (playerHealth.value < 0)
+            {
+                playerHealth.value = 0;
+            }
+            print("playerHealth " + playerHealth.value);
+            playerHealthChangeE.Raise();
+            if (playerHealth.value == 0)
+            {
+                LoseE.Raise();
+                print("Lose");
+            }
+        }
     }
 
+    public void SetNoHealthLose(bool val)
+    {
+        NoHealthLose = val;
+    }
 }
