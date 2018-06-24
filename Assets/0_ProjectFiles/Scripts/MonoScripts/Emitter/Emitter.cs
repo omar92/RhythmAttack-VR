@@ -23,6 +23,8 @@ public class Emitter : MonoBehaviour
     public GameEvent ThrowFromLeftHand;
     public GameEvent ThrowFromRightHand;
 
+    public GameEvent TutorialDone;
+    public GameEvent TutorialGun;
     [Header("Boss Hands")]
     public TransformVariable bossRightHand;
     public TransformVariable bossLeftHand;
@@ -69,51 +71,82 @@ public class Emitter : MonoBehaviour
         StopCoroutine(TutorialCo);
 
     }
+
+    bool isTutorialFinished = false;
     IEnumerator TutorialCoFun()
     {
         TutorialProgrees = 0;
         TutorialProceed = false;
+        isTutorialFinished = false;
+        var midiMidle = 0;
+        foreach (var midi in GlobalData.DefenceTracksNotesIndicies[(int)currentTrackIndex.value].Keys)
+        {
+            if (GlobalData.DefenceTracksNotesIndicies[(int)currentTrackIndex.value][midi] == 2)
+            {
+                midiMidle = midi;
+                break;
+            }
+        }
 
-        while (true)
+        var noteAudio = new MidiNoteAudio
+        {
+            note = new MidiPlayerTK.MidiNote
+            {
+                Midi = midiMidle
+            }
+        };
+
+        while (!isTutorialFinished)
         {
             switch (TutorialProgrees)
             {
                 case 0:
-                    var noteAudio = new MidiNoteAudio();
-            
-      //                          Debug.Log("note Midi" + note.note.Midi
-      //+ "\n" + "note Pitch" + note.note.Pitch
-      //+ "\n" + "note Patch" + note.note.Patch
-      //+ "\n" + "note AbsoluteQuantize" + note.note.AbsoluteQuantize
-      //+ "\n" + "note Chanel" + note.note.Chanel
-      //+ "\n" + "note Delay" + note.note.Delay
-      //+ "\n" + "note Drum" + note.note.Drum
-      //+ "\n" + "note Duration" + note.note.Duration
-      //+ "\n" + "note Velocity" + note.note.Velocity);
-      //              var velocityRatio = (float)(note.note.Velocity * 100) / (125);
-            
+                    noteAudio.note.Velocity = 100;
                     SpawnNote(noteAudio);
                     break;
-
+                case 1:
+                    noteAudio.note.Velocity = 10;
+                    SpawnNote(noteAudio);
+                    break;
+                case 2:
+                    noteAudio.note.Midi = midiMidle;
+                    noteAudio.note.Velocity = 10;
+                    SpawnNote(noteAudio, true);
+                    break;
+                case 3:
+                    noteAudio.note.Midi = midiMidle;
+                    noteAudio.note.Velocity = 100;
+                    SpawnNote(noteAudio, true);
+                    break;
+                case 4:
+                    TutorialGun.Raise();
+                    TutorialProgrees++;
+                    TutorialProceed = true;
+                    break;
+                case 5:
+                case 6:
+                    ActivateRangedTarget();
+                    TutorialProceed = true;
+                    yield return new WaitForSeconds(2);
+                    break;
                 default:
-
-
-
+                    isTutorialFinished = true;
+                    TutorialProceed = true;
                     break;
             }
-
             while (!TutorialProceed)
             {
                 yield return new WaitForEndOfFrame();
             }
-            yield return new WaitForEndOfFrame();
+            TutorialProceed = false;
+            // yield return new WaitForEndOfFrame();
         }
-
+        TutorialDone.Raise();
     }
 
     public void OnTutorialSuccess()
     {
-        TutorialProgres++;
+        TutorialProgrees++;
         TutorialProceed = true;
     }
 
@@ -187,7 +220,7 @@ public class Emitter : MonoBehaviour
     }
 
     int noteIndex;
-    void SpawnNote(MidiNoteAudio note)
+    void SpawnNote(MidiNoteAudio note, bool ForceEvade = false)
     {
         // DebugNote(note);
 
@@ -197,8 +230,9 @@ public class Emitter : MonoBehaviour
         Vector3 distination;
         CalculateNoteDirection(note, out source, out distination);
 
-        if (GetNoteIndex(note) == 7)
+        if (GetNoteIndex(note) >= 7 || ForceEvade)
         {
+            distination.z = player.value.position.z;
             SpawnEvade(source, distination, slashDir);
         }
         else
