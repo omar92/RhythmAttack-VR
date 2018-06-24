@@ -29,7 +29,7 @@ public class BroadcastMidiWave : MonoBehaviour
         //Debug.Log("MIDI note Broadcast");
         NoteData.value = new MidiNoteAudio
         {
-            audioSource = audioSource,
+           // audioSource = audioSource,
             note = note
         };
 
@@ -44,6 +44,6 @@ public class BroadcastMidiWave : MonoBehaviour
 
 public struct MidiNoteAudio
 {
-    public AudioSource audioSource;
+ //   public AudioSource audioSource;
     public MidiNote note;
 }

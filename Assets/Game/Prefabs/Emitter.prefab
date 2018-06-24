@@ -23,6 +23,10 @@ GameObject:
   - component: {fileID: 114069279152157112}
   - component: {fileID: 114367244950921434}
   - component: {fileID: 114322827602096746}
+  - component: {fileID: 114924102532471882}
+  - component: {fileID: 114870032049255032}
+  - component: {fileID: 114697203259727790}
+  - component: {fileID: 114026015359269582}
   m_Layer: 0
   m_Name: Emitter
   m_TagString: Untagged
@@ -801,6 +805,34 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: -0.00000047683716, y: -0.00000023841858, z: 0}
+--- !u!114 &114026015359269582
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1174121475195748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79c7ae08bc75c7e43a13e01367bad9b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 009c15651fff5564a80ec8afcbdc715a, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114065218471795554}
+        m_MethodName: OnTutorialSuccess
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114065218471795554
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -818,12 +850,15 @@ MonoBehaviour:
   evadeNotePref: {fileID: 114168702610011170, guid: b36aee2a5265e8e4dae673a5d3878420,
     type: 2}
   player: {fileID: 11400000, guid: 2a328382eac28d44492407695e84a265, type: 2}
+  playerHead: {fileID: 11400000, guid: cb64a2f3ab24b1d45844466c3d516abe, type: 2}
   currentTrackIndex: {fileID: 11400000, guid: 22293211273e6d140a31d1cbcdfd54f9, type: 2}
   startBgMusicE: {fileID: 11400000, guid: 74c0754ad01f5fd429f4dd7576b2e6aa, type: 2}
   stopBgMusicE: {fileID: 11400000, guid: 78a79799fb8a83c478123b03948d79ec, type: 2}
   attakEndE: {fileID: 11400000, guid: dbd414abf8899514dbc6a6f5e4ab74a3, type: 2}
   ThrowFromLeftHand: {fileID: 11400000, guid: 8147dbc2c2ecf2b4e8c7f81deeb8ed8a, type: 2}
   ThrowFromRightHand: {fileID: 11400000, guid: 351e6a22c40baa94196a3d9ec1cea12e, type: 2}
+  TutorialDone: {fileID: 11400000, guid: 441daddbf34ae1c45badce2033e82493, type: 2}
+  TutorialGun: {fileID: 11400000, guid: 1c142a07a169d8345a6896423a86f40b, type: 2}
   bossRightHand: {fileID: 11400000, guid: 4b6ff107bd27db840aaa7a55f19b8bca, type: 2}
   bossLeftHand: {fileID: 11400000, guid: 183cfda8483f7ee42a96f81c2943c7d0, type: 2}
   bossMeleeHand: {fileID: 11400000, guid: df093f0ad0eaf0a4c89ea77e0b3f65cf, type: 2}
@@ -936,6 +971,49 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
+  - state: {fileID: 11400000, guid: d8f91948a9566894ab681546631e1b38, type: 2}
+    onEnter:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114065218471795554}
+          m_MethodName: StartTutorial
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    onPause:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    onUnPause:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+    onExit:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114065218471795554}
+          m_MethodName: StopTutorial
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
 --- !u!114 &114322827602096746
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -993,6 +1071,34 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114697203259727790
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1174121475195748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79c7ae08bc75c7e43a13e01367bad9b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 59f7d271d03ae5f4090536afd6308a31, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114065218471795554}
+        m_MethodName: OnTutorialSuccess
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114743659649793506
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1005,3 +1111,59 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NotePref: {fileID: 114050400184172646, guid: 18f2d377e348fa042801a85115288a7a, type: 2}
+--- !u!114 &114870032049255032
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1174121475195748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79c7ae08bc75c7e43a13e01367bad9b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 12a2500e664738c47be8aadb43cf2330, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114065218471795554}
+        m_MethodName: OnTutorialFail
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &114924102532471882
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1174121475195748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79c7ae08bc75c7e43a13e01367bad9b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: a9f5acdfd9955e945a92a5d2373949b9, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114065218471795554}
+        m_MethodName: OnTutorialSuccess
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null

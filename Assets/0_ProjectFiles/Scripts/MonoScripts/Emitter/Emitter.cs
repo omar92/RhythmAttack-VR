@@ -11,6 +11,7 @@ public class Emitter : MonoBehaviour
     public EventsNoteScript eventNotePref;
     public EvadeNoteScript evadeNotePref;
     public TransformVariable player;
+    public TransformVariable playerHead;
     public static Emitter inistance = null;
 
     public FloatVariable currentTrackIndex;
@@ -23,6 +24,8 @@ public class Emitter : MonoBehaviour
     public GameEvent ThrowFromLeftHand;
     public GameEvent ThrowFromRightHand;
 
+    public GameEvent TutorialDone;
+    public GameEvent TutorialGun;
     [Header("Boss Hands")]
     public TransformVariable bossRightHand;
     public TransformVariable bossLeftHand;
@@ -54,6 +57,107 @@ public class Emitter : MonoBehaviour
         mode = EmitterMode.Attack;
     }
 
+    Coroutine TutorialCo;
+    int TutorialProgrees;
+    bool TutorialProceed;
+    public void StartTutorial()
+    {
+        mode = EmitterMode.Tutorial;
+
+        TutorialCo = StartCoroutine(TutorialCoFun());
+
+    }
+    public void StopTutorial()
+    {
+        StopCoroutine(TutorialCo);
+
+    }
+
+    bool isTutorialFinished = false;
+    IEnumerator TutorialCoFun()
+    {
+        TutorialProgrees = 0;
+        TutorialProceed = false;
+        isTutorialFinished = false;
+        var midiMidle = 0;
+        foreach (var midi in GlobalData.DefenceTracksNotesIndicies[(int)currentTrackIndex.value].Keys)
+        {
+            if (GlobalData.DefenceTracksNotesIndicies[(int)currentTrackIndex.value][midi] == 2)
+            {
+                midiMidle = midi;
+                break;
+            }
+        }
+
+        var noteAudio = new MidiNoteAudio
+        {
+            note = new MidiPlayerTK.MidiNote
+            {
+                Midi = midiMidle
+            }
+        };
+
+        while (!isTutorialFinished)
+        {
+            switch (TutorialProgrees)
+            {
+                case 0:
+                    noteAudio.note.Velocity = 100;
+                    SpawnNote(noteAudio);
+                    break;
+                case 1:
+                    noteAudio.note.Velocity = 10;
+                    SpawnNote(noteAudio);
+                    break;
+                case 2:
+                    noteAudio.note.Midi = midiMidle;
+                    noteAudio.note.Velocity = 10;
+                    SpawnNote(noteAudio, true);
+                    //TutorialProgrees++;
+                    //TutorialProceed = true;
+                    break;
+                case 3:
+                    noteAudio.note.Midi = midiMidle;
+                    noteAudio.note.Velocity = 100;
+                    SpawnNote(noteAudio, true);
+                   
+                    break;
+                case 4:
+                    TutorialGun.Raise();
+                    TutorialProgrees++;
+                    TutorialProceed = true;
+                    break;
+                case 5:
+                case 6:
+                    ActivateRangedTarget();
+                    TutorialProceed = true;
+                    yield return new WaitForSeconds(2);
+                    break;
+                default:
+                    isTutorialFinished = true;
+                    TutorialProceed = true;
+                    break;
+            }
+            while (!TutorialProceed)
+            {
+                yield return new WaitForEndOfFrame();
+            }
+            TutorialProceed = false;
+            // yield return new WaitForEndOfFrame();
+        }
+        TutorialDone.Raise();
+    }
+
+    public void OnTutorialSuccess()
+    {
+        TutorialProgrees++;
+        TutorialProceed = true;
+    }
+
+    public void OnTutorialFail()
+    {
+        TutorialProceed = true;
+    }
     public void HideAttackTargets()
     {
         for (int i = 0; i < AttackTargets.Length; i++)
@@ -104,9 +208,9 @@ public class Emitter : MonoBehaviour
     {
         int traials = 10;
         var target = AttackTargets[Random.Range(0, AttackTargets.Length)];// AttackTargets.get
-        while (target.activeInHierarchy && --traials >= 0) 
+        while (target.activeInHierarchy && --traials >= 0)
         {
-            yield return true; 
+            yield return true;
             target = AttackTargets[Random.Range(0, AttackTargets.Length)];// AttackTargets.get
         }
         if (traials > 0)
@@ -120,7 +224,7 @@ public class Emitter : MonoBehaviour
     }
 
     int noteIndex;
-    void SpawnNote(MidiNoteAudio note)
+    void SpawnNote(MidiNoteAudio note, bool ForceEvade = false)
     {
         // DebugNote(note);
 
@@ -130,8 +234,9 @@ public class Emitter : MonoBehaviour
         Vector3 distination;
         CalculateNoteDirection(note, out source, out distination);
 
-        if (GetNoteIndex(note) == 7)
+        if (GetNoteIndex(note) >= 7 || ForceEvade)
         {
+            distination.y = playerHead.value.position.y+1;
             SpawnEvade(source, distination, slashDir);
         }
         else
@@ -243,8 +348,8 @@ public class Emitter : MonoBehaviour
         else
         {
             print("Attack End");
-            StartCoroutine(StartAfterDelay(2f,()=> { attakEndE.Raise(); }));
-            
+            StartCoroutine(StartAfterDelay(2f, () => { attakEndE.Raise(); }));
+
         }
     }
 
@@ -264,6 +369,6 @@ public class Emitter : MonoBehaviour
 
     enum EmitterMode
     {
-        Defence, Attack
+        Defence, Attack, Tutorial
     }
 }
