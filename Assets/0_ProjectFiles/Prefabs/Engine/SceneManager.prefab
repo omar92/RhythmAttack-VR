@@ -40,18 +40,15 @@ GameObject:
   - component: {fileID: 114987851221061556}
   - component: {fileID: 114617843008592658}
   - component: {fileID: 114638235098816384}
-  - component: {fileID: 114659148306650782}
   - component: {fileID: 114692386674749402}
   - component: {fileID: 114674285205107654}
   - component: {fileID: 114889102955628180}
   - component: {fileID: 114431541411941970}
   - component: {fileID: 114946373788741780}
   - component: {fileID: 114400839388140806}
-  - component: {fileID: 114463481750666400}
   - component: {fileID: 114828121595953252}
   - component: {fileID: 114865929736271398}
   - component: {fileID: 114309044639633642}
-  - component: {fileID: 114678399214065014}
   - component: {fileID: 114859373985663728}
   - component: {fileID: 114830653415651510}
   - component: {fileID: 114355982116168976}
@@ -712,7 +709,7 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114463481750666400}
+      - m_Target: {fileID: 0}
         m_MethodName: CheckWin
         m_Mode: 1
         m_Arguments:
@@ -1057,17 +1054,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114463481750666400
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1215017269107966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114515173725431818
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1170,50 +1156,6 @@ MonoBehaviour:
     type: 2}
   ScoreHealthChanged: {fileID: 11400000, guid: a0ae95781989ed8448cf3886762e543d, type: 2}
   GameLevelChanged: {fileID: 11400000, guid: e0e31d08cbc56c24ebc50c3e9db4bf6b, type: 2}
---- !u!114 &114659148306650782
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1215017269107966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07c91019330db914bac5c8ee05628426, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  states:
-  - state: {fileID: 11400000, guid: 612f8137cb83f544ca4e0534bc3f1cd8, type: 2}
-    onEnter:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 114678399214065014}
-          m_MethodName: BeginCoroutine
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    onPause:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    onUnPause:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-    onExit:
-      m_PersistentCalls:
-        m_Calls: []
-      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
 --- !u!114 &114659643293472440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1258,20 +1200,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114678399214065014
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1215017269107966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ee1fb4a541c48a48abdc27d2d2130a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  musicLengyh: {fileID: 11400000, guid: 13d84946f25e05e46a127833db77cdf0, type: 2}
-  introMusicEnd: {fileID: 11400000, guid: 84b98a7c59bd4cf42a481cac172a3dca, type: 2}
-  EndAt: 0.1
 --- !u!114 &114692386674749402
 MonoBehaviour:
   m_ObjectHideFlags: 1

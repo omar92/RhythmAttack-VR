@@ -6,7 +6,7 @@ using UnityEngine;
 public class MusicPercentage : MonoBehaviour
 {
 
-    public FloatVariable remainingTime;
+    public FloatVariable remainingTime; 
     AudioSource source;
     float passedTime;
     bool bossStamina=false;
@@ -35,6 +35,8 @@ public class MusicPercentage : MonoBehaviour
     {
         bossStamina = false;
     }
+
+    
 
 }
 

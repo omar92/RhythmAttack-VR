@@ -166,6 +166,11 @@ public class Emitter : MonoBehaviour
         }
     }
 
+    public void IncrementCurrentLevelIndex()
+    {
+        currentTrackIndex.value++;
+    }
+
     private void CreateEventNoteTrigger()
     {
         eventCollectorPos = EventEmitter.position;
@@ -234,9 +239,9 @@ public class Emitter : MonoBehaviour
         Vector3 distination;
         CalculateNoteDirection(note, out source, out distination);
 
-        if (GetNoteIndex(note) >= 7 || ForceEvade)
+        if (GetNoteIndex(note) > 7 || ForceEvade)
         {
-            distination.y = playerHead.value.position.y+1;
+            distination.y = playerHead.value.position.y+.2f;
             SpawnEvade(source, distination, slashDir);
         }
         else

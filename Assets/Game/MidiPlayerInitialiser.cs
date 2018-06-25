@@ -48,7 +48,7 @@ public class MidiPlayerInitialiser
         {
             LoadMidiSet();
             CheckMidiSet();
-            AssetDatabase.Refresh();
+           // AssetDatabase.Refresh();
         }
         catch (System.Exception ex)
         {

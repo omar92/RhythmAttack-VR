@@ -26,7 +26,15 @@ public class SwordIntersiction : MonoBehaviour {
                 
                 intersictionParticle.transform.position = hit.point;
                 intersictionParticle.gameObject.SetActive(true);
-                intersectionSound.Play();
+                if (intersectionSound.isPlaying)
+                {
+
+                }
+                else
+                {
+                    intersectionSound.Play();
+                }
+                
             }
             else
             {

@@ -14,8 +14,8 @@ MonoBehaviour:
   MeleeSlash: {fileID: 8300000, guid: e95cc5dd55bc7cb41aa042e3040b13a3, type: 3}
   MeleeMiss: {fileID: 8300000, guid: e95cc5dd55bc7cb41aa042e3040b13a3, type: 3}
   MeleeSwing: {fileID: 8300000, guid: 2f41a310a8766f742bec4ed7add10010, type: 3}
-  RangedShoot: {fileID: 8300000, guid: 9af56bac4b63a2146b9543986fcc7d16, type: 3}
-  RangedHit: {fileID: 8300000, guid: 9ca01fd06909f1e4eaf7ba30310630ee, type: 3}
+  RangedShoot: {fileID: 8300000, guid: 3652ab14178ba7e4690463d272a20120, type: 3}
+  RangedHit: {fileID: 8300000, guid: 4654b2eb591ba59459d0324f54a20a22, type: 3}
   NoteMiss: {fileID: 8300000, guid: 7b283ccad0acf8a4cb40b458c1487b9d, type: 3}
   GameWin: {fileID: 8300000, guid: e0af9573980af704e91bbc76f8f8eaa7, type: 3}
   GameLose: {fileID: 8300000, guid: 3b9ed68730cebf74cb20e5f6ed1b1e83, type: 3}

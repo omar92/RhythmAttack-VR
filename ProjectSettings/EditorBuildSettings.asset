@@ -6,8 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/0_ProjectFiles/Scenes/GamePlayScene.unity
+    guid: ca9e16724fd1cfd47a72980f9d0b100d
+  - enabled: 0
     path: Assets/Game/Prototype.unity
     guid: f8077a77b03538a4e9c7615c33c7ef44
-  - enabled: 1
+  - enabled: 0
     path: Assets/VRTK/Examples/VRTK_SDKManager_Constructor.unity
     guid: 3fb19ae213a4a4d45bb9ecd245a8fadb
+  m_configObjects: {}

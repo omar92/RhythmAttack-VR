@@ -15,7 +15,7 @@ MonoBehaviour:
   BossHealth: 100
   NoteVelocity: 1.5
   GunDamage: 15
-  minCutSpeed: 0
+  minCutSpeed: 0.1
   PlayerHealValue: 5
   MissNoteDamage: 10
   scoreFactor: 10

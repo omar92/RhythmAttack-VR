@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: 98fa07255c439f54487b1c5a9c54ab9b
-timeCreated: 1526302333
-licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -413,6 +411,7 @@ ModelImporter:
     4300082: Cylinder24
     4300084: polySurface59
     9500000: //RootNode
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -432,6 +431,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
