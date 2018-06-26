@@ -85,8 +85,8 @@ public class NoteCuttingEffect : MonoBehaviour
             Half1.isKinematic = false;
             Half2.isKinematic = false;
 
-            Half1.AddForce((-transform.right - transform.forward) * ForceMultiplier, ForceMode.Impulse);
-            Half2.AddForce((transform.right - transform.forward) * ForceMultiplier, ForceMode.Impulse);
+            Half1.AddForce((-transform.right - (transform.forward / 2)) * ForceMultiplier, ForceMode.Impulse);
+            Half2.AddForce((transform.right - (transform.forward / 2)) * ForceMultiplier, ForceMode.Impulse);
         }
         else
         {
@@ -95,8 +95,8 @@ public class NoteCuttingEffect : MonoBehaviour
             Half1.isKinematic = false;
             Half2.isKinematic = false;
 
-            Half1.AddForce((transform.up - transform.forward) * ForceMultiplier, ForceMode.Impulse);
-            Half2.AddForce((-transform.up - transform.forward) * ForceMultiplier, ForceMode.Impulse);
+            Half1.AddForce((transform.up - (transform.forward / 2)) * ForceMultiplier, ForceMode.Impulse);
+            Half2.AddForce((-transform.up - (transform.forward / 2)) * ForceMultiplier, ForceMode.Impulse);
         }
         Half1.transform.parent = null;
         Half2.transform.parent = null;

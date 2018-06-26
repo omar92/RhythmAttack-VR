@@ -30,10 +30,11 @@ public class Gun : MonoBehaviour, IControllable {
     private void Awake()
     {
         Source = GetComponent<AudioSource>();
+        Source.clip = sounds.RangedShoot;
     }
     private void Start()
     {
-        StartCoroutine(CleanSceneFromParticles());
+        //StartCoroutine(CleanSceneFromParticles());
     }
     public void OnTrigger(bool isDown)
     {
@@ -46,14 +47,21 @@ public class Gun : MonoBehaviour, IControllable {
 
     void Shoot()
     {
-        var gunParticle = Instantiate(gunFireParticle, gunFire.position, Quaternion.identity);
-        gunParticle.gameObject.SetActive(true);
-        bulletsParticle.Add(gunParticle);
-        Source.clip = sounds.RangedShoot;
-        Source.Play();
-        GunVibrate.Raise();
+
         if (this.gameObject.activeInHierarchy == true)
         {
+            //muzel fire effect
+            var gunParticle = Instantiate(gunFireParticle, gunFire.position, Quaternion.identity);
+            gunParticle.gameObject.SetActive(true);
+            Destroy(gunParticle, destroyAfter);
+
+            //gun sounds
+            Source.Play();
+
+            //gun vibration
+            GunVibrate.Raise();
+
+            //throw projectile
             RaycastHit hit;
             Rigidbody clone;
             clone = Instantiate(projectile, transform.position, projectile.transform.rotation) as Rigidbody;
@@ -66,10 +74,11 @@ public class Gun : MonoBehaviour, IControllable {
                 {
                     target.OnHit();
                     BossHitE.Raise();
-                    var bossParticle = Instantiate(bossHitParticle, hit.transform.position, Quaternion.identity);
-                    bossParticle.gameObject.SetActive(true);
-                    hitParticle.Add(bossParticle);
                 }
+                //bullet collision effect
+                var bossParticle = Instantiate(bossHitParticle, hit.transform.position, Quaternion.identity);
+                bossParticle.gameObject.SetActive(true);
+                Destroy(bossParticle, destroyAfter);
             }
             Destroy(clone.gameObject, destroyAfter);
         }
@@ -79,16 +88,17 @@ public class Gun : MonoBehaviour, IControllable {
     {
         //throw new NotImplementedException();
     }
-    IEnumerator CleanSceneFromParticles()
-    {
-        for (int i = 0; i < bulletsParticle.Capacity; i++)
-        {
-            bulletsParticle[i].gameObject.SetActive(false);
-        }
-        for (int i = 0; i < hitParticle.Capacity; i++)
-        {
-            hitParticle[i].gameObject.SetActive(false);
-        }
-        yield return new  WaitForSeconds(2f);
-    }
+    //IEnumerator CleanSceneFromParticles()
+    //{
+        
+    //    //yield return new  WaitForSeconds(6f);
+    //    //for (int i = 0; i < bulletsParticle.Capacity; i++)
+    //    //{
+    //    //    bulletsParticle[i].gameObject.SetActive(false);
+    //    //}
+    //    //for (int i = 0; i < hitParticle.Capacity; i++)
+    //    //{
+    //    //    hitParticle[i].gameObject.SetActive(false);
+    //    //}
+    //}
 }

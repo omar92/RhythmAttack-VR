@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        GameObject.Destroy(this);
+        // GameObject.Destroy(this);
+        this.gameObject.SetActive(false);
     }
 }
