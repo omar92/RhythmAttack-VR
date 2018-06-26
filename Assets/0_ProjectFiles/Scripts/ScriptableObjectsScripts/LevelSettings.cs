@@ -10,6 +10,7 @@ public class LevelSettings : ScriptableObject
     public float PlayerHealth;
     public float BossHealth;
     public float NoteVelocity;
+    public float ThrowDelay;
     public float GunDamage;
     public float minCutSpeed;
     public float PlayerHealValue;

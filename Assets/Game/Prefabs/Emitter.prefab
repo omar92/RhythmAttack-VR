@@ -844,6 +844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1ba7acd138ebb84dba20fcac4d1fc12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settings: {fileID: 11400000, guid: b9631101d1d296346a4108d7517f2217, type: 2}
   EventEmitter: {fileID: 4759805464520270}
   eventNotePref: {fileID: 114718006405924004, guid: 9a06d2522e7546c428ae450546e40842,
     type: 2}

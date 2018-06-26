@@ -27,8 +27,10 @@ public class IntroMusicMonitor : MonoBehaviour
 
     IEnumerator MusicCoroutine()
     {
-        yield return new WaitForSeconds(source.clip.length - settings.NoteVelocity);
+        yield return new WaitForSeconds(source.clip.length - settings.NoteVelocity - settings.ThrowDelay);
         Debug.Log("change state");
         introMusicEnd.Raise();
     }
+
+
 }

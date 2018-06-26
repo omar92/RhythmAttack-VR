@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class Emitter : MonoBehaviour
 {
+    public LevelSettings settings;
     public Transform EventEmitter;
     public EventsNoteScript eventNotePref;
     public EvadeNoteScript evadeNotePref;
@@ -120,7 +121,6 @@ public class Emitter : MonoBehaviour
                     noteAudio.note.Midi = midiMidle;
                     noteAudio.note.Velocity = 100;
                     SpawnNote(noteAudio, true);
-                   
                     break;
                 case 4:
                     TutorialGun.Raise();
@@ -239,13 +239,17 @@ public class Emitter : MonoBehaviour
         Vector3 distination;
         CalculateNoteDirection(note, out source, out distination);
 
-        if (GetNoteIndex(note) > 7 || ForceEvade)
-        {
-            distination.y = playerHead.value.position.y+.2f;
-            SpawnEvade(source, distination, slashDir);
-        }
-        else
-            NotesPoolScript.inistance.PullNote(source.position, distination, noteIndex, slashDir);
+        StartCoroutine(StartAfterDelay(settings.ThrowDelay, () =>
+         {
+             if (GetNoteIndex(note) > 7 || ForceEvade)
+             {
+                 distination.y = playerHead.value.position.y + .2f;
+                 SpawnEvade(source, distination, slashDir);
+             }
+             else
+                 NotesPoolScript.inistance.PullNote(source.position, distination, noteIndex, slashDir);
+         }));
+
 
     }
 
