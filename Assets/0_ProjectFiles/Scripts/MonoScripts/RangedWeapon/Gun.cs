@@ -24,14 +24,16 @@ public class Gun : MonoBehaviour, IControllable {
     [SerializeField]
     ParticleSystem bossHitParticle;
 
-    List<ParticleSystem> bulletsParticle ; 
+    List<ParticleSystem> bulletsParticle ;
+    List<ParticleSystem> hitParticle;
+
     private void Awake()
     {
         Source = GetComponent<AudioSource>();
     }
     private void Start()
     {
-        StartCoroutine(BulletDeactivate());
+        StartCoroutine(CleanSceneFromParticles());
     }
     public void OnTrigger(bool isDown)
     {
@@ -64,8 +66,9 @@ public class Gun : MonoBehaviour, IControllable {
                 {
                     target.OnHit();
                     BossHitE.Raise();
-                    var bossParticle = Instantiate(bossHitParticle, hit.transform.position, Quaternion.Euler(hit.normal));
+                    var bossParticle = Instantiate(bossHitParticle, hit.transform.position, Quaternion.identity);
                     bossParticle.gameObject.SetActive(true);
+                    hitParticle.Add(bossParticle);
                 }
             }
             Destroy(clone.gameObject, destroyAfter);
@@ -76,11 +79,15 @@ public class Gun : MonoBehaviour, IControllable {
     {
         //throw new NotImplementedException();
     }
-    IEnumerator BulletDeactivate()
+    IEnumerator CleanSceneFromParticles()
     {
         for (int i = 0; i < bulletsParticle.Capacity; i++)
         {
             bulletsParticle[i].gameObject.SetActive(false);
+        }
+        for (int i = 0; i < hitParticle.Capacity; i++)
+        {
+            hitParticle[i].gameObject.SetActive(false);
         }
         yield return new  WaitForSeconds(2f);
     }
