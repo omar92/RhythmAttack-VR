@@ -163,6 +163,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4981251678380684}
+  - component: {fileID: 114815198132508916}
   m_Layer: 0
   m_Name: MusicBeatsWorld
   m_TagString: Untagged
@@ -1687,6 +1688,38 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114815198132508916
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1613255031771350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4c924c65018dec4ab3eec77cda09b6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicData: []
+  audioST: {fileID: 11400000, guid: 32409c90229c9de478b6208f8b13d9b8, type: 2}
+  audioS: {fileID: 0}
+  filter: 0
+  BaseColor: {r: 0.657212, g: 0.57855755, b: 0.9044118, a: 1}
+  Mask: {r: 0, g: 0, b: 0.003921569, a: 0}
+  scale: 1.5
+  ImissionMats:
+  - {fileID: 2100000, guid: 2e56d6d8557874e479fdfc79e2f5621f, type: 2}
+  - {fileID: 2100000, guid: fb3c7c45699fb0d46a617683195d9fe7, type: 2}
+  - {fileID: 2100000, guid: b155015c381725d45b5fed3390d61e42, type: 2}
+  - {fileID: 2100000, guid: cae415cb7aad4064caad4ca9b45f052e, type: 2}
+  - {fileID: 2100000, guid: 00183f6e6971d9f4983b722e99983c34, type: 2}
+  - {fileID: 2100000, guid: f450bb92a4200a747a8ebf71d5527a78, type: 2}
+  - {fileID: 2100000, guid: 052beda7e83add0458ac5d0a892d5016, type: 2}
+  - {fileID: 2100000, guid: 8c60dc49acb38b148a261b5a45524101, type: 2}
+  ColorMats:
+  - {fileID: 2100000, guid: 11b050e661ec0cf48a289a7266451e91, type: 2}
+  - {fileID: 2100000, guid: fe63a3412f8f855429befcce06e08fee, type: 2}
+  TransformsScale: []
+  ApplyOnSkyBox: 0
 --- !u!114 &114828121595953252
 MonoBehaviour:
   m_ObjectHideFlags: 1
