@@ -1,4 +1,4 @@
-# BeatBeasts-VR
+# RhythmAttack-VR
 ITI T38 GD/GA Graduation Project
 
 - VR Game
